@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
 <head>
     <!---Meta-->
     <meta charset="utf-8">
@@ -9,8 +9,8 @@
     <meta name="author" content="" />
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" href="{{ asset('neonFrontEnd/assets/images/favicon.ico') }}">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
+    <link rel="icon" href="<?php echo e(asset('blogFrontend/assets/images/favicon.ico')); ?>">
 
 
     <title>Big Data</title>
@@ -18,7 +18,7 @@
 
 
     <!-- Scripts -->
-    <script src="{{ asset('neonFrontEnd/assets/js/jquery-1.11.3.min.js') }}" defer></script>
+    <script src="<?php echo e(asset('blogFrontend/assets/js/jquery-1.11.3.min.js')); ?>" defer></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <!-- Fonts -->
@@ -26,9 +26,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('neonFrontEnd/assets/css/bootstrap.css') }}">
-	<link rel="stylesheet" href="{{ asset('neonFrontEnd/assets/css/font-icons/entypo/css/entypo.css') }}">
-	<link rel="stylesheet" href="{{ asset('neonFrontEnd/assets/css/neon.css') }}">
+    <link rel="stylesheet" href="<?php echo e(asset('blogFrontend/assets/css/bootstrap.css')); ?>">
+	<link rel="stylesheet" href="<?php echo e(asset('blogFrontend/assets/css/font-icons/entypo/css/entypo.css')); ?>">
+	<link rel="stylesheet" href="<?php echo e(asset('blogFrontend/assets/css/neon.css')); ?>">
 
 </head>
 <body>
@@ -45,8 +45,8 @@
 
                     <section class="site-logo">
 
-                        <a href="{{ url('/') }}">
-                            <img src="{{ asset('Imagenes/logo.png') }}" width="120" />
+                        <a href="<?php echo e(url('/')); ?>">
+                            <img src="<?php echo e(asset('Imagenes/logo.png')); ?>" width="120" />
                         </a>
 
                     </section>
@@ -55,27 +55,27 @@
 
                         <ul class="main-menu hidden-xs" id="main-menu">
                             <li>
-                                <a href="{{ url('/') }}">
+                                <a href="<?php echo e(url('/')); ?>">
                                     <span>Inicio</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{URL::to('Servicios')}}">
+                                <a href="<?php echo e(URL::to('Servicios')); ?>">
                                     <span>Sevicios</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{URL::to('Contact')}}">
+                                <a href="<?php echo e(URL::to('Contact')); ?>">
                                     <span>Contactenos</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ url('/home') }}">
+                                <a href="<?php echo e(url('/home')); ?>">
                                     <span>Home</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ url('instahunters') }}">
+                                <a href="<?php echo e(url('instahunters')); ?>">
                                     <span>InstaHunters <i class="fas fa-spider"></i></span>
                                 </a>
                             </li>
@@ -98,18 +98,19 @@
         </div>
 
     </div>
-@yield('content')
+<?php echo $__env->yieldContent('content'); ?>
 
     <!-- Blog -->
 
 	<!-- Bottom scripts (common) -->
-	<script src="{{ asset('neonFrontEnd/assets/js/gsap/TweenMax.min.js') }}" defer></script>
-	<script src="{{ asset('neonFrontEnd/assets/js/bootstrap.js') }}" defer></script>
-	<script src="{{ asset('neonFrontEnd/assets/js/joinable.js') }}" defer></script>
-	<script src="{{ asset('neonFrontEnd/assets/js/resizeable.js') }}" defer></script>
+	<script src="<?php echo e(asset('blogFrontend/assets/js/gsap/TweenMax.min.js')); ?>" defer></script>
+	<script src="<?php echo e(asset('blogFrontend/assets/js/bootstrap.js')); ?>" defer></script>
+	<script src="<?php echo e(asset('blogFrontend/assets/js/joinable.js')); ?>" defer></script>
+	<script src="<?php echo e(asset('blogFrontend/assets/js/resizeable.js')); ?>" defer></script>
 
 
 	<!-- JavaScripts initializations and stuff -->
-	<script src="{{ asset('neonFrontEnd/assets/js/neon-custom.js') }}" defer></script>
+	<script src="<?php echo e(asset('blogFrontend/assets/js/neon-custom.js')); ?>" defer></script>
 </body>
 </html>
+<?php /**PATH C:\laragon\www\AppTransaccional-v4.2rc\resources\views/layouts/InstaHuntershow.blade.php ENDPATH**/ ?>

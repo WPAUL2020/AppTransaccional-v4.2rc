@@ -1,5 +1,4 @@
-@extends('layouts.app')
-@section('content')
+<?php $__env->startSection('content'); ?>
         <!-- Breadcrumb -->
         <section class="breadcrumb">
 
@@ -13,11 +12,11 @@
 
                                     <ol class="breadcrumb bc-3" >
                                 <li>
-                        <a href="{{ url('/home') }}"><i class="fas fa-home"></i> Home</a>
+                        <a href="<?php echo e(url('/home')); ?>"><i class="fas fa-home"></i> Home</a>
                     </li>
                             <li>
 
-                                    <a href="{{ url('instahunters') }}">InstaHunters <i class="fas fa-spider"></i></a>
+                                    <a href="<?php echo e(url('instahunters')); ?>">InstaHunters <i class="fas fa-spider"></i></a>
                             </li>
                         <li class="active">
 
@@ -41,14 +40,14 @@
                 <div class="col-sm-8">
 
                     <div class="blog-posts">
-                        @foreach ($items as $data)
+                        <?php $__currentLoopData = $items; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <!-- Blog Post -->
                         <div class="blog-post">
 
                             <div class="post-thumb">
 
                                 <a href="#">
-                                    <img src="{{$data->img}}" class="img-rounded" />
+                                    <img src="<?php echo e($data->img); ?>" class="img-rounded" />
                                     <span class="hover-zoom"></span>
                                 </a>
 
@@ -63,30 +62,33 @@
                                 <div class="post-meta">
 
                                     <div class="meta-info">
-                                        <i class="entypo-calendar"></i> {{$data->date}}</div>
+                                        <i class="entypo-calendar"></i> <?php echo e($data->date); ?></div>
 
                                     <div class="meta-info">
                                         <i class="entypo-comment"></i>
-                                        {{$data->comentarios}}
+                                        <?php echo e($data->comentarios); ?>
+
                                     </div>
 
                                     <div class="meta-info">
                                         <i class="far fa-thumbs-up"></i>
-                                        {{$data->likes}}
+                                        <?php echo e($data->likes); ?>
+
                                     </div>
 
 
                                 </div>
 
-                                <p>{{$data->txt}}</p>
+                                <p><?php echo e($data->txt); ?></p>
 
                             </div>
 
                         </div>
-                        @endforeach
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
-                            <form action="{{URL::to('instahunterview')}}" method="post"> {{ csrf_field() }}
+                            <form action="<?php echo e(URL::to('instahunterview')); ?>" method="post"> <?php echo e(csrf_field()); ?>
+
                                 <button href="#" type="submit" class="btn btn-success btn-lg float-right" name="save">
                                     Download Data <i class="fas fa-file-download"></i>
                                  </button>
@@ -97,7 +99,8 @@
 
                             <ul class="pagination">
                                 <li class="active">
-                                    {{ $items->links() }}
+                                    <?php echo e($items->links()); ?>
+
                                 </li>
                             </ul>
 
@@ -112,7 +115,8 @@
     <div class="sidebar">
 
         <h3>
-            <form action="{{URL::to('instahunterview')}}" method="post"> {{ csrf_field() }}
+            <form action="<?php echo e(URL::to('instahunterview')); ?>" method="post"> <?php echo e(csrf_field()); ?>
+
                 <button href="#" type="submit" class="btn btn-success btn-lg float-right" name="save">
                     Download Data <i class="fas fa-file-download"></i>
                  </button>
@@ -122,7 +126,7 @@
             Elementos listos a descargar
             <ul>
                 <li>
-                    <a href="#">Total <span>({{$countItem}})</span></a>
+                    <a href="#">Total <span>(<?php echo e($countItem); ?>)</span></a>
                 </li>
             </ul>
         </div>
@@ -139,7 +143,7 @@
                 <div class="col-sm-6">
 
                     <a href="https://universitariadecolombia.edu.co">
-                        <img src="{{ asset('blogFrontend/assets/images/logo1.png') }}" width="120"/>
+                        <img src="<?php echo e(asset('blogFrontend/assets/images/logo1.png')); ?>" width="120"/>
                     </a>
 
                     <p>
@@ -218,4 +222,6 @@
 
     </footer>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\AppTransaccional-v4.2rc\resources\views/instahunterview.blade.php ENDPATH**/ ?>
