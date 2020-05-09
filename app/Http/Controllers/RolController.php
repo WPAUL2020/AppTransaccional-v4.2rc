@@ -15,7 +15,7 @@ class RolController extends Controller
     public function mostrarRol()
     {
         if (Auth::check()){
-            $roles = \App\rol::paginate(20);
+            $roles = \App\Role::paginate(20);
             return view('RolVista') ->with("roles",$roles);
         } else {
             return redirect('/login');
