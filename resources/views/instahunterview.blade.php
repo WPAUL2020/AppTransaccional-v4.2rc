@@ -1,4 +1,4 @@
-@extends('layouts.InstaHuntershow')
+@extends('layouts.app')
 @section('content')
         <!-- Breadcrumb -->
         <section class="breadcrumb">
@@ -186,7 +186,7 @@
 
                 <div class="col-sm-6">
                     © 2020 Copyright:
-                    <a href="https://universitariadecolombia.edu.co/programas/profesionales/ingenieria-de-sistemas/"> Semillero Ingenieria de Sistemas, Universitaria de Colombia. </a>
+                    <a href="https://universitariadecolombia.edu.co/programas/profesionales/ingenieria-de-sistemas/"> Semillero Ingenieria de Sistemas, Institución Universitaria de Colombia. </a>
 
                 </div>
 

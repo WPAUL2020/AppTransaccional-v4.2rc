@@ -7,16 +7,13 @@ use Illuminate\Support\Facades\DB;
 
 class FacturaController extends Controller
 {
-    public function BuscarFactura()
-    {
-        $TipoIdents = TipoIdent::all();
-        return view('FacturaBuscar')->with(['TipoIdents'=>$TipoIdents]);
+    public function __construct() {
+        $this->middleware('auth');
     }
 
-    public function MostrarFactura(Request $Factura)
+    public function generateInvoice()
     {
-        $data = DB::select('EXEC InsertFactura');
-            dump($data);
-
+        return view('Factura');
     }
+
 }
