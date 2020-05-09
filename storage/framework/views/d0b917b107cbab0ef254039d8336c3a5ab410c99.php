@@ -1,13 +1,11 @@
-@extends('layouts.app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 <div class="page-body boxed-layout" >
     <div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
         <div class="main-content">
                                 <ol class="breadcrumb bc-2 hidden-print" >
                                     <li>
-                            <a href="{{ url('/home') }}"><i class="fas fa-home"></i>Home</a>
+                            <a href="<?php echo e(url('/home')); ?>"><i class="fas fa-home"></i>Home</a>
                         </li>
                             <li class="active">
                                         <strong>Factura</strong>
@@ -22,14 +20,14 @@
                     <div class="col-sm-6 invoice-left">
 
                         <a href="#">
-                            <img src="{{ asset('Imagenes/logo.png') }}" width="185" alt="" />
+                            <img src="<?php echo e(asset('Imagenes/logo.png')); ?>" width="185" alt="" />
                         </a>
 
                     </div>
 
                     <div class="col-sm-6 invoice-right">
 
-                            <h3>INVOICE NO. #5652256</h3>
+                            <h3>FACTURA NO. #5652256</h3>
                             <span>31 October 2013</span>
                     </div>
 
@@ -201,4 +199,6 @@
         </div>
     </div>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\AppTransaccional-v4.2rc\resources\views/Factura.blade.php ENDPATH**/ ?>

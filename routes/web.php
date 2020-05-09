@@ -118,5 +118,5 @@ Route::post('instahunterview', 'instahuntersController@exportXls');/**Download D
 // Route::get('reporte', 'ReporteController@index');
 
 //FACTURA
-Route::get('/BuscarFactura', 'FacturaController@BuscarFactura')->name('BuscarFactura');
+Route::get('/Factura', 'FacturaController@generateInvoice')->name('Factura');
 

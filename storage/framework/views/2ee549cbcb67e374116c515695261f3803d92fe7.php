@@ -140,7 +140,7 @@
   <br>
   <center><img src="<?php echo e(asset('Imagenes/Facturas.png')); ?>" style="max-width: 150px; max-height: 150px" class='imgRedonda'/></center>
       <div class="card-body">
-      <center><a class="btn btn-primary" href="<?php echo e(URL::to('/BuscarFactura')); ?>">Factura</a></center>
+      <center><a class="btn btn-primary" href="<?php echo e(URL::to('/Factura')); ?>">Factura</a></center>
       </div>
     </div>
   </div>
