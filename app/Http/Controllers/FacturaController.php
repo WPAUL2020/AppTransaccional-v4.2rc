@@ -16,7 +16,7 @@ class FacturaController extends Controller
     public function MostrarFactura(Request $Factura)
     {
         $data = DB::select('EXEC InsertFactura');
-            dump($data);
+            dd($data);
 
     }
 }
