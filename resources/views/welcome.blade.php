@@ -10,7 +10,7 @@
 
 	<link rel="icon" href="assets/images/favicon.ico">
 
-	<title>Neon | Frontend</title>
+	<title>BIG DATA | Institución Universitaria de Colombia</title>
 
 	<link rel="stylesheet" href="{{ asset('neonFrontEnd/assets/css/bootstrap.css') }}">
 	<link rel="stylesheet" href="{{ asset('neonFrontEnd/assets/css/font-icons/entypo/css/entypo.css') }}">
