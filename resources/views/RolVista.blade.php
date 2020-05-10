@@ -16,10 +16,10 @@
                        <th class="text-center">DEPENDENCIA</th>
                    </tr>
                    @foreach($roles as $users1)
-                   <tr><td>{{ $users1->ID_ROL}}</td>
-                       <td>{{ $users1->NOMBRE_ROL}}</td>
-                       <td>{{ $users1->DESCRIPCION}}</td>
-                       <td>{{ $users1->DEPENDENCIA}}</td>
+                   <tr><td>{{ $users1->id}}</td>
+                       <td>{{ $users1->name}}</td>
+                       <td>{{ $users1->description}}</td>
+                       <td>{{ $users1->dependency}}</td>
                        </tr>
                    @endforeach
 

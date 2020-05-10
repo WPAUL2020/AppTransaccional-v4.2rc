@@ -18,7 +18,7 @@ class EmpleadosInternoController extends Controller
 
     public function Internos(Request $request)
     {
-        $request->user()->authorizeRoles('ADMINISTRADOR');
+        $request->user()->authorizeRoles('PRUEBAS1', 'ADMINISTRADOR');
 
     }
 
@@ -87,7 +87,7 @@ class EmpleadosInternoController extends Controller
    public function changeUser(Request $r,$ID_EMPLEADO_INTERNO)
    {
     $reglas_Validacion =["DIRECCION" =>"required|min:3", "TELEFONO" =>"numeric|min:3", "CIUDAD" =>"required|min:3",
-    "CORREO" =>"required|min:3", "TELEFONO_OFICINA" =>"numeric|min:3", "EXTENSION" =>"numeric|min:3", 
+    "CORREO" =>"required|min:3", "TELEFONO_OFICINA" =>"numeric|min:3", "EXTENSION" =>"numeric|min:3",
     "ID_CARGO" =>"required|min:3", "ID_ROL" =>"required|min:3", "OBSERVACION" =>"required|min:3", "ESTADO" =>"required|min:3", "ID_EMPRESA_TERCERO" =>"required|min:3" ];
    $mensajes = ["required" => "Este campo es obligatorio", "alpha" => "Este campo solo permite Letras", "numeric" => "Este Campo Solo Permite Numeros",
         "min" => "Este Campo Debe Tener Minimo :min Digitos", "unique" => "Este Campo ya esta Registrado", "exists" => "Este Campo Debe Existir"];

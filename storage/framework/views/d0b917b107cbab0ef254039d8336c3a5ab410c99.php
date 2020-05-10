@@ -193,7 +193,7 @@
             <!-- Footer -->
             <footer class="main">
 
-                &copy; 2020 Copyright: <strong><a href="https://universitariadecolombia.edu.co/programas/profesionales/ingenieria-de-sistemas/"> Semillero Ingenieria de Sistemas</a></strong> , Instirución Universitaria de Colombia.
+                &copy; 2020 Copyright: <strong><a href="https://universitariadecolombia.edu.co/programas/profesionales/ingenieria-de-sistemas/"> Semillero Ingenieria de Sistemas</a></strong> , Institución Universitaria de Colombia.
 
             </footer>
         </div>
