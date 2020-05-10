@@ -137,7 +137,8 @@
 	<script src="<?php echo e(asset('neonFrontEnd/assets/js/joinable.js')); ?>" defer></script>
     <script src="<?php echo e(asset('neonFrontEnd/assets/js/resizeable.js')); ?>" defer></script>
 	<script src="<?php echo e(asset('neonFrontEnd/assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js')); ?>"></script>
-	<script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-api.js')); ?>"></script>
+    <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-api.js')); ?>"></script>
+    <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-chat.js')); ?>"></script>
 
 
 
