@@ -82,11 +82,26 @@
                                     <span>Contactenos</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="{{ url('/home') }}">
-                                    <span>Home</span>
-                                </a>
-                            </li>
+                                @if (Route::has('login'))
+                                    @auth
+                                    <div class="btn-group left-dropdown">
+                                        <button type="button" class="btn btn-black">Left Dropdown</button>
+                                        <button type="button" class="btn btn-black dropdown-toggle" data-toggle="dropdown">
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-primary" role="menu">
+                                            <li><a href="#">Logout</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    @else
+                                    <li>
+                                        <a href="{{ route('login') }}">
+                                            <span class="btn btn-black">Login</span>
+                                        </a>
+                                    </li>
+                                    @endauth
+                            @endif
                         </ul>
 
 
