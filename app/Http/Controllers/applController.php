@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\metodoPago as metodoPago;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+/* use Illuminate\Http\Request; */
 
 class applController extends Controller
 {
@@ -23,6 +26,7 @@ class applController extends Controller
      */
     public function index()
     {
+        /* dd($metodoPago = metodoPago::all()); */
         return view('appl');
     }
 }
