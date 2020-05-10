@@ -139,7 +139,12 @@
 	<script src="<?php echo e(asset('neonFrontEnd/assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js')); ?>"></script>
     <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-api.js')); ?>"></script>
     <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-chat.js')); ?>"></script>
+	<!-- JavaScripts initializations and stuff -->
+	<script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-custom.js')); ?>"></script>
 
+
+	<!-- Demo Settings -->
+	<script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-demo.js')); ?>"></script>
 
 
 	<!-- JavaScripts initializations and stuff -->
