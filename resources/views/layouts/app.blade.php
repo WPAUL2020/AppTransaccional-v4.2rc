@@ -85,12 +85,17 @@
                                 @if (Route::has('login'))
                                     @auth
                                     <div class="btn-group left-dropdown">
-                                        <button type="button" class="btn btn-black">Left Dropdown</button>
+                                    <button type="button" class="btn btn-black">{{Auth::user()->name}}</button>
                                         <button type="button" class="btn btn-black dropdown-toggle" data-toggle="dropdown">
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu dropdown-primary" role="menu">
-                                            <li><a href="#">Logout</a>
+                                            <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                                                Logout
+                                            </a>
+                                            <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                {{ csrf_field() }}
+                                            </form>
                                             </li>
                                         </ul>
                                     </div>

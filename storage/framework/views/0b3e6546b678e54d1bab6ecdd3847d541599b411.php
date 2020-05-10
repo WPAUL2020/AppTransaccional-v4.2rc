@@ -85,12 +85,18 @@
                                 <?php if(Route::has('login')): ?>
                                     <?php if(auth()->guard()->check()): ?>
                                     <div class="btn-group left-dropdown">
-                                        <button type="button" class="btn btn-black">Left Dropdown</button>
+                                    <button type="button" class="btn btn-black"><?php echo e(Auth::user()->name); ?></button>
                                         <button type="button" class="btn btn-black dropdown-toggle" data-toggle="dropdown">
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu dropdown-primary" role="menu">
-                                            <li><a href="#">Logout</a>
+                                            <li><a href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                                                Logout
+                                            </a>
+                                            <form id="frm-logout" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                                                <?php echo e(csrf_field()); ?>
+
+                                            </form>
                                             </li>
                                         </ul>
                                     </div>
