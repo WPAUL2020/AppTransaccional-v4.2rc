@@ -136,15 +136,15 @@
 	<script src="<?php echo e(asset('neonFrontEnd/assets/js/bootstrap.js')); ?>" defer></script>
 	<script src="<?php echo e(asset('neonFrontEnd/assets/js/joinable.js')); ?>" defer></script>
     <script src="<?php echo e(asset('neonFrontEnd/assets/js/resizeable.js')); ?>" defer></script>
-	<script src="<?php echo e(asset('neonFrontEnd/assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-api.js')); ?>"></script>
-    <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-chat.js')); ?>"></script>
+	<script src="<?php echo e(asset('neonFrontEnd/assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js')); ?>" defer></script>
+    <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-api.js')); ?>" defer></script>
+    <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-chat.js')); ?>" defer></script>
 	<!-- JavaScripts initializations and stuff -->
-	<script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-custom.js')); ?>"></script>
+	<script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-custom.js')); ?>" defer></script>
 
 
 	<!-- Demo Settings -->
-	<script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-demo.js')); ?>"></script>
+	<script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-demo.js')); ?>" defer></script>
 
 
 	<!-- JavaScripts initializations and stuff -->

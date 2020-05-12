@@ -11,9 +11,9 @@ class FacturaController extends Controller
         $this->middleware('auth');
     }
 
-    public function generateInvoice()
+    public function home()
     {
-        return view('Factura');
+        return redirect('/');
     }
 
 }

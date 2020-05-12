@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\metodoPago as metodoPago;
 use Illuminate\Http\Request;
+use App\MedioPago as metodoPago;
+use App\ciudad as nombreciudad;
+use App\Servicio as tipoSevicio;
 use Illuminate\Support\Facades\DB;
 
 /* use Illuminate\Http\Request; */
@@ -26,7 +28,10 @@ class applController extends Controller
      */
     public function index()
     {
-        /* dd($metodoPago = metodoPago::all()); */
-        return view('appl');
+        $metodoPago = metodoPago::all();
+        $nombreciudad = nombreciudad::all();
+        $tipoSevicio = tipoSevicio::all();
+
+        return view('appl', compact('metodoPago', 'nombreciudad', 'tipoSevicio'));
     }
 }

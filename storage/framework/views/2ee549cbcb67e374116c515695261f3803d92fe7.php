@@ -154,7 +154,7 @@
 </div>
 </div>
 
-
+<form action="<?php echo e(route('generarFactura')); ?>" method="get" id="frm-modal-factura">
 <!-- Modal -->
 <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -169,51 +169,62 @@
                 <div class="container-fluid">
                     <div class="form-group">
                         <label for=""></label>
-                        <input type="text" name="nit" id="nit" class="form-control" placeholder="Nit" aria-describedby="helpId">
                         <strong><small id="helpId" class="text-muted">Nit</small></strong>
-                        <select class="form-control" name="mPago" id="mPago">
-                            <option> Seleccione....</option>
-
-                        </select>
+                        <input type="text" name="nit" id="nit" class="form-control" data-validate="required" data-message-required="Ingrese el Nit." placeholder="Nit" aria-describedby="helpId">
                         <strong><label for="" class="text-muted">Metodo de pago</label></strong>
-                        <label for=""></label>
-                        <input type="text" name="docN" id="docN" class="form-control" data-numeric="true" placeholder="No. de documento" aria-describedby="helpId">
-                        <strong><small id="helpId" class="text-muted">Número de documneto</small></strong>
-                        <select class="form-control" name="service" id="service">
+                        <select class="form-control" name="mPago" id="mPago" data-validate="required" data-message-required="Seleccione un metodo de pago">
                             <option> Seleccione....</option>
-
+                            <?php $__currentLoopData = $metodoPago; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mPago): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <option><?php echo e($mPago->METODO_PAGO); ?> </option>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
+                        <label for=""></label>
+                        <strong><small id="helpId" class="text-muted">Número de documento</small></strong>
+                        <input type="text" name="docN" id="docN" class="form-control" data-numeric="true" data-validate="required,number" data-message-required="Ingrese un número de documento" placeholder="No. de documento" aria-describedby="helpId">
                         <strong><label for="" class="text-muted">Servicio</label></strong>
-                        <label for=""></label>
-                        <input type="text" name="cantidad" id="cantidad" class="form-control" data-numeric="true" placeholder="Cantidad" aria-describedby="helpId">
-                        <strong><small id="helpId" class="text-muted">Cantidad</small></strong>
-                        <label for=""></label>
-                        <input type="text" name="date" id="date" class="form-control" data-mask="date" aria-describedby="helpId" placeholder="DD/MM/YYYY">
-                        <strong><small id="helpId" class="text-muted">Fecha de envio </small></strong>
-                        <label for=""></label>
-                        <input type="text" name="direc" id="direc" class="form-control" aria-describedby="helpId" placeholder="Dirección">
-                        <strong><small id="helpId" class="text-muted">Dirección de envio </small></strong>
-                        <input type="hidden" name="" id="" class="form-control" value="Colombia">
-                        <select class="form-control" name="ciudad" id="ciudad">
+                        <select class="form-control" name="service" id="service" data-validate="required" data-message-required="Seleccione un tipo de servicio">
                             <option> Seleccione....</option>
-
+                            <?php $__currentLoopData = $tipoSevicio; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $sevicio): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <option><?php echo e($sevicio->NOMBRE_PRODUCTO); ?></option>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
+                        <label for=""></label>
+                        <strong><small id="helpId" class="text-muted">Cantidad</small></strong>
+                        <input type="text" name="cantidad" id="cantidad" class="form-control" data-numeric="true" data-validate="required,number" data-message-required="Ingrese una cantidad valida" placeholder="Cantidad" aria-describedby="helpId">
+                        <label for=""></label>
+                        <strong><small id="helpId" class="text-muted">Fecha de envio</small></strong>
+                        <input type="text" name="date" id="date" class="form-control" data-mask="date" aria-describedby="helpId" placeholder="DD/MM/YYYY">
+                        <label for=""></label>
+                        <strong><small id="helpId" class="text-muted">Dirección de envio </small></strong>
+                        <input type="text" name="direc" id="direc" class="form-control" aria-describedby="helpId" data-numeric="true" data-validate="required" data-message-required="Ingrese la dirección" placeholder="Cantidad" aria-describedby="helpId" placeholder="Dirección">
+                        <input type="hidden" name="" id="" class="form-control" value="Colombia">
                         <strong><label for="" class="text-muted">Ciudad</label></strong>
+                        <select class="form-control" name="ciudad" id="ciudad" data-numeric="true" data-validate="required" data-message-required="Seleccion" placeholder="Cantidad" aria-describedby="helpId">
+                            <option> Seleccione....</option>
+                            <?php $__currentLoopData = $nombreciudad; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ciudad): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option><?php echo e($ciudad->NOMBRE_CIUDAD); ?></option>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </select>
                         <div class="form-group">
-                          <strong><label for="" class="text-muted">Observaciones</label></strong>
-                          <textarea class="form-control" name="obser" id="obser" rows="3"></textarea>
+                            <strong><label for="" class="text-muted">Observaciones (Opcional)</label></strong>
+                            <textarea class="form-control" name="obser" id="obser" rows="3"></textarea>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
+                <a class="btn btn-primary" href="<?php echo e(route('generarFactura')); ?>" onclick="event.preventDefault(); document.getElementById('frm-modal-factura').submit();"> Generar </a>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Generar</button>
             </div>
         </div>
     </div>
 </div>
 
+</form>
+        <!-- Imported scripts on this page -->
+        <script src="<?php echo e(asset('neonFrontEnd/assets/js/jquery.validate.min.js')); ?>" defer></script>
+		<script src="<?php echo e(asset('neonFrontEnd/assets/js/jquery.inputmask.bundle.js')); ?>" defer></script>
+		<script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-chat.js')); ?>" defer></script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\AppTransaccional-v4.2rc\resources\views/appl.blade.php ENDPATH**/ ?>
