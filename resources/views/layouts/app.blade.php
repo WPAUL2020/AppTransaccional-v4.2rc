@@ -127,9 +127,6 @@
 
     </div>
 @yield('content')
-
-    <!-- Blog -->
-
 	<!-- Bottom scripts (common) -->
 	<script src="{{ asset('neonFrontEnd/assets/js/gsap/TweenMax.min.js') }}" defer></script>
 	<script src="{{ asset('neonFrontEnd/assets/js/bootstrap.js') }}" defer></script>
@@ -140,13 +137,16 @@
     <script src="{{ asset('neonFrontEnd/assets/js/neon-chat.js') }}" defer></script>
 	<!-- JavaScripts initializations and stuff -->
 	<script src="{{ asset('neonFrontEnd/assets/js/neon-custom.js') }}" defer></script>
-
+    <!-- Imported scripts on this page -->
+    <script src="{{ asset('neonFrontEnd/assets/js/jquery.validate.min.js') }}" defer></script>
+    <script src="{{ asset('neonFrontEnd/assets/js/jquery.inputmask.bundle.js') }}" defer></script>
+    <script src="{{ asset('neonFrontEnd/assets/js/neon-chat.js') }}" defer></script>
 
 	<!-- Demo Settings -->
 	<script src="{{ asset('neonFrontEnd/assets/js/neon-demo.js') }}" defer></script>
 
 
 	<!-- JavaScripts initializations and stuff -->
-	<script src="{{ asset('neonFrontEnd/assets/js/neon-custom.js') }}" defer></script>
+    <script src="{{ asset('neonFrontEnd/assets/js/neon-custom.js') }}" defer></script>
 </body>
 </html>
