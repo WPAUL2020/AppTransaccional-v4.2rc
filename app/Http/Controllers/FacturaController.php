@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\TipoIdentificacion as TipoIdent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\TipoIdentificacion as TipoIdent;
+use Illuminate\Support\Facades\Redirect;
 
 class FacturaController extends Controller
 {
@@ -13,7 +14,12 @@ class FacturaController extends Controller
 
     public function home()
     {
-        return redirect('/');
+        return Redirect::route('Factura');
+    }
+
+    public function index()
+    {
+        return view('Factura');
     }
 
 }
