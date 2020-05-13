@@ -1,15 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
 
-<!DOCTYPE html>
-<html lang="es_DO">
-<head>
-    <meta charset="UTF-8">
-<title>Pagina de Contacto</title>
-                   <br>
-                   <br>
-</head>
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-9">
+
+                    <h1>Editar Rol de Usuario</h1>
+
+                    <ol class="breadcrumb bc-3" >
+                            <li>
+                    <a href="{{URL::previous()}}"> <i class="fas fa-angle-left"></i> Regresar</a>
+                </li>
+                    <li class="active">
+                                <strong>Editar Rol de Usuario</strong>
+                        </li>
+                        </ol>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
 <body>
     <div class="container">

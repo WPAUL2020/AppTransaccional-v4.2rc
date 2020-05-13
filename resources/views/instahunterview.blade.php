@@ -13,7 +13,7 @@
 
                                     <ol class="breadcrumb bc-3" >
                                 <li>
-                        <a href="{{ url('/home') }}"><i class="fas fa-home"></i> Home</a>
+                        <a href="{{ url('/') }}"><i class="fas fa-home"></i> Home</a>
                     </li>
                             <li>
 

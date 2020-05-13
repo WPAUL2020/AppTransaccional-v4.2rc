@@ -2,10 +2,30 @@
 
 @section('content')
 
-<title>Big Data E-Commerce</title>
-                   <a class="btn btn-outline-secondary" href="{{URL::to('GestionUser')}}">MI PERFIL</a>
-                  
-                   <a class="btn btn-outline-secondary" href="{{URL::to('appl')}}">REGRESAR</a>
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-9">
+
+                    <h1>Gestion de Sector Empresa</h1>
+
+                    <ol class="breadcrumb bc-3" >
+                            <li>
+                    <a href="{{URL::to('appl')}}"> <i class="fas fa-angle-left"></i> Regresar</a>
+                </li>
+                    <li class="active">
+                                <strong>Gestion de Sector Empresa</strong>
+                        </li>
+                        </ol>
+                </div>
+            </div>
+
+        </div>
+    </section>
 <br>
 <BR>
 <div class="container">
@@ -23,6 +43,6 @@
 
 </table>
 {!! $sector->render() !!}
-                <a class="btn btn-outline-secondary" href="{{URL::to('SectEmprTerCrear/agregar')}}">Agregar</a>
+                <a class="btn btn-primary" href="{{URL::to('SectEmprTerCrear/agregar')}}">Agregar</a>
 </div>
 @endsection

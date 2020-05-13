@@ -1,9 +1,28 @@
 <?php $__env->startSection('content'); ?>
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
 
-<title>Big Data E-Commerce</title>
-                   <a class="btn btn-outline-secondary" href="<?php echo e(URL::to('GestionUser')); ?>">MI PERFIL</a>
+        <div class="container">
 
-                   <a class="btn btn-outline-secondary" href="<?php echo e(URL::to('appl')); ?>">REGRESAR</a>
+            <div class="row">
+
+                <div class="col-sm-9">
+
+                    <h1>Gestion de Roles y Perfiles</h1>
+
+                    <ol class="breadcrumb bc-3" >
+                            <li>
+                    <a href="<?php echo e(URL::to('appl')); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
+                </li>
+                    <li class="active">
+                                <strong>Gestion de Roles y Perfiles</strong>
+                        </li>
+                        </ol>
+                </div>
+            </div>
+
+        </div>
+    </section>
 <br>
 <BR>
 <div class="container">
@@ -24,7 +43,7 @@
 </table>
 <?php echo $roles->render(); ?>
 
-                <a class="btn btn-outline-secondary" href="<?php echo e(URL::to('RolCrear/agregar')); ?>">Agregar</a>
+                <a class="btn btn-primary" href="<?php echo e(URL::to('RolCrear/agregar')); ?>">Agregar</a>
 </div>
 <?php $__env->stopSection(); ?>
 

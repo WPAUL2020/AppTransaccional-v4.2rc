@@ -1,11 +1,32 @@
 @extends('layouts.app')
 
 @section('content')
+   <!-- Breadcrumb -->
+   <section class="breadcrumb">
 
-<title>Big Data E-Commerce</title>
-                   <a class="btn btn-outline-secondary" href="{{URL::to('GestionUser')}}">MI PERFIL</a>
+    <div class="container">
 
-                   <a class="btn btn-outline-secondary" href="{{URL::to('appl')}}">REGRESAR</a>
+        <div class="row">
+
+            <div class="col-sm-9">
+
+                <h1>Gestión Categoria</h1>
+
+                <ol class="breadcrumb bc-3" >
+                        <li>
+                <a href="{{URL::to('appl')}}"> <i class="fas fa-angle-left"></i> Regresar</a>
+            </li>
+                <li class="active">
+                            <strong>Gestión Categoria</strong>
+                    </li>
+                    </ol>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
 <br>
 <BR>
 <div class="container">
@@ -21,6 +42,6 @@
 
 </table>
 {!! $Categorias->render() !!}
-                <a class="btn btn-outline-secondary" href="{{URL::to('CategoriaCrear/agregar')}}">Agregar</a>
+                <a class="btn btn-primary" href="{{URL::to('CategoriaCrear/agregar')}}">Agregar</a>
 </div>
 @endsection
