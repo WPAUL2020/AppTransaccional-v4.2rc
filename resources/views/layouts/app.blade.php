@@ -127,26 +127,26 @@
 
     </div>
 @yield('content')
-
-    <!-- Blog -->
-
 	<!-- Bottom scripts (common) -->
 	<script src="{{ asset('neonFrontEnd/assets/js/gsap/TweenMax.min.js') }}" defer></script>
 	<script src="{{ asset('neonFrontEnd/assets/js/bootstrap.js') }}" defer></script>
 	<script src="{{ asset('neonFrontEnd/assets/js/joinable.js') }}" defer></script>
     <script src="{{ asset('neonFrontEnd/assets/js/resizeable.js') }}" defer></script>
-	<script src="{{ asset('neonFrontEnd/assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js') }}"></script>
-    <script src="{{ asset('neonFrontEnd/assets/js/neon-api.js') }}"></script>
-    <script src="{{ asset('neonFrontEnd/assets/js/neon-chat.js') }}"></script>
-	<!-- JavaScripts initializations and stuff -->
-	<script src="{{ asset('neonFrontEnd/assets/js/neon-custom.js') }}"></script>
-
-
-	<!-- Demo Settings -->
-	<script src="{{ asset('neonFrontEnd/assets/js/neon-demo.js') }}"></script>
-
-
+	<script src="{{ asset('neonFrontEnd/assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js') }}" defer></script>
+    <script src="{{ asset('neonFrontEnd/assets/js/neon-api.js') }}" defer></script>
+    <script src="{{ asset('neonFrontEnd/assets/js/neon-chat.js') }}" defer></script>
 	<!-- JavaScripts initializations and stuff -->
 	<script src="{{ asset('neonFrontEnd/assets/js/neon-custom.js') }}" defer></script>
+    <!-- Imported scripts on this page -->
+    <script src="{{ asset('neonFrontEnd/assets/js/jquery.validate.min.js') }}" defer></script>
+    <script src="{{ asset('neonFrontEnd/assets/js/jquery.inputmask.bundle.js') }}" defer></script>
+    <script src="{{ asset('neonFrontEnd/assets/js/neon-chat.js') }}" defer></script>
+
+	<!-- Demo Settings -->
+	<script src="{{ asset('neonFrontEnd/assets/js/neon-demo.js') }}" defer></script>
+
+
+	<!-- JavaScripts initializations and stuff -->
+    <script src="{{ asset('neonFrontEnd/assets/js/neon-custom.js') }}" defer></script>
 </body>
 </html>

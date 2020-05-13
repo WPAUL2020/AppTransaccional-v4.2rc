@@ -3,7 +3,7 @@
 <div class="page-body boxed-layout" >
     <div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
         <div class="main-content">
-                                <ol class="breadcrumb bc-2 hidden-print" >
+                        <ol class="breadcrumb bc-2 hidden-print" >
                                     <li>
                             <a href="<?php echo e(url('/home')); ?>"><i class="fas fa-home"></i>Home</a>
                         </li>
@@ -27,8 +27,8 @@
 
                     <div class="col-sm-6 invoice-right">
 
-                            <h3>FACTURA NO. #5652256</h3>
-                            <span>31 October 2013</span>
+                            <h3>FACTURA NO. #<?php echo e($response->factura_venta); ?></h3>
+                            <p id="date"></p>
                     </div>
 
                 </div>
@@ -41,12 +41,13 @@
 
                     <div class="col-sm-3 invoice-left">
 
-                        <h4>Client</h4>
+                        <h4>Cliente</h4>
                         John Doe
                         <br />
                         Mr Nilson Otto
                         <br />
-                        FoodMaster Ltd
+                        <?php echo e($response->NOMBRE); ?>
+
 
                     </div>
 
@@ -55,19 +56,22 @@
                         <h4>&nbsp;</h4>
                         1982 OOP
                         <br />
-                        Madrid, Spain
+                        <?php echo e($response->CIUDAD_ENVIO); ?>, COL
                         <br />
                         +1 (151) 225-4183
                     </div>
 
                     <div class="col-md-6 invoice-right">
 
-                        <h4>Payment Details:</h4>
-                        <strong>V.A.T Reg #:</strong> 542554(DEMO)78
+                        <h4>Detalles del pago:</h4>
+                        <strong>Nit #:</strong> <?php echo e($response->NIT); ?>
+
                         <br />
-                        <strong>Account Name:</strong> FoodMaster Ltd
+                        <strong>Nombre de cuenta:</strong> <?php echo e($response->NOMBRE); ?>
+
                         <br />
-                        <strong>SWIFT code:</strong> 45454DEMO545DEMO
+                        <strong>Medio de pago:</strong> <?php echo e($response->METODO_PAGO); ?>
+
 
                     </div>
 
@@ -79,54 +83,21 @@
                     <thead>
                         <tr>
                             <th class="text-center">#</th>
-                            <th width="60%">Product</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
+                            <th width="60%">Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
                         </tr>
                     </thead>
 
                     <tbody>
+                        <?php for($i = 0; $i < $arrayLength; $i++): ?>
                         <tr>
-                            <td class="text-center">1</td>
-                            <td>On am we offices expense thought</td>
-                            <td>1</td>
-                            <td class="text-right">$1,290</td>
+                            <td class="text-center"><?php echo e($i+1); ?></td>
+                            <td><?php echo e($response->NOMBRE_PRODUCTO); ?></td>
+                            <td><?php echo e($response->CANTIDAD); ?></td>
+                            <td class="text-right"><?php echo e($response->PRECIO_TOTAL/$response->CANTIDAD); ?></td>
                         </tr>
-
-                        <tr>
-                            <td class="text-center">2</td>
-                            <td>Up do view time they shot</td>
-                            <td>1</td>
-                            <td class="text-right">$400</td>
-                        </tr>
-
-                        <tr>
-                            <td class="text-center">3</td>
-                            <td>Way ham unwilling not breakfast</td>
-                            <td>1</td>
-                            <td class="text-right">$550</td>
-                        </tr>
-
-                        <tr>
-                            <td class="text-center">4</td>
-                            <td>Songs to an blush woman be sorry</td>
-                            <td>1</td>
-                            <td class="text-right">$4020</td>
-                        </tr>
-
-                        <tr>
-                            <td class="text-center">5</td>
-                            <td>Luckily offered article led lasting</td>
-                            <td>1</td>
-                            <td class="text-right">$87</td>
-                        </tr>
-
-                        <tr>
-                            <td class="text-center">6</td>
-                            <td>Of as by belonging therefore suspicion</td>
-                            <td>1</td>
-                            <td class="text-right">$140</td>
-                        </tr>
+                        <?php endfor; ?>
                     </tbody>
                 </table>
 
@@ -138,13 +109,15 @@
 
                         <div class="invoice-left">
 
-                            795 Park Ave, Suite 120
+                            <?php echo e($response->DIRECCION_ENVIO); ?>
+
                             <br />
-                            San Francisco, CA 94107
+                            <?php echo e($response->CIUDAD_ENVIO); ?>, COL
                             <br />
                             P: (234) 145-1810
                             <br />
-                            Full Name
+                            <?php echo e($response->NOMBRE); ?>
+
                             <br />
                             first.last@email.com
                         </div>
@@ -157,27 +130,27 @@
 
                             <ul class="list-unstyled">
                                 <li>
-                                    Sub - Total amount:
-                                    <strong>$6,487</strong>
+                                    Sub - Total :
+                                    <strong><?php echo e($response->PRECIO_TOTAL); ?></strong>
                                 </li>
                                 <li>
-                                    VAT:
-                                    <strong>12.9%</strong>
+                                    IVA:
+                                    <strong>19%</strong>
                                 </li>
                                 <li>
-                                    Discount:
+                                    Descuento:
                                     -----
                                 </li>
                                 <li>
-                                    Grand Total:
-                                    <strong>$7,304</strong>
+                                    Total a pagar:
+                                    <strong><?php echo e($response->PRECIO_TOTAL); ?></strong>
                                 </li>
                             </ul>
 
                             <br />
 
                             <a href="javascript:window.print();" class="btn btn-primary btn-icon icon-left hidden-print">
-                                Print Invoice
+                                Imprimir Factura
                                 <i class="entypo-doc-text"></i>
                             </a>
 
@@ -199,6 +172,16 @@
         </div>
     </div>
 </div>
+<script>
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+h = n.getHours();
+min = n.getMinutes();
+seg = n.getSeconds();
+document.getElementById("date").innerHTML = m + "/" + d + "/" + y + " - " + h + ":" + min +":" + seg;
+</script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\AppTransaccional-v4.2rc\resources\views/Factura.blade.php ENDPATH**/ ?>

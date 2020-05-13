@@ -2,10 +2,32 @@
 
 @section('content')
 
-<title>Big Data E-Commerce</title>
-                   <a class="btn btn-outline-secondary" href="{{URL::to('GestionUser')}}">MI PERFIL</a>
-                   
-                   <a class="btn btn-outline-secondary" href="{{URL::to('appl')}}">Regresar</a>
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-9">
+
+                    <h1>Gestión Clientes</h1>
+
+                    <ol class="breadcrumb bc-3" >
+                            <li>
+                    <a href="{{URL::to('appl')}}"> <i class="fas fa-angle-left"></i> Regresar</a>
+                </li>
+                    <li class="active">
+                                <strong>Gestión Clientes</strong>
+                        </li>
+                        </ol>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
 <br>
 <BR>
 <div class="container">
@@ -32,14 +54,14 @@
                        <td>{{ $users1->NIT }}</td>
                        <td>{{ $users1->OBSERVACION }}</td>
                        <td>
-                            <a href="GestionClientesEdit/updateEmpresa/{{$users1->ID_EMPRESA_TERCERO}}">EDITAR</a>
+                            <a href="GestionClientesEdit/updateEmpresa/{{$users1->ID_EMPRESA_TERCERO}}" class="btn btn-secondary">EDITAR</a>
                        </td>
                        </tr>
                    @endforeach
 
 </table>
 {!! $users->render() !!}
-                <a class="btn btn-outline-secondary" href="{{URL::to('Clientes/agregar')}}">Agregar</a>
+                <a class="btn btn-primary" href="{{URL::to('Clientes/agregar')}}">Agregar</a>
 </div>
 @endsection
 

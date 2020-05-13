@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\EmpleadosTercero as EmpleadosTercero;
-use App\rol as rol;
+use App\role as rol;
 use App\cargo as cargo;
 use App\EmpresaTercero as EmpresaTercero;
 use App\TipoIdentificacion as TipoIdent;

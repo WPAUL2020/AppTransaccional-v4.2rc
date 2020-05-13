@@ -1,4 +1,30 @@
 <?php $__env->startSection('content'); ?>
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-9">
+
+                    <h1>InstaHunters</h1>
+
+                    <ol class="breadcrumb bc-3" >
+                            <li>
+                    <a href="<?php echo e(url('/')); ?>"><i class="fas fa-home"></i> Home</a>
+                </li>
+                    <li class="active">
+                                <strong>InstaHunters<i class="fas fa-spider"></i></strong>
+                        </li>
+                        </ol>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -12,13 +38,31 @@
 
                          <div class="form-group row card-header text-center display-4">
                             <select name="campoSelect" class="form-control">
-                                <option class="">Seleccionar..</option>
+                                <option value="">Seleccionar..</option>
                                 <option value="usuario">@Usuario</option>
                                 <option value="hashtag">#Hashtag</option>
                             </select>
+                            <?php if ($errors->has('campoSelect')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('campoSelect'); ?>
+                            <div class="alert alert-danger" role="alert">
+                                <strong><?php echo e($message); ?></strong>
+                            </div>
+                            <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>
                         </div>
                         <div class="form-group row card-header text-center display-4">
-                            <input type="text" class="form-control form-control-lg" placeholder="Ingrese la palabra clave (username o hashtag)" name="palabraClave" required>
+                            <input type="text" class="form-control form-control-lg" placeholder="Ingrese la palabra clave (username o hashtag)" name="palabraClave">
+                            <?php if ($errors->has('palabraClave')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('palabraClave'); ?>
+                            <div class="alert alert-danger" role="alert">
+                                <strong><?php echo e($message); ?></strong>
+                            </div>
+                            <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>
                         </div>
 
                         <div class="form-group">

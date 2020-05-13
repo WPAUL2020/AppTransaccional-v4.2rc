@@ -105,7 +105,7 @@
         <select name="ID_ROL" id="ID_ROL" class="form-control">
         <option value="">--Escoja Tipo de Rol--</option>
             <?php $__currentLoopData = $roles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rol): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <option value="<?php echo e($rol->NOMBRE_ROL); ?>"><?php echo e($rol->NOMBRE_ROL); ?></option>
+                <option value="<?php echo e($rol->id); ?>"><?php echo e($rol->name); ?></option>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </select>
         <span class="text-danger"><?php echo e($errors->first("ID_ROL")); ?></span>

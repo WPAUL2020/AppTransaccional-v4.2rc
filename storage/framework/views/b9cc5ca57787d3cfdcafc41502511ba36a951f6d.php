@@ -84,11 +84,9 @@
                                         <span class="btn btn-blue">Zona Transaccional</span>
                                     </a>
                                     <?php else: ?>
-                                    <li>
                                         <a href="<?php echo e(route('login')); ?>" class="btn btn-black">
                                             <span class="btn btn-black">Login</span>
                                         </a>
-                                    </li>
                                     <?php endif; ?>
                             </li>
                             <?php endif; ?>

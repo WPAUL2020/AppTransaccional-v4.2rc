@@ -24,7 +24,13 @@
                      </div>
                     <div class="form-group">
                     <label>Descripciòn:</label>
-                    <input type="text" name="DESCRIPCION" class="form-control" placeholder="Descripciòn">
+                    <select type="" name="DESCRIPCION" class="form-control">
+                    <option value="">--Escoja Descripciòn del Cargo--</option>
+                                <option>ADMINISTRADOR TECNOLOGIA</option>
+                                <option>USUARIO INTERNO</option>
+                                <option>ADMINISTRADOR CLIENTE</option>
+                                <option>USUARIO CLIENTE</option>
+                       </select>
                     <span class="text-danger">{{$errors->first("DESCRIPCION")}}</span>
                      </div>
                      <div class="form-group">
@@ -35,6 +41,7 @@
                                 <option>ADMINISTRACION</option>
                                 <option>OPERACION</option>
                                 <option>DIRECCION</option>
+                                <option>GENERAL</option>
                        </select>
                        <span class="text-danger">{{$errors->first("DEPENDENCIA")}}</span>
                     </div>

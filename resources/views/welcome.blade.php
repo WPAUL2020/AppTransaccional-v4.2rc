@@ -84,11 +84,9 @@
                                         <span class="btn btn-blue">Zona Transaccional</span>
                                     </a>
                                     @else
-                                    <li>
                                         <a href="{{ route('login') }}" class="btn btn-black">
                                             <span class="btn btn-black">Login</span>
                                         </a>
-                                    </li>
                                     @endauth
                             </li>
                             @endif

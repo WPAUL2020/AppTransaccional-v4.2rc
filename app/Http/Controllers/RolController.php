@@ -12,8 +12,9 @@ use Illuminate\Support\Facades\DB;
 class RolController extends Controller
 {
 
-    public function mostrarRol()
+    public function mostrarRol(Request $request)
     {
+        $request->user()->authorizeRoles('ADMINISTRADOR');
         if (Auth::check()){
             $roles = \App\Role::paginate(20);
             return view('RolVista') ->with("roles",$roles);
