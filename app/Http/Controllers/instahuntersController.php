@@ -80,6 +80,15 @@ class instahuntersController extends Controller
      */
     public function postGuzzleRequest()
     {
+        $validateMessage = [
+            "required" => "Este campo es obligatorio",
+            "min" => "Este campo debe tener mínimo :min dígitos"
+        ];
+        $this->request->validate([
+            'campoSelect' => 'required',
+            'palabraClave' => 'required'
+        ],$validateMessage);
+
         $data2view = null;
         /* http://localhost/AnalisisBigData/public/apiInsert.php */
         $res = $this->client->request('POST', 'apiInsert.php', [

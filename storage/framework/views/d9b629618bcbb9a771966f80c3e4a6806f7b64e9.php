@@ -5,15 +5,6 @@
             <div class="card">
                 <div class="card-header text-center display-4"><h1> InstaHunters <i class="fas fa-spider"></i>
                 </div>
-                <?php if($errors->any()): ?>
-                <div class="alert alert-danger">
-                    <ul>
-                        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <li><?php echo e($error); ?></li>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </ul>
-                </div>
-                <?php endif; ?>
                 <div class="card-header text-center text-primary display-4 ">
                     <a href="https://universitariadecolombia.edu.co/programas/profesionales/ingenieria-de-sistemas/" class="text-primary"> by Semillero Ing. de Sistemas, Universitaria de Colombia.</a></div>
                 <div class="card-body display-4">
@@ -21,13 +12,31 @@
 
                          <div class="form-group row card-header text-center display-4">
                             <select name="campoSelect" class="form-control">
-                                <option class="">Seleccionar..</option>
+                                <option value="">Seleccionar..</option>
                                 <option value="usuario">@Usuario</option>
                                 <option value="hashtag">#Hashtag</option>
                             </select>
+                            <?php if ($errors->has('campoSelect')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('campoSelect'); ?>
+                            <div class="alert alert-danger" role="alert">
+                                <strong><?php echo e($message); ?></strong>
+                            </div>
+                            <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>
                         </div>
                         <div class="form-group row card-header text-center display-4">
-                            <input type="text" class="form-control form-control-lg" placeholder="Ingrese la palabra clave (username o hashtag)" name="palabraClave" required>
+                            <input type="text" class="form-control form-control-lg" placeholder="Ingrese la palabra clave (username o hashtag)" name="palabraClave">
+                            <?php if ($errors->has('palabraClave')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('palabraClave'); ?>
+                            <div class="alert alert-danger" role="alert">
+                                <strong><?php echo e($message); ?></strong>
+                            </div>
+                            <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>
                         </div>
 
                         <div class="form-group">
