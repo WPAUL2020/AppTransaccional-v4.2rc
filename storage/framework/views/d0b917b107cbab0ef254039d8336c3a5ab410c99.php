@@ -70,7 +70,7 @@
                         <strong>Nombre de cuenta:</strong> <?php echo e($response->NOMBRE); ?>
 
                         <br />
-                        <strong>Dirección de envio:</strong> <?php echo e($response->DIRECCION_ENVIO); ?>
+                        <strong>Medio de pago:</strong> <?php echo e($response->METODO_PAGO); ?>
 
 
                     </div>
@@ -150,7 +150,7 @@
                             <br />
 
                             <a href="javascript:window.print();" class="btn btn-primary btn-icon icon-left hidden-print">
-                                Print Invoice
+                                Imprimir Factura
                                 <i class="entypo-doc-text"></i>
                             </a>
 

@@ -5,7 +5,7 @@
 <div class="page-body boxed-layout" >
     <div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
         <div class="main-content">
-                                <ol class="breadcrumb bc-2 hidden-print" >
+                        <ol class="breadcrumb bc-2 hidden-print" >
                                     <li>
                             <a href="{{ url('/home') }}"><i class="fas fa-home"></i>Home</a>
                         </li>
@@ -69,7 +69,7 @@
                         <br />
                         <strong>Nombre de cuenta:</strong> {{$response->NOMBRE}}
                         <br />
-                        <strong>Dirección de envio:</strong> {{$response->DIRECCION_ENVIO}}
+                        <strong>Medio de pago:</strong> {{$response->METODO_PAGO}}
 
                     </div>
 
@@ -146,7 +146,7 @@
                             <br />
 
                             <a href="javascript:window.print();" class="btn btn-primary btn-icon icon-left hidden-print">
-                                Print Invoice
+                                Imprimir Factura
                                 <i class="entypo-doc-text"></i>
                             </a>
 
