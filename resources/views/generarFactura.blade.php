@@ -148,7 +148,7 @@
                 <center><label for="" class="text-muted">Observaciones (Opcional)</label></center>
                     <textarea class="form-control" name="obser" id="obser" rows="3"></textarea>
             </div>
-            <center><button class="btn btn-primary" type="submit">Generar</button></center>
+            <center><button class="btn btn-primary float-right btn-lg" type="submit">Generar</button></center>
         </form>
     </div>
     </div>
