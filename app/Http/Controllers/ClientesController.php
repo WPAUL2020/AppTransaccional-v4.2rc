@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\GestionClientes as clientes;
 use App\sector_empresa_tercero as SectorEmpresa;
-use App\rol as rol;
+use App\role as rol;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -89,7 +89,7 @@ class ClientesController extends Controller
         return view('clientes')->with(['roles'=>$roles, 'SectorEmpresas'=>$SectorEmpresas]);
     }
 
-    public function changeEmpresa(Request $ID_EMPRESA_TERCERO)
+    public function changeEmpresa(Request $ID_EMPRESA_TERCERO, $clientes)
     {
         $reglas_Validacion =["DIRECCION" =>"required|min:3", "TELEFONO" =>"numeric|min:3", "CIUDAD" =>"required|min:3",
         "WEBSITE" =>"required|min:3", "CORREO" =>"required|min:3", "ESTADO" =>"required|min:3"];

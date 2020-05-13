@@ -77,7 +77,7 @@
         <select name="ID_ROL" id="ID_ROL" class="form-control">
         <option value="">--Escoja Tipo de Rol--</option>
             @foreach($roles as $rol)
-                <option value="{{$rol->NOMBRE_ROL}}">{{$rol->NOMBRE_ROL}}</option>
+                <option value="{{$rol->id}}">{{$rol->name}}</option>
             @endforeach
         </select>
         <span class="text-danger">{{$errors->first("ID_ROL")}}</span>

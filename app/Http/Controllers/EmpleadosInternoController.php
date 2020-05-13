@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\EmpleadosInterno as EmpleadosInterno;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Hash;
-use App\rol as rol;
+use App\role as rol;
 use App\cargo as cargo;
 use App\TipoIdentificacion as TipoIdent;
 use Illuminate\Support\Facades\Validator;
@@ -16,11 +16,6 @@ use Illuminate\Support\Facades\DB;
 class EmpleadosInternoController extends Controller
 {
 
-    public function Internos(Request $request)
-    {
-        $request->user()->authorizeRoles('PRUEBAS1', 'ADMINISTRADOR');
-
-    }
 
     public function InsertEmpleadoInternoInterno()
     {
@@ -30,7 +25,6 @@ class EmpleadosInternoController extends Controller
 
     public function mostrarEmpleadosInt(Request $request)
     {
-            $request->user()->authorizeRoles('ADMINISTRADOR');
             $empleados = EmpleadosInterno::paginate(10);
             return view('GestUserIntVista') ->with("empleados",$empleados);
     }
@@ -76,22 +70,23 @@ class EmpleadosInternoController extends Controller
        return Redirect('UsuariosInterno')->with("mensaje" , " Registro Exitoso");
    }
 
-   public function getFrmInsertInterno()
+   public function getFrmInsertInterno(Request $request)
    {
+    $request->user()->authorizeRoles('ADMINISTRADOR');
     $roles = rol::all();
     $cargos = cargo::all();
     $TipoIdents = TipoIdent::all();
     return view('GestUserIntCrear')->with(['roles'=>$roles, 'cargos'=>$cargos, 'TipoIdents'=>$TipoIdents]);
    }
 
-   public function changeUser(Request $r,$ID_EMPLEADO_INTERNO)
+   public function changeUser(Request $EmpleadosInterno,$ID_EMPLEADO_INTERNO)
    {
     $reglas_Validacion =["DIRECCION" =>"required|min:3", "TELEFONO" =>"numeric|min:3", "CIUDAD" =>"required|min:3",
     "CORREO" =>"required|min:3", "TELEFONO_OFICINA" =>"numeric|min:3", "EXTENSION" =>"numeric|min:3",
-    "ID_CARGO" =>"required|min:3", "ID_ROL" =>"required|min:3", "OBSERVACION" =>"required|min:3", "ESTADO" =>"required|min:3", "ID_EMPRESA_TERCERO" =>"required|min:3" ];
+    "ID_CARGO" =>"required|min:1", "ID_ROL" =>"required|min:1", "OBSERVACION" =>"required|min:3"];
    $mensajes = ["required" => "Este campo es obligatorio", "alpha" => "Este campo solo permite Letras", "numeric" => "Este Campo Solo Permite Numeros",
         "min" => "Este Campo Debe Tener Minimo :min Digitos", "unique" => "Este Campo ya esta Registrado", "exists" => "Este Campo Debe Existir"];
-       $this->validate($r, $reglas_Validacion, $mensajes);
+       $this->validate($EmpleadosInterno, $reglas_Validacion, $mensajes);
        $EmpleadosInterno=EmpleadosInterno::find($ID_EMPLEADO_INTERNO);
        $EmpleadosInterno -> DIRECCION  = $_POST["DIRECCION"];
        $EmpleadosInterno -> TELEFONO = $_POST["TELEFONO"];
@@ -107,8 +102,9 @@ class EmpleadosInternoController extends Controller
        //return $id;
    }
 
-   public function updateUser($ID_EMPLEADO_INTERNO)
+   public function updateUser($ID_EMPLEADO_INTERNO , Request $request)
    {
+    $request->user()->authorizeRoles('ADMINISTRADOR');
        if (Auth::check()) {
            $EmpleadosInterno = EmpleadosInterno::find($ID_EMPLEADO_INTERNO);
            $roles = rol::all();

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\role as Rol;
+use App\Role as Rol;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -40,7 +40,7 @@ class RolController extends Controller
 
    public function guardar(Request $Rol)
    {
-       $reglas_Validacion =["NOMBRE_ROL" =>"unique:rol,NOMBRE_ROL|required|min:3", "DESCRIPCION" =>"required|min:3", "DEPENDENCIA" =>"required|min:3" ];
+       $reglas_Validacion =["NOMBRE_ROL" =>"unique:roles,name|required|min:3", "DESCRIPCION" =>"required|min:3", "DEPENDENCIA" =>"required|min:3" ];
        $mensajes = ["required" => "Este campo es obligatorio", "alpha" => "Este campo solo permite Letras", "numeric" => "Este Campo Solo Permite Numeros",
             "min" => "Este Campo Debe Tener Minimo :min Digitos", "unique" => "Este Campo ya esta Registrado", "exists" => "Este Campo Debe Existir"];
        $this->validate($Rol, $reglas_Validacion, $mensajes);
