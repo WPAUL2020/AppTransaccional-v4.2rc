@@ -521,7 +521,7 @@
                 <div class="col-sm-6">
 
                     <a href="https://universitariadecolombia.edu.co">
-                        <img src="{{ asset('blogFrontend/assets/images/logo1.png') }}" width="120"/>
+                        <img src="{{ asset('neonFrontEnd/assets/images/logo1.png') }}" width="120"/>
                     </a>
 
                     <p>
