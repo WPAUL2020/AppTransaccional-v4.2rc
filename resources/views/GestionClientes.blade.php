@@ -54,14 +54,14 @@
                        <td>{{ $users1->NIT }}</td>
                        <td>{{ $users1->OBSERVACION }}</td>
                        <td>
-                            <a href="GestionClientesEdit/updateEmpresa/{{$users1->ID_EMPRESA_TERCERO}}">EDITAR</a>
+                            <a href="GestionClientesEdit/updateEmpresa/{{$users1->ID_EMPRESA_TERCERO}}" class="btn btn-secondary">EDITAR</a>
                        </td>
                        </tr>
                    @endforeach
 
 </table>
 {!! $users->render() !!}
-                <a class="btn btn-outline-secondary" href="{{URL::to('Clientes/agregar')}}">Agregar</a>
+                <a class="btn btn-primary" href="{{URL::to('Clientes/agregar')}}">Agregar</a>
 </div>
 @endsection
 

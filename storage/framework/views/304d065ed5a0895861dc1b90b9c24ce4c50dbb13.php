@@ -26,9 +26,6 @@
 
         </div>
     </section>
-                   <a class="btn btn-outline-secondary" href="<?php echo e(URL::to('GestionUser')); ?>">MI PERFIL</a>
-
-                   <a class="btn btn-outline-secondary" href="<?php echo e(URL::to('appl')); ?>">Regresar</a>
 <br>
 <BR>
 <div class="container">
@@ -55,7 +52,7 @@
                        <td><?php echo e($users1->NIT); ?></td>
                        <td><?php echo e($users1->OBSERVACION); ?></td>
                        <td>
-                            <a href="GestionClientesEdit/updateEmpresa/<?php echo e($users1->ID_EMPRESA_TERCERO); ?>">EDITAR</a>
+                            <a href="GestionClientesEdit/updateEmpresa/<?php echo e($users1->ID_EMPRESA_TERCERO); ?>" class="btn btn-secondary">EDITAR</a>
                        </td>
                        </tr>
                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -63,7 +60,7 @@
 </table>
 <?php echo $users->render(); ?>
 
-                <a class="btn btn-outline-secondary" href="<?php echo e(URL::to('Clientes/agregar')); ?>">Agregar</a>
+                <a class="btn btn-primary" href="<?php echo e(URL::to('Clientes/agregar')); ?>">Agregar</a>
 </div>
 <?php $__env->stopSection(); ?>
 
