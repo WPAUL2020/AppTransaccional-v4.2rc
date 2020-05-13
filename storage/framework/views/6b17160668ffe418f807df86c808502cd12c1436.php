@@ -95,7 +95,7 @@ endif; ?>
                     <select class="form-control" name="service" id="service" data-validate="required" data-message-required="Seleccione un metodo de pago">
                         <option value=""> Seleccione....</option>
                         <?php $__currentLoopData = $tipoSevicio; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <option value="<?php echo e($service->NOMBRE_PRODUCTO); ?>"><?php echo e($service->NOMBRE_PRODUCTO); ?> </option>
+                            <option value="<?php echo e($service->ID_SERVICIO); ?>"><?php echo e($service->NOMBRE_PRODUCTO); ?> </option>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
                     <?php if ($errors->has('service')) :
@@ -125,7 +125,7 @@ endif; ?>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="direccion">Fecha de envio</label>
-                        <input type="text" name="date" id="date" class="form-control" data-mask="date" aria-describedby="helpId" placeholder="dd/mm/yyyy">
+                        <input type="text" name="date" id="date" class="form-control" data-mask="yyyy-mm-dd" aria-describedby="helpId" placeholder="yyyy-mm-dd">
                         <?php if ($errors->has('date')) :
 if (isset($message)) { $messageCache = $message; }
 $message = $errors->first('date'); ?>

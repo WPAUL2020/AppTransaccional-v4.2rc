@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\ciudad as nombreciudad;
 use App\MedioPago as metodoPago;
 use App\Servicio as tipoSevicio;
+use App\EmpresaTercero as empresa;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -28,35 +29,38 @@ class FacturaController extends Controller
             "min" => "Este campo debe tener mínimo :min dígitos"
         ];
         if ($this->request->pais === 'Colombia') {
-            $this->request->validate([
-                'Nit' => 'required|numeric|min:10',
-                'mPago' => 'required',
-                'docN' => 'required|numeric|min:3',
-                'service' => 'required',
-                'cantidad' => 'required|numeric|min:1',
-                'date' => 'required',
-                'direc' => 'required',
-                'ciudad' => "required",
-                'obser' => 'max:255',
-            ],  $validateMessage);
-            dd(DB::select(
-                'call InsertFactura(?,?,?,?,?,?,?,?,?)',
-                [
-                    $this->request->nit,
-                    $this->request->docN,
-                    $this->request->service,
-                    $this->request->cantidad,
-                    $this->request->date,
-                    $this->request->direc,
-                    $this->request->pais,
-                    $this->request->ciudad,
-                    $this->request->obser,
-                ]
-            ));
-            return Redirect::route('Factura');
+                $this->request->validate([
+                    'Nit' => 'required|numeric|min:10',
+                    'mPago' => 'required',
+                    'docN' => 'required|numeric|min:3',
+                    'service' => 'required',
+                    'cantidad' => 'required|numeric|min:1',
+                    'date' => 'required',
+                    'direc' => 'required',
+                    'ciudad' => "required",
+                    'obser' => 'max:255',
+                ],  $validateMessage);
+
+                DB::select(
+                    'call InsertFactura(?,?,?,?,?,?,?,?,?,?)',
+                    [
+                        $this->request->Nit,
+                        $this->request->mPago,
+                        $this->request->docN,
+                        $this->request->service,
+                        $this->request->cantidad,
+                        $this->request->date,
+                        $this->request->direc,
+                        $this->request->pais,
+                        $this->request->ciudad,
+                        $this->request->obser
+                    ]
+                );
+                return Redirect::route('Factura');
         } else {
             return Auth::logout();
         }
+
     }
 
     public function index()

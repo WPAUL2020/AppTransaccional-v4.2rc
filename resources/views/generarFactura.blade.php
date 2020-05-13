@@ -105,7 +105,7 @@
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="direccion">Fecha de envio</label>
-                        <input type="text" name="date" id="date" class="form-control" data-mask="date" aria-describedby="helpId" placeholder="dd/mm/yyyy">
+                        <input type="text" name="date" id="date" class="form-control" data-mask="yyyy-mm-dd" aria-describedby="helpId" placeholder="yyyy-mm-dd">
                         @error('date')
                         <div class="alert alert-danger" role="alert">
                             <strong>{{ $message }}</strong>
