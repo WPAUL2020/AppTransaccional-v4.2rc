@@ -79,6 +79,11 @@ class FacturaController extends Controller
                                 [
                                     $this->request->nit
                                 ]);
-        return view('Factura', compact('response'));
+        foreach ($response as $respuesta) {
+            $response = $respuesta;
+        }
+        $itemCollection = collect($response->NOMBRE_PRODUCTO);
+        $arrayLength = count($itemCollection);
+        return view('Factura', compact('response', 'arrayLength'));
     }
 }
