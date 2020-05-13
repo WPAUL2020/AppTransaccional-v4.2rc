@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Validator;
-use App\MedioPago as metodoPago;
 use App\ciudad as nombreciudad;
+use App\MedioPago as metodoPago;
 use App\Servicio as tipoSevicio;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
 
 class FacturaController extends Controller
 {
@@ -31,11 +32,26 @@ class FacturaController extends Controller
                 'cantidad' => 'required|numeric|min:1',
                 'date' => 'required',
                 'direc' => 'required',
-                "ciudad" => "required",
+                'ciudad' => "required",
+                'obser' => 'max:255',
             ],  $validateMessage);
+            dd(DB::select(
+                'call InsertFactura(?,?,?,?,?,?,?,?,?)',
+                    [
+                        $this->request->nit,
+                        $this->request->docN,
+                        $this->request->service,
+                        $this->request->cantidad,
+                        $this->request->date,
+                        $this->request->direc,
+                        $this->request->pais,
+                        $this->request->ciudad,
+                        $this->request->obser,
+                    ]
+                ));
             return Redirect::route('Factura');
         } else {
-            # code...
+            return Auth::logout();
         }
 
     }
