@@ -3,7 +3,7 @@
 <div class="page-body boxed-layout" >
     <div class="page-container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
         <div class="main-content">
-                                <ol class="breadcrumb bc-2 hidden-print" >
+                        <ol class="breadcrumb bc-2 hidden-print" >
                                     <li>
                             <a href="<?php echo e(url('/home')); ?>"><i class="fas fa-home"></i>Home</a>
                         </li>
