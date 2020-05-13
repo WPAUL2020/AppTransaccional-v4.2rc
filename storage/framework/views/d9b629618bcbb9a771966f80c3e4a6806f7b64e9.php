@@ -5,6 +5,15 @@
             <div class="card">
                 <div class="card-header text-center display-4"><h1> InstaHunters <i class="fas fa-spider"></i>
                 </div>
+                <?php if($errors->any()): ?>
+                <div class="alert alert-danger">
+                    <ul>
+                        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <li><?php echo e($error); ?></li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </ul>
+                </div>
+                <?php endif; ?>
                 <div class="card-header text-center text-primary display-4 ">
                     <a href="https://universitariadecolombia.edu.co/programas/profesionales/ingenieria-de-sistemas/" class="text-primary"> by Semillero Ing. de Sistemas, Universitaria de Colombia.</a></div>
                 <div class="card-body display-4">

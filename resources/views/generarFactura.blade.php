@@ -83,7 +83,7 @@
                     <select class="form-control" name="service" id="service" data-validate="required" data-message-required="Seleccione un metodo de pago">
                         <option value=""> Seleccione....</option>
                         @foreach ($tipoSevicio as $service)
-                            <option value="{{$service->NOMBRE_PRODUCTO}}">{{$service->NOMBRE_PRODUCTO}} </option>
+                            <option value="{{$service->ID_SERVICIO}}">{{$service->NOMBRE_PRODUCTO}} </option>
                         @endforeach
                     </select>
                     @error('service')

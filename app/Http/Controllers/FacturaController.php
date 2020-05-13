@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\ciudad as nombreciudad;
 use App\MedioPago as metodoPago;
@@ -14,15 +15,18 @@ class FacturaController extends Controller
 {
     protected $request;
 
-    public function __construct(Request $request) {
+    public function __construct(Request $request)
+    {
         $this->middleware('auth');
         $this->request = $request;
     }
 
     public function redirecTO()
     {
-        $validateMessage = ["required" => "Este campo es obligatorio", "numeric" => "Este campo solo permite números",
-        "min" => "Este campo debe tener mínimo :min dígitos"];
+        $validateMessage = [
+            "required" => "Este campo es obligatorio", "numeric" => "Este campo solo permite números",
+            "min" => "Este campo debe tener mínimo :min dígitos"
+        ];
         if ($this->request->pais === 'Colombia') {
             $this->request->validate([
                 'Nit' => 'required|numeric|min:10',
@@ -37,23 +41,22 @@ class FacturaController extends Controller
             ],  $validateMessage);
             dd(DB::select(
                 'call InsertFactura(?,?,?,?,?,?,?,?,?)',
-                    [
-                        $this->request->nit,
-                        $this->request->docN,
-                        $this->request->service,
-                        $this->request->cantidad,
-                        $this->request->date,
-                        $this->request->direc,
-                        $this->request->pais,
-                        $this->request->ciudad,
-                        $this->request->obser,
-                    ]
-                ));
+                [
+                    $this->request->nit,
+                    $this->request->docN,
+                    $this->request->service,
+                    $this->request->cantidad,
+                    $this->request->date,
+                    $this->request->direc,
+                    $this->request->pais,
+                    $this->request->ciudad,
+                    $this->request->obser,
+                ]
+            ));
             return Redirect::route('Factura');
         } else {
             return Auth::logout();
         }
-
     }
 
     public function index()
@@ -68,5 +71,4 @@ class FacturaController extends Controller
     {
         return view('Factura');
     }
-
 }
