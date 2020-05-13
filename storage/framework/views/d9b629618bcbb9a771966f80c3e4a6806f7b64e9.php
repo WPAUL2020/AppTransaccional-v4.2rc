@@ -1,4 +1,30 @@
 <?php $__env->startSection('content'); ?>
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-9">
+
+                    <h1>InstaHunters</h1>
+
+                    <ol class="breadcrumb bc-3" >
+                            <li>
+                    <a href="<?php echo e(url('/')); ?>"><i class="fas fa-home"></i> Home</a>
+                </li>
+                    <li class="active">
+                                <strong>InstaHunters<i class="fas fa-spider"></i></strong>
+                        </li>
+                        </ol>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
