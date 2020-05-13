@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Validator;
 class FacturaController extends Controller
 {
     protected $request;
-
     public function __construct(Request $request)
     {
         $this->middleware('auth');
@@ -56,7 +55,9 @@ class FacturaController extends Controller
                         $this->request->obser
                     ]
                 );
-                return Redirect::route('Factura');
+                return Redirect::action('FacturaController@Factura', [
+                    'nit' => $this->request->Nit
+                ]);
         } else {
             return Auth::logout();
         }
@@ -73,6 +74,11 @@ class FacturaController extends Controller
 
     public function Factura()
     {
-        return view('Factura');
+        $response = DB::select(
+                                'call GenerarFactura (?)',
+                                [
+                                    $this->request->nit
+                                ]);
+        return view('Factura', compact('response'));
     }
 }
