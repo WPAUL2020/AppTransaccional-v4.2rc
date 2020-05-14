@@ -77,7 +77,7 @@
 
 				<div class="portfolio-item">
 					<a href="{{URL::to('Categorias')}}" class="image">
-						<img src="{{ asset('Imagenes/gestionSectorEmpresaFinal.png')}}" class="img-rounded" />
+						<img src="{{ asset('Imagenes/categoriasfinal.png')}}" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>
 
