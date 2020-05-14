@@ -9,7 +9,7 @@
 
                 <div class="col-sm-9">
 
-                    <h1>Instahunters</h1>
+                    <h1>InstaHunters</h1>
 
                     <ol class="breadcrumb bc-3" >
                             <li>

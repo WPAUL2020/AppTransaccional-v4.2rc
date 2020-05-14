@@ -27,4 +27,9 @@ class applController extends Controller
 
         return view('appl');
     }
+    public function index2()
+    {
+
+        return view('appl2');
+    }
 }
