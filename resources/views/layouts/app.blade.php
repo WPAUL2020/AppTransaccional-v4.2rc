@@ -127,6 +127,7 @@
         </div>
 
     </div>
+</div>
 @yield('content')
 -<!-- Footer Widgets -->
 <section class="footer-widgets">
