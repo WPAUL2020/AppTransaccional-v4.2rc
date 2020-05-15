@@ -757,7 +757,7 @@
                                                     </button>
                                                     <ul class="dropdown-menu dropdown-primary" role="menu">
                                                         <li><a href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
-                                                            Logout
+                                                            Logout <i class="entypo-logout"></i>
                                                         </a>
                                                         <form id="frm-logout" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
                                                             <?php echo e(csrf_field()); ?>
