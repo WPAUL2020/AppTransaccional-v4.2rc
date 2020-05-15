@@ -26,6 +26,7 @@ Route::post('register', 'Auth\RegisterController@register');
 
  Route::get('/home', 'HomeController@index')->name('home');
  Route::get('/appl', 'applController@index')->name('appl');
+ Route::get('/appl2', 'applController@index2')->name('appl2');
  Route::get('/Contact', 'ContactController@Contact')->name('Contact');
  Route::get('/Productos', 'ProductosController@Productos')->name('Productos');
  Route::get('/Servicios1', 'ServiciosController@Servicios')->name('Servicios1');

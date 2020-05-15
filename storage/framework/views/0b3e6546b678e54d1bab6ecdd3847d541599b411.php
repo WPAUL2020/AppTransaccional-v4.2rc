@@ -128,6 +128,95 @@
 
     </div>
 <?php echo $__env->yieldContent('content'); ?>
+
+    <!-- Footer Widgets -->
+    <section class="footer-widgets">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-6">
+
+                    <a href="https://universitariadecolombia.edu.co">
+                        <img src="<?php echo e(asset('neonFrontEnd/assets/images/logo1.png')); ?>" width="120"/>
+                    </a>
+
+                    <p>
+                        Institución educativa <br />
+                        Universitaria de Colombia.
+                    </p>
+
+                </div>
+
+                <div class="col-sm-3">
+
+                    <h5>Sede Administrativa:</h5>
+                    <p>
+                        Carrera 7 No. 35-85 <br />
+                        Bogotá, COL
+                    </p>
+
+                </div>
+
+                <div class="col-sm-3">
+
+                    <h5>Contactenos</h5>
+
+                    <p>
+                        Teléfono: +57 (1) 288 – 0871 <br />
+                        Teléfono: +57 (1) 232 – 4070 <br />
+                        inscripciones@universitariadecolombia.edu.co
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-6">
+                    © 2020 Copyright:
+                    <a href="https://universitariadecolombia.edu.co/programas/profesionales/ingenieria-de-sistemas/"> Semillero Ingenieria de Sistemas, Institución Universitaria de Colombia. </a>
+
+                </div>
+
+                <div class="col-sm-6">
+
+                    <ul class="social-networks text-right">
+                        <li>
+                            <a href="#">
+                                <i class="entypo-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="entypo-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="entypo-facebook"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
 	<!-- Bottom scripts (common) -->
 	<script src="<?php echo e(asset('neonFrontEnd/assets/js/gsap/TweenMax.min.js')); ?>" defer></script>
 	<script src="<?php echo e(asset('neonFrontEnd/assets/js/bootstrap.js')); ?>" defer></script>

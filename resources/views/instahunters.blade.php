@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <!-- Breadcrumb -->
     <section class="breadcrumb">
 
@@ -14,15 +15,13 @@
 
                     <ol class="breadcrumb bc-3" >
                             <li>
-                    <a href="{{ url('/') }}"><i class="fas fa-home"></i> Home</a>
+                    <a href="{{URL::to('appl')}}"> <i class="fas fa-angle-left"></i> Regresar</a>
                 </li>
                     <li class="active">
-                                <strong>InstaHunters<i class="fas fa-spider"></i></strong>
+                                <strong>InstaHunters</strong>
                         </li>
                         </ol>
-
                 </div>
-
             </div>
 
         </div>
