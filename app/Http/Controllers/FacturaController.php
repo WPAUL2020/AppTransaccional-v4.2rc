@@ -7,9 +7,6 @@ use App\ciudad as nombreciudad;
 use App\MedioPago as metodoPago;
 use App\Servicio as tipoSevicio;
 use App\EmpresaTercero as empresa;
-
-use App\fac_venta as ID;
-
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -72,7 +69,6 @@ class FacturaController extends Controller
         $metodoPago = metodoPago::all();
         $nombreciudad = nombreciudad::all();
         $tipoSevicio = tipoSevicio::all();
-        dd($idfac = ID::all());
         return view('generarFactura', compact('metodoPago', 'nombreciudad', 'tipoSevicio'));
     }
 
