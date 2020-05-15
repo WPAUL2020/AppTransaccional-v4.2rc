@@ -155,6 +155,9 @@
 </div>
 </div>
 </div>
-
-
+@endsection
+@section('Scripts')
+    		<!-- Imported scripts on this page -->
+            <script src="{{ asset('neonFrontEnd/assets/js/jquery.inputmask.bundle.js') }}"></script>
+            <script src="{{ asset('neonFrontEnd/assets/js/neon-chat.js') }}"></script>
 @endsection

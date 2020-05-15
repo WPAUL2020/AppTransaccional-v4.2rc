@@ -136,20 +136,14 @@
 	<script src="<?php echo e(asset('neonFrontEnd/assets/js/joinable.js')); ?>"></script>
 	<script src="<?php echo e(asset('neonFrontEnd/assets/js/resizeable.js')); ?>"></script>
     <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-api.js')); ?>"></script>
-    <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-chat.js')); ?>"></script>
-	<!-- JavaScripts initializations and stuff -->
-	<script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-custom.js')); ?>" defer></script>
-    <!-- Imported scripts on this page -->
-    <script src="<?php echo e(asset('neonFrontEnd/assets/js/jquery.validate.min.js')); ?>" defer></script>
-    <script src="<?php echo e(asset('neonFrontEnd/assets/js/jquery.inputmask.bundle.js')); ?>" defer></script>
-    <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-chat.js')); ?>" defer></script>
-
-	<!-- Demo Settings -->
-	<script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-demo.js')); ?>" defer></script>
+<?php echo $__env->yieldContent('Scripts'); ?>
 
 
-	<!-- JavaScripts initializations and stuff -->
-    <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-custom.js')); ?>" defer></script>
-</body>
+		<!-- JavaScripts initializations and stuff -->
+		<script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-custom.js')); ?>"></script>
+
+
+		<!-- Demo Settings -->
+		<script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-demo.js')); ?>"></script>
 </html>
 <?php /**PATH C:\laragon\www\AppTransaccional-v4.2rc\resources\views/layouts/app.blade.php ENDPATH**/ ?>
