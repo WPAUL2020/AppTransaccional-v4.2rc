@@ -12,7 +12,7 @@
 
 							<ol class="breadcrumb bc-3" >
 						<li>
-				<a href="index.html"><i class="fa fa-home"></i>Home</a>
+				<a href="<?php echo e(url('/')); ?>"><i class="fas fa-home"></i> Home</a>
 			</li>
 				<li class="active">
 							<strong>Zona Transaccional</strong>
@@ -75,7 +75,7 @@
 
 				<div class="portfolio-item">
 					<a href="<?php echo e(URL::to('Categorias')); ?>" class="image">
-						<img src="<?php echo e(asset('Imagenes/gestionSectorEmpresaFinal.png')); ?>" class="img-rounded" />
+						<img src="<?php echo e(asset('Imagenes/categoriasfinal.png')); ?>" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>
 

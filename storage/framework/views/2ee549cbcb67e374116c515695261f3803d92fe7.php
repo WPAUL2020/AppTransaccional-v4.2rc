@@ -12,7 +12,7 @@
 
 							<ol class="breadcrumb bc-3" >
 						<li>
-				<a href="/"><i class="fa fa-home"></i>Home</a>
+				<a href="<?php echo e(url('/')); ?>"><i class="fas fa-home"></i> Home</a>
 			</li>
 				<li class="active">
 							<strong>Zona Transaccional</strong>
