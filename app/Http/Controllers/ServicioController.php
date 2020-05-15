@@ -12,8 +12,9 @@ use Illuminate\Support\Facades\DB;
 
 class ServicioController extends Controller
 {
-    public function mostrarServicio()
+    public function mostrarServicio(Request $request)
     {
+        $request->user()->authorizeRoles('ADMINISTRADOR');
         if (Auth::check()){
             $Servicios = \App\Servicio::paginate(20);
             return view('ServicioVista') ->with("Servicios",$Servicios);

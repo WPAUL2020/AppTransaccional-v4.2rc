@@ -1,15 +1,31 @@
 <?php $__env->startSection('content'); ?>
 
-<!DOCTYPE html>
-<html lang="es_DO">
-<head>
-    <meta charset="UTF-8">
-<title>Pagina de Contacto</title>
-                   <br>
-                   <br>
-</head>
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
 
-<body>
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-9">
+
+                    <h1>Registro de Usuarios</h1>
+
+                    <ol class="breadcrumb bc-3" >
+                            <li>
+                    <a href="<?php echo e(URL::previous()); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
+                </li>
+                    <li class="active">
+                                <strong>Registro de Usuario</strong>
+                        </li>
+                        </ol>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
     <div class="container">
     <div class="row">
             <div class="col-md-5">
@@ -142,7 +158,7 @@
   <div class="form-row">
                     <div class="form-group">
                         <input type="submit" value="Registrar" class="btn btn-primary">
-                        <a class="btn btn-outline-secondary" href="<?php echo e(URL::to('UsuariosInterno')); ?>">Regresar</a>
+                        <a class="btn btn-secondary" href="<?php echo e(URL::to('UsuariosInterno')); ?>">Regresar</a>
                     </div>
 
 </form>

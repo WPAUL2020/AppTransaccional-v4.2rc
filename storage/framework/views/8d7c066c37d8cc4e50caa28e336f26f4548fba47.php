@@ -1,9 +1,29 @@
 <?php $__env->startSection('content'); ?>
 
-<title>Big Data E-Commerce</title>
-                   <a class="btn btn-outline-secondary" href="<?php echo e(URL::to('GestionUser')); ?>">MI PERFIL</a>
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
 
-                   <a class="btn btn-outline-secondary" href="<?php echo e(URL::to('appl')); ?>">REGRESAR</a>
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-9">
+
+                    <h1>Gestion Usuarios Tercero</h1>
+
+                    <ol class="breadcrumb bc-3" >
+                            <li>
+                    <a href="<?php echo e(URL::to('appl')); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
+                </li>
+                    <li class="active">
+                                <strong>Gestion Usuarios Tercero</strong>
+                        </li>
+                        </ol>
+                </div>
+            </div>
+
+        </div>
+    </section>
 <br>
 <BR>
 <div class="container">
@@ -27,7 +47,7 @@
                        <td><?php echo e($users1->EXTENSION); ?></td>
                        <td><?php echo e($users1->USUARIO); ?></td>
                        <td>
-                           <a a href="GesUserTerEdit/updateUser/<?php echo e($users1->ID_EMPLEADO_TERCERO); ?>">EDITAR</a>
+                           <a a href="GesUserTerEdit/updateUser/<?php echo e($users1->ID_EMPLEADO_TERCERO); ?>" class="btn btn-secondary">EDITAR</a>
                        </td>
                        </tr>
                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -35,7 +55,7 @@
 </table>
 <?php echo $empleados->render(); ?>
 
-                <a class="btn btn-outline-secondary" href="<?php echo e(URL::to('GesUserTerCrear/agregar')); ?>">Agregar</a>
+                <a class="btn btn-primary" href="<?php echo e(URL::to('GesUserTerCrear/agregar')); ?>">Agregar</a>
 </div>
 <?php $__env->stopSection(); ?>
 

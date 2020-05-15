@@ -25,7 +25,8 @@ class EmpleadosInternoController extends Controller
 
     public function mostrarEmpleadosInt(Request $request)
     {
-            $empleados = EmpleadosInterno::paginate(10);
+        $request->user()->authorizeRoles('ADMINISTRADOR');
+        $empleados = EmpleadosInterno::paginate(10);
             return view('GestUserIntVista') ->with("empleados",$empleados);
     }
 

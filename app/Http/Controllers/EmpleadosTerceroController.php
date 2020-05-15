@@ -17,10 +17,19 @@ class EmpleadosTerceroController extends Controller
 {
     public function mostrarEmpleadosTer(Request $request)
     {
-        $request->user()->authorizeRoles('ADMINISTRADOR');
+        $request->user()->authorizeRoles('ADMINISTRADOR CLIENTE');
         if (Auth::check()){
-            $empleados = EmpleadosTercero::paginate(10);
-            return view('GesUserTerVista') ->with("empleados",$empleados);
+            $user = Auth::user();
+            // print($user->ID_EMPRESA_TERCERO);
+            // print($user->name);
+            // print($user->email);
+            $empleados = EmpleadosTercero::where ('ID_EMPRESA_TERCERO',$user->ID_EMPRESA_TERCERO)->get();
+            $empresa = EmpresaTercero::where ('ID_EMPRESA_TERCERO',$user->ID_EMPRESA_TERCERO)->first();
+            // print ($empresa->ID_EMPRESA_TERCERO);
+            // var_dump($empleados);
+            return view('GesUserTerVista') ->with(["empleados"=>$empleados , 'empresa'=>$empresa ]);
+            // ->with(["empleados"=>$empleados , 'empresa'=>$empresa ])
+
         } else {
             return redirect('/login');
         }

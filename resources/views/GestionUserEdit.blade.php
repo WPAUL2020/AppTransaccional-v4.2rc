@@ -1,6 +1,32 @@
 @extends('layouts.app')
 
 @section('content')
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-9">
+
+                    <h1>Editar Usuarios</h1>
+
+                    <ol class="breadcrumb bc-3" >
+                            <li>
+                    <a href="{{URL::previous()}}"> <i class="fas fa-angle-left"></i> Regresar</a>
+                </li>
+                    <li class="active">
+                                <strong>Editar Usuario</strong>
+                        </li>
+                        </ol>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -30,7 +56,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('ACTUALIZAR') }}
                                 </button>
-                                <a class="btn btn-outline-secondary" href="{{URL::to('GestionUser')}}">REGRESAR</a>
+                                <a class="btn btn-secondary" href="{{URL::to('GestionUser')}}">REGRESAR</a>
                             </div>
                         </div>
                     </form>

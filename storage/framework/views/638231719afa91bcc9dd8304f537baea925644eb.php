@@ -507,7 +507,7 @@
                 <div class="col-sm-6">
 
                     <a href="https://universitariadecolombia.edu.co">
-                        <img src="<?php echo e(asset('blogFrontend/assets/images/logo1.png')); ?>" width="120"/>
+                        <img src="<?php echo e(asset('neonFrontEnd/assets/images/logo1.png')); ?>" width="120"/>
                     </a>
 
                     <p>

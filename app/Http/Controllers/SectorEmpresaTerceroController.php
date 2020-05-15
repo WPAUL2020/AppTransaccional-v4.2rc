@@ -11,8 +11,9 @@ use Illuminate\Support\Facades\DB;
 
 class SectorEmpresaTerceroController extends Controller
 {
-    public function mostrarSector()
+    public function mostrarSector(Request $request)
     {
+        $request->user()->authorizeRoles('ADMINISTRADOR');
         if (Auth::check()){
             $sector = Sector::paginate(10);
             return view('SectEmprTercVista') ->with("sector",$sector);

@@ -1,4 +1,5 @@
 <?php $__env->startSection('content'); ?>
+
     <!-- Breadcrumb -->
     <section class="breadcrumb">
 
@@ -8,39 +9,42 @@
 
                 <div class="col-sm-9">
 
-                    <h1>Registro De Cargos</h1>
+                    <h1>Crear Rol de Usuario</h1>
 
-                                <ol class="breadcrumb bc-3" >
+                    <ol class="breadcrumb bc-3" >
                             <li>
                     <a href="<?php echo e(URL::previous()); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
                 </li>
                     <li class="active">
-                                <strong>Registro De Cargos</strong>
+                                <strong>Crear Rol de Usuario</strong>
                         </li>
                         </ol>
-
                 </div>
-
             </div>
 
         </div>
     </section>
+<body>
     <div class="container">
         <div class="row justify-content-sm-center">
             <div class="col-md-5">
-                <h2> <center>REGISTRO DE CARGOS</center></h2>
-                <form method="POST" action="<?php echo e(URL::to('CargoCrear/guardar')); ?>" class="form-horizontal"> <?php echo e(csrf_field()); ?>
+                <h2> <center>REGISTRO ROL USUARIO</center></h2>
+                <form method="POST" action="<?php echo e(URL::to('RolCrear/guardar')); ?>" class="form-horizontal"> <?php echo e(csrf_field()); ?>
 
-                <div class="col">
                 <div class="form-group">
-                    <label>Cargo a Registrar</label>
-                    <input type="text" name="NOMBRE_CARGO" class="form-control" placeholder="Nombre del Cargo">
-                    <span class="text-danger"><?php echo e($errors->first("NOMBRE_CARGO")); ?></span>
+                <label>Rol a Registrar</label>
+                    <input type="text" name="NOMBRE_ROL" class="form-control" placeholder="Nombre del Rol">
+                    <span class="text-danger"><?php echo e($errors->first("NOMBRE_ROL")); ?></span>
                      </div>
                     <div class="form-group">
+                    <label>Descripciòn:</label>
+                    <input type="text" name="DESCRIPCION" class="form-control" placeholder="Descripciòn">
+                    <span class="text-danger"><?php echo e($errors->first("DESCRIPCION")); ?></span>
+                     </div>
+                     <div class="form-group">
                     <label>Dependencia del Cargo</label>
                         <select type="" name="DEPENDENCIA" class="form-control">
-                                <option value="">--Escoja Tipo de Dependencia--</option>
+                        <option value="">--Escoja Dependencia del Cargo--</option>
                                 <option>TIC</option>
                                 <option>ADMINISTRACION</option>
                                 <option>OPERACION</option>
@@ -49,18 +53,15 @@
                        <span class="text-danger"><?php echo e($errors->first("DEPENDENCIA")); ?></span>
                     </div>
                     <div class="form-group">
-                    <label>Descripciòn:</label>
-                    <input type="text" name="DESCRIPCION" class="form-control" placeholder="Descripciòn">
-                    <span class="text-danger"><?php echo e($errors->first("DESCRIPCION")); ?></span>
-                     </div>
-                    <div class="form-group">
                         <input type="submit" value="Registrar" class="btn btn-primary">
-                        <a class="btn btn-secondary" href="<?php echo e(URL::to('Cargos')); ?>">Regresar</a>
+                        <a class="btn btn-secondary" href="<?php echo e(URL::to('Roles')); ?>">Regresar</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+</body>
+</html>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\AppTransaccional-v4.2rc\resources\views/CargoCrear.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\AppTransaccional-v4.2rc\resources\views/RolCrear.blade.php ENDPATH**/ ?>

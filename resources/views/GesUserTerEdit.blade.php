@@ -2,16 +2,31 @@
 
 @section('content')
 
-<!DOCTYPE html>
-<html lang="es_DO">
-<head>
-    <meta charset="UTF-8">
-<title>Pagina de Contacto</title>
-                   <br>
-                   <br>
-</head>
 
-<body>
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-9">
+
+                    <h1>Editar Usuarios Tercero</h1>
+
+                    <ol class="breadcrumb bc-3" >
+                            <li>
+                    <a href="{{URL::previous()}}"> <i class="fas fa-angle-left"></i> Regresar</a>
+                </li>
+                    <li class="active">
+                                <strong>Editar Usuarios Tercero</strong>
+                        </li>
+                        </ol>
+
+                </div>
+            </div>
+        </div>
+    </section>
     <div class="container">
     <div class="row">
             <div class="col-md-5">

@@ -10,4 +10,10 @@ class EmpresaTercero extends Model
     protected $primaryKey="ID_EMPRESA_TERCERO";
     public $incrementing = true;
     public $timestamps = false;
+
+    public function EmpleadosTercero()
+    {
+
+        return $this->hasMany('App\EmpleadosTercero');
+    }
 }

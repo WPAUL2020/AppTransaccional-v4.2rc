@@ -1,6 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-9">
+
+                    <h1>Registro Usuarios</h1>
+
+                    <ol class="breadcrumb bc-3" >
+                            <li>
+                    <a href="{{URL::previous()}}"> <i class="fas fa-angle-left"></i> Regresar</a>
+                </li>
+                    <li class="active">
+                                <strong>Registro Usuarios</strong>
+                        </li>
+                        </ol>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

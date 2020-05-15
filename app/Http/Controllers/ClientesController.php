@@ -30,8 +30,9 @@ class ClientesController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
-    public function Clientes()
+    public function Clientes(Request $request)
     {
+        $request->user()->authorizeRoles('ADMINISTRADOR');
         if (Auth::check()){
             $clientes = Clientes::paginate(10);
             return view('Clientes') ->with("Clientes",$clientes);
@@ -72,8 +73,9 @@ class ClientesController extends Controller
        return Redirect('Clientes')->with("mensaje" , "El Cliente Registro Exitoso");
    }
 
-    public function GestionClientes()
+    public function GestionClientes(Request $request)
     {
+        $request->user()->authorizeRoles('ADMINISTRADOR');
         if (Auth::check()) {
             $users1 = \App\GestionClientes::paginate(10);
             return view('GestionClientes')->with("users", $users1);

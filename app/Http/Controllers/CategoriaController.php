@@ -11,8 +11,9 @@ use Illuminate\Support\Facades\DB;
 
 class CategoriaController extends Controller
 {
-    public function mostrarCategoria()
+    public function mostrarCategoria(Request $request)
     {
+        $request->user()->authorizeRoles('ADMINISTRADOR');
         if (Auth::check()){
             $Categorias = \App\Categoria::paginate(20);
             return view('CategoriaVista') ->with("Categorias",$Categorias);

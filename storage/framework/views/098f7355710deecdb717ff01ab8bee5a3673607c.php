@@ -1,14 +1,30 @@
 <?php $__env->startSection('content'); ?>
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
 
-<!DOCTYPE html>
-<html lang="es_DO">
-<head>
-    <meta charset="UTF-8">
-<title>Pagina de Contacto</title>
-                   <br>
-                   <br>
-</head>
+        <div class="container">
 
+            <div class="row">
+
+                <div class="col-sm-9">
+
+                    <h1>Registro De Empresas</h1>
+
+                                <ol class="breadcrumb bc-3" >
+                            <li>
+                    <a href="<?php echo e(URL::previous()); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
+                </li>
+                    <li class="active">
+                                <strong>Registro De Empresas</strong>
+                        </li>
+                        </ol>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
 <body>
 <div class="container">
     <div class="row">

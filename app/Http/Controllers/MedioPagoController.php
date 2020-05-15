@@ -11,8 +11,9 @@ use Illuminate\Support\Facades\DB;
 
 class MedioPagoController extends Controller
 {
-    public function mostrarMedioPago()
+    public function mostrarMedioPago(Request $request)
     {
+        $request->user()->authorizeRoles('ADMINISTRADOR');
         if (Auth::check()){
             $MedioPagos = \App\MedioPago::paginate(20);
             return view('MedioPagoVista') ->with("MedioPagos",$MedioPagos);

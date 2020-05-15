@@ -11,8 +11,9 @@ use Illuminate\Support\Facades\DB;
 
 class CargoController extends Controller
 {
-    public function mostrarCargo()
+    public function mostrarCargo(Request $request)
     {
+        $request->user()->authorizeRoles('ADMINISTRADOR');
         if (Auth::check()){
             $cargo = Cargo::paginate(10);
             return view('CargoVista') ->with("cargo",$cargo);
