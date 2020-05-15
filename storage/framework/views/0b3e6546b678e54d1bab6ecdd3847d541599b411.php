@@ -894,7 +894,7 @@
 	<script src="<?php echo e(asset('neonFrontEnd/assets/js/joinable.js')); ?>"></script>
 	<script src="<?php echo e(asset('neonFrontEnd/assets/js/resizeable.js')); ?>"></script>
     <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-api.js')); ?>"></script>
-<?php echo $__env->yieldContent('Scripts'); ?>
+    <?php echo $__env->yieldContent('Scripts'); ?>
 
 <script>
     $("#menu-toggle").click(function(e) {
