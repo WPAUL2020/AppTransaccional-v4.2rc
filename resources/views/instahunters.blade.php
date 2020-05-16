@@ -12,58 +12,16 @@
                     </a>
                 </div>
                 </center>
+                @foreach ($response as $respuesta)
                 <div class="card-body">
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
-                            <label for="Nit">Nit</label>
-                            <input name="Nit" type="text" class="form-control" id="Nit" data-validate="required" data-message-required="Ingrese el Nit." placeholder="Nit">
-                            @error('Nit')
-                            <div class="alert alert-danger" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </div>
-                            @enderror
+                            <label for="">{{$respuesta->NOMBRE_PRODUCTO_SERV_T}}</label>
+                            <input name="{{$respuesta->NOMBRE_PRODUCTO_SERV_T}}" type="checkbox" class="form-control" id="{{$respuesta->NOMBRE_PRODUCTO_SERV_T}}">
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
-                    <div class="form-row">
-                        <div class="col-md-4 mb-3">
-                            <label for="Nit">Nit</label>
-                            <input name="Nit" type="text" class="form-control" id="Nit" data-validate="required" data-message-required="Ingrese el Nit." placeholder="Nit">
-                            @error('Nit')
-                            <div class="alert alert-danger" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </div>
-                            @enderror
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="form-row">
-                        <div class="col-md-4 mb-3">
-                            <label for="Nit">Nit</label>
-                            <input name="Nit" type="text" class="form-control" id="Nit" data-validate="required" data-message-required="Ingrese el Nit." placeholder="Nit">
-                            @error('Nit')
-                            <div class="alert alert-danger" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </div>
-                            @enderror
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="form-row">
-                        <div class="col-md-4 mb-3">
-                            <label for="Nit">Nit</label>
-                            <input name="Nit" type="text" class="form-control" id="Nit" data-validate="required" data-message-required="Ingrese el Nit." placeholder="Nit">
-                            @error('Nit')
-                            <div class="alert alert-danger" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </div>
-                            @enderror
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

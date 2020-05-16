@@ -63,7 +63,7 @@ class instahuntersController extends Controller
         $response = DB::select('call RetornaProductos(?)', [
             $this->nitCliente
                 ]);
-        dd($response);
+        return view('instahunters', compact('response'));
     }
 
     public function getFrmInstaHunterview()
