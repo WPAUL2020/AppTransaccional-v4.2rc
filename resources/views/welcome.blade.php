@@ -347,7 +347,7 @@
 				<!-- Portfolio Item in Widget -->
 				<div class="portfolio-item">
 					<a href="portfolio-single.html" class="image">
-						<img src="{{ asset('neonFrontEnd/assets/images/portfolio-thumb-1.png') }}" class="img-rounded" />
+						<img src="{{ asset('imagenes/portfolio-thumb-3.png') }}" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>
 
