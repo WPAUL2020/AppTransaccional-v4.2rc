@@ -108,11 +108,25 @@ endif; ?>
                     </a>
                 </div>
         </form>
-        <form action="" method="post" id="frm-reset-pass">
+        <form action="<?php echo e(route('password.update')); ?>" method="post" id="frm-reset-pass">
             <div class="register-show">
+                <?php echo csrf_field(); ?>
                 <h2 style="color:white">REINICIAR PASSWORD</h2>
-                <input type="email" placeholder="Email" class="form-control">
-                <a href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault(); document.getElementById('frm-reset-pass').submit();" type="button">
+                <input id="email" type="email" placeholder="Email" name="email" class="form-control <?php if ($errors->has('email')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('email'); ?> is-invalid <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>" required>
+                <?php if ($errors->has('email')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('email'); ?>
+                <span class="invalid-feedback" role="alert">
+                    <strong><?php echo e($message); ?></strong>
+                </span>
+                <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>
+                <a href="<?php echo e(route('password.update')); ?>" onclick="event.preventDefault(); document.getElementById('frm-reset-pass').submit();" type="button">
                     <center>Enviar</center>
                 </a>
             </div>
