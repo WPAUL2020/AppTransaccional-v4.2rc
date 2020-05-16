@@ -35,6 +35,7 @@
                        <th class="text-center">TELEFONO</th>
                        <th class="text-center">EXTENSION</th>
                        <th class="text-center">USUARIO</th>
+                       <th class="text-center">EMPRESA</th>
                        <th class="text-center">ACCIONES</th>
                    </tr>
 
@@ -46,6 +47,8 @@
                        <td><?php echo e($users1->TELEFONO); ?></td>
                        <td><?php echo e($users1->EXTENSION); ?></td>
                        <td><?php echo e($users1->USUARIO); ?></td>
+                       <td><?php echo e($empresa->NOMBRE); ?></td>
+
                        <td>
                            <a a href="GesUserTerEdit/updateUser/<?php echo e($users1->ID_EMPLEADO_TERCERO); ?>" class="btn btn-secondary">EDITAR</a>
                        </td>
@@ -53,8 +56,6 @@
                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 </table>
-<?php echo $empleados->render(); ?>
-
                 <a class="btn btn-primary" href="<?php echo e(URL::to('GesUserTerCrear/agregar')); ?>">Agregar</a>
 </div>
 <?php $__env->stopSection(); ?>
