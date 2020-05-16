@@ -239,7 +239,7 @@
                     <li class="has-sub">
                         <a href="layout-api.html">
                             <i class="entypo-layout"></i>
-                            <span class="title">Gestion (Empresa)</span>
+                            <span class="title">Gestion Sector (Empresa)</span>
                         </a>
                         <ul>
                             <li>
