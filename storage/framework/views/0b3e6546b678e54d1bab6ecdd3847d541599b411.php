@@ -239,7 +239,7 @@
                     <li class="has-sub">
                         <a href="layout-api.html">
                             <i class="entypo-layout"></i>
-                            <span class="title">Gestion Sector (Empresa)</span>
+                            <span class="title">Gestion (Empresa)</span>
                         </a>
                         <ul>
                             <li>
@@ -266,13 +266,13 @@
                     </li>
                     <li class="has-sub">
                         <a href="layout-api.html">
-                            <i class="fa fa-database"></i>
+                            <i class="entypo-layout"></i>
                             <span class="title">Gestión Big Data</span>
                         </a>
                         <ul>
                             <li>
                                 <a href="layout-api.html">
-                                    <span class="title"> <i class="fa fa-spider"></i> InstaHunters</span>
+                                    <span class="title">InstaHunters</span>
                                 </a>
                             </li>
                         </ul>
@@ -363,7 +363,7 @@
                     </li>
                     <li class="has-sub">
                         <a href="layout-api.html">
-                            <i class="fa fa-ccamex"></i>
+                            <i class="entypo-layout"></i>
                             <span class="title">Generar Factura</span>
                         </a>
                         <ul>

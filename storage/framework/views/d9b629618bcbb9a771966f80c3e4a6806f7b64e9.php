@@ -11,16 +11,74 @@
                     </a>
                 </div>
                 </center>
-                <?php $__currentLoopData = $response; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $respuesta): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="card-body">
                     <div class="form-row">
                         <div class="col-md-4 mb-3">
-                            <label for=""><?php echo e($respuesta->NOMBRE_PRODUCTO_SERV_T); ?></label>
-                            <input name="<?php echo e($respuesta->NOMBRE_PRODUCTO_SERV_T); ?>" type="checkbox" class="form-control" id="<?php echo e($respuesta->NOMBRE_PRODUCTO_SERV_T); ?>">
+                            <label for="Nit">Nit</label>
+                            <input name="Nit" type="text" class="form-control" id="Nit" data-validate="required" data-message-required="Ingrese el Nit." placeholder="Nit">
+                            <?php if ($errors->has('Nit')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('Nit'); ?>
+                            <div class="alert alert-danger" role="alert">
+                                <strong><?php echo e($message); ?></strong>
+                            </div>
+                            <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>
                         </div>
                     </div>
                 </div>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="Nit">Nit</label>
+                            <input name="Nit" type="text" class="form-control" id="Nit" data-validate="required" data-message-required="Ingrese el Nit." placeholder="Nit">
+                            <?php if ($errors->has('Nit')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('Nit'); ?>
+                            <div class="alert alert-danger" role="alert">
+                                <strong><?php echo e($message); ?></strong>
+                            </div>
+                            <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="Nit">Nit</label>
+                            <input name="Nit" type="text" class="form-control" id="Nit" data-validate="required" data-message-required="Ingrese el Nit." placeholder="Nit">
+                            <?php if ($errors->has('Nit')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('Nit'); ?>
+                            <div class="alert alert-danger" role="alert">
+                                <strong><?php echo e($message); ?></strong>
+                            </div>
+                            <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="Nit">Nit</label>
+                            <input name="Nit" type="text" class="form-control" id="Nit" data-validate="required" data-message-required="Ingrese el Nit." placeholder="Nit">
+                            <?php if ($errors->has('Nit')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('Nit'); ?>
+                            <div class="alert alert-danger" role="alert">
+                                <strong><?php echo e($message); ?></strong>
+                            </div>
+                            <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
