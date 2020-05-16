@@ -23,6 +23,7 @@ class FacturaController extends Controller
 
     public function redirecTO()
     {
+
         $validateMessage = [
             "required" => "Este campo es obligatorio", "numeric" => "Este campo solo permite números",
             "min" => "Este campo debe tener mínimo :min dígitos"
@@ -64,8 +65,9 @@ class FacturaController extends Controller
 
     }
 
-    public function index()
+    public function index(Request $request)
     {
+        $request->user()->authorizeRoles([ 'ADMINISTRADOR']);
         $metodoPago = metodoPago::all();
         $nombreciudad = nombreciudad::all();
         $tipoSevicio = tipoSevicio::all();
