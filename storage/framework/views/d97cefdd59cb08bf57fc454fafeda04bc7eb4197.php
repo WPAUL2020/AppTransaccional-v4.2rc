@@ -66,7 +66,7 @@
 						<a href="<?php echo e(URL::to('MedioPagos')); ?>" class="like">
 							<i class="entypo-heart"></i>
 						</a>
-						<center><a href="<?php echo e(URL::to('MedioPagos')); ?>" class="btn btn-primary">Gestión Usuarios Externos</a></center>
+						<center><a href="<?php echo e(URL::to('MedioPagos')); ?>" class="btn btn-primary">Medios de pago</a></center>
 					</h4>
 				</div>
 

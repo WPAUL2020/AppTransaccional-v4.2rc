@@ -17,7 +17,7 @@ class EmpleadosTerceroController extends Controller
 {
     public function mostrarEmpleadosTer(Request $request)
     {
-        $request->user()->authorizeRoles(['ADMINISTRADOR CLIENTE' , 'ADMINISTRADOR']);
+        $request->user()->authorizeRoles(['SUPERVISOR EXTERNO' , 'ADMINISTRADOR']);
         if (Auth::check()){
             $user = Auth::user();
             // print($user->ID_EMPRESA_TERCERO);
