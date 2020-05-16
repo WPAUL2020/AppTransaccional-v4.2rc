@@ -92,11 +92,17 @@
                     </a>
                 </div>
         </form>
-        <form action="" method="post" id="frm-reset-pass">
+        <form action="{{ route('password.update') }}" method="post" id="frm-reset-pass">
             <div class="register-show">
+                @csrf
                 <h2 style="color:white">REINICIAR PASSWORD</h2>
-                <input type="email" placeholder="Email" class="form-control">
-                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-reset-pass').submit();" type="button">
+                <input id="email" type="email" placeholder="Email" name="email" class="form-control @error('email') is-invalid @enderror" required>
+                @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+                <a href="{{ route('password.update') }}" onclick="event.preventDefault(); document.getElementById('frm-reset-pass').submit();" type="button">
                     <center>Enviar</center>
                 </a>
             </div>
