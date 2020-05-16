@@ -140,7 +140,12 @@
     </div>
     <div class="col">
     <label for="">Empresa:</label>
-        <input type="texto" name="ID_EMPRESA_TERCERO" class="form-control" placeholder="Empresa"value=<?php echo e($empresa->NOMBRE); ?>>
+        <select name="ID_EMPRESA_TERCERO" id="ID_EMPRESA_TERCERO" class="form-control">
+            <?php $__currentLoopData = $empresa; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $empresa): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <option value="<?php echo e($empresa->ID_EMPRESA_TERCERO); ?>"><?php echo e($empresa->NOMBRE); ?></option>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </select>
+
         <span class="text-danger"><?php echo e($errors->first("ID_EMPRESA_TERCERO")); ?></span>
     </div>
     <div class="col">

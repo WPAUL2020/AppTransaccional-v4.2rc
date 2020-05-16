@@ -141,7 +141,12 @@
     </div>
     <div class="col">
     <label for="">Empresa:</label>
-        <input type="texto" name="ID_EMPRESA_TERCERO" class="form-control" placeholder="Empresa"value={{ $empresa->NOMBRE}}>
+        <select name="ID_EMPRESA_TERCERO" id="ID_EMPRESA_TERCERO" class="form-control">
+            @foreach($empresa as $empresa)
+                <option value="{{$empresa->ID_EMPRESA_TERCERO}}">{{$empresa->NOMBRE}}</option>
+            @endforeach
+        </select>
+
         <span class="text-danger">{{$errors->first("ID_EMPRESA_TERCERO")}}</span>
     </div>
     <div class="col">
