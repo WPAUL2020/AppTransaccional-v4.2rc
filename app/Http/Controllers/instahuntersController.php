@@ -59,11 +59,13 @@ class instahuntersController extends Controller
      */
     public function getFrmInstaHunter()
     {
-        $this->nitCliente = Auth::user()->ID_EMPRESA_TERCERO;
-        $response = DB::select('call RetornaProductos(?)', [
-            $this->nitCliente
-                ]);
-        dd($response);
+        $data2view = null;
+        if ($data2view!=null) {
+            return view('instahunters', compact('data2view'));
+        }
+        else {
+            return view('instahunters' , compact('data2view'));
+        }
     }
 
     public function getFrmInstaHunterview()
