@@ -27,7 +27,7 @@
 
         </div>
     </section>
-    <div class="container">
+    <div class="container fondo_container">
         <div class="row justify-content-sm-center">
             <div class="col-md-5">
                 <h2> <center>REGISTRO DE PRODUCTOS</center></h2>

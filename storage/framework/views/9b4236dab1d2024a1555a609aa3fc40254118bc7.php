@@ -1,5 +1,4 @@
-@extends('layouts.app')
-@section('content')
+<?php $__env->startSection('content'); ?>
     <!-- Breadcrumb -->
     <section class="breadcrumb">
 
@@ -13,7 +12,7 @@
 
                                 <ol class="breadcrumb bc-3" >
                             <li>
-                    <a href="{{URL::to('appl')}}"> <i class="fas fa-angle-left"></i> Regresar</a>
+                    <a href="<?php echo e(URL::to('appl')); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
                 </li>
                     <li class="active">
                                 <strong>Generar Factura</strong>
@@ -36,107 +35,140 @@
         <center>
         <div class="card-header">
             <a href="#">
-                <img src="{{ asset('Imagenes/logo.png') }}" width="185" alt="" />
+                <img src="<?php echo e(asset('Imagenes/logo.png')); ?>" width="185" alt="" />
             </a>
         </div>
         </center>
 
         <div class="card-body ">
-            <form method="POST" action="{{URL::to('Factura')}}" class="form-horizontal"> {{ csrf_field() }}
+            <form method="POST" action="<?php echo e(URL::to('Factura')); ?>" class="form-horizontal"> <?php echo e(csrf_field()); ?>
+
                     <div class="form-row">
                     <div class="col-md-4 mb-3">
                         <label for="Nit">Nit</label>
                         <input name="Nit" type="text" class="form-control" id="Nit" data-validate="required" data-message-required="Ingrese el Nit." placeholder="Nit">
-                        @error('Nit')
+                        <?php if ($errors->has('Nit')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('Nit'); ?>
                         <div class="alert alert-danger" role="alert">
-                            <strong>{{ $message }}</strong>
+                            <strong><?php echo e($message); ?></strong>
                         </div>
-                        @enderror
+                        <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="Metodo de pago">Metodo de pago</label>
                         <select class="form-control" name="mPago" id="mPago" data-validate="required" data-message-required="Seleccione un metodo de pago">
                         <option value=""> Seleccione....</option>
-                        @foreach ($metodoPago as $mPago)
-                            <option value="{{$mPago->METODO_PAGO}}">{{$mPago->METODO_PAGO}} </option>
-                        @endforeach
+                        <?php $__currentLoopData = $metodoPago; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mPago): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($mPago->METODO_PAGO); ?>"><?php echo e($mPago->METODO_PAGO); ?> </option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
-                    @error('mPago')
+                    <?php if ($errors->has('mPago')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('mPago'); ?>
                     <div class="alert alert-danger" role="alert">
-                        <strong>{{ $message }}</strong>
+                        <strong><?php echo e($message); ?></strong>
                     </div>
-                    @enderror
+                    <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>
                     </div>
                     </div>
                     <div class="form-row">
                     <div class="col-md-4 mb-3">
                         <label for="direccion">Número de documento</label>
                         <input type="text" name="docN" id="docN" class="form-control" data-numeric="true" data-validate="required,number" data-message-required="Ingrese un número de documento" placeholder="No. de documento">
-                        @error('docN')
+                        <?php if ($errors->has('docN')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('docN'); ?>
                         <div class="alert alert-danger" role="alert">
-                            <strong>{{ $message }}</strong>
+                            <strong><?php echo e($message); ?></strong>
                         </div>
-                        @enderror
+                        <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>
                     </div>
                     <div class="col-md-4 mb-3">
                     <label for="Metodo de pago">Servicio</label>
                     <select class="form-control" name="service" id="service" data-validate="required" data-message-required="Seleccione un metodo de pago">
                         <option value=""> Seleccione....</option>
-                        @foreach ($tipoSevicio as $service)
-                            <option value="{{$service->ID_SERVICIO}}">{{$service->NOMBRE_PRODUCTO}} </option>
-                        @endforeach
+                        <?php $__currentLoopData = $tipoSevicio; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($service->ID_SERVICIO); ?>"><?php echo e($service->NOMBRE_PRODUCTO); ?> </option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
-                    @error('service')
+                    <?php if ($errors->has('service')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('service'); ?>
                     <div class="alert alert-danger" role="alert">
-                        <strong>{{ $message }}</strong>
+                        <strong><?php echo e($message); ?></strong>
                     </div>
-                    @enderror
+                    <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
                         <label for="direccion">Cantidad</label>
                         <input type="text" name="cantidad" id="cantidad" class="form-control" data-numeric="true" data-validate="required,number" data-message-required="Ingrese una cantidad valida" placeholder="Cantidad">
-                        @error('cantidad')
+                        <?php if ($errors->has('cantidad')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('cantidad'); ?>
                         <div class="alert alert-danger" role="alert">
-                            <strong>{{ $message }}</strong>
+                            <strong><?php echo e($message); ?></strong>
                         </div>
-                        @enderror
+                        <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="direccion">Fecha de envio</label>
                         <input type="text" name="date" id="date" class="form-control" data-mask="yyyy-mm-dd" aria-describedby="helpId" placeholder="yyyy-mm-dd">
-                        @error('date')
+                        <?php if ($errors->has('date')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('date'); ?>
                         <div class="alert alert-danger" role="alert">
-                            <strong>{{ $message }}</strong>
+                            <strong><?php echo e($message); ?></strong>
                         </div>
-                        @enderror
+                        <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>
                     </div>
                     </div>
                     <div class="form-row">
                     <div class="col-md-4 mb-3">
                     <label for="direccion">Dirección de envio</label>
                     <input type="text" name="direc" id="direc" class="form-control" data-validate="required" data-message-required="Ingrese la dirección" placeholder="Dirección">
-                    @error('direc')
+                    <?php if ($errors->has('direc')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('direc'); ?>
                     <div class="alert alert-danger" role="alert">
-                        <strong>{{ $message }}</strong>
+                        <strong><?php echo e($message); ?></strong>
                     </div>
-                    @enderror
+                    <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>
                     <input type="hidden" name="pais" value="Colombia">
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="direccion">Ciudad</label>
                         <select class="form-control" name="ciudad" id="ciudad" data-validate="required" data-message-required="Seleccion" placeholder="Cantidad">
                             <option value=""> Seleccione....</option>
-                            @foreach ($nombreciudad as $ciudad)
-                            <option value="{{$ciudad->NOMBRE_CIUDAD}}">{{$ciudad->NOMBRE_CIUDAD}}</option>
-                            @endforeach
+                            <?php $__currentLoopData = $nombreciudad; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ciudad): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($ciudad->NOMBRE_CIUDAD); ?>"><?php echo e($ciudad->NOMBRE_CIUDAD); ?></option>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
-                        @error('ciudad')
+                        <?php if ($errors->has('ciudad')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('ciudad'); ?>
                         <div class="alert alert-danger" role="alert">
-                            <strong>{{ $message }}</strong>
+                            <strong><?php echo e($message); ?></strong>
                         </div>
-                        @enderror
+                        <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>
                 </div>
                 </div>
         </div>
@@ -155,9 +187,11 @@
 </div>
 </div>
 </div>
-@endsection
-@section('Scripts')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('Scripts'); ?>
     		<!-- Imported scripts on this page -->
-            <script src="{{ asset('neonFrontEnd/assets/js/jquery.inputmask.bundle.js') }}"></script>
-            <script src="{{ asset('neonFrontEnd/assets/js/neon-chat.js') }}"></script>
-@endsection
+            <script src="<?php echo e(asset('neonFrontEnd/assets/js/jquery.inputmask.bundle.js')); ?>"></script>
+            <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-chat.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\AppTransacional\AppTransaccional-v4.2rc\resources\views/generarFactura.blade.php ENDPATH**/ ?>

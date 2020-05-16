@@ -40,6 +40,7 @@
 	<link rel="stylesheet" href="{{ asset('neonFrontEnd/assets/css/neon-theme.css') }}">
 	<link rel="stylesheet" href="{{ asset('neonFrontEnd/assets/css/neon-forms.css') }}">
     <link rel="stylesheet" href="{{ asset('neonFrontEnd/assets/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/formulario.css') }}">
     <!-- Scripts -->
     <script src="{{ asset('neonFrontEnd/assets/js/jquery-1.11.3.min.js') }}"></script>
 

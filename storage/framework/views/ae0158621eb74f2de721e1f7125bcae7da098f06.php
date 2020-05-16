@@ -12,15 +12,15 @@
 
 	<title>BIG DATA | Institución Universitaria de Colombia</title>
 
-	<link rel="stylesheet" href="{{ asset('neonFrontEnd/assets/css/bootstrap.css') }}">
-	<link rel="stylesheet" href="{{ asset('neonFrontEnd/assets/css/font-icons/entypo/css/entypo.css') }}">
-    <link rel="stylesheet" href="{{ asset('neonFrontEnd/assets/css/neon.css') }}">
-    <link rel="stylesheet" href="{{ asset('neonFrontEnd/assets/css/neon-core.css') }}">
-	<link rel="stylesheet" href="{{ asset('neonFrontEnd/assets/css/neon-theme.css') }}">
-	<link rel="stylesheet" href="{{ asset('neonFrontEnd/assets/css/neon-forms.css') }}">
+	<link rel="stylesheet" href="<?php echo e(asset('neonFrontEnd/assets/css/bootstrap.css')); ?>">
+	<link rel="stylesheet" href="<?php echo e(asset('neonFrontEnd/assets/css/font-icons/entypo/css/entypo.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('neonFrontEnd/assets/css/neon.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('neonFrontEnd/assets/css/neon-core.css')); ?>">
+	<link rel="stylesheet" href="<?php echo e(asset('neonFrontEnd/assets/css/neon-theme.css')); ?>">
+	<link rel="stylesheet" href="<?php echo e(asset('neonFrontEnd/assets/css/neon-forms.css')); ?>">
 
 
-	<script src="{{ asset('neonFrontEnd/assets/js/jquery-1.11.3.min.js') }}"></script>
+	<script src="<?php echo e(asset('neonFrontEnd/assets/js/jquery-1.11.3.min.js')); ?>"></script>
 
 	<!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -48,8 +48,8 @@
 
                     <section class="site-logo">
 
-                        <a href="{{ url('/') }}">
-                            <img src="{{ asset('Imagenes/logo.png') }}" width="120" />
+                        <a href="<?php echo e(url('/')); ?>">
+                            <img src="<?php echo e(asset('Imagenes/logo.png')); ?>" width="120" />
                         </a>
 
                     </section>
@@ -58,7 +58,7 @@
 
                         <ul class="main-menu hidden-xs" id="main-menu">
                             <li class="active">
-                                <a href="{{ url('/') }}">
+                                <a href="<?php echo e(url('/')); ?>">
                                     <span>Inicio</span>
                                 </a>
                             </li>
@@ -73,23 +73,23 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{URL::to('Contact')}}">
+                                <a href="<?php echo e(URL::to('Contact')); ?>">
                                     <span>Contactenos</span>
                                 </a>
                             </li>
                             <li>
-                                @if (Route::has('login'))
-                                    @auth
-                                    <a href="{{URL::to('appl')}}" class="btn btn-blue">
+                                <?php if(Route::has('login')): ?>
+                                    <?php if(auth()->guard()->check()): ?>
+                                    <a href="<?php echo e(URL::to('appl')); ?>" class="btn btn-blue">
                                         <span class="btn btn-blue">Zona Transaccional</span>
                                     </a>
-                                    @else
-                                        <a href="{{ route('login') }}" class="btn btn-black">
+                                    <?php else: ?>
+                                        <a href="<?php echo e(route('login')); ?>" class="btn btn-black">
                                             <span class="btn btn-black">Login</span>
                                         </a>
-                                    @endauth
+                                    <?php endif; ?>
                             </li>
-                            @endif
+                            <?php endif; ?>
                         </ul>
 
 
@@ -110,7 +110,7 @@
 
     </div>
 	<!-- Main Slider -->
-<section class="slider-container" style="background-image: url('{{ asset('neonFrontEnd/assets/images/slide-img-1-bg.png') }}');">
+<section class="slider-container" style="background-image: url('<?php echo e(asset('neonFrontEnd/assets/images/slide-img-1-bg.png')); ?>');">
 
 	<div class="container">
 
@@ -137,19 +137,19 @@
 						<div class="slide-image">
 
 							<a href="#">
-								<img src="{{ asset('Imagenes/slide-img-1-2.png') }}" class="img-responsive" />
+								<img src="<?php echo e(asset('Imagenes/slide-img-1-2.png')); ?>" class="img-responsive" />
 							</a>
 						</div>
 
 					</div>
 
 					<!-- Slide 2 -->
-					<div class="slide" data-bg="{{ asset('Imagenes/logo.png') }}">
+					<div class="slide" data-bg="<?php echo e(asset('Imagenes/logo.png')); ?>">
 
 						<div class="slide-image">
 
 							<a href="#">
-								<img src="{{ asset('Imagenes/slide-img-1-3.png') }}" class="img-responsive" />
+								<img src="<?php echo e(asset('Imagenes/slide-img-1-3.png')); ?>" class="img-responsive" />
 							</a>
 						</div>
 
@@ -187,7 +187,7 @@
 						<div class="slide-image">
 
 							<a href="#">
-								<img src="{{ asset('Imagenes/slide-img-1.png') }}" class="img-responsive" />
+								<img src="<?php echo e(asset('Imagenes/slide-img-1.png')); ?>" class="img-responsive" />
 							</a>
 						</div>
 
@@ -299,7 +299,7 @@
 				<!-- Portfolio Item in Widget -->
 				<div class="portfolio-item">
 					<a href="portfolio-single.html" class="image">
-						<img src="{{ asset('imagenes/portfolio-thumb-1.png') }}" class="img-rounded" />
+						<img src="<?php echo e(asset('imagenes/portfolio-thumb-1.png')); ?>" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>
 
@@ -323,7 +323,7 @@
 				<!-- Portfolio Item in Widget -->
 				<div class="portfolio-item">
 					<a href="portfolio-single.html" class="image">
-						<img src="{{ asset('imagenes/portfolio-thumb-2.png') }}" class="img-rounded" />
+						<img src="<?php echo e(asset('imagenes/portfolio-thumb-2.png')); ?>" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>
 
@@ -347,7 +347,7 @@
 				<!-- Portfolio Item in Widget -->
 				<div class="portfolio-item">
 					<a href="portfolio-single.html" class="image">
-						<img src="{{ asset('imagenes/portfolio-thumb-3.png') }}" class="img-rounded" />
+						<img src="<?php echo e(asset('imagenes/portfolio-thumb-3.png')); ?>" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>
 
@@ -372,21 +372,7 @@
 
 </section>
 <!-- Call for Action Button -->
-{{-- <div class="container">
-	<div class="row vspace">
-		<div class="col-md-12">
 
-			<div class="callout-action">
-				<h2>Get your copy of Neon now</h2>
-
-				<div class="callout-button">
-					<a href="index.html" class="btn btn-secondary">Purchase</a>
-				</div>
-			</div>
-
-		</div>
-	</div>
-</div> --}}
 <!-- Testimonails -->
 <section class="testimonials-container">
 
@@ -465,19 +451,19 @@
 					<div class="item active">
 
 						<a href="#">
-							<img src="{{ asset('neonFrontEnd/assets/images/client-logo-1.png') }}" />
+							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1.png')); ?>" />
 						</a>
 
 						<a href="#">
-							<img src="{{ asset('neonFrontEnd/assets/images/client-logo-1.png') }}" />
+							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1.png')); ?>" />
 						</a>
 
 						<a href="#">
-							<img src="{{ asset('neonFrontEnd/assets/images/client-logo-1.png') }}" />
+							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1.png')); ?>" />
 						</a>
 
 						<a href="#">
-							<img src="{{ asset('neonFrontEnd/assets/images/client-logo-1.png') }}" />
+							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1.png')); ?>" />
 						</a>
 
 					</div>
@@ -485,19 +471,19 @@
 					<div class="item">
 
 						<a href="#">
-							<img src="{{ asset('neonFrontEnd/assets/images/client-logo-1.png') }}" />
+							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1.png')); ?>" />
 						</a>
 
 						<a href="#">
-							<img src="{{ asset('neonFrontEnd/assets/images/client-logo-1.png') }}" />
+							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1.png')); ?>" />
 						</a>
 
 						<a href="#">
-							<img src="{{ asset('neonFrontEnd/assets/images/client-logo-1.png') }}" />
+							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1.png')); ?>" />
 						</a>
 
 						<a href="#">
-							<img src="{{ asset('neonFrontEnd/assets/images/client-logo-1.png') }}" />
+							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1.png')); ?>" />
 						</a>
 
 					</div>
@@ -521,7 +507,7 @@
                 <div class="col-sm-6">
 
                     <a href="https://universitariadecolombia.edu.co">
-                        <img src="{{ asset('neonFrontEnd/assets/images/logo1.png') }}" width="120"/>
+                        <img src="<?php echo e(asset('neonFrontEnd/assets/images/logo1.png')); ?>" width="120"/>
                     </a>
 
                     <p>
@@ -603,15 +589,16 @@
 
 
 	<!-- Bottom scripts (common) -->
-	<script src="{{ asset('neonFrontEnd/assets/js/gsap/TweenMax.min.js') }}"></script>
-	<script src="{{ asset('neonFrontEnd/assets/js/bootstrap.js') }}"></script>
-	<script src="{{ asset('neonFrontEnd/assets/js/joinable.js') }}"></script>
-	<script src="{{ asset('neonFrontEnd/assets/js/resizeable.js') }}"></script>
-	<script src="{{ asset('neonFrontEnd/assets/js/neon-slider.js') }}"></script>
+	<script src="<?php echo e(asset('neonFrontEnd/assets/js/gsap/TweenMax.min.js')); ?>"></script>
+	<script src="<?php echo e(asset('neonFrontEnd/assets/js/bootstrap.js')); ?>"></script>
+	<script src="<?php echo e(asset('neonFrontEnd/assets/js/joinable.js')); ?>"></script>
+	<script src="<?php echo e(asset('neonFrontEnd/assets/js/resizeable.js')); ?>"></script>
+	<script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-slider.js')); ?>"></script>
 
 
 	<!-- JavaScripts initializations and stuff -->
-	<script src="{{ asset('neonFrontEnd/assets/js/neon-custom.js') }}"></script>
+	<script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-custom.js')); ?>"></script>
 
 </body>
 </html>
+<?php /**PATH C:\xampp\htdocs\AppTransacional\AppTransaccional-v4.2rc\resources\views/welcome.blade.php ENDPATH**/ ?>
