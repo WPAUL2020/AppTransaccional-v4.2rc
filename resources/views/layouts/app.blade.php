@@ -97,57 +97,57 @@
                         </ul>
                     </li>
                     <li class="has-sub">
-                        <a href="layout-api.html">
-                            <i class="entypo-layout"></i>
+                        <a href="{{URL::to('UsuariosTercero')}}">
+                            <i class="entypo-user"></i>
                             <span class="title">Gestión Usuarios Externos</span>
                         </a>
                         <ul>
                             <li>
-                                <a href="layout-api.html">
-                                    <span class="title">Gestionar</span>
+                                <a href="{{URL::to('UsuariosTercero')}}">
+                                    <span class="title"><i class="entypo-user"></i> Gestionar</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-collapsed-sidebar.html">
-                                    <span class="title">Crear</span>
+                                    <span class="title"><i class="entypo-user"></i> Crear</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-fixed-sidebar.html">
-                                    <span class="title">Editar</span>
+                                    <span class="title"> <i class="entypo-user"></i> Editar</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-chat-open.html">
-                                    <span class="title">Actualizar</span>
+                                    <span class="title"><i class="entypo-user"></i> Actualizar</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="has-sub">
-                        <a href="layout-api.html">
-                            <i class="entypo-layout"></i>
+                        <a href="{{URL::to('UsuariosInterno')}}">
+                            <i class="entypo-user"></i>
                             <span class="title">Gestión Usuarios Internos</span>
                         </a>
                         <ul>
                             <li>
-                                <a href="layout-api.html">
-                                    <span class="title">Gestionar</span>
+                                <a href="{{URL::to('UsuariosInterno')}}">
+                                    <span class="title"><i class="entypo-user"></i> Gestionar</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-collapsed-sidebar.html">
-                                    <span class="title">Crear</span>
+                                    <span class="title"><i class="entypo-user"></i> Crear</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-fixed-sidebar.html">
-                                    <span class="title">Editar</span>
+                                    <span class="title"><i class="entypo-user"></i> Editar</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-chat-open.html">
-                                    <span class="title">Actualizar</span>
+                                    <span class="title"><i class="entypo-user"></i> Actualizar</span>
                                 </a>
                             </li>
                         </ul>
@@ -374,6 +374,20 @@
                             </li>
                         </ul>
                     </li>
+                </li>
+                <li class="has-sub">
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                        <i class="entypo-logout"></i>
+                        <span class="title">Logout</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                                <span class="title">Logout  <i class="entypo-logout"></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 </ul>
 
             </div>
