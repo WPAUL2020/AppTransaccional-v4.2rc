@@ -17,7 +17,7 @@ class EmpleadosTerceroController extends Controller
 {
     public function mostrarEmpleadosTer(Request $request)
     {
-        $request->user()->authorizeRoles('ADMINISTRADOR CLIENTE');
+        $request->user()->authorizeRoles(['ADMINISTRADOR CLIENTE' , 'ADMINISTRADOR']);
         if (Auth::check()){
             $user = Auth::user();
             // print($user->ID_EMPRESA_TERCERO);
@@ -75,11 +75,13 @@ class EmpleadosTerceroController extends Controller
 
    public function getFrmInsertTercero()
    {
+    $user = Auth::user();
+    $empresa = EmpresaTercero::where ('ID_EMPRESA_TERCERO',$user->ID_EMPRESA_TERCERO)->first();
     $roles = rol::all();
     $cargos = cargo::all();
     $TipoIdents = TipoIdent::all();
     $EmpresaTerceros = EmpresaTercero::all();
-       return view('GesUserTerCrear')->with(['roles'=>$roles, 'cargos'=>$cargos, 'TipoIdents'=>$TipoIdents, 'EmpresaTerceros'=>$EmpresaTerceros]);
+       return view('GesUserTerCrear')->with(['roles'=>$roles, 'cargos'=>$cargos, 'TipoIdents'=>$TipoIdents, 'empresa'=>$empresa]);
    }
 
    public function changeUser(Request $EmpleadosTercero,$ID_EMPLEADO_TERCERO)
