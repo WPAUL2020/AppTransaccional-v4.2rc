@@ -187,8 +187,11 @@ endif; ?>
 </div>
 </div>
 </div>
-
-
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('Scripts'); ?>
+    		<!-- Imported scripts on this page -->
+            <script src="<?php echo e(asset('neonFrontEnd/assets/js/jquery.inputmask.bundle.js')); ?>"></script>
+            <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-chat.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/AppTransaccional-v4.2rc/resources/views/generarFactura.blade.php ENDPATH**/ ?>

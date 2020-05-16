@@ -76,7 +76,7 @@ class EmpleadosTerceroController extends Controller
    public function getFrmInsertTercero()
    {
     $user = Auth::user();
-    $empresa = EmpresaTercero::where ('ID_EMPRESA_TERCERO',$user->ID_EMPRESA_TERCERO)->first();
+    $empresa = EmpresaTercero::where ('ID_EMPRESA_TERCERO',$user->ID_EMPRESA_TERCERO)->get();
     $roles = rol::all();
     $cargos = cargo::all();
     $TipoIdents = TipoIdent::all();

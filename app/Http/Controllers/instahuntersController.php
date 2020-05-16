@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use GuzzleHttp\Middleware;
 use GuzzleHttp\Client;
-use Illuminate\Pagination\LengthAwarePaginator;
-use Illuminate\Pagination\Paginator;
-use Illuminate\Support\Collection;
+use GuzzleHttp\Middleware;
 use App\Exports\exportData;
-use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class instahuntersController extends Controller
 {
@@ -32,6 +34,13 @@ class instahuntersController extends Controller
      * @var string
      */
     protected $data2view;
+
+    /**
+     * $nitCliente
+     *
+     * @var int
+     */
+    protected $nitCliente;
 
 
     public function __construct(Request $request) {

@@ -66,7 +66,7 @@
 						<a href="<?php echo e(URL::to('MedioPagos')); ?>" class="like">
 							<i class="entypo-heart"></i>
 						</a>
-						<center><a href="<?php echo e(URL::to('MedioPagos')); ?>" class="btn btn-primary">Gestión Usuarios Externos</a></center>
+						<center><a href="<?php echo e(URL::to('MedioPagos')); ?>" class="btn btn-primary">Medios de pago</a></center>
 					</h4>
 				</div>
 
@@ -83,7 +83,7 @@
 						<a href="<?php echo e(URL::to('Categorias')); ?>" class="like">
 							<i class="entypo-heart"></i>
 						</a>
-						<center><a href="<?php echo e(URL::to('Categorias')); ?>" class="btn btn-primary">Categorias</a></center>
+						<center><a href="<?php echo e(URL::to('Categorias')); ?>" class="btn btn-primary">Productos</a></center>
 					</h4>
 				</div>
 
