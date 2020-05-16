@@ -137,7 +137,7 @@
 						<div class="slide-image">
 
 							<a href="#">
-								<img src="{{ asset('Imagenes/logo.png') }}" class="img-responsive" />
+								<img src="{{ asset('Imagenes/slide-img-1-2.png') }}" class="img-responsive" />
 							</a>
 						</div>
 
@@ -149,20 +149,20 @@
 						<div class="slide-image">
 
 							<a href="#">
-								<img src="{{ asset('Imagenes/logo.png') }}" class="img-responsive" />
+								<img src="{{ asset('Imagenes/slide-img-1-3.png') }}" class="img-responsive" />
 							</a>
 						</div>
 
 						<div class="slide-content text-right">
 							<h2>
 								<small>Big Data</small>
-								Powerful
+								Control de sus Servicios
 							</h2>
 
 							<p>
-								Designed for Bootstrap Framework, the theme works <br />
-								perfectly on any device, you can use it on<br />
-								 your smartphone, tablet or your laptop.
+								Sientase libre Administrando todos sus servicios, <br />
+								su empresa,<br />
+								sus clientes, sus empleados.
 							</p>
 
 						</div>
@@ -175,19 +175,19 @@
 						<div class="slide-content">
 							<h2>
 								<small>Big Data</small>
-								Responsive &amp; Retina
+								Visualiza &amp; Analiza
 							</h2>
 
 							<p>
-								Device type is not a problem if you use Neon theme for your application UI.<br />
-								It's packed with latest Bootstrap framework and it's compatible for Large Screens, Tablets and Smartphones.
+								Cambia la forma de manejar la información, organizada, intuitiva, <br />
+								transformar los modelos de negocio.
 							</p>
 						</div>
 
 						<div class="slide-image">
 
 							<a href="#">
-								<img src="{{ asset('neonFrontEnd/assets/images/slide-img-1.png') }}" class="img-responsive" />
+								<img src="{{ asset('Imagenes/slide-img-1.png') }}" class="img-responsive" />
 							</a>
 						</div>
 
@@ -299,7 +299,7 @@
 				<!-- Portfolio Item in Widget -->
 				<div class="portfolio-item">
 					<a href="portfolio-single.html" class="image">
-						<img src="{{ asset('neonFrontEnd/assets/images/portfolio-thumb-1.png') }}" class="img-rounded" />
+						<img src="{{ asset('imagenes/portfolio-thumb-1.png') }}" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>
 
@@ -323,7 +323,7 @@
 				<!-- Portfolio Item in Widget -->
 				<div class="portfolio-item">
 					<a href="portfolio-single.html" class="image">
-						<img src="{{ asset('neonFrontEnd/assets/images/portfolio-thumb-1.png') }}" class="img-rounded" />
+						<img src="{{ asset('imagenes/portfolio-thumb-2.png') }}" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>
 

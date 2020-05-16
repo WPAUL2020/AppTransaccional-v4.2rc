@@ -12,3 +12,24 @@ h2{
     color: honeydew;
 }
 
+
+.img{
+    margin:10px auto;
+    border-radius:5px;
+    
+    padding:13px;
+    width:220px;
+    height:220px;
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    background:url(../img/imagen.jpg);
+    background-size: cover;
+    }
+  .img img{
+    width: 100%;
+  }
+  @media all and (min-width: 500px) and (max-width: 1000px)
+  {  
+  
+  }
+ 

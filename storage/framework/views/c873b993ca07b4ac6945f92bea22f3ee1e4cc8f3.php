@@ -24,14 +24,14 @@
 
         </div>
     </section>
-<div class="container">
+<div class="container fondo_container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header text-center display-4"><h1> InstaHunters <i class="fas fa-spider"></i>
-                </div>
-                <div class="card-header text-center text-primary display-4 ">
-                    <a href="https://universitariadecolombia.edu.co/programas/profesionales/ingenieria-de-sistemas/" class="text-primary"> by Semillero Ing. de Sistemas, Universitaria de Colombia.</a></div>
+            <div class="card justify-content-center">
+                
+                <a class="img">
+                    <img src="<?php echo e(asset('imagenes/instahunterss.gif')); ?>" />                    
+                </a>
                 <div class="card-body display-4">
                     <form method="POST" action="<?php echo e(URL::to('instahunters/instahunters')); ?>" class="form-horizontal"> <?php echo e(csrf_field()); ?>
 
@@ -84,6 +84,7 @@ endif; ?>
             </center>
         </div>
     </div>
+</div>
 </div>
 <footer>
     <?php if($data2view!=null): ?>
