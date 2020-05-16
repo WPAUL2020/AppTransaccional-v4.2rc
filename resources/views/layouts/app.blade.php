@@ -57,8 +57,8 @@
 
                     <!-- logo -->
                     <div class="logo">
-                        <a href="index.html">
-                            <img src="assets/images/logo@2x.png" width="120" alt="" />
+                        <a href="{{ url('/') }}">
+                            <img src="{{ asset('Imagenes/logo.png') }}" width="120" alt="" />
                         </a>
                     </div>
 
@@ -893,7 +893,7 @@
 	<script src="{{ asset('neonFrontEnd/assets/js/joinable.js') }}"></script>
 	<script src="{{ asset('neonFrontEnd/assets/js/resizeable.js') }}"></script>
     <script src="{{ asset('neonFrontEnd/assets/js/neon-api.js') }}"></script>
-@yield('Scripts')
+    @yield('Scripts')
 
 <script>
     $("#menu-toggle").click(function(e) {
