@@ -154,13 +154,69 @@
                     </li>
                     <li class="has-sub">
                         <a href="layout-api.html">
-                            <i class="entypo-layout"></i>
-                            <span class="title">Gestión Usuarios Clientes</span>
+                            <i class="entypo-user"></i>
+                            <span class="title">Gestión Clientes</span>
                         </a>
                         <ul>
                             <li>
                                 <a href="layout-api.html">
                                     <span class="title">Gestionar</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="layout-collapsed-sidebar.html">
+                                    <span class="title"> Crear</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="layout-fixed-sidebar.html">
+                                    <span class="title"> Editar</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="layout-chat-open.html">
+                                    <span class="title"><i class="entypo-user"></i> Actualizar</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="has-sub">
+                        <a href="layout-api.html">
+                            <i class="entypo-user"></i>
+                            <span class="title">Gestión Roles</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="layout-api.html">
+                                    <span class="title"><i class="entypo-user"></i> Gestionar</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="layout-collapsed-sidebar.html">
+                                    <span class="title"><i class="entypo-user"></i> Crear</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="layout-fixed-sidebar.html">
+                                    <span class="title"><i class="entypo-user"></i> Editar</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="layout-chat-open.html">
+                                    <span class="title"><i class="entypo-user"></i> Actualizar</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="has-sub">
+                        <a href="layout-api.html">
+                            <i class="entypo-user"></i>
+                            <span class="title">Gestion Cargos</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="layout-api.html">
+                                    <span class="title"><i class="entypo-user"></i>Gestionar</span>
                                 </a>
                             </li>
                             <li>
@@ -183,63 +239,7 @@
                     <li class="has-sub">
                         <a href="layout-api.html">
                             <i class="entypo-layout"></i>
-                            <span class="title">Gestión Usuarios Roles</span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="layout-api.html">
-                                    <span class="title">Gestionar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-collapsed-sidebar.html">
-                                    <span class="title">Crear</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-fixed-sidebar.html">
-                                    <span class="title">Editar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-chat-open.html">
-                                    <span class="title">Actualizar</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-sub">
-                        <a href="layout-api.html">
-                            <i class="entypo-layout"></i>
-                            <span class="title">Gestion Usuarios Cargos</span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="layout-api.html">
-                                    <span class="title">Gestionar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-collapsed-sidebar.html">
-                                    <span class="title">Crear</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-fixed-sidebar.html">
-                                    <span class="title">Editar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-chat-open.html">
-                                    <span class="title">Actualizar</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-sub">
-                        <a href="layout-api.html">
-                            <i class="entypo-layout"></i>
-                            <span class="title">Gestion Usuarios Sector (Empresa)</span>
+                            <span class="title">Gestion (Empresa)</span>
                         </a>
                         <ul>
                             <li>
@@ -280,7 +280,7 @@
                     <li class="has-sub">
                         <a href="layout-api.html">
                             <i class="entypo-layout"></i>
-                            <span class="title">Gestion Usuarios Externos</span>
+                            <span class="title">Medios de Pago</span>
                         </a>
                         <ul>
                             <li>
