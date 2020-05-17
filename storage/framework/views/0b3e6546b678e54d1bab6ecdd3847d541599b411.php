@@ -40,6 +40,7 @@
 	<link rel="stylesheet" href="<?php echo e(asset('neonFrontEnd/assets/css/neon-theme.css')); ?>">
 	<link rel="stylesheet" href="<?php echo e(asset('neonFrontEnd/assets/css/neon-forms.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('neonFrontEnd/assets/css/custom.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('css/formulario.css')); ?>">
     <!-- Scripts -->
     <script src="<?php echo e(asset('neonFrontEnd/assets/js/jquery-1.11.3.min.js')); ?>"></script>
 
@@ -239,7 +240,7 @@
                     <li class="has-sub">
                         <a href="layout-api.html">
                             <i class="entypo-layout"></i>
-                            <span class="title">Gestion (Empresa)</span>
+                            <span class="title">Gestion Sector (Empresa)</span>
                         </a>
                         <ul>
                             <li>

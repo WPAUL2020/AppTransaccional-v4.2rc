@@ -26,7 +26,7 @@
         </div>
     </section>
 <body>
-<div class="container">
+<div class="container fondo_container">
     <div class="row">
             <div class="">
                 <h2> REGISTRO DE EMPRESAS</h2>
@@ -37,7 +37,7 @@
     <form method="POST" action="<?php echo e(URL::to('clientes/guardar')); ?>"> <?php echo e(csrf_field()); ?>
 
   <div class="form-row">
-    <div class="col">
+    <div class="col-sm-6">
     <label for="">Tipo de Sector de La compañia:</label>
         <select name="ID_SECTOR_EMPRESA_TERCERO" id="ID_SECTOR_EMPRESA_TERCERO" class="form-control">
         <option value="">--Escoja Tipo de Sector de la Empresa--</option>
@@ -47,7 +47,7 @@
         </select>
         <span class="text-danger"><?php echo e($errors->first("ID_SECTOR_EMPRESA_TERCERO")); ?></span>
     </div>
-    <div class="col">
+    <div class="col-sm-6">
     <label>Nombre Completo de la Compañia:</label>
     <input type="text" name="NOMBRE" class="form-control" placeholder="Nombre Completo">
     <span class="text-danger"><?php echo e($errors->first("NOMBRE")); ?></span>
@@ -55,12 +55,12 @@
   </div>
 
   <div class="form-row">
-    <div class="col">
+    <div class="col-sm-6">
     <label>Direcciòn de la Compañia:</label>
     <input type="text" name="DIRECCION" class="form-control" placeholder="Direcciòn">
     <span class="text-danger"><?php echo e($errors->first("DIRECCION")); ?></span>
     </div>
-    <div class="col">
+    <div class="col-sm-6">
     <label>Telefono de la Compañia</label>
     <input type="phone" name="TELEFONO" class="form-control" placeholder="Telefono">
     <span class="text-danger"><?php echo e($errors->first("TELEFONO")); ?></span>
@@ -68,12 +68,12 @@
   </div>
 
   <div class="form-row">
-    <div class="col">
+    <div class="col-sm-6">
     <label>Pais:</label>
     <input value="COLOMBIA" type="text" name="PAIS" class="form-control" placeholder="Pais" value="COLOMBIA">
     <span class="text-danger"><?php echo e($errors->first("PAIS")); ?></span>
     </div>
-    <div class="col">
+    <div class="col-sm-6">
     <label>Ciudad:</label>
     <input type="text" name="CIUDAD" class="form-control" placeholder="Ciudad">
     <span class="text-danger"><?php echo e($errors->first("CIUDAD")); ?></span>
@@ -81,13 +81,13 @@
   </div>
 
   <div class="form-row">
-    <div class="col">
+    <div class="col-sm-6">
     <label>Correo Electronico:</label>
     <input type="email" name="CORREO" class="form-control" placeholder="Correo Electronico">
     <span class="text-danger"><?php echo e($errors->first("CORREO")); ?></span>
     </div>
 
-    <div class="col">
+    <div class="col-sm-6">
     <label>Sitio Web:</label>
     <input type="text" name="WEBSITE" class="form-control" placeholder="Sitio Web">
     <span class="text-danger"><?php echo e($errors->first("WEBSITE")); ?></span>
@@ -95,19 +95,19 @@
   </div>
 
   <div class="form-row">
-    <div class="col">
+    <div class="col-sm-6">
     <label>NIT de la compañia:</label>
     <input type="text" name="NIT" class="form-control" placeholder="NIT de la compañia">
     <span class="text-danger"><?php echo e($errors->first("NIT")); ?></span>
     </div>
 
-  <div class="col">
+  <div class="col-sm-6">
     <label>Usuario:</label>
     <input type="email" name="USUARIO" class="form-control" placeholder="Usuario Correo">
     <span class="text-danger"><?php echo e($errors->first("USUARIO")); ?></span>
   </div>
 
-  <div class="col">
+  <div class="col-sm-6">
     <label>Contraseña:</label>
     <input type="password" name="CONTRASENA" class="form-control" placeholder="PASSWORD">
     <span class="text-danger"><?php echo e($errors->first("CONTRASENA")); ?></span>
@@ -116,7 +116,7 @@
 
 
   <div class="form-row">
-    <div class="col">
+    <div class="col-sm-6">
     <label for="">Rol del Propietario:</label>
         <select name="ID_ROL" id="ID_ROL" class="form-control">
         <option value="">--Escoja Tipo de Rol--</option>
@@ -126,7 +126,7 @@
         </select>
         <span class="text-danger"><?php echo e($errors->first("ID_ROL")); ?></span>
     </div>
-    <div class="col">
+    <div class="col-sm-6">
     <label>Estado:</label>
     <select name="ESTADO"class="form-control">
     <option value="">--Escoja Estado--</option>
@@ -137,7 +137,7 @@
   </div>
   </div>
   <div class="form-group">
-  <div class="col">
+  <div class="col-sm-6">
     <label>Observaciones:</label>
     <textarea name="OBSERVACION" class="form-control" placeholder="Escribe tu Observación"></textarea>
   </div>
@@ -150,6 +150,7 @@
   </div>
   </div>
 </form>
+</div>
 </body>
 </html>
 <?php $__env->stopSection(); ?>

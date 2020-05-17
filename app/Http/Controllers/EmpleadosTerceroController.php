@@ -78,10 +78,11 @@ class EmpleadosTerceroController extends Controller
     $user = Auth::user();
     $empresa = EmpresaTercero::where ('ID_EMPRESA_TERCERO',$user->ID_EMPRESA_TERCERO)->get();
     $roles = rol::all();
+    // $roles = rol::where ('dependency'->EXTERNO)->get();
     $cargos = cargo::all();
     $TipoIdents = TipoIdent::all();
     $EmpresaTerceros = EmpresaTercero::all();
-       return view('GesUserTerCrear')->with(['roles'=>$roles, 'cargos'=>$cargos, 'TipoIdents'=>$TipoIdents, 'empresa'=>$empresa]);
+    return view('GesUserTerCrear')->with(['roles'=>$roles, 'cargos'=>$cargos, 'TipoIdents'=>$TipoIdents, 'empresa'=>$empresa]);
    }
 
    public function changeUser(Request $EmpleadosTercero,$ID_EMPLEADO_TERCERO)
