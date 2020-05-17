@@ -119,9 +119,6 @@ class instahuntersController extends Controller
         }
 
 
-
-
-
     }
 
 
