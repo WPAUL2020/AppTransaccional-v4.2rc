@@ -33,7 +33,7 @@
                 <div class="card-header text-center text-primary display-4 ">
                     <a href="https://universitariadecolombia.edu.co/programas/profesionales/ingenieria-de-sistemas/" class="text-primary"> by Semillero Ing. de Sistemas, Universitaria de Colombia.</a></div>
                 <div class="card-body display-4">
-                    <form method="POST" action="<?php echo e(URL::to('instahunters/instahunters')); ?>" class="form-horizontal"> <?php echo e(csrf_field()); ?>
+                    <form method="POST" action="<?php echo e(route('scrapPost')); ?>" class="form-horizontal"> <?php echo e(csrf_field()); ?>
 
                          <div class="form-group row card-header text-center display-4">
                             <select name="campoSelect" class="form-control">
