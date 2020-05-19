@@ -26,7 +26,7 @@
 
         </div>
     </section>
-<div class="container">
+<div class="container fondo_container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -77,6 +77,8 @@
             </center>
         </div>
     </div>
+</div>
+
 </div>
 <footer>
     @if ($data2view!=null)

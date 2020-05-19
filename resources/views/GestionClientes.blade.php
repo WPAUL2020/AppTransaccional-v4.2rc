@@ -30,9 +30,11 @@
     </section>
 <br>
 <BR>
-<div class="container">
-   <table class="table table-striped text-center">
-                   <tr><th class="text-center">SECTOR</th>
+<div class="table100 ver2 m-b-110">
+   <table class="table table-striped text-center" data-vertable="ver2">
+                <thead>
+                   <tr class="row100 head">
+                       <th class="text-center">SECTOR</th>
                        <th class="text-center">NOMBRE</th>
                        <th class="text-center">DIRECCION</th>
                        <th class="text-center">TELEFONO</th>
@@ -43,8 +45,10 @@
                        <th class="text-center">OBSERVACION</th>
                        <th class="text-center">ACCIONES</th>
                    </tr>
+                </thead>
                    @foreach($users as $users1)
-                   <tr><td>{{ $users1->ID_SECTOR_EMPRESA_TERCERO}}</td>
+                   <tr class="row100">
+                       <td>{{ $users1->ID_SECTOR_EMPRESA_TERCERO}}</td>
                        <td>{{ $users1->NOMBRE }}</td>
                        <td>{{ $users1->DIRECCION }}</td>
                        <td>{{ $users1->TELEFONO }}</td>
@@ -56,7 +60,7 @@
                        <td>
                             <a href="GestionClientesEdit/updateEmpresa/{{$users1->ID_EMPRESA_TERCERO}}" class="btn btn-secondary">EDITAR</a>
                        </td>
-                       </tr>
+                    </tr>
                    @endforeach
 
 </table>

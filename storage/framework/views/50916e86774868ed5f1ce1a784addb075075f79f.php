@@ -24,7 +24,7 @@
 
         </div>
     </section>
-<div class="container">
+<div class="container fondo_container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -33,7 +33,7 @@
                 <div class="card-header text-center text-primary display-4 ">
                     <a href="https://universitariadecolombia.edu.co/programas/profesionales/ingenieria-de-sistemas/" class="text-primary"> by Semillero Ing. de Sistemas, Universitaria de Colombia.</a></div>
                 <div class="card-body display-4">
-                    <form method="POST" action="<?php echo e(URL::to('instahunters/instahunters')); ?>" class="form-horizontal"> <?php echo e(csrf_field()); ?>
+                    <form method="POST" action="<?php echo e(route('scrapPost')); ?>" class="form-horizontal"> <?php echo e(csrf_field()); ?>
 
                          <div class="form-group row card-header text-center display-4">
                             <select name="campoSelect" class="form-control">
@@ -85,6 +85,8 @@ endif; ?>
         </div>
     </div>
 </div>
+
+</div>
 <footer>
     <?php if($data2view!=null): ?>
         <div>
@@ -98,4 +100,4 @@ endif; ?>
 </footer>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\AppTransacional\AppTransaccional-v4.2rc\resources\views/instahunters.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\AppTransaccional-v4.2rc\resources\views/instahunters.blade.php ENDPATH**/ ?>
