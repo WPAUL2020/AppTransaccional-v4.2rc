@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\GestionClientes as clientes;
 use App\sector_empresa_tercero as SectorEmpresa;
 use App\role as rol;
+use App\Ciudad as Ciudad;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -88,7 +89,8 @@ class ClientesController extends Controller
     {
      $roles = rol::all();
      $SectorEmpresas = SectorEmpresa::all();
-        return view('clientes')->with(['roles'=>$roles, 'SectorEmpresas'=>$SectorEmpresas]);
+     $Ciudad = Ciudad::all();
+        return view('clientes')->with(['roles'=>$roles, 'SectorEmpresas'=>$SectorEmpresas, 'Ciudad'=>$Ciudad]);
     }
 
     public function changeEmpresa(Request $ID_EMPRESA_TERCERO, $clientes)
