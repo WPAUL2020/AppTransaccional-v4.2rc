@@ -4,12 +4,12 @@ body{
   font-family: 'Mukta', sans-serif;
 	height:100vh;
 	min-height:550px;
-	background-image: url();
 	background-repeat: no-repeat;
 	background-size:cover;
 	background-position:center;
 	position:relative;
     overflow-y: hidden;
+    background: radial-gradient(circle at 100% 0, #E0F8E6 10%, #E0F2F7, #A9D0F5);
 }
 a{
   text-decoration:none;
@@ -105,9 +105,15 @@ a{
     border: none;
     padding: 10px;
     text-transform: uppercase;
-    border-radius: 2px;
     float:right;
     cursor:pointer;
+    font-weight: 700;
+    transition: color 0.5s, background 0.5s;
+    border-radius: 10px;
+}
+.login-show a:hover {
+    color: #FAFAFA;
+    background: linear-gradient(90deg, #2c7715, #04B404);
 }
 .login-show a{
     display:inline-block;
@@ -133,6 +139,11 @@ a{
     border-radius: 2px;
     float:right;
     cursor:pointer;
+    border-radius: 10px;
+}
+.register-show a:hover {
+    color: #FAFAFA;
+    background: linear-gradient(90deg, #2c7715, #04B404);
 }
 .credit {
     position:absolute;
