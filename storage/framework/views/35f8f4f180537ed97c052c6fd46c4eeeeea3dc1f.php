@@ -107,7 +107,6 @@
                             </li>
                         </ul>
                     </li>
-                    
                     <li class="has-sub">
                         <a href="<?php echo e(URL::to('UsuariosTercero')); ?>">
                             <i class="entypo-user"></i>
@@ -619,4 +618,4 @@
         <script src="resources/js/main.js"></script>
 </body>
 </html>
-<?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/AppTransaccional-v4.2rc/resources/views/layouts/app.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\AppTransaccional-v4.2rc\resources\views/layouts/app.blade.php ENDPATH**/ ?>

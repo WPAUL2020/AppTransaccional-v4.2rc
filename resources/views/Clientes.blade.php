@@ -81,6 +81,8 @@
                     @foreach($Ciudad as $Ciudad)
                          <option value="{{$Ciudad->NOMBRE_CIUDAD}}">{{$Ciudad->NOMBRE_CIUDAD}}</option>
                     @endforeach
+        </select>
+        <span class="text-danger">{{$errors->first("CIUDAD")}}</span>
     </div>
   </div>
 

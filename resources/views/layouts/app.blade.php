@@ -41,6 +41,16 @@
 	<link rel="stylesheet" href="{{ asset('neonFrontEnd/assets/css/neon-forms.css') }}">
     <link rel="stylesheet" href="{{ asset('neonFrontEnd/assets/css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('css/formulario.css') }}">
+    <!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="../vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="css/util.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    
     <!-- Scripts -->
     <script src="{{ asset('neonFrontEnd/assets/js/jquery-1.11.3.min.js') }}"></script>
 
@@ -596,5 +606,15 @@
 
 		<!-- Demo Settings -->
         <script src="{{ asset('neonFrontEnd/assets/js/neon-demo.js') }}"></script>
+
+        <!--===============================================================================================-->	
+	    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="resources/js/main.js"></script>
 </body>
 </html>
