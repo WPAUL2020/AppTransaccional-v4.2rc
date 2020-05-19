@@ -272,8 +272,11 @@ body {
   font-size: 13px;
   line-height: 1.42857143;
   color: #333333;
-  background-color: #fff;
+  background: radial-gradient(circle at 100% 0, #E0F8E6 10%, #E0F2F7, #A9D0F5); 
 }
+/*body{
+  background-image: url(AppTransaccional-v4.2rc/public/Imagenes/logo.png);
+}*/
 input,
 button,
 select,
@@ -2205,6 +2208,8 @@ select[multiple].input-lg {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border-radius: 10px;
+  
 }
 .btn:focus,
 .btn:active:focus,
@@ -2720,6 +2725,7 @@ tbody.collapse.in {
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box;
+  border-radius: 10px;
 }
 .dropdown-menu.pull-right {
   right: 0;
@@ -2829,6 +2835,9 @@ tbody.collapse.in {
   position: relative;
   display: inline-block;
   vertical-align: middle;
+}
+.btn-group .left-dropdown{
+  border-radius: 10px;
 }
 .btn-group > .btn,
 .btn-group-vertical > .btn {

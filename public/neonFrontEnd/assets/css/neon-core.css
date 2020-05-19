@@ -5912,7 +5912,7 @@ float: left;
   display: table-cell;
   vertical-align: top;
   padding: 20px;
-  background: #ffffff;
+  background: radial-gradient(circle at 100% 0, #E0F8E6 10%, #E0F2F7, #A9D0F5);
   width: 100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
