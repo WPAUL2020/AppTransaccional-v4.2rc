@@ -26,17 +26,19 @@
     </section>
 <br>
 <BR>
-<div class="container">
-   <table class="table table-striped text-center">
-                   <tr><th class="text-center">ID</th>
+<div class="table100 ver2 m-b-110">
+   <table class="table table-striped text-center" data-vertable="ver2">
+                   <tr class="row100 head">
+                       <th class="text-center">ID</th>
                        <th class="text-center">SECTOR DE LA EMPRESA</th>
                        <th class="text-center">DESCRIPCION</th>
                    </tr>
                    <?php $__currentLoopData = $sector; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $users1): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                   <tr><td><?php echo e($users1->ID_SECTOR_EMPRESA_TERCERO); ?></td>
+                   <tr class="row100">
+                       <td><?php echo e($users1->ID_SECTOR_EMPRESA_TERCERO); ?></td>
                        <td><?php echo e($users1->NOMBRE_SECTOR_EMPRESA_TERCERO); ?></td>
                        <td><?php echo e($users1->DESCRIPCION); ?></td>
-                       </tr>
+                   </tr>
                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 </table>

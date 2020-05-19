@@ -27,16 +27,18 @@
     </section>
 <br>
 <BR>
-<div class="container">
-   <table class="table table-striped text-center">
-                   <tr><th class="text-center">ID SERVICIO</th>
+<div class="table100 ver2 m-b-110">
+   <table class="table table-striped text-center" data-vertable="ver2">
+                   <tr class="row100 head">
+                       <th class="text-center">ID SERVICIO</th>
                        <th class="text-center">CATEGORIA</th>
                        <th class="text-center">NOMBRE SERVICIO</th>
                        <th class="text-center">PRECIO UNITARIO</th>
 
                    </tr>
                    @foreach($Servicios as $users1)
-                   <tr><td>{{ $users1->ID_SERVICIO}}</td>
+                   <tr class="row100">
+                       <td>{{ $users1->ID_SERVICIO}}</td>
                        <td>{{ $users1->NOMBRE_CATEGORIA}}</td>
                        <td>{{ $users1->NOMBRE_PRODUCTO}}</td>
                        <td>{{ $users1->PRECIO_UNITARIO }}</td>

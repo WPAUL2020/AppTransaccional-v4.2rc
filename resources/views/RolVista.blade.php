@@ -27,15 +27,17 @@
     </section>
 <br>
 <BR>
-<div class="container">
-   <table class="table table-striped text-center">
-                   <tr><th class="text-center">ID</th>
+<div class="table100 ver2 m-b-110">
+   <table class="table table-striped text-center" data-vertable="ver2">
+                   <tr class="row100 head">
+                       <th class="text-center">ID</th>
                        <th class="text-center">NOMBRE DEL ROL</th>
                        <th class="text-center">DESCRIPCION</th>
                        <th class="text-center">DEPENDENCIA</th>
                    </tr>
                    @foreach($roles as $users1)
-                   <tr><td>{{ $users1->id}}</td>
+                   <tr class="row100">
+                       <td>{{ $users1->id}}</td>
                        <td>{{ $users1->name}}</td>
                        <td>{{ $users1->description}}</td>
                        <td>{{ $users1->dependency}}</td>

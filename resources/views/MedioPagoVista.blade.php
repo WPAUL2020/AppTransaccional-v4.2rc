@@ -28,15 +28,17 @@
     </section>
 <br>
 <BR>
-<div class="container">
-   <table class="table table-striped text-center">
-                   <tr><th class="text-center">ID</th>
+<div class="table100 ver2 m-b-110">
+   <table class="table table-striped text-center" data-vertable="ver2">
+                   <tr class="row100 head">
+                       <th class="text-center">ID</th>
                        <th class="text-center">MEDIO DE PAGO</th>
                    </tr>
                    @foreach($MedioPagos as $users1)
-                   <tr><td>{{ $users1->ID_PAGO}}</td>
+                   <tr class="row100">
+                       <td>{{ $users1->ID_PAGO}}</td>
                        <td>{{ $users1->METODO_PAGO}}</td>
-                       </tr>
+                    </tr>
                    @endforeach
 
 </table>
