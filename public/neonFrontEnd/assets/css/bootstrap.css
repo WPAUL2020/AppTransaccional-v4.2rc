@@ -273,6 +273,7 @@ body {
   font-size: 13px;
   line-height: 1.42857143;
   color: #333333;
+<<<<<<< HEAD
   background-image: url('../images/fondo.jpg');
   background-size: 100% 100%;
   background-attachment: fixed;
@@ -280,10 +281,11 @@ body {
   height:100%;
   
   /* background: radial-gradient(circle at 100% 0, #E0F8E6 10%, #E0F2F7, #A9D0F5);  */
+=======
+  background: radial-gradient(circle at 100% 0, #E0F8E6 10%, #E0F2F7, #A9D0F5);
+>>>>>>> b38bdc736932e08a95aa4b1a0128cfc75fbf89cf
 }
-/*body{
-  background-image: url(AppTransaccional-v4.2rc/public/Imagenes/logo.png);
-}*/
+
 input,
 button,
 select,
@@ -609,6 +611,16 @@ a.bg-danger:focus {
   margin: 36px 0 18px;
   border-bottom: 1px solid #eeeeee;
 }
+
+.bc-3 li{
+  background-color: #FAFAFA;
+  display: inline-block;
+  padding: 3px;
+  border-radius: 5px;
+  border-bottom: 5px solid #31B404;
+  margin-right: 5px;
+}
+
 ul,
 ol {
   margin-top: 0;

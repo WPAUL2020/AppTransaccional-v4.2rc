@@ -13,7 +13,7 @@
 
                     <h1>Gestion Usuarios</h1>
 
-                    <ol class="breadcrumb bc-3" >
+                    <ol class=" bc-3" >
                             <li>
                     <a href="{{URL::to('appl')}}"> <i class="fas fa-angle-left"></i> Regresar</a>
                 </li>

@@ -1,4 +1,9 @@
 <<<<<<< HEAD
+[2020-05-19 23:58:19] local.ERROR: Maximum execution time of 30 seconds exceeded {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Maximum execution time of 30 seconds exceeded at C:\\xampp\\htdocs\\git\\AppTransaccional-v4.2rc\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Auth\\Access\\AuthorizesRequests.php:8)
+[stacktrace]
+#0 {main}
+=======
+<<<<<<< HEAD
 [2020-05-19 23:39:24] local.ERROR: Argument 1 passed to App\Http\Controllers\Controller::validate() must be an instance of Illuminate\Http\Request, string given, called in C:\xampp\htdocs\AppTransaccional-v4.2rc\app\Http\Controllers\ClientesController.php on line 100 {"userId":2,"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Argument 1 passed to App\\Http\\Controllers\\Controller::validate() must be an instance of Illuminate\\Http\\Request, string given, called in C:\\xampp\\htdocs\\AppTransaccional-v4.2rc\\app\\Http\\Controllers\\ClientesController.php on line 100 at C:\\xampp\\htdocs\\AppTransaccional-v4.2rc\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Validation\\ValidatesRequests.php:42)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\AppTransaccional-v4.2rc\\app\\Http\\Controllers\\ClientesController.php(100): App\\Http\\Controllers\\Controller->validate('1', Array, Array)
@@ -310,4 +315,5 @@
 #55 /Applications/XAMPP/xamppfiles/htdocs/AppTransaccional-v4.2rc/server.php(21): require_once('/Applications/X...')
 #56 {main}
 >>>>>>> 0ada718112fb6d927ed628636fd75c05f13b9a09
+>>>>>>> 639a4b6e202f32bca4ed99571ab0561cc5e5bbb2
 "} 
