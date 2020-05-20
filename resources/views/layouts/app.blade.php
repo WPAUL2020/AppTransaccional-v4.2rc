@@ -42,11 +42,11 @@
     <link rel="stylesheet" href="{{ asset('neonFrontEnd/assets/css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('css/formulario.css') }}">
     <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
     <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
+        <link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
     <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="../vendor/perfect-scrollbar/perfect-scrollbar.css">
+        <link rel="stylesheet" type="text/css" href="/vendor/perfect-scrollbar/perfect-scrollbar.css">
     <!--===============================================================================================-->
         <link rel="stylesheet" type="text/css" href="css/util.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -492,8 +492,9 @@
             </div>
             @yield('content')
 
-            <br />
--<!-- Footer Widgets -->
+        <br>
+        </div>
+<!-- Footer Widgets -->
 <section class="footer-widgets">
 
     <div class="container">
