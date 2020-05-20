@@ -79,10 +79,24 @@
   </div>
 
   <div class="form-row">
+<<<<<<< HEAD
+    <div class="col">
+
+    <label for="">Ciudad:</label>
+        <select name="CIUDAD" id="ID_CIUDAD" class="form-control">
+        <option value="">--Escoje la ciudad--</option>
+            <?php $__currentLoopData = $Ciudad; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $Ciudad): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <option value="<?php echo e($Ciudad->NOMBRE_CIUDAD); ?>"><?php echo e($Ciudad->NOMBRE_CIUDAD); ?></option>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </select>
+        <span class="text-danger"><?php echo e($errors->first("CIUDAD")); ?></span>
+    </div>
+=======
     <div class="col-sm-6">
     <label>Ciudad:</label>
     <input type="text" name="CIUDAD" class="form-control" placeholder="Ciudad">
     <span class="text-danger"><?php echo e($errors->first("CIUDAD")); ?></span>
+>>>>>>> 70cb4fc9fedb43c8cad5b2513ce0957b1277518a
     </div>
     <div class="col-sm-6">
     <label>Correo Electronico:</label>
