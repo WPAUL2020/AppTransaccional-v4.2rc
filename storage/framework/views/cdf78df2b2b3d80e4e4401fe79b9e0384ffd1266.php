@@ -11,7 +11,7 @@
 
                     <h1>Gestión Clientes</h1>
 
-                    <ol class="breadcrumb bc-3" >
+                    <ol class=" bc-3" >
                             <li>
                     <a href="<?php echo e(URL::to('appl')); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
                 </li>
@@ -32,29 +32,29 @@
    <table class="table table-striped text-center" data-vertable="ver2">
                 <thead>
                    <tr class="row100 head">
-                       <th class="text-center">SECTOR</th>
+                       
                        <th class="text-center">NOMBRE</th>
                        <th class="text-center">DIRECCION</th>
                        <th class="text-center">TELEFONO</th>
-                       <th class="text-center">PAIS</th>
+                       
                        <th class="text-center">CORREO</th>
                        <th class="text-center">WEBSITE</th>
                        <th class="text-center">NIT</th>
-                       <th class="text-center">OBSERVACION</th>
+                       
                        <th class="text-center">ACCIONES</th>
                    </tr>
                 </thead>
                    <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $users1): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                    <tr class="row100">
-                       <td><?php echo e($users1->ID_SECTOR_EMPRESA_TERCERO); ?></td>
+                       
                        <td><?php echo e($users1->NOMBRE); ?></td>
                        <td><?php echo e($users1->DIRECCION); ?></td>
                        <td><?php echo e($users1->TELEFONO); ?></td>
-                       <td><?php echo e($users1->PAIS); ?></td>
+                       
                        <td><?php echo e($users1->CORREO); ?></td>
                        <td><?php echo e($users1->WEBSITE); ?></td>
                        <td><?php echo e($users1->NIT); ?></td>
-                       <td><?php echo e($users1->OBSERVACION); ?></td>
+                       
                        <td>
                             <a href="GestionClientesEdit/updateEmpresa/<?php echo e($users1->ID_EMPRESA_TERCERO); ?>" class="btn btn-secondary">EDITAR</a>
                        </td>
