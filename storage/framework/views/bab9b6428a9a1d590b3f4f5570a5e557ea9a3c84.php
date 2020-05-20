@@ -28,9 +28,11 @@
     </section>
 <br>
 <BR>
-<div class="container">
-   <table class="table table-striped text-center">
-                   <tr><th class="text-center">SECTOR</th>
+<div class="table100 ver2 m-b-110">
+   <table class="table table-striped text-center" data-vertable="ver2">
+                <thead>
+                   <tr class="row100 head">
+                       <th class="text-center">SECTOR</th>
                        <th class="text-center">NOMBRE</th>
                        <th class="text-center">DIRECCION</th>
                        <th class="text-center">TELEFONO</th>
@@ -41,8 +43,10 @@
                        <th class="text-center">OBSERVACION</th>
                        <th class="text-center">ACCIONES</th>
                    </tr>
+                </thead>
                    <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $users1): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                   <tr><td><?php echo e($users1->ID_SECTOR_EMPRESA_TERCERO); ?></td>
+                   <tr class="row100">
+                       <td><?php echo e($users1->ID_SECTOR_EMPRESA_TERCERO); ?></td>
                        <td><?php echo e($users1->NOMBRE); ?></td>
                        <td><?php echo e($users1->DIRECCION); ?></td>
                        <td><?php echo e($users1->TELEFONO); ?></td>
@@ -54,7 +58,7 @@
                        <td>
                             <a href="GestionClientesEdit/updateEmpresa/<?php echo e($users1->ID_EMPRESA_TERCERO); ?>" class="btn btn-secondary">EDITAR</a>
                        </td>
-                       </tr>
+                    </tr>
                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 </table>

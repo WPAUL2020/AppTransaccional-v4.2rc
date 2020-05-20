@@ -3,7 +3,7 @@
 @section('content')
 
 
-  
+
 
     <!-- Breadcrumb -->
     <section class="breadcrumb">
@@ -85,9 +85,14 @@
 
             <div class="form-row">
               <div class="col-sm-6">
-              <label style="color:white">Ciudad:</label>
-              <input type="text" name="CIUDAD" class="form-control" placeholder="Ciudad">
-              <span class="text-danger">{{$errors->first("CIUDAD")}}</span>
+              <label for="" style="color:white">Ciudad:</label>
+                <select name="CIUDAD" id="ID_CIUDAD" class="form-control">
+                 <option value="">--Escoje la ciudad--</option>
+                    @foreach($Ciudad as $Ciudad)
+                         <option value="{{$Ciudad->NOMBRE_CIUDAD}}">{{$Ciudad->NOMBRE_CIUDAD}}</option>
+                    @endforeach
+        </select>
+        <span class="text-danger">{{$errors->first("CIUDAD")}}</span>
               </div>
               <div class="col-sm-6">
               <label style="color:white">Correo Electronico:</label>
@@ -159,7 +164,7 @@
               <textarea name="OBSERVACION" class="form-control" placeholder="Escribe tu Observación"></textarea>
               <span class="text-danger">{{$errors->first("OBSERVACION")}}</span>
 
-              
+
             </div>
             <div class="form-row">
               <div class="form-group">

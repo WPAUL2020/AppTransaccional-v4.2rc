@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\GestionClientes as clientes;
 use App\sector_empresa_tercero as SectorEmpresa;
 use App\role as rol;
+use App\Ciudad as Ciudad;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -88,13 +89,14 @@ class ClientesController extends Controller
     {
      $roles = rol::all();
      $SectorEmpresas = SectorEmpresa::all();
-        return view('clientes')->with(['roles'=>$roles, 'SectorEmpresas'=>$SectorEmpresas]);
+     $Ciudad = Ciudad::all();
+        return view('clientes')->with(['roles'=>$roles, 'SectorEmpresas'=>$SectorEmpresas, 'Ciudad'=>$Ciudad]);
     }
 
-    public function changeEmpresa(Request $ID_EMPRESA_TERCERO, $clientes)
+    public function changeEmpresa(Request $clientes,$ID_EMPRESA_TERCERO)
     {
         $reglas_Validacion =["DIRECCION" =>"required|min:3", "TELEFONO" =>"numeric|min:3", "CIUDAD" =>"required|min:3",
-        "WEBSITE" =>"required|min:3", "CORREO" =>"required|min:3", "ESTADO" =>"required|min:3"];
+        "WEBSITE" =>"required|min:3", "CORREO" =>"required|min:3", "ESTADO" =>"required|min:1"];
        $mensajes = ["required" => "Este campo es obligatorio", "alpha" => "Este campo solo permite Letras", "numeric" => "Este Campo Solo Permite Numeros",
             "min" => "Este Campo Debe Tener Minimo :min Digitos", "unique" => "Este Campo ya esta Registrado", "exists" => "Este Campo Debe Existir"];
        $this->validate($clientes, $reglas_Validacion, $mensajes);

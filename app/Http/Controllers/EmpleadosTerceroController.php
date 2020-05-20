@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\EmpleadosTercero as EmpleadosTercero;
 use App\role as rol;
 use App\cargo as cargo;
+use App\Ciudad as Ciudad;
 use App\EmpresaTercero as EmpresaTercero;
 use App\TipoIdentificacion as TipoIdent;
 use Illuminate\Support\Facades\Redirect;
@@ -81,8 +82,9 @@ class EmpleadosTerceroController extends Controller
     // $roles = rol::where ('dependency'->EXTERNO)->get();
     $cargos = cargo::all();
     $TipoIdents = TipoIdent::all();
+    $Ciudad = Ciudad::all();
     $EmpresaTerceros = EmpresaTercero::all();
-    return view('GesUserTerCrear')->with(['roles'=>$roles, 'cargos'=>$cargos, 'TipoIdents'=>$TipoIdents, 'empresa'=>$empresa]);
+    return view('GesUserTerCrear')->with(['roles'=>$roles, 'cargos'=>$cargos, 'TipoIdents'=>$TipoIdents, 'empresa'=>$empresa , 'Ciudad'=>$Ciudad]);
    }
 
    public function changeUser(Request $EmpleadosTercero,$ID_EMPLEADO_TERCERO)

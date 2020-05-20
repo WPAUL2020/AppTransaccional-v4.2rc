@@ -28,9 +28,10 @@
     </section>
 <br>
 <BR>
-<div class="container">
-   <table class="table table-striped text-center">
-                   <tr><th class="text-center">NOMBRE</th>
+<div class="table100 ver2 m-b-110">
+   <table class="table table-striped text-center" data-vertable="ver2">
+                   <tr class="row100 head">
+                       <th class="text-center">NOMBRE</th>
                        <th class="text-center">TIPO DE DOCUMENTO</th>
                        <th class="text-center">NUMERO DOCUMENTO</th>
                        <th class="text-center">DIRECCION</th>
@@ -42,7 +43,8 @@
                    </tr>
 
                    @foreach($empleados as $users1)
-                   <tr><td>{{ $users1->NOMBRE}}</td>
+                   <tr class="row100">
+                       <td>{{ $users1->NOMBRE}}</td>
                        <td>{{ $users1->TIPO_DOCUMENTO}}</td>
                        <td>{{ $users1->NUM_DOCUMENTO}}</td>
                        <td>{{ $users1->DIRECCION }}</td>

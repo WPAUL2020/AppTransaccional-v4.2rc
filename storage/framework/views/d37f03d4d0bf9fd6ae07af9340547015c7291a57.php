@@ -41,6 +41,16 @@
 	<link rel="stylesheet" href="<?php echo e(asset('neonFrontEnd/assets/css/neon-forms.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('neonFrontEnd/assets/css/custom.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('css/formulario.css')); ?>">
+    <!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="../vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="css/util.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    
     <!-- Scripts -->
     <script src="<?php echo e(asset('neonFrontEnd/assets/js/jquery-1.11.3.min.js')); ?>"></script>
 
@@ -97,6 +107,7 @@
                             </li>
                         </ul>
                     </li>
+                    
                     <li class="has-sub">
                         <a href="<?php echo e(URL::to('UsuariosTercero')); ?>">
                             <i class="entypo-user"></i>
@@ -596,6 +607,16 @@
 
 		<!-- Demo Settings -->
         <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-demo.js')); ?>"></script>
+
+        <!--===============================================================================================-->	
+	    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+        <script src="resources/js/main.js"></script>
 </body>
 </html>
 <?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/AppTransaccional-v4.2rc/resources/views/layouts/app.blade.php ENDPATH**/ ?>

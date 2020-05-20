@@ -75,9 +75,14 @@
     <span class="text-danger">{{$errors->first("PAIS")}}</span>
     </div>
     <div class="col-sm-6">
-    <label>Ciudad:</label>
-    <input type="text" name="CIUDAD" class="form-control" placeholder="Ciudad">
-    <span class="text-danger">{{$errors->first("CIUDAD")}}</span>
+    <label for="" style="color:white">Ciudad:</label>
+                <select name="CIUDAD" id="ID_CIUDAD" class="form-control">
+                 <option value="">--Escoje la ciudad--</option>
+                    @foreach($Ciudad as $Ciudad)
+                         <option value="{{$Ciudad->NOMBRE_CIUDAD}}">{{$Ciudad->NOMBRE_CIUDAD}}</option>
+                    @endforeach
+        </select>
+        <span class="text-danger">{{$errors->first("CIUDAD")}}</span>
     </div>
   </div>
 
@@ -147,7 +152,7 @@
   <div class="form-row">
                     <div class="form-group">
                         <input type="submit" value="Registrar" class="btn btn-primary">
-                        <a class="btn btn-secondary" href="{{URL::to('Clientes')}}">Regresar</a>
+                        <a class="btn btn-outline-secondary" href="{{URL::to('Clientes')}}">Regresar</a>
   </div>
   </div>
 </form>
