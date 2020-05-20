@@ -1,16 +1,31 @@
 <?php $__env->startSection('content'); ?>
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
 
-<!DOCTYPE html>
-<html lang="es_DO">
-<head>
-    <meta charset="UTF-8">
-<title>Pagina de Contacto</title>
-                   <br>
-                   <br>
-</head>
+        <div class="container">
 
-<body>
-<div class="container">
+            <div class="row">
+
+                <div class="col-sm-9">
+
+                    <h1>Editar Empresa</h1>
+
+                    <ol class="breadcrumb bc-3" >
+                            <li>
+                    <a href="<?php echo e(URL::to('appl')); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
+                </li>
+                    <li class="active">
+                                <strong>Editar Empresa</strong>
+                        </li>
+                        </ol>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+<div class="container fondo_container">
     <div class="row">
             <div class="">
                 <h2> EDITAR EMPRESA: <?php echo e($clientes->NOMBRE); ?></h2>
@@ -57,12 +72,11 @@
   <div class="form-row">
                     <div class="col">
                         <input type="submit" value="Guardar" class="btn btn-primary">
-                        <a class="btn btn-outline-secondary" href="<?php echo e(URL::to('Clientes')); ?>">Regresar</a>
+                        <a class="btn btn-secondary" href="<?php echo e(URL::to('Clientes')); ?>">Regresar</a>
   </div>
   </div>
 </form>
-</body>
-</html>
+</div>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/AppTransaccional-v4.2rc/resources/views/GestionClientesEdit.blade.php ENDPATH**/ ?>

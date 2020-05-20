@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Hash;
 use App\role as rol;
 use App\cargo as cargo;
+use App\Ciudad as Ciudad;
 use App\TipoIdentificacion as TipoIdent;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -76,8 +77,9 @@ class EmpleadosInternoController extends Controller
     $request->user()->authorizeRoles('ADMINISTRADOR');
     $roles = rol::all();
     $cargos = cargo::all();
+    $Ciudad = Ciudad::all();
     $TipoIdents = TipoIdent::all();
-    return view('GestUserIntCrear')->with(['roles'=>$roles, 'cargos'=>$cargos, 'TipoIdents'=>$TipoIdents]);
+    return view('GestUserIntCrear')->with(['roles'=>$roles, 'cargos'=>$cargos, 'TipoIdents'=>$TipoIdents, 'Ciudad'=>$Ciudad]);
    }
 
    public function changeUser(Request $EmpleadosInterno,$ID_EMPLEADO_INTERNO)
