@@ -230,9 +230,8 @@ body .carousel-inner > .active {
 
 }
 .site-header .site-nav .main-menu > li > a:hover{
-color: #FAFAFA;
+color: rgb(0, 246, 213);
 background-color:  #81BEF7;
-
 }
 
 .site-header .site-nav .main-menu > li > a span:after {
