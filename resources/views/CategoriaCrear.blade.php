@@ -12,7 +12,7 @@
 
                     <h1>Registro De Productos</h1>
 
-                                <ol class="breadcrumb bc-3" >
+                                <ol class=" bc-3" >
                             <li>
                     <a href="{{URL::previous()}}"> <i class="fas fa-angle-left"></i> Regresar</a>
                 </li>

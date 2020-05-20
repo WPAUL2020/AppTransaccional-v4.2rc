@@ -3428,9 +3428,11 @@ table > tbody > tr.highlight > th {
   padding: 8px 15px;
   margin-bottom: 17px;
   list-style: none;
-  background-color: #f5f5f5;
+  background: linear-gradient(90deg, #D7D7D7 10% , #FAFAFA );
   border-radius: 3px;
+   box-shadow: 0 5px 20px #646464;
 }
+
 .breadcrumb > li {
   display: inline-block;
 }
