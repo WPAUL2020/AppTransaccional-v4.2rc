@@ -27,7 +27,7 @@
             </div>
         </div>
     </section>
-    <div class="container">
+    <div class="container fondo_container">
     <div class="row">
             <div class="col-md-5">
                 <h2> EDITAR USUARIO {{$EmpleadosTercero->NOMBRE}}</h2>
@@ -112,6 +112,7 @@
                     </div>
 
 </form>
+</div>
 </body>
 </html>
 @endsection

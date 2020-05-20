@@ -302,7 +302,7 @@
 						<img src="<?php echo e(asset('imagenes/portfolio-thumb-1.png')); ?>" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>
-
+					<div class="busqueda">
 					<h4>
 						<a href="portfolio-single.html" class="like">
 							<i class="entypo-heart"></i>
@@ -313,6 +313,7 @@
 
 					<div class="categories">
 						<a href="portfolio-single.html">Web Design / Development</a>
+					</div>
 					</div>
 				</div>
 
@@ -326,7 +327,7 @@
 						<img src="<?php echo e(asset('imagenes/portfolio-thumb-2.png')); ?>" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>
-
+					<div class="busqueda">
 					<h4>
 						<a href="portfolio-single.html" class="like liked">
 							<i class="entypo-heart"></i>
@@ -339,6 +340,7 @@
 						<a href="portfolio-single.html">Photography</a>
 					</div>
 				</div>
+				</div>
 
 			</div>
 
@@ -350,7 +352,7 @@
 						<img src="<?php echo e(asset('imagenes/portfolio-thumb-3.png')); ?>" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>
-
+					<div class="busqueda">
 					<h4>
 						<a href="portfolio-single.html" class="like">
 							<i class="entypo-heart"></i>
@@ -362,6 +364,7 @@
 					<div class="categories">
 						<a href="portfolio-single.html">UI Design</a>
 					</div>
+				</div>
 				</div>
 
 			</div>
