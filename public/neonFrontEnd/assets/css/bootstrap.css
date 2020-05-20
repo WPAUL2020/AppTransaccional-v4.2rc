@@ -272,8 +272,7 @@ body {
   font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 1.42857143;
-  color: #333333;
-<<<<<<< HEAD
+  color: #888787;
   background-image: url('../images/fondo.jpg');
   background-size: 100% 100%;
   background-attachment: fixed;
@@ -281,9 +280,6 @@ body {
   height:100%;
   
   /* background: radial-gradient(circle at 100% 0, #E0F8E6 10%, #E0F2F7, #A9D0F5);  */
-=======
-  background: radial-gradient(circle at 100% 0, #E0F8E6 10%, #E0F2F7, #A9D0F5);
->>>>>>> b38bdc736932e08a95aa4b1a0128cfc75fbf89cf
 }
 
 input,
