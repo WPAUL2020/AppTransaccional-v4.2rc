@@ -504,6 +504,10 @@ mark,
   background-color: #fcf8e3;
   padding: .2em;
 }
+.busqueda{
+  margin-bottom: 20px;
+  padding-top: 40px;
+}
 .text-left {
   text-align: left;
 }
@@ -615,6 +619,9 @@ a.bg-danger:focus {
   border-radius: 5px;
   border-bottom: 5px solid #31B404;
   margin-right: 5px;
+}
+.bc-3 li:hover {
+transform: scale(1.05);
 }
 
 ul,

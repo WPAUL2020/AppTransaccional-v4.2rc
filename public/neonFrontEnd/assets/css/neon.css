@@ -231,7 +231,7 @@ body .carousel-inner > .active {
 }
 .site-header .site-nav .main-menu > li > a:hover{
 color: #FAFAFA;
-background-color: #81BEF7;
+background-color:  #81BEF7;
 
 }
 
@@ -484,8 +484,9 @@ background-color: #81BEF7;
   transform: scaleX(1);
 }
 .site-footer {
-  background: #eeeeee;
+  background: linear-gradient(90deg, #D7D7D7 10% , #FAFAFA );
   padding: 30px 0;
+  box-shadow: 0 3px 20px #646464;
 }
 .mobile-menu {
   background: #303641;
