@@ -25,17 +25,15 @@
     </section>
 <br>
 <BR>
-<div class="table100 ver2 m-b-110">
-   <table class="table table-striped text-center" data-vertable="ver2">
-                   <tr class="row100 head">
-                       <th class="text-center">ID</th>
+<div class="container">
+   <table class="table table-striped text-center">
+                   <tr><th class="text-center">ID</th>
                        <th class="text-center">NOMBRE DEL ROL</th>
                        <th class="text-center">DESCRIPCION</th>
                        <th class="text-center">DEPENDENCIA</th>
                    </tr>
                    <?php $__currentLoopData = $roles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $users1): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                   <tr class="row100">
-                       <td><?php echo e($users1->id); ?></td>
+                   <tr><td><?php echo e($users1->id); ?></td>
                        <td><?php echo e($users1->name); ?></td>
                        <td><?php echo e($users1->description); ?></td>
                        <td><?php echo e($users1->dependency); ?></td>
@@ -49,4 +47,4 @@
 </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\AppTransaccional-v4.2rc\resources\views/RolVista.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\git\AppTransaccional-v4.2rc\resources\views/RolVista.blade.php ENDPATH**/ ?>

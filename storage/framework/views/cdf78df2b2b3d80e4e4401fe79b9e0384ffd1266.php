@@ -11,7 +11,7 @@
 
                     <h1>Gestión Clientes</h1>
 
-                    <ol class="breadcrumb bc-3" >
+                    <ol class=" bc-3" >
                             <li>
                     <a href="<?php echo e(URL::to('appl')); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
                 </li>
@@ -69,4 +69,4 @@
 <?php $__env->stopSection(); ?>
 
 
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\AppTransaccional-v4.2rc\resources\views/GestionClientes.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\git\AppTransaccional-v4.2rc\resources\views/GestionClientes.blade.php ENDPATH**/ ?>

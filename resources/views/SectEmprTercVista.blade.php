@@ -13,7 +13,7 @@
 
                     <h1>Gestion de Sector Empresa</h1>
 
-                    <ol class="breadcrumb bc-3" >
+                    <ol class=" bc-3" >
                             <li>
                     <a href="{{URL::to('appl')}}"> <i class="fas fa-angle-left"></i> Regresar</a>
                 </li>
@@ -28,17 +28,19 @@
     </section>
 <br>
 <BR>
-<div class="container">
-   <table class="table table-striped text-center">
-                   <tr><th class="text-center">ID</th>
+<div class="table100 ver2 m-b-110">
+   <table class="table table-striped text-center" data-vertable="ver2">
+                   <tr class="row100 head">
+                       <th class="text-center">ID</th>
                        <th class="text-center">SECTOR DE LA EMPRESA</th>
                        <th class="text-center">DESCRIPCION</th>
                    </tr>
                    @foreach($sector as $users1)
-                   <tr><td>{{ $users1->ID_SECTOR_EMPRESA_TERCERO}}</td>
+                   <tr class="row100">
+                       <td>{{ $users1->ID_SECTOR_EMPRESA_TERCERO}}</td>
                        <td>{{ $users1->NOMBRE_SECTOR_EMPRESA_TERCERO}}</td>
                        <td>{{ $users1->DESCRIPCION}}</td>
-                       </tr>
+                   </tr>
                    @endforeach
 
 </table>

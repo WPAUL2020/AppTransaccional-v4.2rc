@@ -13,7 +13,7 @@
 
                     <h1>Gestionar Usuarios</h1>
 
-                    <ol class="breadcrumb bc-3" >
+                    <ol class=" bc-3" >
                             <li>
                     <a href="{{URL::to('appl')}}"> <i class="fas fa-angle-left"></i> Regresar</a>
                 </li>
@@ -29,9 +29,9 @@
     </section>
 <br>
 <BR>
-<div class="container">
-   <table class="table table-striped text-center">
-                   <tr>
+<div class="table100 ver2 m-b-110">
+   <table class="table table-striped text-center" data-vertable="ver2">
+                   <tr class="row100 head">
                        <th class="text-center">ID</th>
                        <th class="text-center">NOMBRE</th>
                        <th class="text-center">E-MAIL</th>
@@ -40,7 +40,7 @@
                        <th class="text-center">ACCIONES</th>
                    </tr>
                    @foreach($users as $users1)
-                   <tr>
+                   <tr class="row100">
                        <td>{{ $users1->id }}</td>
                        <td>{{ $users1->name }}</td>
                        <td>{{ $users1->email }}</td>

@@ -12,7 +12,7 @@
 
                 <h1>Gestión Productos</h1>
 
-                <ol class="breadcrumb bc-3" >
+                <ol class=" bc-3" >
                         <li>
                 <a href="{{URL::to('appl')}}"> <i class="fas fa-angle-left"></i> Regresar</a>
             </li>
@@ -29,15 +29,17 @@
 </section>
 <br>
 <BR>
-<div class="container">
-   <table class="table table-striped text-center">
-                   <tr><th class="text-center">NOMBRE DEL PRODUCTO</th>
+<div class="table100 ver2 m-b-110">
+   <table class="table table-striped text-center" data-vertable="ver2">
+                   <tr class="row100 head">
+                       <th class="text-center">NOMBRE DEL PRODUCTO</th>
                        <th class="text-center">DETALLE DEL PRODUCTO</th>
                    </tr>
                    @foreach($Categoria as $users1)
-                   <tr><td>{{ $users1->NOMBRE_PRODUCTO_SERV_T}}</td>
+                   <tr class="row100">
+                       <td>{{ $users1->NOMBRE_PRODUCTO_SERV_T}}</td>
                        <td>{{ $users1->	DETALLE_PRODUCTO_SERV_T}}</td>
-                       </tr>
+                    </tr>
                    @endforeach
 
 </table>

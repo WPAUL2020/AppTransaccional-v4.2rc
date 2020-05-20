@@ -11,7 +11,7 @@
 
                         <h1>Vista Previa</h1>
 
-                                    <ol class="breadcrumb bc-3" >
+                                    <ol class="bc-3" >
                                 <li>
                         <a href="{{ url('/') }}"><i class="fas fa-home"></i> Home</a>
                     </li>

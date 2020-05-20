@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
     <!-- Breadcrumb -->
     <section class="breadcrumb">
@@ -13,9 +11,9 @@
 
                     <h1>InstaHunters</h1>
 
-                    <ol class=" bc-3" >
+                    <ol class="breadcrumb bc-3" >
                             <li>
-                    <a href="{{URL::to('appl')}}"> <i class="fas fa-angle-left"></i> Regresar</a>
+                    <a href="<?php echo e(URL::to('appl')); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
                 </li>
                     <li class="active">
                                 <strong>InstaHunters</strong>
@@ -35,26 +33,35 @@
                 <div class="card-header text-center text-primary display-4 ">
                     <a href="https://universitariadecolombia.edu.co/programas/profesionales/ingenieria-de-sistemas/" class="text-primary"> by Semillero Ing. de Sistemas, Universitaria de Colombia.</a></div>
                 <div class="card-body display-4">
-                    <form method="POST" action="{{ route('scrapPost') }}" class="form-horizontal"> {{ csrf_field() }}
+                    <form method="POST" action="<?php echo e(route('scrapPost')); ?>" class="form-horizontal"> <?php echo e(csrf_field()); ?>
+
                          <div class="form-group row card-header text-center display-4">
                             <select name="campoSelect" class="form-control">
                                 <option value="">Seleccionar..</option>
                                 <option value="usuario">@Usuario</option>
                                 <option value="hashtag">#Hashtag</option>
                             </select>
-                            @error('campoSelect')
+                            <?php if ($errors->has('campoSelect')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('campoSelect'); ?>
                             <div class="alert alert-danger" role="alert">
-                                <strong>{{ $message }}</strong>
+                                <strong><?php echo e($message); ?></strong>
                             </div>
-                            @enderror
+                            <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>
                         </div>
                         <div class="form-group row card-header text-center display-4">
                             <input type="text" class="form-control form-control-lg" placeholder="Ingrese la palabra clave (username o hashtag)" name="palabraClave">
-                            @error('palabraClave')
+                            <?php if ($errors->has('palabraClave')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('palabraClave'); ?>
                             <div class="alert alert-danger" role="alert">
-                                <strong>{{ $message }}</strong>
+                                <strong><?php echo e($message); ?></strong>
                             </div>
-                            @enderror
+                            <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>
                         </div>
 
                         <div class="form-group">
@@ -63,7 +70,7 @@
                                    Buscar <i class="fas fa-search"></i>
                                 </button>
                             </form>
-                            <a href="{{URL::to('instahunterview')}}" class="btn btn-info float-right btn-lg">
+                            <a href="<?php echo e(URL::to('instahunterview')); ?>" class="btn btn-info float-right btn-lg">
                                 Vista previa <i class="fas fa-eye"></i>
                             </a>
                         </div>
@@ -81,13 +88,16 @@
 
 </div>
 <footer>
-    @if ($data2view!=null)
+    <?php if($data2view!=null): ?>
         <div>
-            {!!$success!!}
+            <?php echo $success; ?>
+
         </div>
-    @else
+    <?php else: ?>
     <div>
     </div>
-    @endif
+    <?php endif; ?>
 </footer>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\git\AppTransaccional-v4.2rc\resources\views/instahunters.blade.php ENDPATH**/ ?>
