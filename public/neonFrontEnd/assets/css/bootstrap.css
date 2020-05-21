@@ -310,6 +310,7 @@ figure {
 }
 img {
   vertical-align: middle;
+  filter: drop-shadow(0 0 6px #FAFAFA);
 }
 .img-responsive,
 .thumbnail > img,
@@ -536,10 +537,10 @@ mark,
   text-transform: capitalize;
 }
 .text-muted {
-  color: #777777;
+  color: #FAFAFA;
 }
 .text-primary {
-  color: #303641;
+  color: #000000;
 }
 a.text-primary:hover,
 a.text-primary:focus {
@@ -1767,8 +1768,8 @@ output {
   padding: 6px 12px;
   font-size: 13px;
   line-height: 1.42857143;
-  color: #555555;
-  background-color: #fff;
+  
+  background-color: #ffffff96;
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -1777,7 +1778,27 @@ output {
   -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  border-bottom: 4px solid rgba(0, 184, 1, 1);
 }
+
+.form-group label{
+
+  color: #000000;
+  background: #a1ecaa55;
+  padding: 5px 15px;
+  display: inline-block;
+  position: relative;
+  font-size: 1em;
+  border-radius: 3px;
+  cursor: pointer;
+
+}
+.form-group label:hover{
+  background: #a1ecaa;
+}
+
+
+
 .form-control:focus {
   border-color: #66afe9;
   outline: 0;
@@ -2189,8 +2210,9 @@ select[multiple].input-lg {
   min-height: 25px;
 }
 .form-horizontal .form-group {
-  margin-left: -15px;
+  margin-left: 30px;
   margin-right: -15px;
+
 }
 @media (min-width: 768px) {
   .form-horizontal .control-label {
@@ -2216,7 +2238,7 @@ select[multiple].input-lg {
 }
 .btn {
   display: inline-block;
-  margin-bottom: 0;
+  margin-left: 7px;
   font-weight: normal;
   text-align: center;
   vertical-align: middle;
@@ -2234,6 +2256,12 @@ select[multiple].input-lg {
   -ms-user-select: none;
   user-select: none;
   border-radius: 10px;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  transform: scale(1.10);
+}
   
 }
 .btn:focus,

@@ -1,8 +1,19 @@
 .fondo_container {
     border-style: double;
-    background-color:rgb(106, 110, 110);
-    border-right: 6px solid rgb(2, 170, 105);
-    border-left: 6px solid rgb(2, 170, 105);
+    background: linear-gradient(270deg, #80ff9f40, #64b2fc33);
+    border-radius: 10px;
+    /*background-color:rgb(106, 110, 110);*/
+    border-right: 6px solid rgba(0, 184, 1, 1);
+    border-left: 6px solid rgba(0, 184, 1, 1);
+}
+.col{
+  font-weight: normal;
+  font-family: sans-serif;
+  color: rgba(0, 184, 1, 1);
+}
+
+.col span{
+  color: #FAFAFA;
 }
 
 label{
@@ -12,6 +23,7 @@ h2{
     color: honeydew;
 }
 
+}
 
 .img{
     margin:10px auto;

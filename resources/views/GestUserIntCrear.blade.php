@@ -16,7 +16,7 @@
 
                     <h1>Registro de Usuarios</h1>
 
-                    <ol class=" bc-3" >
+                    <ol class="bc-3" >
                             <li>
                     <a href="{{URL::previous()}}"> <i class="fas fa-angle-left"></i> Regresar</a>
                 </li>
@@ -34,7 +34,7 @@
     <div class="container fondo_container">
       <div class="row">
               <div class="col-md-5">
-                  <h2 style="color:white" > REGISTRO DE USUARIOS</h2>
+                  <h2 class="col" > R<span>EGISTRO DE </span>U<span>SUARIOS</span></h2>
                   <div class="form-row">
               </div>
           </div>
@@ -174,6 +174,7 @@
             </div>
 
           </form>
+
 </div>
 
 

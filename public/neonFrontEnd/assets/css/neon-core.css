@@ -3431,10 +3431,11 @@ table > tbody > tr.highlight > th {
   background-image: url('../images/lineas.png');
   width:100%;
   animation: movimiento 15s infinite linear alternate;
-  background-size: 80% 50%;
+  background-size: 80% 90%;
   background-attachment: fixed;
   border-radius: 3px;
   box-shadow: 0 6px 20px #a1ecaa;
+  border-radius: 10px;
 }
 @keyframes movimiento{
   from{
@@ -5508,6 +5509,8 @@ body {
   -o-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
 }
+
+
 
 
 .page-container .sidebar-menu .logo-env > div.sidebar-collapse a:hover,
