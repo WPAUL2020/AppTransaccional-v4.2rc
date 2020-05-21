@@ -222,7 +222,7 @@ body .carousel-inner > .active {
   position: relative;
   display: inline-block;
   z-index: 2;
-  border: 2px solid #FAFAFA;
+  border: 2px solid #000000;
   padding: 10px 10px;
   font-weight: 700;
   transition: color 0.8s, background 0.8s;
@@ -1055,12 +1055,12 @@ section.breadcrumb .alt-select-field {
 .gallery-container .gallery-item {
   margin-top: 30px;
 }
-/* .portfolio-container .portfolio-item .like,
+/*.portfolio-container .portfolio-item .like,
 .gallery-container .portfolio-item .like,
 .portfolio-container .gallery-item .like,
 .gallery-container .gallery-item .like {
-  font-size: 15px;
-} */
+  font-size: 15px;*/
+}
 .portfolio-container .portfolio-item h4,
 .gallery-container .portfolio-item h4,
 .portfolio-container .gallery-item h4,

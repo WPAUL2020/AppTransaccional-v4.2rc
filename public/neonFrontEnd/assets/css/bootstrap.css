@@ -322,6 +322,8 @@ img {
 }
 .img-rounded {
   border-radius: 6px;
+  filter: drop-shadow(0 0 10px #a1ecaa);
+
 }
 .img-thumbnail {
   padding: 4px;

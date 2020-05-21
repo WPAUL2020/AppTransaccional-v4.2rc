@@ -692,11 +692,11 @@ select[multiple].input-lg {
 }
 lesshat-selector {
   -lh-property: 0; } 
-@-webkit-keyframes reloadingAnimation{ 0%{ -webkit-transform: rotate(0deg); } 100%{ -webkit-transform: rotate(360deg); }}
-@-moz-keyframes reloadingAnimation{ 0%{ -moz-transform: rotate(0deg); } 100%{ -moz-transform: rotate(360deg); }}
-@-o-keyframes reloadingAnimation{ 0%{ -o-transform: rotate(0deg); } 100%{ -o-transform: rotate(360deg); }}
+@-webkit-keyframes reloadingAnimation{ 0%{ -webkit-transform: rotate(0deg); } 100%{ -webkit-transform: rotate(360deg); }}}
+@-moz-keyframes reloadingAnimation{ 0%{ -moz-transform: rotate(0deg); } 100%{ -moz-transform: rotate(360deg); }}}
+@-o-keyframes reloadingAnimation{ 0%{ -o-transform: rotate(0deg); } 100%{ -o-transform: rotate(360deg); }}}
 @keyframes reloadingAnimation{ 0%{-webkit-transform: rotate(0deg);-moz-transform: rotate(0deg);-ms-transform: rotate(0deg);transform: rotate(0deg); } 100%{-webkit-transform: rotate(360deg);-moz-transform: rotate(360deg);-ms-transform: rotate(360deg);transform: rotate(360deg); }};
-         
+}
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;
@@ -3428,11 +3428,22 @@ table > tbody > tr.highlight > th {
   padding: 8px 15px;
   margin-bottom: 17px;
   list-style: none;
-  background: linear-gradient(90deg, #D7D7D7 10% , #FAFAFA );
+  background-image: url('../images/lineas.png');
+  width:100%;
+  animation: movimiento 15s infinite linear alternate;
+  background-size: 80% 50%;
+  background-attachment: fixed;
   border-radius: 3px;
-   box-shadow: 0 5px 20px #646464;
+  box-shadow: 0 6px 20px #a1ecaa;
 }
-
+@keyframes movimiento{
+  from{
+    background-position: bottom left;
+  }
+  to{
+    background-position: top right;
+  }
+}
 .breadcrumb > li {
   display: inline-block;
 }
@@ -5914,8 +5925,11 @@ float: left;
   display: table-cell;
   vertical-align: top;
   padding: 20px;
-  background: radial-gradient(circle at 100% 0, #E0F8E6 10%, #E0F2F7, #A9D0F5);
-  width: 100%;
+  background-image: url('../images/fondo.jpg');
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  width:100%;
+  height:100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -7697,7 +7711,7 @@ body.overflow-x-disabled {
   overflow-x: hidden;
 }
 a {
-  color: #ffffff;
+  color: #c0c8c0;
 }
 a:hover {
   text-decoration: none;
