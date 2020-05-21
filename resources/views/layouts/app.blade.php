@@ -594,12 +594,12 @@
     <script src="{{ asset('neonFrontEnd/assets/js/neon-api.js') }}"></script>
     @yield('Scripts')
 
-<script>
+    <script>
     $("#menu-toggle").click(function(e) {
       e.preventDefault();
       $("#container").toggleClass("sidebar-collapsed");
     });
-  </script>
+    </script>
 
 
 		<!-- JavaScripts initializations and stuff -->

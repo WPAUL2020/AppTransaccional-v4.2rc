@@ -595,12 +595,12 @@
     <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-api.js')); ?>"></script>
     <?php echo $__env->yieldContent('Scripts'); ?>
 
-<script>
+    <script>
     $("#menu-toggle").click(function(e) {
       e.preventDefault();
       $("#container").toggleClass("sidebar-collapsed");
     });
-  </script>
+    </script>
 
 
 		<!-- JavaScripts initializations and stuff -->
