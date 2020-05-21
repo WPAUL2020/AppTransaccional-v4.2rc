@@ -422,7 +422,7 @@
                                 <section class="site-logo">
 
                                     <a href="{{ url('/') }}">
-                                        <img src="{{ asset('Imagenes/logo.png') }}" width="120" />
+                                        <img src="{{ asset('Imagenes/logo3.png') }}" width="120" />
                                     </a>
 
                                 </section>
@@ -599,7 +599,7 @@
       e.preventDefault();
       $("#container").toggleClass("sidebar-collapsed");
     });
-    </script>
+  </script>
 
 
 		<!-- JavaScripts initializations and stuff -->
