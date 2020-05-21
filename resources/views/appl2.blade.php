@@ -47,11 +47,7 @@
 						<span class="hover-zoom"></span>
 					</a>
 
-					<h4>
-						
-						</a>
-						<center><a href="{{URL::to('instahunters')}}" class="btn btn-primary">Gestión Big Data</a></center>
-					</h4>
+					
 				</div>
 
             </div>
@@ -63,10 +59,7 @@
 						<span class="hover-zoom"></span>
 					</a>
 
-					<h4>
-						
-						<center><a href="{{URL::to('MedioPagos')}}" class="btn btn-primary">Medios de pago</a></center>
-					</h4>
+					
 				</div>
 
             </div>
@@ -78,11 +71,7 @@
 						<span class="hover-zoom"></span>
 					</a>
 
-					<h4>
-						
-						</a>
-						<center><a href="{{URL::to('Categorias')}}" class="btn btn-primary">Productos</a></center>
-					</h4>
+					
 				</div>
 
             </div>
@@ -94,10 +83,7 @@
 						<span class="hover-zoom"></span>
 					</a>
 
-					<h4>
-						
-						<center><a href="{{URL::to('Servicios')}}" class="btn btn-primary">Servicio</a></center>
-					</h4>
+					
 				</div>
 
             </div>
@@ -109,10 +95,7 @@
 						<span class="hover-zoom"></span>
 					</a>
 
-					<h4>
-						
-						<center><a href="{{URL::to('/generarFactura')}}" class="btn btn-primary">Generar Factura</a></center>
-					</h4>
+					
 				</div>
 
 			</div>

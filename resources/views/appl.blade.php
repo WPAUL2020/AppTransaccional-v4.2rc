@@ -48,10 +48,6 @@
 						<span class="hover-zoom"></span>
 					</a>
 
-					<h4>
-						
-						<center><a href="{{URL::to('UsuariosTercero')}}" class="btn btn-primary">Gestión Usuarios Externos</a></center>
-					</h4>
 				</div>
 
             </div>
@@ -63,10 +59,7 @@
 						<span class="hover-zoom"></span>
 					</a>
 
-					<h4>
-						
-						<center><a href="{{URL::to('UsuariosInterno')}}" class="btn btn-primary">Gestión Usuarios Internos</a></center>
-					</h4>
+					
 				</div>
 
             </div>
@@ -78,10 +71,7 @@
 						<span class="hover-zoom"></span>
 					</a>
 
-					<h4>
-						
-						<center><a href="{{URL::to('Clientes')}}" class="btn btn-primary">Gestión Clientes</a></center>
-					</h4>
+					
 				</div>
 
             </div>
@@ -93,10 +83,7 @@
 						<span class="hover-zoom"></span>
 					</a>
 
-					<h4>
-						
-						<center><a href="{{URL::to('Roles')}}" class="btn btn-primary">Gestión Roles</a></center>
-					</h4>
+					
 				</div>
 
             </div>
@@ -108,10 +95,7 @@
 						<span class="hover-zoom"></span>
 					</a>
 
-					<h4>
-						
-						<center><a href="{{URL::to('Cargos')}}" class="btn btn-primary">Gestión de Cargos</a></center>
-					</h4>
+					
 				</div>
 
             </div>
@@ -123,11 +107,7 @@
 						<span class="hover-zoom"></span>
 					</a>
 
-					<h4>
-						
-						</a>
-						<center><a href="{{URL::to('Sector')}}" class="btn btn-primary">Gestión de Sector Empresa</a></center>
-					</h4>
+					
 				</div>
 
             </div>
