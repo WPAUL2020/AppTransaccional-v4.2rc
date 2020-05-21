@@ -490,10 +490,11 @@
 
                 </div>
             </div>
+            
             @yield('content')
 
         <br>
-        </div>
+       
 <!-- Footer Widgets -->
 <section class="footer-widgets">
 

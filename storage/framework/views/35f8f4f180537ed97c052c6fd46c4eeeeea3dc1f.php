@@ -491,10 +491,11 @@
 
                 </div>
             </div>
+            
             <?php echo $__env->yieldContent('content'); ?>
 
         <br>
-        </div>
+       
 <!-- Footer Widgets -->
 <section class="footer-widgets">
 

@@ -31,8 +31,8 @@
     <div style="height: 30px;" class=""></div>
     <div class="container fondo_container page-body boxed-layout">
         <div class="row">
-            <div class="col-lg-12">
-            <div class="card shadow-lg p-3 mb-5 bg-white ">
+            <div class="col-md-12">
+            <div class="card shadow-md p-3 mb-5 bg-white ">
         <center>
         <div class="card-header">
             <a href="#">
