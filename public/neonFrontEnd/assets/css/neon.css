@@ -870,12 +870,13 @@ section.breadcrumb .alt-select-field {
 .portfolio-item .image,
 .gallery-item .image {
   display: block;
-  margin-bottom: -35px;
+  margin-bottom: 15px;
   overflow: hidden;
 }
 .portfolio-item .image,
 .gallery-item .image:active {
   box-shadow: inset 0 0 20px width;
+
 }
 .portfolio-item .image img,
 .gallery-item .image img {
@@ -891,7 +892,7 @@ section.breadcrumb .alt-select-field {
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
+  top: 35px;
   bottom: 0;
   background: rgba(48, 54, 65, 0.5);
   z-index: 5;
@@ -910,6 +911,7 @@ section.breadcrumb .alt-select-field {
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+
 }
 .portfolio-item .image .hover-zoom,
 .gallery-item .image .hover-zoom {
@@ -1053,7 +1055,8 @@ section.breadcrumb .alt-select-field {
 .gallery-container .portfolio-item,
 .portfolio-container .gallery-item,
 .gallery-container .gallery-item {
-  margin-top: 30px;
+  margin-top: 20px;
+
 }
 /*.portfolio-container .portfolio-item .like,
 .gallery-container .portfolio-item .like,

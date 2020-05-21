@@ -5432,6 +5432,7 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+
 }
 @media screen and (max-width: 767px) {
   .page-container .sidebar-menu {
@@ -5507,6 +5508,8 @@ body {
   -o-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
 }
+
+
 .page-container .sidebar-menu .logo-env > div.sidebar-collapse a:hover,
 .page-container .sidebar-menu .logo-env > div.sidebar-mobile-menu a:hover {
   background-color: rgba(69, 74, 84, 0.4);
