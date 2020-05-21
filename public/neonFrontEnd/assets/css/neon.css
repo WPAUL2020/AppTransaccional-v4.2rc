@@ -103,7 +103,8 @@ p {
 .btn.btn-secondary {
   background-color: #ff4e50;
   color: #fff;
-}
+  }
+
 .no-top-margin {
   margin-top: 0 !important;
 }

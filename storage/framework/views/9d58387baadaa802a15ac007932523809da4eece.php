@@ -422,7 +422,7 @@
                                 <section class="site-logo">
 
                                     <a href="<?php echo e(url('/')); ?>">
-                                        <img src="<?php echo e(asset('Imagenes/logo.png')); ?>" width="120" />
+                                        <img src="<?php echo e(asset('Imagenes/logo3.png')); ?>" width="120" />
                                     </a>
 
                                 </section>
@@ -600,7 +600,7 @@
       e.preventDefault();
       $("#container").toggleClass("sidebar-collapsed");
     });
-    </script>
+  </script>
 
 
 		<!-- JavaScripts initializations and stuff -->
