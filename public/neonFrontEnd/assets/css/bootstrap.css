@@ -2260,7 +2260,7 @@ select[multiple].input-lg {
 }
 
 .btn:hover {
-  transform: scale(1.10);
+  transform: scale(1.02);
 }
   
 }
