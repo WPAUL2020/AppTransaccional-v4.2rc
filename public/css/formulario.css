@@ -22,7 +22,123 @@ label{
 h2{
     color: honeydew;
 }
+.letra h3{
+  margin-top: -29px;
+  margin-bottom: 9px;
+  top: 222px;
+}
+.form-group1 label{
+  left: 100px;
+  top: -32px;
+}
+.form-group1{
+  margin-right: 430px;
+}
+.lbl{
+  display: inline-block;
+  width: 65px;
+  height: 28px;
+  background: #e1ece0;
+  border-radius: 100px;
+  cursor: pointer;
+  position: relative;
+  transition: .3s;
 
+}
+.lbl::after{
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #21a9e1;
+  border-radius: 100px;
+  position: absolute;
+  top: 4px;
+  left: 4px; 
+  transition: .3s;
+}
+.card-header1 img {
+  height: 90%;
+  width: 90%;
+  margin-right: -30px;
+  margin-top: 12px;
+}
+
+
+.form-group2{
+  width: 100%;
+  height: 50px;
+  max-width: 400px;
+  position: relative;
+  overflow: hidden;
+}
+.form-group2 input{
+  width: 100%;
+  height: 100%;
+  background: none;
+  color: #fff;
+  padding-top: 20px;
+  border: none;
+  outline: 0px;
+}
+
+.form-group2 .lbl2{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #c7c7c7;
+}
+
+.form-group2 .lbl2::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 100%;
+  border-bottom: 3px solid  #a1ecaa;
+  transform: translateX(-100%);
+  transition: all 0.3s ease;
+}
+.lbltex{
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+.form-group2 input:focus + .lbl2 .lbltex{
+  transform: translateY(-99%);
+  font-size: 15px;
+  color:  #a1ecaa;
+}
+.form-group2 input:focus + .lbl2::after
+{
+  transform: translateX(0%);
+}
+
+.form-group2{
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+
+
+
+#usu:checked + .lbl::after,
+#has:checked + .lbl::after{
+  left: 40px;
+}
+#usu:checked + .lbl,
+#has:checked + .lbl{
+  background: #a1ecaa;
+}
+#usu,
+#has{
+  display: none;
 }
 
 .img{

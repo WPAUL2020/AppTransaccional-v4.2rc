@@ -30,26 +30,32 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header text-center display-4">
-                    <img src="..\imagenes\Instahunterss.gif">
+                <div class="card-header1 text-center display-4">
+                    <img src="Imagenes/Instahunterss.gif">
                 </div>
 
                 <div class="card-body display-4">
                     <form method="POST" action="{{ route('scrapPost') }}" class="form-horizontal"> {{ csrf_field() }}
-                         <div class="form-group row card-header text-center display-4">
-
-                                <input type="radio" name="optionScrap" value="usuario">
-                                <label for="usuario"> @Usuario </label>
-                                <input type="radio" name="optionScrap" value="hashtag">
-                                <label for="usuario"> #Hashtag </label>
+                         <div class="form-group1 row card-header text-center display-4">
+                            <div>
+                                <h3>@ Usuario</h3><input type="checkbox" id="usu"> 
+                                <label for="usu" class="lbl">  </label>
+                            </div>
+                            <div class="letra">
+                                <h3># Hashtag </h3><input type="checkbox" id="has"> 
+                                <label for="has" class="lbl"> </label>
+                            </div>
                             @error('optionScrap')
                             <div class="alert alert-danger" role="alert">
                                 <strong>{{ $message }}</strong>
                             </div>
                             @enderror
                         </div>
-                        <div class="form-group row card-header text-center display-4">
-                            <input type="text" class="form-control form-control-lg" placeholder="Ingrese la palabra clave (username o hashtag)" name="palabraClave">
+                        <div class="form-group2 row card-header text-center display-4">
+                            <input type="text" class="" name="palabraClave">
+                            <label class="lbl2">
+                                <span class="lbltex">...Busqueda...</span>
+                            </label>
                             @error('palabraClave')
                             <div class="alert alert-danger" role="alert">
                                 <strong>{{ $message }}</strong>

@@ -310,7 +310,7 @@ figure {
 }
 img {
   vertical-align: middle;
-  filter: drop-shadow(0 0 6px #FAFAFA);
+  filter: drop-shadow(0 0 4px #FAFAFA);
 }
 .img-responsive,
 .thumbnail > img,
@@ -323,7 +323,7 @@ img {
 }
 .img-rounded {
   border-radius: 6px;
-  filter: drop-shadow(0 0 10px #a1ecaa);
+
 
 }
 .img-thumbnail {
@@ -1781,24 +1781,6 @@ output {
   border-bottom: 4px solid rgba(0, 184, 1, 1);
 }
 
-.form-group label{
-
-  color: #000000;
-  background: #a1ecaa55;
-  padding: 5px 15px;
-  display: inline-block;
-  position: relative;
-  font-size: 1em;
-  border-radius: 3px;
-  cursor: pointer;
-
-}
-.form-group label:hover{
-  background: #a1ecaa;
-}
-
-
-
 .form-control:focus {
   border-color: #66afe9;
   outline: 0;
@@ -2260,7 +2242,7 @@ select[multiple].input-lg {
 }
 
 .btn:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
   
 }
