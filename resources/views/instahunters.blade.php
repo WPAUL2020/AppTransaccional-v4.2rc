@@ -28,7 +28,7 @@
     </section>
 <div class="container fondo_container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 aliniar">
             <div class="card">
                 <div class="card-header1 text-center display-4">
                     <img src="Imagenes/Instahunterss.gif">
@@ -60,7 +60,7 @@
                             @enderror
                             <input type="text" class="" name="palabraClave" autocomplete="off" required>
                             <label class="lbl2">
-                                <span class="lbltex">...Busqueda...</span>
+                                <span class="lbltex">Busqueda...</span>
                             </label>
                         </div>
 

@@ -26,7 +26,7 @@
     </section>
 <div class="container fondo_container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 aliniar">
             <div class="card">
                 <div class="card-header1 text-center display-4">
                     <img src="Imagenes/Instahunterss.gif">
@@ -67,7 +67,7 @@ if (isset($messageCache)) { $message = $messageCache; }
 endif; ?>
                             <input type="text" class="" name="palabraClave" autocomplete="off" required>
                             <label class="lbl2">
-                                <span class="lbltex">...Busqueda...</span>
+                                <span class="lbltex">Busqueda...</span>
                             </label>
                         </div>
 
@@ -94,17 +94,6 @@ endif; ?>
 </div>
 
 </div>
-<footer>
-    <?php if($data2view!=null): ?>
-        <div>
-            <?php echo $success; ?>
-
-        </div>
-    <?php else: ?>
-    <div>
-    </div>
-    <?php endif; ?>
-</footer>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\git\AppTransaccional-v4.2rc\resources\views/instahunters.blade.php ENDPATH**/ ?>
