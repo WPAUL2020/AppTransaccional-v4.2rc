@@ -33,17 +33,16 @@
                 <div class="card-header text-center display-4">
                     <img src="..\images\Instahunterss.gif">
                 </div>
-                
+
                 <div class="card-body display-4">
                     <form method="POST" action="{{ route('scrapPost') }}" class="form-horizontal"> {{ csrf_field() }}
                          <div class="form-group row card-header text-center display-4">
-                            
-                                <input type="checkbox" name="usuario" id="usuario1"> 
+
+                                <input type="radio" name="optionScrap" value="usuario">
                                 <label for="usuario"> @Usuario </label>
-                                <input type="checkbox" name="hashtag" id="hashtag1"> 
+                                <input type="radio" name="optionScrap" value="hashtag">
                                 <label for="usuario"> #Hashtag </label>
-                            
-                            @error('campoSelect')
+                            @error('optionScrap')
                             <div class="alert alert-danger" role="alert">
                                 <strong>{{ $message }}</strong>
                             </div>
