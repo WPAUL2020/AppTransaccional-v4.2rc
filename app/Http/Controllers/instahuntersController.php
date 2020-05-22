@@ -190,6 +190,7 @@ class instahuntersController extends Controller
             $dataTOInsert[$i]['comentarios'] = $comentarios;
             $dataTOInsert[$i]['id_usuario'] = $id_usuario;
             $dataTOInsert['consulta_log'] = $this->date;
+            $dataTOInsert['wordSearch'] = $routeAtributte[0]->graphql->hashtag->name;
         }
 
         $dataIn = $routeAtributte[0]->graphql->hashtag->edge_hashtag_to_top_posts->edges;
@@ -209,7 +210,9 @@ class instahuntersController extends Controller
             $dataTOPInsert[$i]['likes'] = $likes;
             $dataTOPInsert[$i]['comentarios'] = $comentarios;
             $dataTOPInsert[$i]['id_usuario'] = $id_usuario;
+            $dataTOInsert['wordSearch'] = $routeAtributte[0]->graphql->hashtag->name;
         }
+        array_push($dataTOInsert, $hastagSearch);
         $dataMongoDB = new \App\dataCollectionMongoDB;
         $dataMongoDB->insert($dataTOInsert);
 
@@ -237,6 +240,7 @@ class instahuntersController extends Controller
             $dataTOInsert[$i]['likes'] = $likes;
             $dataTOInsert[$i]['comentarios'] = $comentarios;
             $dataTOInsert['consulta_log'] = $this->date;
+            $dataTOInsert['userSearch'] = $routeAtributte[0]->graphql->hashtag->name;
         }
         $dataMongoDB = new \App\dataCollectionMongoDB;
         $dataMongoDB->insert($dataTOInsert);
