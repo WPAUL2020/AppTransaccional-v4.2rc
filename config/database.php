@@ -96,11 +96,11 @@ return [
             'driver' => 'mongodb',
             'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', 27017),
-            'database' => env('DB_DATABASE'),
-            'username' => env('DB_USERNAME'),
-            'password' => env('DB_PASSWORD'),
+            'database' => env('DB_DATABASE_2'),
+            'username' => env('DB_USERNAME_2'),
+            'password' => env('DB_PASSWORD_2'),
             'options' => [
-            'database' => 'styde' // sets the authentication database required by mongo 3
+            'database' => 'semilleroBigData' // sets the authentication database required by mongo 3
     ]
 ],
 
