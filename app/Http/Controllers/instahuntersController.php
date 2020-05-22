@@ -53,6 +53,7 @@ class instahuntersController extends Controller
         $this->data2view = null;
         $this->middleware('auth');
         date_default_timezone_set('America/Bogota');
+        $this->date = date('d/m/Y H:i:s');
     }
 
     /**
@@ -126,7 +127,7 @@ class instahuntersController extends Controller
 
             );
             $data2view = json_decode($res->getBody()->getContents());
-            $this->TruncadeAndInsertHashtag($data2view);
+            $this->TruncadeAndInsertUser($data2view);
         }
 
     }
@@ -166,7 +167,7 @@ class instahuntersController extends Controller
 
     private  function TruncadeAndInsertHashtag($data)
     {
-        $dataMongoDB = new \App\dataCollectionMongoDB;
+
         $routeAtributte = $data->entry_data->TagPage;
         $dataIn = $routeAtributte[0]->graphql->hashtag->edge_hashtag_to_media->edges;
         $dataTOInsert = [];
@@ -174,6 +175,7 @@ class instahuntersController extends Controller
          * Y entrega la data importante a guardar en BD de Mongo
         */
         for ($i=0; $i < count($dataIn); $i++) {
+            error_reporting(~E_NOTICE);
             $text = $dataIn[$i]->node->edge_media_to_caption->edges[0]->node->text;
             $img = $dataIn[$i]->node->display_url;
             $likes = $dataIn[$i]->node->edge_liked_by->count;
@@ -189,9 +191,11 @@ class instahuntersController extends Controller
             $dataTOInsert[$i]['id_usuario'] = $id_usuario;
             $dataTOInsert['consulta_log'] = $this->date;
         }
+
         $dataIn = $routeAtributte[0]->graphql->hashtag->edge_hashtag_to_top_posts->edges;
         $dataTOPInsert = [];
         for ($i=0; $i <count($dataIn) ; $i++) {
+            error_reporting(~E_NOTICE);
             $text = $dataIn[$i]->node->edge_media_to_caption->edges[0]->node->text;
             $img = $dataIn[$i]->node->display_url;
             $likes = $dataIn[$i]->node->edge_liked_by->count;
@@ -206,10 +210,38 @@ class instahuntersController extends Controller
             $dataTOPInsert[$i]['comentarios'] = $comentarios;
             $dataTOPInsert[$i]['id_usuario'] = $id_usuario;
         }
-
+        $dataMongoDB = new \App\dataCollectionMongoDB;
         $dataMongoDB->insert($dataTOInsert);
 
-        return view('instahunters');
+        $dataTopHastag = new \App\dataTOPCollectionMongoDB;
+        $dataTopHastag->insert($dataTOPInsert);
+
+        return back();
+    }
+    private  function TruncadeAndInsertUser($data)
+    {
+        $routeAtributte = $data->entry_data->ProfilePage[0]->graphql->user->edge_owner_to_timeline_media->edges;
+        $dataTOInsert = [];
+        for ($i=0; $i < count($routeAtributte); $i++) {
+            error_reporting(~E_NOTICE);
+            $text = $routeAtributte[$i]->node->edge_media_to_caption->edges[0]->node->text;
+            $img = $routeAtributte[$i]->node->display_url;
+            $likes = $routeAtributte[$i]->node->edge_liked_by->count;
+            $comentarios = $routeAtributte[$i]->node->edge_media_to_comment->count;
+            $usuario_time = $routeAtributte[$i]->node->taken_at_timestamp;
+            $id_usuario = $routeAtributte[$i]->node->shortcode;
+            $fecha = new DateTime("@$usuario_time");
+            $dataTOInsert[$i]['img'] = $img;
+            $dataTOInsert[$i]['txt'] = $text;
+            $dataTOInsert[$i]['time'] = $fecha->format('Y-m-d H:i:s');
+            $dataTOInsert[$i]['likes'] = $likes;
+            $dataTOInsert[$i]['comentarios'] = $comentarios;
+            $dataTOInsert['consulta_log'] = $this->date;
+        }
+        $dataMongoDB = new \App\dataCollectionMongoDB;
+        $dataMongoDB->insert($dataTOInsert);
+
+        return back();
     }
 
 }
