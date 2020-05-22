@@ -26,7 +26,7 @@
     </section>
 <div class="container fondo_container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 aliniar">
             <div class="card">
                 <div class="card-header1 text-center display-4">
                     <img src="Imagenes/Instahunterss.gif">
@@ -37,28 +37,25 @@
 
                          <div class="form-group1 row card-header text-center display-4">
                             <div>
-                                <h3>@ Usuario</h3><input type="checkbox" id="usu"> 
+                                <?php if ($errors->has('optionScrap')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('optionScrap'); ?>
+                                <label class="alert alert-danger" role="alert">
+                                    <strong><?php echo e($message); ?></strong>
+                                </label>
+                                <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>
+                                <h3>@ Usuario</h3><input type="radio" id="usu" name="optionScrap" value="hashtag">
                                 <label for="usu" class="lbl">  </label>
                             </div>
                             <div class="letra">
-                                <h3># Hashtag </h3><input type="checkbox" id="has"> 
+                                <h3># Hashtag </h3><input type="radio" id="has" name="optionScrap" value="hashtag">
                                 <label for="has" class="lbl"> </label>
                             </div>
-                            <?php if ($errors->has('optionScrap')) :
-if (isset($message)) { $messageCache = $message; }
-$message = $errors->first('optionScrap'); ?>
-                            <div class="alert alert-danger" role="alert">
-                                <strong><?php echo e($message); ?></strong>
-                            </div>
-                            <?php unset($message);
-if (isset($messageCache)) { $message = $messageCache; }
-endif; ?>
+
                         </div>
                         <div class="form-group2 row card-header text-center display-4">
-                            <input type="text" class="" name="palabraClave" autocomplete="off">
-                            <label class="lbl2">
-                                <span class="lbltex">...Busqueda...</span>
-                            </label>
                             <?php if ($errors->has('palabraClave')) :
 if (isset($message)) { $messageCache = $message; }
 $message = $errors->first('palabraClave'); ?>
@@ -68,6 +65,10 @@ $message = $errors->first('palabraClave'); ?>
                             <?php unset($message);
 if (isset($messageCache)) { $message = $messageCache; }
 endif; ?>
+                            <input type="text" class="" name="palabraClave" autocomplete="off" required>
+                            <label class="lbl2">
+                                <span class="lbltex">Busqueda...</span>
+                            </label>
                         </div>
 
                         <div class="form-group">
@@ -93,17 +94,6 @@ endif; ?>
 </div>
 
 </div>
-<footer>
-    <?php if($data2view!=null): ?>
-        <div>
-            <?php echo $success; ?>
-
-        </div>
-    <?php else: ?>
-    <div>
-    </div>
-    <?php endif; ?>
-</footer>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\git\AppTransaccional-v4.2rc\resources\views/instahunters.blade.php ENDPATH**/ ?>
