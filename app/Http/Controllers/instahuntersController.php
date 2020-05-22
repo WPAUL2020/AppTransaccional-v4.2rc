@@ -213,6 +213,7 @@ class instahuntersController extends Controller
             $dataTOPInsert['consulta_log'] = $this->date;
             $dataTOPInsert['wordSearch'] = $routeAtributte[0]->graphql->hashtag->name;
         }
+
         $dataMongoDB = new \App\dataCollectionMongoDB;
         $dataMongoDB->insert($dataTOInsert);
 
