@@ -87,14 +87,4 @@
 </div>
 
 </div>
-<footer>
-    @if ($data2view!=null)
-        <div>
-            {!!$success!!}
-        </div>
-    @else
-    <div>
-    </div>
-    @endif
-</footer>
 @endsection

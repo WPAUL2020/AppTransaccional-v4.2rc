@@ -94,17 +94,6 @@ endif; ?>
 </div>
 
 </div>
-<footer>
-    <?php if($data2view!=null): ?>
-        <div>
-            <?php echo $success; ?>
-
-        </div>
-    <?php else: ?>
-    <div>
-    </div>
-    <?php endif; ?>
-</footer>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\AppTransaccional-v4.2rc\resources\views/instahunters.blade.php ENDPATH**/ ?>
