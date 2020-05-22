@@ -38,11 +38,11 @@
                     <form method="POST" action="{{ route('scrapPost') }}" class="form-horizontal"> {{ csrf_field() }}
                          <div class="form-group1 row card-header text-center display-4">
                             <div>
-                                <h3>@ Usuario</h3><input type="checkbox" id="usu"> 
+                                <h3>@ Usuario</h3><input type="radio" id="usu" name="optionScrap" value="hashtag">
                                 <label for="usu" class="lbl">  </label>
                             </div>
                             <div class="letra">
-                                <h3># Hashtag </h3><input type="checkbox" id="has"> 
+                                <h3># Hashtag </h3><input type="radio" id="has" name="optionScrap" value="hashtag">
                                 <label for="has" class="lbl"> </label>
                             </div>
                             @error('optionScrap')
