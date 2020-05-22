@@ -38,6 +38,11 @@
                     <form method="POST" action="{{ route('scrapPost') }}" class="form-horizontal"> {{ csrf_field() }}
                          <div class="form-group1 row card-header text-center display-4">
                             <div>
+                                @error('optionScrap')
+                                <label class="alert alert-danger" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </label>
+                                @enderror
                                 <h3>@ Usuario</h3><input type="radio" id="usu" name="optionScrap" value="hashtag">
                                 <label for="usu" class="lbl">  </label>
                             </div>
@@ -45,22 +50,18 @@
                                 <h3># Hashtag </h3><input type="radio" id="has" name="optionScrap" value="hashtag">
                                 <label for="has" class="lbl"> </label>
                             </div>
-                            @error('optionScrap')
-                            <div class="alert alert-danger" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </div>
-                            @enderror
+
                         </div>
                         <div class="form-group2 row card-header text-center display-4">
-                            <input type="text" class="" name="palabraClave" autocomplete="off">
-                            <label class="lbl2">
-                                <span class="lbltex">...Busqueda...</span>
-                            </label>
                             @error('palabraClave')
                             <div class="alert alert-danger" role="alert">
                                 <strong>{{ $message }}</strong>
                             </div>
                             @enderror
+                            <input type="text" class="" name="palabraClave" autocomplete="off">
+                            <label class="lbl2">
+                                <span class="lbltex">...Busqueda...</span>
+                            </label>
                         </div>
 
                         <div class="form-group">

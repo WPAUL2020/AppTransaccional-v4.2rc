@@ -37,6 +37,15 @@
 
                          <div class="form-group1 row card-header text-center display-4">
                             <div>
+                                <?php if ($errors->has('optionScrap')) :
+if (isset($message)) { $messageCache = $message; }
+$message = $errors->first('optionScrap'); ?>
+                                <label class="alert alert-danger" role="alert">
+                                    <strong><?php echo e($message); ?></strong>
+                                </label>
+                                <?php unset($message);
+if (isset($messageCache)) { $message = $messageCache; }
+endif; ?>
                                 <h3>@ Usuario</h3><input type="radio" id="usu" name="optionScrap" value="hashtag">
                                 <label for="usu" class="lbl">  </label>
                             </div>
@@ -44,21 +53,9 @@
                                 <h3># Hashtag </h3><input type="radio" id="has" name="optionScrap" value="hashtag">
                                 <label for="has" class="lbl"> </label>
                             </div>
-                            <?php if ($errors->has('optionScrap')) :
-if (isset($message)) { $messageCache = $message; }
-$message = $errors->first('optionScrap'); ?>
-                            <div class="alert alert-danger" role="alert">
-                                <strong><?php echo e($message); ?></strong>
-                            </div>
-                            <?php unset($message);
-if (isset($messageCache)) { $message = $messageCache; }
-endif; ?>
+
                         </div>
                         <div class="form-group2 row card-header text-center display-4">
-                            <input type="text" class="" name="palabraClave" autocomplete="off">
-                            <label class="lbl2">
-                                <span class="lbltex">...Busqueda...</span>
-                            </label>
                             <?php if ($errors->has('palabraClave')) :
 if (isset($message)) { $messageCache = $message; }
 $message = $errors->first('palabraClave'); ?>
@@ -68,6 +65,10 @@ $message = $errors->first('palabraClave'); ?>
                             <?php unset($message);
 if (isset($messageCache)) { $message = $messageCache; }
 endif; ?>
+                            <input type="text" class="" name="palabraClave" autocomplete="off">
+                            <label class="lbl2">
+                                <span class="lbltex">...Busqueda...</span>
+                            </label>
                         </div>
 
                         <div class="form-group">
