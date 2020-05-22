@@ -123,5 +123,4 @@ Route::post('Factura', 'FacturaController@redirecTO')->name('generarFactura.requ
 Route::get('/Factura', 'FacturaController@Factura')->name('Factura');
 Route::get('/generarFactura', 'FacturaController@index')->name('generarFactura');
 
-Route::get('/testMongo', 'testMongoController@index')->name('testMongo');
 
