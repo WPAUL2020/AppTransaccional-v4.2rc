@@ -46,7 +46,7 @@ class instahuntersController extends Controller
     public function __construct(Request $request) {
         $this->request = $request;
         $this->client = new Client([
-            'base_uri' => 'http://localhost/AnalisisBigData%20v2.2rc/public/'
+            'base_uri' => 'http://127.0.0.1:5000/'
         ]);
         $this->data2view = null;
         $this->middleware('auth');
@@ -70,7 +70,7 @@ class instahuntersController extends Controller
 
     public function getFrmInstaHunterview()
     {
-            $response =  $this->client->request('GET', 'apiPreview.php');
+            $response =  $this->client->request('GET', '');
             $allData = json_decode($response->getBody()->getContents());
 
             /**
@@ -89,35 +89,38 @@ class instahuntersController extends Controller
      */
     public function postGuzzleRequest()
     {
-        $validateMessage = [
+ /*        $validateMessage = [
             "required" => "Este campo es obligatorio",
             "min" => "Este campo debe tener mínimo :min dígitos"
         ];
         $this->request->validate([
             'campoSelect' => 'required',
             'palabraClave' => 'required'
-        ],$validateMessage);
+        ],$validateMessage); */
 
         $data2view = null;
         /* http://localhost/AnalisisBigData/public/apiInsert.php */
-        $res = $this->client->request('POST', 'apiInsert.php', [
+        $res = $this->client->request('POST', 'ScrapTags', [
+            'headers' => [
+            'Accept'     => 'application/json',
+            ],
             'json' => [
-                'campoSelect' => $this->request->input('campoSelect'),
-                'palabraClave' => $this->request->input('palabraClave'),
+                'hashtag' => "messi",
                 ]
             ]
 
         );
         $data2view = json_decode($res->getBody()->getContents());
 
-        if ($data2view!=null) {
+        dd($data2view);
+/*         if ($data2view!=null) {
             $success = "<script>alert('".$data2view->message."')</script>";
             return view('instahunters', compact('success', 'data2view'));
         }
         else {
             return view('instahunters', compact('data2view'));
         }
-
+ */
 
     }
 

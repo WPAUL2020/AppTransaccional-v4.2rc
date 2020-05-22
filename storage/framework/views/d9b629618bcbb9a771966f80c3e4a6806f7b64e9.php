@@ -11,7 +11,7 @@
 
                     <h1>InstaHunters</h1>
 
-                    <ol class="breadcrumb bc-3" >
+                    <ol class="bc-3">
                             <li>
                     <a href="<?php echo e(URL::to('appl')); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
                 </li>
@@ -24,23 +24,24 @@
 
         </div>
     </section>
-<div class="container">
+<div class="container fondo_container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header text-center display-4"><h1> InstaHunters <i class="fas fa-spider"></i>
+                <div class="card-header text-center display-4">
+                    <img src="..\images\Instahunterss.gif">
                 </div>
-                <div class="card-header text-center text-primary display-4 ">
-                    <a href="https://universitariadecolombia.edu.co/programas/profesionales/ingenieria-de-sistemas/" class="text-primary"> by Semillero Ing. de Sistemas, Universitaria de Colombia.</a></div>
+                
                 <div class="card-body display-4">
                     <form method="POST" action="<?php echo e(route('scrapPost')); ?>" class="form-horizontal"> <?php echo e(csrf_field()); ?>
 
                          <div class="form-group row card-header text-center display-4">
-                            <select name="campoSelect" class="form-control">
-                                <option value="">Seleccionar..</option>
-                                <option value="usuario">@Usuario</option>
-                                <option value="hashtag">#Hashtag</option>
-                            </select>
+                            
+                                <input type="checkbox" name="usuario" id="usuario1"> 
+                                <label for="usuario"> @Usuario  </label>
+                                <input type="checkbox" name="hashtag" id="hashtag1"> 
+                                <label for="usuario"> #Hashtag </label>
+                            
                             <?php if ($errors->has('campoSelect')) :
 if (isset($message)) { $messageCache = $message; }
 $message = $errors->first('campoSelect'); ?>
@@ -84,6 +85,8 @@ endif; ?>
             </center>
         </div>
     </div>
+</div>
+
 </div>
 <footer>
     <?php if($data2view!=null): ?>
