@@ -31,7 +31,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header text-center display-4">
-                    <img src="..\images\Instahunterss.gif">
+                    <img src="..\imagenes\Instahunterss.gif">
                 </div>
 
                 <div class="card-body display-4">
