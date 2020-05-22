@@ -61,15 +61,9 @@ class instahuntersController extends Controller
      *
      * @return Illuminate\Contracts\Support\Renderable
      */
-    public function getFrmInstaHunter()
+    public function indexInstaHuters()
     {
-        $data2view = null;
-        if ($data2view!=null) {
-            return view('instahunters', compact('data2view'));
-        }
-        else {
-            return view('instahunters' , compact('data2view'));
-        }
+        return view('instahunters');
     }
 
     public function getFrmInstaHunterview()
