@@ -52,7 +52,7 @@
                             @enderror
                         </div>
                         <div class="form-group2 row card-header text-center display-4">
-                            <input type="text" class="" name="palabraClave">
+                            <input type="text" class="" name="palabraClave" autocomplete="off">
                             <label class="lbl2">
                                 <span class="lbltex">...Busqueda...</span>
                             </label>
