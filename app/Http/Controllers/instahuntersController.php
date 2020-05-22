@@ -210,9 +210,9 @@ class instahuntersController extends Controller
             $dataTOPInsert[$i]['likes'] = $likes;
             $dataTOPInsert[$i]['comentarios'] = $comentarios;
             $dataTOPInsert[$i]['id_usuario'] = $id_usuario;
-            $dataTOInsert['wordSearch'] = $routeAtributte[0]->graphql->hashtag->name;
+            $dataTOPInsert['consulta_log'] = $this->date;
+            $dataTOPInsert['wordSearch'] = $routeAtributte[0]->graphql->hashtag->name;
         }
-        array_push($dataTOInsert, $hastagSearch);
         $dataMongoDB = new \App\dataCollectionMongoDB;
         $dataMongoDB->insert($dataTOInsert);
 
