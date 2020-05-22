@@ -111,13 +111,14 @@ h2{
   color: #fff;
 }
 
-.form-group2 input:focus + .lbl2 .lbltex{
+.form-group2 input:focus + .lbl2 .lbltex,
+.form-group2 input:Valid + .lbl2 .lbltex{
   transform: translateY(-99%);
   font-size: 15px;
   color:  #a1ecaa;
 }
-.form-group2 input:focus + .lbl2::after
-{
+.form-group2 input:focus + .lbl2::after,
+.form-group2 input:Valid + .lbl2::after{
   transform: translateX(0%);
 }
 

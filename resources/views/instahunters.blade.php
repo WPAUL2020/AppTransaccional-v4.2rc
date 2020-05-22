@@ -58,7 +58,7 @@
                                 <strong>{{ $message }}</strong>
                             </div>
                             @enderror
-                            <input type="text" class="" name="palabraClave" autocomplete="off">
+                            <input type="text" class="" name="palabraClave" autocomplete="off" required>
                             <label class="lbl2">
                                 <span class="lbltex">...Busqueda...</span>
                             </label>
