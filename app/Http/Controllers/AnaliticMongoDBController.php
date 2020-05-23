@@ -20,10 +20,13 @@ class AnaliticMongoDBController extends Controller
 
     private function findByIDUser($id_user)
     {
+        foreach ($id_user as $value) {
+            dd($value->wordSearch);
+        }
 
         $dataInsert = [];
-        dd($id_user);
-        $wordSerach = $id_user['wordSearch'];
+
+/*         $wordSerach = $id_user['wordSearch'];
         foreach ($id_user as $id) {
             error_reporting(~E_WARNING);
             $id_user= $id['id_usuario'];
@@ -41,7 +44,7 @@ class AnaliticMongoDBController extends Controller
             array_push($dataInsert, $this->truncateUsername($data2view));
         }
 
-        array_push($dataInsert, $wordSerach);
+        array_push($dataInsert, $wordSerach); */
 
         $dataMongoDB = new \App\scrapedUserCollectionMongoDB;
         $dataMongoDB->insert($dataInsert);
