@@ -1762,6 +1762,20 @@ output {
   line-height: 1.42857143;
   color: #555555;
 }
+.col .ciud{
+  margin-left: 15px;
+  width: 950px;
+}
+.form-group .col{
+  margin-left: 15px;
+  width: 950px;
+}
+.col label{
+  margin-left: 14px;
+}
+.lb label{
+  margin-left: 14px;
+}
 .form-control {
   display: block;
   width: 100%;
