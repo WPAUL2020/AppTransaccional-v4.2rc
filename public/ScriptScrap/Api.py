@@ -78,7 +78,7 @@ def ScrapUser():
         app_json = json.dumps(data_dict)
         return Response(app_json, mimetype="application/json")
 
-@app.route('/ScrapUser', methods=['POST'])
+@app.route('/findByUserID', methods=['POST'])
 def ScrapFindByUser():
     req_data = request.get_json()
     tag = req_data['id_usuario']

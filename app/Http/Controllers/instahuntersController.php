@@ -8,7 +8,6 @@ use GuzzleHttp\Middleware;
 use App\Exports\exportData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
@@ -107,7 +106,7 @@ class instahuntersController extends Controller
 
             );
             $data2view = json_decode($res->getBody()->getContents());
-            $this->TruncadeAndInsertHashtag($data2view);
+            $this->truncateAndInsertHashtag($data2view);
         }
         elseif($this->request->optionScrap === "usuario"){
             $res = $this->client->request('POST', 'ScrapUser', [
@@ -121,7 +120,7 @@ class instahuntersController extends Controller
 
             );
             $data2view = json_decode($res->getBody()->getContents());
-            $this->TruncadeAndInsertUser($data2view);
+            $this->truncateAndInsertUser($data2view);
         }
 
     }
@@ -159,7 +158,7 @@ class instahuntersController extends Controller
 
     }
 
-    private  function TruncadeAndInsertHashtag($data)
+    private  function truncateAndInsertHashtag($data)
     {
 
         $routeAtributte = $data->entry_data->TagPage;
@@ -216,7 +215,7 @@ class instahuntersController extends Controller
 
         return back();
     }
-    private  function TruncadeAndInsertUser($data)
+    private  function truncateAndInsertUser($data)
     {
         $routeAtributte = $data->entry_data->ProfilePage[0]->graphql->user->edge_owner_to_timeline_media->edges;
         $dataTOInsert = [];
@@ -242,5 +241,6 @@ class instahuntersController extends Controller
 
         return back();
     }
+
 
 }

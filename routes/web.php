@@ -116,11 +116,14 @@ Route::post('instahunters', 'instahuntersController@postGuzzleRequest')->name('s
 Route::get('instahunterview', 'instahuntersController@getFrmInstaHunterview')->name('viewPreview');
 Route::post('instahunterview', 'instahuntersController@exportXls')->name('exportXls');/**Download Data */
 
-// Route::get('reporte', 'ReporteController@index');
 
 //FACTURA
 Route::post('Factura', 'FacturaController@redirecTO')->name('generarFactura.request');
 Route::get('/Factura', 'FacturaController@Factura')->name('Factura');
 Route::get('/generarFactura', 'FacturaController@index')->name('generarFactura');
+
+// GRÁFICAS
+
+Route::get('chart', 'AnaliticMongoDBController@index')->name('chart');
 
 
