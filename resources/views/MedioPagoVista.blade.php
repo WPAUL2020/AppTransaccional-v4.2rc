@@ -43,6 +43,6 @@
 
 </table>
 {!! $MedioPagos->render() !!}
-                <a class="btn btn-outline-secondary" href="{{URL::to('MedioPagoCrear/agregar')}}">Agregar</a>
+                <a class="btn btn-primary" href="{{URL::to('MedioPagoCrear/agregar')}}">Agregar</a>
 </div>
 @endsection
