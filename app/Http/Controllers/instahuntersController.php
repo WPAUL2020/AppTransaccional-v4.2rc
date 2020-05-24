@@ -12,8 +12,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
-use Illuminate\Pagination\LengthAwarePaginator;
+use GuzzleHttp\Exception\ClientException;
 use App\dataCollectionMongoDB as dataMongoDB;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class instahuntersController extends Controller
 {
@@ -107,6 +108,7 @@ class instahuntersController extends Controller
             );
             $data2view = json_decode($res->getBody()->getContents());
             $this->truncateAndInsertHashtag($data2view);
+            return view('instahunters');
         }
         elseif($this->request->optionScrap === "usuario"){
             $res = $this->client->request('POST', 'ScrapUser', [
@@ -121,6 +123,7 @@ class instahuntersController extends Controller
             );
             $data2view = json_decode($res->getBody()->getContents());
             $this->truncateAndInsertUser($data2view);
+            return view('instahunters');
         }
 
     }
@@ -207,13 +210,13 @@ class instahuntersController extends Controller
             $dataTOPInsert['wordSearch'] = $routeAtributte[0]->graphql->hashtag->name;
         }
 
+        $scrapUser = new \App\scrapedUserCollectionMongoDB;
+        $scrapUser->insert($this->findByIDUser($dataTOInsert));
         $dataMongoDB = new \App\dataCollectionMongoDB;
         $dataMongoDB->insert($dataTOInsert);
 
         $dataTopHastag = new \App\dataTOPCollectionMongoDB;
         $dataTopHastag->insert($dataTOPInsert);
-
-        return back();
     }
     private  function truncateAndInsertUser($data)
     {
@@ -226,7 +229,6 @@ class instahuntersController extends Controller
             $likes = $routeAtributte[$i]->node->edge_liked_by->count;
             $comentarios = $routeAtributte[$i]->node->edge_media_to_comment->count;
             $usuario_time = $routeAtributte[$i]->node->taken_at_timestamp;
-            $id_usuario = $routeAtributte[$i]->node->shortcode;
             $fecha = new DateTime("@$usuario_time");
             $dataTOInsert[$i]['img'] = $img;
             $dataTOInsert[$i]['txt'] = $text;
@@ -238,9 +240,41 @@ class instahuntersController extends Controller
         }
         $dataMongoDB = new \App\dataCollectionMongoDB;
         $dataMongoDB->insert($dataTOInsert);
-
-        return back();
     }
+
+    private function findByIDUser($id_user)
+    {
+        $dataInsert = [
+            'wordSearch' => $id_user['wordSearch'],
+            'consulta_log' => $this->date
+        ];
+        $clientFindUser = new Client([
+            'base_uri' => 'www.instagram.com/'
+        ]);
+        foreach ($id_user as $id) {
+            error_reporting(~E_NOTICE || ~E_WARNING);
+            try {
+                $response =  $clientFindUser->request('GET', "p/".$id['id_usuario']."/?__a=1");
+                $allData = json_decode($response->getBody()->getContents());
+                array_push($dataInsert, $this->truncateUsername($allData));
+            } catch (ClientException $e) {
+                $e->getResponse()->getStatusCode();
+            }
+        }
+        return $dataInsert;
+    }
+
+    private function truncateUsername($data)
+    {
+        $routeAtributte = $data->graphql->shortcode_media->owner;
+        $arrayUsername = [
+            'userName' => $routeAtributte->username,
+            'fullName' => $routeAtributte->full_name,
+            'profile_pic' => $routeAtributte->profile_pic_url,
+    ];
+        return $arrayUsername;
+    }
+
 
 
 }
