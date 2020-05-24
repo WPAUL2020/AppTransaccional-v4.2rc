@@ -124,6 +124,6 @@ Route::get('/generarFactura', 'FacturaController@index')->name('generarFactura')
 
 // GRÁFICAS
 
-Route::get('chart', 'AnaliticMongoDBController@index')->name('chart');
-
+Route::get('instahuntersvista', 'AnaliticMongoDBController@index')->name('indexSearch');
+Route::get('instahunters/Estadistica/{_id}', 'AnaliticMongoDBController@scrapAndAnalitic')->name('scrapAndAnalitic');
 

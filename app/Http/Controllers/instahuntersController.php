@@ -100,7 +100,7 @@ class instahuntersController extends Controller
 
             );
             $data2view = json_decode($res->getBody()->getContents());
-            $this->truncateAndInsertHashtag($data2view);
+            $this->truncateAndInsertHashtag($data2view, $this->request->palabraClave);
             return view('instahunters');
         }
         elseif($this->request->optionScrap === "usuario"){
@@ -132,9 +132,8 @@ class instahuntersController extends Controller
 
     }
 
-    private  function truncateAndInsertHashtag($data)
+    private  function truncateAndInsertHashtag($data, $searchKey)
     {
-
         $routeAtributte = $data->entry_data->TagPage;
         $dataIn = $routeAtributte[0]->graphql->hashtag->edge_hashtag_to_media->edges;
         $dataTOInsert = [];
@@ -186,13 +185,9 @@ class instahuntersController extends Controller
             $dataTOPInsert['wordSearch'] = $routeAtributte[0]->graphql->hashtag->name;
         }
 
-        $scrapUser = new \App\scrapedUserCollectionMongoDB;
-        $scrapUser->insert($this->findByIDUser($dataTOPInsert));
         $dataMongoDB = new \App\dataCollectionMongoDB;
         $dataMongoDB->insert($dataTOInsert);
 
-        $dataTopHastag = new \App\dataTOPCollectionMongoDB;
-        $dataTopHastag->insert($dataTOPInsert);
     }
     private  function truncateAndInsertUser($data)
     {
@@ -217,57 +212,5 @@ class instahuntersController extends Controller
         $dataMongoDB = new \App\dataCollectionMongoDB;
         $dataMongoDB->insert($dataTOInsert);
     }
-
-    private function findByIDUser($id_user)
-    {
-        $dataInsert = [];
-        $clientFindUser = new Client([
-            'base_uri' => 'www.instagram.com/'
-        ]);
-        foreach ($id_user as $id) {
-            error_reporting(~E_NOTICE || ~E_WARNING);
-            try {
-                $response =  $clientFindUser->request('GET', "p/".$id['id_usuario']."/?__a=1");
-                $allData = json_decode($response->getBody()->getContents());
-                array_push($dataInsert, $this->truncateUsername($allData));
-            } catch (ClientException $e) {
-                $e->getResponse()->getStatusCode();
-            }
-        }
-        return $dataInsert;
-    }
-
-    private function truncateUsername($data)
-    {
-        $routeAtributte = $data->graphql->shortcode_media;
-        if ($routeAtributte->is_video == true) {
-            $arrayUsername = [
-                'userName' => $routeAtributte->owner->username,
-                'fullName' => $routeAtributte->owner->full_name,
-                'profile_pic' => $routeAtributte->owner->profile_pic_url,
-                'pais' => $routeAtributte->location->name,
-                'likes' => $routeAtributte->edge_media_preview_like->count,
-                'comentarios' => $routeAtributte->edge_media_preview_comment->count,
-                'video' => $routeAtributte->video_url,
-                'text' => $routeAtributte->edge_media_to_caption->edges[0]->node->text
-        ];
-        } else {
-                $arrayUsername = [
-                    'userName' => $routeAtributte->owner->username,
-                    'fullName' => $routeAtributte->owner->full_name,
-                    'profile_pic' => $routeAtributte->owner->profile_pic_url,
-                    'pais' => $routeAtributte->location->name,
-                    'likes' => $routeAtributte->edge_media_preview_like->count,
-                    'comentarios' => $routeAtributte->edge_media_preview_comment->count,
-                    'img' => $routeAtributte->display_url,
-                    'text' => $routeAtributte->edge_media_to_caption->edges[0]->node->text
-            ];
-        }
-
-
-        return $arrayUsername;
-    }
-
-
 
 }
