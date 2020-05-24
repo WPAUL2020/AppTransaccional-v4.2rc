@@ -5511,8 +5511,6 @@ body {
 }
 
 
-
-
 .page-container .sidebar-menu .logo-env > div.sidebar-collapse a:hover,
 .page-container .sidebar-menu .logo-env > div.sidebar-mobile-menu a:hover {
   background-color: rgba(69, 74, 84, 0.4);
@@ -5606,19 +5604,19 @@ body {
 .page-container .sidebar-menu #main-menu li a i {
   top: 1px;
   display: inline-block;
+  
 }
 
 .page-container .sidebar-menu #main-menu li:hover >ul{
   display: block;
+  position: absolute;
 }
 .page-container .sidebar-menu #main-menu li ul {
-  position: relative;
+  right: -195px;
+  top: -1px;  
+  width: 195px;
 }
-.page-container .sidebar-menu #main-menu li ul {
-  right: -280px;
-  top: -40px;
-  
-}
+
 .page-container .sidebar-menu #main-menu li a{
   border-bottom: 2px solid rgba(0, 184, 1, 1);
   border-radius: 10px;
