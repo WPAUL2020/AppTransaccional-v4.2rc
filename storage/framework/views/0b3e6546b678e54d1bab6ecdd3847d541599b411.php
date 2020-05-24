@@ -199,7 +199,7 @@
                     </li>
                     <li class="has-sub">
                         <a href="layout-api.html">
-                            <i class="entypo-user"></i>
+                           <i class="entypo-layout"></i>
                             <span class="title">Gestión Roles</span>
                         </a>
                         <ul>
@@ -407,7 +407,7 @@
                         <ul>
                             <li>
                                 <a href="layout-api.html">
-                                    <i class="entypo-user"></i>
+                                   <i class="entypo-layout"></i>
                                     <span class="title">Generar</span>
                                 </a>
                             </li>

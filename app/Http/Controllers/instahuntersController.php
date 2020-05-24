@@ -143,8 +143,13 @@ class instahuntersController extends Controller
         */
         for ($i=0; $i < count($dataIn); $i++) {
             error_reporting(~E_NOTICE);
+            if ($dataIn[$i]->node->is_video == true) {
+                # code...
+            } else {
+                $img = $dataIn[$i]->node->display_url;
+            }
+
             $text = $dataIn[$i]->node->edge_media_to_caption->edges[0]->node->text;
-            $img = $dataIn[$i]->node->display_url;
             $likes = $dataIn[$i]->node->edge_liked_by->count;
             $comentarios = $dataIn[$i]->node->edge_media_to_comment->count;
             $hashtag_time = $dataIn[$i]->node->taken_at_timestamp;
@@ -182,7 +187,7 @@ class instahuntersController extends Controller
         }
 
         $scrapUser = new \App\scrapedUserCollectionMongoDB;
-        $scrapUser->insert($this->findByIDUser($dataTOInsert));
+        $scrapUser->insert($this->findByIDUser($dataTOPInsert));
         $dataMongoDB = new \App\dataCollectionMongoDB;
         $dataMongoDB->insert($dataTOInsert);
 
@@ -215,10 +220,7 @@ class instahuntersController extends Controller
 
     private function findByIDUser($id_user)
     {
-        $dataInsert = [
-            'wordSearch' => $id_user['wordSearch'],
-            'consulta_log' => $this->date
-        ];
+        $dataInsert = [];
         $clientFindUser = new Client([
             'base_uri' => 'www.instagram.com/'
         ]);
@@ -237,12 +239,32 @@ class instahuntersController extends Controller
 
     private function truncateUsername($data)
     {
-        $routeAtributte = $data->graphql->shortcode_media->owner;
-        $arrayUsername = [
-            'userName' => $routeAtributte->username,
-            'fullName' => $routeAtributte->full_name,
-            'profile_pic' => $routeAtributte->profile_pic_url,
-    ];
+        $routeAtributte = $data->graphql->shortcode_media;
+        if ($routeAtributte->is_video == true) {
+            $arrayUsername = [
+                'userName' => $routeAtributte->owner->username,
+                'fullName' => $routeAtributte->owner->full_name,
+                'profile_pic' => $routeAtributte->owner->profile_pic_url,
+                'pais' => $routeAtributte->location->name,
+                'likes' => $routeAtributte->edge_media_preview_like->count,
+                'comentarios' => $routeAtributte->edge_media_preview_comment->count,
+                'video' => $routeAtributte->video_url,
+                'text' => $routeAtributte->edge_media_to_caption->edges[0]->node->text
+        ];
+        } else {
+                $arrayUsername = [
+                    'userName' => $routeAtributte->owner->username,
+                    'fullName' => $routeAtributte->owner->full_name,
+                    'profile_pic' => $routeAtributte->owner->profile_pic_url,
+                    'pais' => $routeAtributte->location->name,
+                    'likes' => $routeAtributte->edge_media_preview_like->count,
+                    'comentarios' => $routeAtributte->edge_media_preview_comment->count,
+                    'img' => $routeAtributte->display_url,
+                    'text' => $routeAtributte->edge_media_to_caption->edges[0]->node->text
+            ];
+        }
+
+
         return $arrayUsername;
     }
 
