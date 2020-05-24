@@ -10,6 +10,7 @@ use GuzzleHttp\Exception\ClientException;
 use App\dataCollectionMongoDB as dataCollection;
 use App\scrapedUserCollectionMongoDB as scrapedUser;
 use App\dataTOPCollectionMongoDB as TopPostCollection;
+use App\scrapedUserTopCollectionMongoDB as userTOP;
 
 class AnaliticMongoDBController extends Controller
 {
@@ -43,11 +44,13 @@ class AnaliticMongoDBController extends Controller
 
         $ScrapTopUserPost = new \App\scrapedUserTopCollectionMongoDB;
         $idScrapUserTop = $ScrapTopUserPost->insertGetId($this->findByIDUser($scrapTopUser));
+        $scrapTopUsername = userTOP::findOrFail($idScrapUserTop);
 
         $scrapUser = new \App\scrapedUserCollectionMongoDB;
         $idScrapUser = $scrapUser->insertGetId($this->findByIDUser($findByUser));
-
-        scrapedUser::findOrFail($idScrapUser);
+        $scrapUser = scrapedUser::findOrFail($idScrapUser);
+        $data = $idScrapUser . "------" . $idScrapUserTop . "------" .$idCollecionTop;
+        dd($data);
     }
 
 
