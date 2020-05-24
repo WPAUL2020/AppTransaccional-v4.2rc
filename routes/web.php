@@ -113,7 +113,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('instahunters', 'instahuntersController@indexInstaHuters')->name('scrapGet');
 Route::post('instahunters', 'instahuntersController@postGuzzleRequest')->name('scrapPost');/**Consumir API */
-Route::get('instahunterview', 'instahuntersController@getFrmInstaHunterview')->name('viewPreview');
+Route::get('instahunterview', 'instahuntersController@indexPreview')->name('viewPreview');
 Route::post('instahunterview', 'instahuntersController@exportXls')->name('exportXls');/**Download Data */
 
 

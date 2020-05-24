@@ -22,6 +22,15 @@ class AnaliticMongoDBController extends Controller
     {
         $Users = scrapedUser::All();
         $data = dataCollection::All();
-        dd($data);
+        $truncate = [];
+        error_reporting(~E_NOTICE || ~E_WARNING);
+        foreach ($Users as $value) {
+            $contar = collect($value);
+            for ($i=0; $i <count($contar) ; $i++) {
+                array_push($truncate, $value[$i]['fullName']);
+            }
+        }
+
+        dd(array_count_values($truncate));
     }
 }
