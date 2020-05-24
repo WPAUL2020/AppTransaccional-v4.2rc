@@ -5491,7 +5491,7 @@ body {
 .page-container .sidebar-menu .logo-env > div.sidebar-collapse a,
 .page-container .sidebar-menu .logo-env > div.sidebar-mobile-menu a {
   display: inline-block;
-  border: 1px solid #454a54;
+  border: 2px solid rgba(0, 184, 1, 1);;
   text-align: center;
   padding: 0;
   line-height: 1;
@@ -5527,7 +5527,11 @@ body {
   position: relative;
   margin: 0;
   font-size: 12px;
-  border-bottom: 1px solid rgba(69, 74, 84, 0.7);
+  border-radius: 10px;
+}
+.logo-env .men{
+  vertical-align: middle;
+  filter: drop-shadow(0 0 3px rgba(0, 184, 1, 1));
 }
 .page-container .sidebar-menu #main-menu li#search {
   background: #262b34;
@@ -5593,6 +5597,7 @@ body {
   padding: 10px 20px;
   color: #aaabae;
   z-index: 2;
+  border-radius: 5px;
   -webkit-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
   -moz-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
   -o-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
@@ -5602,6 +5607,23 @@ body {
   top: 1px;
   display: inline-block;
 }
+
+.page-container .sidebar-menu #main-menu li:hover >ul{
+  display: block;
+}
+.page-container .sidebar-menu #main-menu li ul {
+  position: relative;
+}
+.page-container .sidebar-menu #main-menu li ul {
+  right: -280px;
+  top: -40px;
+  
+}
+.page-container .sidebar-menu #main-menu li a{
+  border-bottom: 2px solid rgba(0, 184, 1, 1);
+  border-radius: 10px;
+}
+} 
 .page-container .sidebar-menu #main-menu li a span {
   -webkit-transition: 350ms opacity ease-in-out;
   -moz-transition: 350ms opacity ease-in-out;

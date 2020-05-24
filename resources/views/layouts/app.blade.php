@@ -67,7 +67,7 @@
                 <header class="logo-env">
 
                     <!-- logo -->
-                    <div class="logo">
+                    <div class="logo men">
                         <a href="{{ url('/') }}">
                             <img src="{{ asset('Imagenes/logo.png') }}" width="120" alt="" />
                         </a>
