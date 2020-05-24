@@ -39,8 +39,14 @@ class AnaliticMongoDBController extends Controller
 
         $dataTopHastag = new \App\dataTOPCollectionMongoDB;
         $idCollecionTop = $dataTopHastag->insertGetId($this->findTOPPost($findByUser));
+        $scrapTopUser = TopPostCollection::findOrFail($idCollecionTop);
+
+        $ScrapTopUserPost = new \App\scrapedUserTopCollectionMongoDB;
+        $idScrapUserTop = $ScrapTopUserPost->insertGetId($this->findByIDUser($scrapTopUser));
+
         $scrapUser = new \App\scrapedUserCollectionMongoDB;
         $idScrapUser = $scrapUser->insertGetId($this->findByIDUser($findByUser));
+
         scrapedUser::findOrFail($idScrapUser);
     }
 
