@@ -94,6 +94,7 @@ return [
 
     'mongodb' => [
             'driver' => 'mongodb',
+            'dsn'=> 'mongodb+srv://fernedy:manager147@semillerobigdata-h9igz.mongodb.net/test?retryWrites=true&w=majority',
             'host' => env('DB_HOST_2', 'localhost'),
             'port' => env('DB_PORT_2', 27017),
             'database' => env('DB_DATABASE_2'),
