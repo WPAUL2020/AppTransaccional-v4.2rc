@@ -50,15 +50,15 @@
 <body>
 <div class="login-reg-panel">
 		<div class="login-info-box">
-			<h2 style="color:white">¿Tienes una cuenta?</h2>
-			<p style="color:white">Ingresar</p>
+			<h2 style="color:#000000">¿Tienes una cuenta?</h2>
+			<p style="color:#4e4e4e">Ingresar</p>
 			<label id="label-register" for="log-reg-show">Login</label>
 			<input type="radio" name="active-log-panel" id="log-reg-show"  checked="checked">
 		</div>
 
 		<div class="register-info-box">
-			<h2 style="color:white">Olvidaste tú constraseña?</h2>
-			<p style="color:white">Clic aquí</p>
+			<h2 style="color:#000000">Olvidaste tú constraseña?</h2>
+			<p style="color:#4e4e4e">Clic aquí</p>
 			<label id="label-login" for="log-login-show">Recuperar</label>
 			<input type="radio" name="active-log-panel" id="log-login-show">
 		</div>

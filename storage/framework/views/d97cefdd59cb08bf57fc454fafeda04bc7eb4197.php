@@ -1,5 +1,6 @@
 <?php $__env->startSection('content'); ?>
 	<!-- Breadcrumb -->
+	
 <section class="breadcrumb">
 
 	<div class="container">
@@ -10,7 +11,7 @@
 
 				<h1>Zona Transaccional</h1>
 
-							<ol class="breadcrumb bc-3" >
+							<ol class="bc-3" >
 						<li>
 				<a href="<?php echo e(url('/')); ?>"><i class="fas fa-home"></i> Home</a>
 			</li>
@@ -31,7 +32,6 @@
 
 </section>
 
-
 <section class="portfolio-container">
 
 	<div class="container">
@@ -45,12 +45,7 @@
 						<span class="hover-zoom"></span>
 					</a>
 
-					<h4>
-						<a href="<?php echo e(URL::to('instahunters')); ?>" class="like">
-							<i class="entypo-heart"></i>
-						</a>
-						<center><a href="<?php echo e(URL::to('instahunters')); ?>" class="btn btn-primary">Gestión Big Data</a></center>
-					</h4>
+					
 				</div>
 
             </div>
@@ -62,12 +57,7 @@
 						<span class="hover-zoom"></span>
 					</a>
 
-					<h4>
-						<a href="<?php echo e(URL::to('MedioPagos')); ?>" class="like">
-							<i class="entypo-heart"></i>
-						</a>
-						<center><a href="<?php echo e(URL::to('MedioPagos')); ?>" class="btn btn-primary">Medios de pago</a></center>
-					</h4>
+					
 				</div>
 
             </div>
@@ -79,12 +69,7 @@
 						<span class="hover-zoom"></span>
 					</a>
 
-					<h4>
-						<a href="<?php echo e(URL::to('Categorias')); ?>" class="like">
-							<i class="entypo-heart"></i>
-						</a>
-						<center><a href="<?php echo e(URL::to('Categorias')); ?>" class="btn btn-primary">Productos</a></center>
-					</h4>
+					
 				</div>
 
             </div>
@@ -96,12 +81,7 @@
 						<span class="hover-zoom"></span>
 					</a>
 
-					<h4>
-						<a href="<?php echo e(URL::to('Servicios')); ?>" class="like">
-							<i class="entypo-heart"></i>
-						</a>
-						<center><a href="<?php echo e(URL::to('Servicios')); ?>" class="btn btn-primary">Servicio</a></center>
-					</h4>
+					
 				</div>
 
             </div>
@@ -113,12 +93,7 @@
 						<span class="hover-zoom"></span>
 					</a>
 
-					<h4>
-						<a href="<?php echo e(URL::to('/generarFactura')); ?>" class="like">
-							<i class="entypo-heart"></i>
-						</a>
-						<center><a href="<?php echo e(URL::to('/generarFactura')); ?>" class="btn btn-primary">Generar Factura</a></center>
-					</h4>
+					
 				</div>
 
 			</div>

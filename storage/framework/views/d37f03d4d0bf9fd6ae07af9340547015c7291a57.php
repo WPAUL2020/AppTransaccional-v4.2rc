@@ -42,11 +42,11 @@
     <link rel="stylesheet" href="<?php echo e(asset('neonFrontEnd/assets/css/custom.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('css/formulario.css')); ?>">
     <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
     <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
+        <link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
     <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="../vendor/perfect-scrollbar/perfect-scrollbar.css">
+        <link rel="stylesheet" type="text/css" href="/vendor/perfect-scrollbar/perfect-scrollbar.css">
     <!--===============================================================================================-->
         <link rel="stylesheet" type="text/css" href="css/util.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -422,7 +422,7 @@
                                 <section class="site-logo">
 
                                     <a href="<?php echo e(url('/')); ?>">
-                                        <img src="<?php echo e(asset('Imagenes/logo.png')); ?>" width="120" />
+                                        <img src="<?php echo e(asset('Imagenes/logo3.png')); ?>" width="120" />
                                     </a>
 
                                 </section>
@@ -491,10 +491,12 @@
 
                 </div>
             </div>
+            
             <?php echo $__env->yieldContent('content'); ?>
 
-            <br />
--<!-- Footer Widgets -->
+        <br>
+       
+<!-- Footer Widgets -->
 <section class="footer-widgets">
 
     <div class="container">
@@ -593,7 +595,7 @@
     <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-api.js')); ?>"></script>
     <?php echo $__env->yieldContent('Scripts'); ?>
 
-<script>
+    <script>
     $("#menu-toggle").click(function(e) {
       e.preventDefault();
       $("#container").toggleClass("sidebar-collapsed");

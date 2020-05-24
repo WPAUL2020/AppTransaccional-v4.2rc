@@ -11,7 +11,7 @@
 
                     <h1>InstaHunters</h1>
 
-                    <ol class="breadcrumb bc-3" >
+                    <ol class="bc-3">
                             <li>
                     <a href="<?php echo e(URL::to('appl')); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
                 </li>
@@ -24,35 +24,38 @@
 
         </div>
     </section>
-<div class="container">
+<div class="container fondo_container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header text-center display-4"><h1> InstaHunters <i class="fas fa-spider"></i>
+                <div class="card-header1 text-center display-4">
+                    <img src="Imagenes/Instahunterss.gif">
                 </div>
-                <div class="card-header text-center text-primary display-4 ">
-                    <a href="https://universitariadecolombia.edu.co/programas/profesionales/ingenieria-de-sistemas/" class="text-primary"> by Semillero Ing. de Sistemas, Universitaria de Colombia.</a></div>
-                <div class="card-body display-4">
-                    <form method="POST" action="<?php echo e(URL::to('instahunters/instahunters')); ?>" class="form-horizontal"> <?php echo e(csrf_field()); ?>
 
-                         <div class="form-group row card-header text-center display-4">
-                            <select name="campoSelect" class="form-control">
-                                <option value="">Seleccionar..</option>
-                                <option value="usuario">@Usuario</option>
-                                <option value="hashtag">#Hashtag</option>
-                            </select>
-                            <?php if ($errors->has('campoSelect')) :
+                <div class="card-body display-4">
+                    <form method="POST" action="<?php echo e(route('scrapPost')); ?>" class="form-horizontal"> <?php echo e(csrf_field()); ?>
+
+                         <div class="form-group1 row card-header text-center display-4">
+                            <div>
+                                <?php if ($errors->has('optionScrap')) :
 if (isset($message)) { $messageCache = $message; }
-$message = $errors->first('campoSelect'); ?>
-                            <div class="alert alert-danger" role="alert">
-                                <strong><?php echo e($message); ?></strong>
-                            </div>
-                            <?php unset($message);
+$message = $errors->first('optionScrap'); ?>
+                                <label class="alert alert-danger" role="alert">
+                                    <strong><?php echo e($message); ?></strong>
+                                </label>
+                                <?php unset($message);
 if (isset($messageCache)) { $message = $messageCache; }
 endif; ?>
+                                <h3>@ Usuario</h3><input type="radio" id="usu" name="optionScrap" value="hashtag">
+                                <label for="usu" class="lbl">  </label>
+                            </div>
+                            <div class="letra">
+                                <h3># Hashtag </h3><input type="radio" id="has" name="optionScrap" value="hashtag">
+                                <label for="has" class="lbl"> </label>
+                            </div>
+
                         </div>
-                        <div class="form-group row card-header text-center display-4">
-                            <input type="text" class="form-control form-control-lg" placeholder="Ingrese la palabra clave (username o hashtag)" name="palabraClave">
+                        <div class="form-group2 row card-header text-center display-4">
                             <?php if ($errors->has('palabraClave')) :
 if (isset($message)) { $messageCache = $message; }
 $message = $errors->first('palabraClave'); ?>
@@ -62,6 +65,10 @@ $message = $errors->first('palabraClave'); ?>
                             <?php unset($message);
 if (isset($messageCache)) { $message = $messageCache; }
 endif; ?>
+                            <input type="text" class="" name="palabraClave" autocomplete="off" required>
+                            <label class="lbl2">
+                                <span class="lbltex">...Busqueda...</span>
+                            </label>
                         </div>
 
                         <div class="form-group">
@@ -85,18 +92,8 @@ endif; ?>
         </div>
     </div>
 </div>
-<footer>
-    <?php if($data2view!=null): ?>
-        <div>
-            <?php echo $success; ?>
 
-        </div>
-    <?php else: ?>
-    <div>
-    </div>
-    <?php endif; ?>
-</footer>
+</div>
 <?php $__env->stopSection(); ?>
-
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/AppTransaccional-v4.2rc/resources/views/instahunters.blade.php ENDPATH**/ ?>
