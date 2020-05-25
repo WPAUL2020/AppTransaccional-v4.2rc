@@ -19,6 +19,9 @@ class UserTableSeeder extends Seeder
         $user->name = "USUARIO";
         $user->email = "Usuario@gmail.com";
         $user->password = bcrypt('123456789');
+        $user->ESTADO = "ACTIVO";
+        $user->ROLE_ID ="1";
+        $user->ID_EMPRESA_TERCERO ="NULL";
         $user->save();
         $user->roles()->attach($rol_user);
 
@@ -26,6 +29,9 @@ class UserTableSeeder extends Seeder
         $user->name = "ADMINISTRADOR";
         $user->email = "Administrador@gmail.com";
         $user->password = bcrypt('123456789');
+        $user->ESTADO = "ACTIVO";
+        $user->ROLE_ID ="1";
+        $user->ID_EMPRESA_TERCERO ="NULL";
         $user->save();
         $user->roles()->attach($rol_admin);
     }
