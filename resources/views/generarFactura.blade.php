@@ -28,7 +28,7 @@
     </section>
     <header style="height: 70px">
     </header>
-    <div style="height: 30px;" class=""></div>
+    <div style="height: 30px;" class="">
     <div class="container fondo_container page-body boxed-layout">
         <div class="row">
             <div class="col-md-12">
@@ -152,6 +152,7 @@
         </form>
     </div>
     </div>
+</div>
 </div>
 </div>
 </div>

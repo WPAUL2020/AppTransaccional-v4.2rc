@@ -113,14 +113,17 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('instahunters', 'instahuntersController@indexInstaHuters')->name('scrapGet');
 Route::post('instahunters', 'instahuntersController@postGuzzleRequest')->name('scrapPost');/**Consumir API */
-Route::get('instahunterview', 'instahuntersController@getFrmInstaHunterview')->name('viewPreview');
+Route::get('instahunterview', 'instahuntersController@indexPreview')->name('viewPreview');
 Route::post('instahunterview', 'instahuntersController@exportXls')->name('exportXls');/**Download Data */
 
-// Route::get('reporte', 'ReporteController@index');
 
 //FACTURA
 Route::post('Factura', 'FacturaController@redirecTO')->name('generarFactura.request');
 Route::get('/Factura', 'FacturaController@Factura')->name('Factura');
 Route::get('/generarFactura', 'FacturaController@index')->name('generarFactura');
 
+// GRÁFICAS
+
+Route::get('instahuntersvista', 'AnaliticMongoDBController@index')->name('indexSearch');
+Route::get('instahunters/Estadistica/{_id}', 'AnaliticMongoDBController@scrapAndAnalitic')->name('scrapAndAnalitic');
 

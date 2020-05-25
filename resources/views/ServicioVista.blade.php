@@ -47,6 +47,6 @@
 
 </table>
 {!! $Servicios->render() !!}
-                <a class="btn btn-outline-secondary" href="{{URL::to('ServicioCrear/agregar')}}">Agregar</a>
+                <a class="btn btn-primary" href="{{URL::to('ServicioCrear/agregar')}}">Agregar</a>
 </div>
 @endsection

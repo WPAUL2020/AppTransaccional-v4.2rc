@@ -8,13 +8,13 @@ use GuzzleHttp\Middleware;
 use App\Exports\exportData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
-use Illuminate\Pagination\LengthAwarePaginator;
+use GuzzleHttp\Exception\ClientException;
 use App\dataCollectionMongoDB as dataMongoDB;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class instahuntersController extends Controller
 {
@@ -66,16 +66,9 @@ class instahuntersController extends Controller
         return view('instahunters');
     }
 
-    public function getFrmInstaHunterview()
+    public function indexPreview()
     {
-            $response =  $this->client->request('GET', '');
-            $allData = json_decode($response->getBody()->getContents());
-
-            /**
-             * Paginación
-             */
-            $allData = $this->paginate($allData);
-            return $allData;
+            return view('instahunterview');
 
     }
 
@@ -107,7 +100,8 @@ class instahuntersController extends Controller
 
             );
             $data2view = json_decode($res->getBody()->getContents());
-            $this->TruncadeAndInsertHashtag($data2view);
+            $this->truncateAndInsertHashtag($data2view, $this->request->palabraClave);
+            return view('instahunters');
         }
         elseif($this->request->optionScrap === "usuario"){
             $res = $this->client->request('POST', 'ScrapUser', [
@@ -121,35 +115,14 @@ class instahuntersController extends Controller
 
             );
             $data2view = json_decode($res->getBody()->getContents());
-            $this->TruncadeAndInsertUser($data2view);
+            $this->truncateAndInsertUser($data2view);
+            return view('instahunters');
         }
 
     }
 
 
-    public function paginate($items)
-    {
 
-        // Get current page form url e.x. &page=1
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-
-        // Create a new Laravel collection from the array data
-        $itemCollection = collect($items);
-
-        // Define how many items we want to be visible in each page
-        $perPage = 3;
-
-        // Slice the collection to get the items to display in current page
-        $currentPageItems = $itemCollection->slice(($currentPage * $perPage) - $perPage, $perPage)->all();
-
-        // Create our paginator and pass it to the view
-        $paginatedItems= new LengthAwarePaginator($currentPageItems , count($itemCollection), $perPage);
-
-        // set url path for generted links
-        $paginatedItems->setPath($this->request->url());
-
-        return view('instahunterview', ['items' => $paginatedItems, 'countItem' => count($items)]);
-    }
 
     public function exportXls()
     {
@@ -159,9 +132,8 @@ class instahuntersController extends Controller
 
     }
 
-    private  function TruncadeAndInsertHashtag($data)
+    private  function truncateAndInsertHashtag($data, $searchKey)
     {
-
         $routeAtributte = $data->entry_data->TagPage;
         $dataIn = $routeAtributte[0]->graphql->hashtag->edge_hashtag_to_media->edges;
         $dataTOInsert = [];
@@ -170,8 +142,13 @@ class instahuntersController extends Controller
         */
         for ($i=0; $i < count($dataIn); $i++) {
             error_reporting(~E_NOTICE);
+            if ($dataIn[$i]->node->is_video == true) {
+                # code...
+            } else {
+                $img = $dataIn[$i]->node->display_url;
+            }
+
             $text = $dataIn[$i]->node->edge_media_to_caption->edges[0]->node->text;
-            $img = $dataIn[$i]->node->display_url;
             $likes = $dataIn[$i]->node->edge_liked_by->count;
             $comentarios = $dataIn[$i]->node->edge_media_to_comment->count;
             $hashtag_time = $dataIn[$i]->node->taken_at_timestamp;
@@ -211,12 +188,8 @@ class instahuntersController extends Controller
         $dataMongoDB = new \App\dataCollectionMongoDB;
         $dataMongoDB->insert($dataTOInsert);
 
-        $dataTopHastag = new \App\dataTOPCollectionMongoDB;
-        $dataTopHastag->insert($dataTOPInsert);
-
-        return back();
     }
-    private  function TruncadeAndInsertUser($data)
+    private  function truncateAndInsertUser($data)
     {
         $routeAtributte = $data->entry_data->ProfilePage[0]->graphql->user->edge_owner_to_timeline_media->edges;
         $dataTOInsert = [];
@@ -227,7 +200,6 @@ class instahuntersController extends Controller
             $likes = $routeAtributte[$i]->node->edge_liked_by->count;
             $comentarios = $routeAtributte[$i]->node->edge_media_to_comment->count;
             $usuario_time = $routeAtributte[$i]->node->taken_at_timestamp;
-            $id_usuario = $routeAtributte[$i]->node->shortcode;
             $fecha = new DateTime("@$usuario_time");
             $dataTOInsert[$i]['img'] = $img;
             $dataTOInsert[$i]['txt'] = $text;
@@ -239,8 +211,6 @@ class instahuntersController extends Controller
         }
         $dataMongoDB = new \App\dataCollectionMongoDB;
         $dataMongoDB->insert($dataTOInsert);
-
-        return back();
     }
 
 }

@@ -381,7 +381,8 @@ h6,
 .h3,
 .h4,
 .h5,
-.h6 {
+.h6,
+.lbltex {
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
@@ -1760,6 +1761,20 @@ output {
   font-size: 13px;
   line-height: 1.42857143;
   color: #555555;
+}
+.col .ciud{
+  margin-left: 15px;
+  width: 950px;
+}
+.form-group .col{
+  margin-left: 15px;
+  width: 950px;
+}
+.col label{
+  margin-left: 14px;
+}
+.lb label{
+  margin-left: 14px;
 }
 .form-control {
   display: block;
