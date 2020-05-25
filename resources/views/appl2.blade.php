@@ -87,6 +87,17 @@
             <div class="row">
 
                 <div class="col-md-12">
+                <div class="text-center">
+                    <ul class="pagination">
+                        <li class="active">
+                            <a href="{{URL::to('appl')}}"><i class="fas fa-angle-left"></i></a>
+                             </li>
+                        <li>
+                        <a href=""><i class="fas fa-angle-right"></i></a>
+                        </li>
+                    </ul>
+
+</div>
                 </div>
 		</div>
 	</div>
