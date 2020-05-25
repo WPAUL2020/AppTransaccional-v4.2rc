@@ -106,7 +106,7 @@ class AnaliticMongoDBController extends Controller
         return $arrayUsername;
     }
 
-    public function findTOPPost($data)
+    private function findTOPPost($data)
     {
             try {
                 $response =  $this->client->request('GET', "explore/tags/".$data['wordSearch']."/?__a=1");
@@ -145,4 +145,5 @@ class AnaliticMongoDBController extends Controller
         }
         return $dataTOPInsert;
     }
+
 }

@@ -13,6 +13,7 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\ConnectException;
 use App\dataCollectionMongoDB as dataMongoDB;
 use Illuminate\Pagination\LengthAwarePaginator;
 
@@ -88,35 +89,42 @@ class instahuntersController extends Controller
             'optionScrap'=> 'required|in:usuario,hashtag',
             'palabraClave' => 'required'
         ],$validateMessage);
-        if($this->request->optionScrap === "hashtag"){
-            $res = $this->client->request('POST', 'ScrapTags', [
-                'headers' => [
-                'Accept'     => 'application/json',
-                ],
-                'json' => [
-                    'hashtag' => $this->request->palabraClave,
+        try {
+            if($this->request->optionScrap === "hashtag"){
+                $res = $this->client->request('POST', 'ScrapTags', [
+                    'headers' => [
+                    'Accept'     => 'application/json',
+                    ],
+                    'json' => [
+                        'hashtag' => $this->request->palabraClave,
+                        ]
                     ]
-                ]
 
-            );
-            $data2view = json_decode($res->getBody()->getContents());
-            $this->truncateAndInsertHashtag($data2view, $this->request->palabraClave);
-            return view('instahunters');
-        }
-        elseif($this->request->optionScrap === "usuario"){
-            $res = $this->client->request('POST', 'ScrapUser', [
-                'headers' => [
-                'Accept'     => 'application/json',
-                ],
-                'json' => [
-                    'usuario' => $this->request->palabraClave,
+                );
+                $data2view = json_decode($res->getBody()->getContents());
+                $this->truncateAndInsertHashtag($data2view);
+                return view('instahunters');
+            }
+            elseif($this->request->optionScrap === "usuario"){
+                $res = $this->client->request('POST', 'ScrapUser', [
+                    'headers' => [
+                    'Accept'     => 'application/json',
+                    ],
+                    'json' => [
+                        'usuario' => $this->request->palabraClave,
+                        ]
                     ]
-                ]
 
-            );
-            $data2view = json_decode($res->getBody()->getContents());
-            $this->truncateAndInsertUser($data2view);
-            return view('instahunters');
+                );
+                $data2view = json_decode($res->getBody()->getContents());
+                $this->truncateAndInsertUser($data2view);
+                return view('instahunters');
+            }
+        } catch (ConnectException $th) {
+
+            echo $th->getResponse().'<div class="alert alert-danger" role="alert">
+                                        <strong>OOPS!!!!!!!!! Algo a fallado con el servidor de raspado</strong>
+                                    </div>';
         }
 
     }
@@ -132,7 +140,7 @@ class instahuntersController extends Controller
 
     }
 
-    private  function truncateAndInsertHashtag($data, $searchKey)
+    private  function truncateAndInsertHashtag($data)
     {
         $routeAtributte = $data->entry_data->TagPage;
         $dataIn = $routeAtributte[0]->graphql->hashtag->edge_hashtag_to_media->edges;
@@ -164,30 +172,8 @@ class instahuntersController extends Controller
             $dataTOInsert['wordSearch'] = $routeAtributte[0]->graphql->hashtag->name;
         }
 
-        $dataIn = $routeAtributte[0]->graphql->hashtag->edge_hashtag_to_top_posts->edges;
-        $dataTOPInsert = [];
-        for ($i=0; $i <count($dataIn) ; $i++) {
-            error_reporting(~E_NOTICE);
-            $text = $dataIn[$i]->node->edge_media_to_caption->edges[0]->node->text;
-            $img = $dataIn[$i]->node->display_url;
-            $likes = $dataIn[$i]->node->edge_liked_by->count;
-            $comentarios = $dataIn[$i]->node->edge_media_to_comment->count;
-            $hashtag_time = $dataIn[$i]->node->taken_at_timestamp;
-            $id_usuario = $dataIn[$i]->node->shortcode;
-            $fecha = new DateTime("@$hashtag_time");
-            $dataTOPInsert[$i]['img'] = $img;
-            $dataTOPInsert[$i]['txt'] = $text;
-            $dataTOPInsert[$i]['time'] = $fecha->format('Y-m-d H:i:s');
-            $dataTOPInsert[$i]['likes'] = $likes;
-            $dataTOPInsert[$i]['comentarios'] = $comentarios;
-            $dataTOPInsert[$i]['id_usuario'] = $id_usuario;
-            $dataTOPInsert['consulta_log'] = $this->date;
-            $dataTOPInsert['wordSearch'] = $routeAtributte[0]->graphql->hashtag->name;
-        }
-
         $dataMongoDB = new \App\dataCollectionMongoDB;
         $dataMongoDB->insert($dataTOInsert);
-
     }
     private  function truncateAndInsertUser($data)
     {
