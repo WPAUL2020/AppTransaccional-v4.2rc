@@ -5508,6 +5508,7 @@ body {
   -moz-transition: all 200ms ease-in-out;
   -o-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
+  cursor: pointer;
 }
 
 
@@ -5593,6 +5594,7 @@ body {
   position: relative;
   display: block;
   padding: 10px 20px;
+  cursor: pointer;
   color: #aaabae;
   z-index: 2;
   border-radius: 5px;
@@ -5604,7 +5606,7 @@ body {
 .page-container .sidebar-menu #main-menu li a i {
   top: 1px;
   display: inline-block;
-  
+  cursor: pointer;
 }
 
 .page-container .sidebar-menu #main-menu li:hover >ul{
@@ -5620,6 +5622,7 @@ body {
 .page-container .sidebar-menu #main-menu li a{
   border-bottom: 2px solid rgba(0, 184, 1, 1);
   border-radius: 10px;
+  cursor: pointer;
 }
 } 
 .page-container .sidebar-menu #main-menu li a span {
@@ -6072,6 +6075,7 @@ float: left;
 }
 .page-container.sidebar-collapsed .sidebar-menu #main-menu > li.has-sub > a {
   background-color: transparent;
+  cursor: pointer;
 }
 .page-container.sidebar-collapsed .sidebar-menu #main-menu > li > a {
   position: relative;
@@ -6092,13 +6096,16 @@ float: left;
   -webkit-background-clip: padding-box;
   -moz-border-radius: 0 3px 3px 0;
   -moz-background-clip: padding;
-  border-radius: 0 3px 3px 0;
+  
   background-clip: padding-box;
   zoom: 1;
   filter: alpha(opacity=0);
   -webkit-opacity: 0;
   -moz-opacity: 0;
   opacity: 0;
+  border-bottom: 2px solid rgba(0, 184, 1, 1);
+  border-radius: 10px;
+  cursor: pointer;
 }
 .page-container.sidebar-collapsed .sidebar-menu #main-menu > li > a span {
   -webkit-transition: none;
@@ -6163,7 +6170,7 @@ float: left;
   -webkit-background-clip: padding-box;
   -moz-border-radius: 0 3px 0 0;
   -moz-background-clip: padding;
-  border-radius: 0 3px 0 0;
+  border-radius: 10px;
   background-clip: padding-box;
 }
 .page-container.sidebar-collapsed .sidebar-menu #main-menu > li.has-sub:hover.has-sub > a:hover,

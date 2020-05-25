@@ -182,7 +182,7 @@
   <div class="form-row">
                     <div class="form-group">
                         <input type="submit" value="Registrar" class="btn btn-primary">
-                        <a class="btn btn-outline-secondary" href="{{URL::to('UsuariosTercero')}}">Regresar</a>
+                        <a class="btn btn-secondary" href="{{URL::to('UsuariosTercero')}}">Regresar</a>
                     </div>
   </div>
 
