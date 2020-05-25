@@ -22,19 +22,24 @@ class applController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->user()->authorizeRoles1('ADMINISTRADOR'))
+        {
+            return view('appl');
+        } else
+        if ($request->user()->authorizeRoles1(['SUPERVISOR EXTERNO']))
+        {
+            return view('appl4');
+        }
 
-        return view('appl');
+        if ($request->user()->authorizeRoles1(['EMPLEADO EXTERNO']))
+        {
+            return view('appl3');
+        }
     }
     public function index2()
     {
-
         return view('appl2');
-    }
-    public function index3()
-    {
-
-        return view('appl3');
     }
 }

@@ -23,6 +23,15 @@ class User extends Authenticatable
 
     }
 
+    public function authorizeRoles1($roles)
+    {
+        if($this->hasAnyRole($roles)){
+            return true;
+        }
+        // abort(401, 'Esta accion no esta Autorizada');
+
+    }
+
     public function hasAnyRole($roles)
     {
         if(is_array($roles)){
