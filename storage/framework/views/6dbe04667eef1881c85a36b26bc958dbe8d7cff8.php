@@ -57,7 +57,7 @@
 		</div>
 
 		<div class="register-info-box">
-			<h2 style="color:#000000">Olvidaste tú constraseña?</h2>
+			<h2 style="color:#000000">Olvidaste tú contraseña?</h2>
 			<p style="color:#4e4e4e">Clic aquí</p>
 			<label id="label-login" for="log-login-show">Recuperar</label>
 			<input type="radio" name="active-log-panel" id="log-login-show">
