@@ -67,7 +67,7 @@
                 <header class="logo-env">
 
                     <!-- logo -->
-                    <div class="logo">
+                    <div class="logo men">
                         <a href="<?php echo e(url('/')); ?>">
                             <img src="<?php echo e(asset('Imagenes/logo.png')); ?>" width="120" alt="" />
                         </a>
@@ -101,7 +101,9 @@
                         </a>
                         <ul>
                             <li>
+
                                 <a href="<?php echo e(URL::to('appl')); ?>">
+                                    <i class="entypo-gauge"></i>
                                     <span class="title">Zona Transaccional</span>
                                 </a>
                             </li>
@@ -172,16 +174,19 @@
                         <ul>
                             <li>
                                 <a href="layout-api.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title">Gestionar</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-collapsed-sidebar.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title"> Crear</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-fixed-sidebar.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title"> Editar</span>
                                 </a>
                             </li>
@@ -194,12 +199,13 @@
                     </li>
                     <li class="has-sub">
                         <a href="layout-api.html">
-                            <i class="entypo-user"></i>
+                           <i class="entypo-layout"></i>
                             <span class="title">Gestión Roles</span>
                         </a>
                         <ul>
                             <li>
                                 <a href="layout-api.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title"><i class="entypo-user"></i> Gestionar</span>
                                 </a>
                             </li>
@@ -233,16 +239,19 @@
                             </li>
                             <li>
                                 <a href="layout-collapsed-sidebar.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title">Crear</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-fixed-sidebar.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title">Editar</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-chat-open.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title">Actualizar</span>
                                 </a>
                             </li>
@@ -256,21 +265,25 @@
                         <ul>
                             <li>
                                 <a href="layout-api.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title">Gestionar</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-collapsed-sidebar.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title">Crear</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-fixed-sidebar.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title">Editar</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-chat-open.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title">Actualizar</span>
                                 </a>
                             </li>
@@ -284,6 +297,7 @@
                         <ul>
                             <li>
                                 <a href="layout-api.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title">InstaHunters</span>
                                 </a>
                             </li>
@@ -297,21 +311,25 @@
                         <ul>
                             <li>
                                 <a href="layout-api.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title">Gestionar</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-collapsed-sidebar.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title">Crear</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-fixed-sidebar.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title">Editar</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-chat-open.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title">Actualizar</span>
                                 </a>
                             </li>
@@ -325,21 +343,25 @@
                         <ul>
                             <li>
                                 <a href="layout-api.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title">Gestionar</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-collapsed-sidebar.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title">Crear</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-fixed-sidebar.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title">Editar</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-chat-open.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title">Actualizar</span>
                                 </a>
                             </li>
@@ -353,21 +375,25 @@
                         <ul>
                             <li>
                                 <a href="layout-api.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title">Gestionar</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-collapsed-sidebar.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title">Crear</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-fixed-sidebar.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title">Editar</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layout-chat-open.html">
+                                    <i class="entypo-user"></i>
                                     <span class="title">Actualizar</span>
                                 </a>
                             </li>
@@ -381,6 +407,7 @@
                         <ul>
                             <li>
                                 <a href="layout-api.html">
+                                   <i class="entypo-layout"></i>
                                     <span class="title">Generar</span>
                                 </a>
                             </li>
@@ -395,7 +422,8 @@
                     <ul>
                         <li>
                             <a href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
-                                <span class="title">Logout  <i class="entypo-logout"></i></span>
+                                <i class="entypo-logout"></i>
+                                <span class="title">Logout  </span>
                             </a>
                         </li>
                     </ul>

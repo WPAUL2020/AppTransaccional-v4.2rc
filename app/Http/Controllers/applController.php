@@ -32,4 +32,9 @@ class applController extends Controller
 
         return view('appl2');
     }
+    public function index3()
+    {
+
+        return view('appl3');
+    }
 }
