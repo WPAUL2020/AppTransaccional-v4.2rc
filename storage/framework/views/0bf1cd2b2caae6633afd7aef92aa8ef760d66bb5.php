@@ -48,7 +48,6 @@
                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 </table>
-                <a class="btn btn-primary" href="<?php echo e(URL::to('GesUserTerCrear/agregar')); ?>">Agregar</a>
 </div>
 <?php $__env->stopSection(); ?>
 

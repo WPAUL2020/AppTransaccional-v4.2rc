@@ -49,6 +49,5 @@
                    @endforeach
 
 </table>
-                <a class="btn btn-primary" href="{{URL::to('GesUserTerCrear/agregar')}}">Agregar</a>
 </div>
 @endsection
