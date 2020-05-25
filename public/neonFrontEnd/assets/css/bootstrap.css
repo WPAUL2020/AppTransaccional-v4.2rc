@@ -1863,6 +1863,21 @@ input[type="search"] {
 .form-group {
   margin-bottom: 15px;
 }
+.ag{
+ height: 350px;
+}
+.be{
+  width: : 150px;
+}
+.cor{
+  margin-left: 30px;
+  width: 375px;
+}
+.pro{
+  position: relative;
+  bottom: -280px;
+  left: -270px;
+}
 .radio,
 .checkbox {
   position: relative;
