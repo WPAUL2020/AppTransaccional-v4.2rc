@@ -199,22 +199,4 @@ class instahuntersController extends Controller
         $dataMongoDB->insert($dataTOInsert);
     }
 
-    private function findByIDUser($id_user)
-    {
-        $dataInsert = [];
-        $clientFindUser = new Client([
-            'base_uri' => 'www.instagram.com/'
-        ]);
-        foreach ($id_user as $id) {
-            error_reporting(~E_NOTICE || ~E_WARNING);
-            try {
-                $response =  $clientFindUser->request('GET', "p/".$id['id_usuario']."/?__a=1");
-                $allData = json_decode($response->getBody()->getContents());
-                array_push($dataInsert, $this->truncateUsername($allData));
-            } catch (ClientException $e) {
-                $e->getResponse()->getStatusCode();
-            }
-        }
-        return $dataInsert;
-    }
 }
