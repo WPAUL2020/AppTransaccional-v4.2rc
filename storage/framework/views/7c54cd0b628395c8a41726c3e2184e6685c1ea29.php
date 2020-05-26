@@ -46,7 +46,7 @@
 </table>
 <?php echo $Servicios->render(); ?>
 
-                <a class="btn btn-outline-secondary" href="<?php echo e(URL::to('ServicioCrear/agregar')); ?>">Agregar</a>
+                <a class="btn btn-primary" href="<?php echo e(URL::to('ServicioCrear/agregar')); ?>">Agregar</a>
 </div>
 <?php $__env->stopSection(); ?>
 
