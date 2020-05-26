@@ -25,12 +25,13 @@
             </div>
         </div>
     </section>
-<<<<<<< HEAD
+
+<div>
 <div class="cir2">
     <strong  class="">Publicaciones</strong>
 
     <ul class="galeria">
-    	<li><a href="#img11"><img src=""></a></li>
+    	<li><a href="#img11"><img src="https://www.youtube.com/watch?v=w1FOFIg1Xnk"></a></li>
     	<li><a href="#img22"><img src=""></a></li>
     	<li><a href="#img33"><img src=""></a></li>
     	<li><a href="#img44"><img src=""></a></li>
@@ -47,7 +48,7 @@
     	</div>
     	<a class="cerrar" href="">x</a>
     </div>
-
+ 
  	<div class="modal" id="img22">
     	<h4>"Nombre del que la publico2" </h4>
     	<div class="imagen1">
@@ -57,7 +58,7 @@
     	</div>
     	<a class="cerrar" href="">x</a>
     </div>
-
+ 
  	<div class="modal" id="img33">
     	<h4>"Nombre del que la publico3" </h4>
     	<div class="imagen1">
@@ -67,7 +68,7 @@
     	</div>
     	<a class="cerrar" href="">x</a>
     </div>
-
+ 
  	<div class="modal" id="img44">
     	<h4>"Nombre del que la publico4" </h4>
     	<div class="imagen1">
@@ -77,7 +78,7 @@
     	</div>
     	<a class="cerrar" href="">x</a>
     </div>
-
+ 
  	<div class="modal" id="img55">
     	<h4>"Nombre del que la publico5" </h4>
     	<div class="imagen1">
@@ -97,7 +98,7 @@
     	</div>
     	<a class="cerrar" href="">x</a>
     </div>
-
+ 
  	<div class="modal" id="img77">
     	<h4>"Nombre del que la publico7" </h4>
     	<div class="imagen1">
@@ -108,8 +109,7 @@
     	<a class="cerrar" href="">x</a>
     </div>
  </div>
-=======
->>>>>>> 4b21f225cac4d0c07fd84a14f9281e0850e0d96a
+
     <div class="cir">
             <td class="circ" >
                 <strong  class="">Likes & Comentarios</strong>
