@@ -36,25 +36,49 @@ class AnaliticMongoDBController extends Controller
 
     public function scrapAndAnalitic()
     {
-        ##Busca en Mongo la Collección por ID asignado al momento de realizar el raspado
+        #Busca en Mongo la Collección por ID asignado al momento de realizar el raspado
         $findByUser = dataCollection::findOrFail($this->request->_id);
-
+        #Instancia el modelo dataTopHashtag
         $dataTopHastag = new \App\dataTOPCollectionMongoDB;
+        /***
+         * Al modelo dataTopHashtag le inserta el array que retorna el método "findTOPPost" que recibe como parámetro
+         * La colección de encontrada por id en mongo y retorna un id de inserción
+         */
+
         $idCollecionTop = $dataTopHastag->insertGetId($this->findTOPPost($findByUser));
+        /** Se busca por el id la colección anteriormente generada en el modelo dataTopHashtag*/
         $scrapTopUser = TopPostCollection::findOrFail($idCollecionTop);
-
+        #Instancia el modelo scrapedUserTop
         $ScrapTopUserPost = new \App\scrapedUserTopCollectionMongoDB;
+        /***
+         * Al modelo scrapedUserTop le inserta el array que retorna el método "findByIDUser" que recibe como parámetro
+         * La colección de encontrada por id en mongo y retorna un id de inserción
+         */
         $idScrapUserTop = $ScrapTopUserPost->insertGetId($this->findByIDUser($scrapTopUser));
+        /** Se busca por el id la colección anteriormente generada en el modelo scrapedUserTop*/
         $scrapTopUsername = userTOP::findOrFail($idScrapUserTop);
-
+        #Instancia el modelo dataTopHashtag scrapedUser
         $scrapUser = new \App\scrapedUserCollectionMongoDB;
+        /***
+         * Al modelo scrapedUser le inserta el array que retorna el método "findByIDUser" que recibe como parámetro
+         * La colección de encontrada por id en mongo y retorna un id de inserción
+         */
         $idScrapUser = $scrapUser->insertGetId($this->findByIDUser($findByUser));
+        /** Se busca por el id la colección anteriormente generada en el modelo scrapedUser*/
         $scrapUser = scrapedUser::findOrFail($idScrapUser);
-
+        /** Se llama el método "chartLikesComment" que generá el array con los valores para el pie char con la data encontrada en la colección de mongo
+         * encontrada por ID
+         */
         $likesAndComments = $this->chartLikesComment($findByUser);
+        /** Se llama el método "chartUserTOP" que generá el array con los valores para el pie char con la data encontrada en la colección de mongo
+         * encontrada por ID
+         */
         $usersTOP = $this->chartUserTOP($scrapTopUsername);
 
-        return view('chartMongoDB', compact('likesAndComments', 'usersTOP'));
+        $chartUserValues = $this->chartUserValues($scrapUser);
+        $chartUserName = $this->chartUserName($scrapUser);
+        /**Retorno de la vista  con los datos */
+        return view('chartMongoDB', compact('likesAndComments', 'usersTOP', 'chartUserValues', 'chartUserName'));
     }
 
 
@@ -170,7 +194,7 @@ class AnaliticMongoDBController extends Controller
         return $total;
     }
 
-    public function chartUserTOP($scrapTopUsername)
+    private function chartUserTOP($scrapTopUsername)
     {
 
         $chart = [];
@@ -188,6 +212,51 @@ class AnaliticMongoDBController extends Controller
             }
         }
         return $chart;
+    }
+
+
+    private function chartUserValues($Data)
+    {
+        error_reporting(~E_NOTICE || ~E_WARNING);
+        $onlyUserName = [];
+        for ($i=0; $i <count(collect($Data)) ; $i++) {
+            $userName = $Data[$i]['userName'];
+            if (isset($userName)) {
+                if(!empty($userName)){
+                    $onlyUserName[$i]['userName'] = $userName;
+                }
+            }
+        }
+        $truncate = [];
+        foreach ($onlyUserName as $key => $value) {
+            if (isset($value['userName'])) {
+                array_push($truncate, $value['userName']);
+            }
+        }
+
+        return array_count_values($truncate);
+    }
+
+    private function chartUserName($Data)
+    {
+        error_reporting(~E_NOTICE || ~E_WARNING);
+        $onlyUserName = [];
+        for ($i=0; $i <count(collect($Data)) ; $i++) {
+            $userName = $Data[$i]['userName'];
+            if (isset($userName)) {
+                if(!empty($userName)){
+                    $onlyUserName[$i]['userName'] = $userName;
+                }
+            }
+        }
+        $truncate = [];
+        foreach ($onlyUserName as $key => $value) {
+            if (isset($value['userName'])) {
+                array_push($truncate, $value['userName']);
+            }
+        }
+
+        return $truncate;
     }
 
 }

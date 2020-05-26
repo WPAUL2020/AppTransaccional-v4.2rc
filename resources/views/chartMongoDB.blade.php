@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <!-- Breadcrumb -->
     <section class="breadcrumb">
 
@@ -47,7 +46,7 @@
     	</div>
     	<a class="cerrar" href="">x</a>
     </div>
- 
+
  	<div class="modal" id="img22">
     	<h4>"Nombre del que la publico2" </h4>
     	<div class="imagen1">
@@ -57,7 +56,7 @@
     	</div>
     	<a class="cerrar" href="">x</a>
     </div>
- 
+
  	<div class="modal" id="img33">
     	<h4>"Nombre del que la publico3" </h4>
     	<div class="imagen1">
@@ -67,7 +66,7 @@
     	</div>
     	<a class="cerrar" href="">x</a>
     </div>
- 
+
  	<div class="modal" id="img44">
     	<h4>"Nombre del que la publico4" </h4>
     	<div class="imagen1">
@@ -77,7 +76,7 @@
     	</div>
     	<a class="cerrar" href="">x</a>
     </div>
- 
+
  	<div class="modal" id="img55">
     	<h4>"Nombre del que la publico5" </h4>
     	<div class="imagen1">
@@ -97,7 +96,7 @@
     	</div>
     	<a class="cerrar" href="">x</a>
     </div>
- 
+
  	<div class="modal" id="img77">
     	<h4>"Nombre del que la publico7" </h4>
     	<div class="imagen1">
@@ -115,16 +114,26 @@
                 <div class="circ" id="chartLikesComments"></div>
             </td>
        </div>
-       
-       <div class="cir1">     
+
+       <div class="cir1">
             <td class="circ1">
                 <strong>Top 7</strong>
                 <br />
-                <div class="circ1" id="chartTOP">	
+                <div class="circ1" id="chartTOP">
                 </div>
             </td>
-       
+
     </div>
+
+    <div class="cir1">
+        <td class="circ1">
+            <strong>Usuarios recurrentes</strong>
+            <br />
+            <div class="circ1" id="chartUser">
+            </div>
+        </td>
+
+</div>
 
 
 @endsection
@@ -168,6 +177,20 @@
 				xkey: 'x',
 				ykeys: ['y'],
 				labels: ['Likes'],
+				barColors: ['#00a651']
+			});
+
+			Morris.Bar({
+				element: 'chartUser',
+				axes: true,
+				data: [
+                    @foreach ($chartUserValues as $user => $value)
+                    {x: '{{$user}}', y: {{$value}}},
+                    @endforeach
+				],
+				xkey: 'x',
+				ykeys: ['y'],
+				labels: ['Publicaciones'],
 				barColors: ['#00a651']
 			});
 		}
