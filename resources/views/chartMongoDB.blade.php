@@ -26,6 +26,7 @@
         </div>
     </section>
 
+
 <div>
 <div class="cir2">
     <strong  class="">Publicaciones</strong>
@@ -109,7 +110,7 @@
     	<a class="cerrar" href="">x</a>
     </div>
  </div>
-
+</div>
     <div class="cir">
             <td class="circ" >
                 <strong  class="">Likes & Comentarios</strong>

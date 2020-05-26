@@ -122,7 +122,6 @@
             </td>
 
     </div>
-
     <div class="cir1">
         <td class="circ1">
             <strong>Usuarios recurrentes</strong>
@@ -132,8 +131,7 @@
         </td>
 
 </div>
-
-
+</div>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('Scripts'); ?>
 <script src="<?php echo e(asset('neonFrontEnd/assets/js/rickshaw/rickshaw.min.js')); ?>"></script>
