@@ -105,7 +105,7 @@
                     <li class="has-sub">
                         <a href="<?php echo e(URL::to('UsuariosTercero')); ?>">
                             <i class="entypo-users"></i>
-                            <span class="title">Gestión Usuarios Externos</span>
+                            <span class="title">Gestión de Empleado Externos</span>
                         </a>
                         <ul>
                            
@@ -125,7 +125,7 @@
                     <li class="has-sub">
                         <a href="<?php echo e(URL::to('UsuariosInterno')); ?>">
                             <i class="entypo-user"></i>
-                            <span class="title">Gestión Usuarios Internos</span>
+                            <span class="title">Gestión de Empleado Internos</span>
                         </a>
                         <ul>
                           
