@@ -1,4 +1,29 @@
 <?php $__env->startSection('content'); ?>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-9">
+
+                    <h1>Gestión Big Data</h1>
+
+                    <ol class=" bc-3" >
+                            <li>
+                    <a href="<?php echo e(URL::previous()); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
+                </li>
+                    <li class="active">
+                                <strong>Gestión Big Data/ Estadistica</strong>
+                        </li>
+                        </ol>
+
+                </div>
+            </div>
+        </div>
+    </section>
 <table class="table table-bordered">
     <tbody>
         <tr>
