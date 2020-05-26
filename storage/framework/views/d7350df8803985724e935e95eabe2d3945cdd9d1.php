@@ -24,88 +24,6 @@
             </div>
         </div>
     </section>
-<div class="cir2">
-    <strong  class="">Publicaciones</strong>
-
-    <ul class="galeria">
-    	<li><a href="#img11"><img src="Imagenes/member-1.jpg"></a></li>
-    	<li><a href="#img22"><img src="Imagenes/member-2.jpg"></a></li>
-    	<li><a href="#img33"><img src="Imagenes/member-3.jpg"></a></li>
-    	<li><a href="#img44"><img src="Imagenes/member-4.jpg"></a></li>
-    	<li><a href="#img55"><img src="Imagenes/member-5.jpg"></a></li>
-    	<li><a href="#img66"><img src="Imagenes/member-6.jpg"></a></li>
-    	<li><a href="#img77"><img src="Imagenes/member-1.jpg"></a></li>
-    </ul>
-    <div class="modal" id="img11">
-    	<h4>"Nombre del que la publico1" </h4>
-    	<div class="imagen1">
-    		<a href="#img44"><</a>
-    		<a href="#img22"><img src="Imagenes/member-1.jpg"></a>
-    		<a href="#img22">></a>
-    	</div>
-    	<a class="cerrar" href="">x</a>
-    </div>
- 
- 	<div class="modal" id="img22">
-    	<h4>"Nombre del que la publico2" </h4>
-    	<div class="imagen1">
-    		<a href="#img11"><</a>
-    		<a href="#img33"><img src="Imagenes/member-2.jpg"></a>
-    		<a href="#img33">></a>
-    	</div>
-    	<a class="cerrar" href="">x</a>
-    </div>
- 
- 	<div class="modal" id="img33">
-    	<h4>"Nombre del que la publico3" </h4>
-    	<div class="imagen1">
-    		<a href="#img22"><</a>
-    		<a href="#img44"><img src="Imagenes/member-3.jpg"></a>
-    		<a href="#img44">></a>
-    	</div>
-    	<a class="cerrar" href="">x</a>
-    </div>
- 
- 	<div class="modal" id="img44">
-    	<h4>"Nombre del que la publico4" </h4>
-    	<div class="imagen1">
-    		<a href="#img33"><</a>
-    		<a href="#img55"><img src="Imagenes/member-4.jpg"></a>
-    		<a href="#img55">></a>
-    	</div>
-    	<a class="cerrar" href="">x</a>
-    </div>
- 
- 	<div class="modal" id="img55">
-    	<h4>"Nombre del que la publico5" </h4>
-    	<div class="imagen1">
-    		<a href="#img44"><</a>
-    		<a href="#img66"><img src="Imagenes/member-5.jpg"></a>
-    		<a href="#img66">></a>
-    	</div>
-    	<a class="cerrar" href="">x</a>
-    </div>
-
- 	<div class="modal" id="img66">
-    	<h4>"Nombre del que la publico6" </h4>
-    	<div class="imagen1">
-    		<a href="#img55"><</a>
-    		<a href="#img77"><img src="Imagenes/member-6.jpg"></a>
-    		<a href="#img77">></a>
-    	</div>
-    	<a class="cerrar" href="">x</a>
-    </div>
- 
- 	<div class="modal" id="img77">
-    	<h4>"Nombre del que la publico7" </h4>
-    	<div class="imagen1">
-    		<a href="#img66"><</a>
-    		<a href="#img11"><img src="Imagenes/member-7.jpg"></a>
-    		<a href="#img11">></a>
-    	</div>
-    	<a class="cerrar" href="">x</a>
-    </div>
- </div>
     <div class="cir">
             <td class="circ" >
                 <strong  class="">Likes & Comentarios</strong>
@@ -124,7 +42,7 @@
        
     </div>
 
-
+</div>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('Scripts'); ?>
 <script src="<?php echo e(asset('neonFrontEnd/assets/js/rickshaw/rickshaw.min.js')); ?>"></script>

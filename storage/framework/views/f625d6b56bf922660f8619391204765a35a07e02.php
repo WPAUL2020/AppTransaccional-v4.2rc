@@ -188,7 +188,7 @@
 				],
 				xkey: 'x',
 				ykeys: ['y'],
-				labels: ['Likes'],
+				labels: ['Publicaciones'],
 				barColors: ['#00a651']
 			});
 		}
