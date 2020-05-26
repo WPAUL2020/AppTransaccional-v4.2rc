@@ -25,7 +25,6 @@
             </div>
         </div>
     </section>
-<<<<<<< HEAD
 <div class="cir2">
     <strong  class="">Publicaciones</strong>
 
@@ -108,8 +107,6 @@
     	<a class="cerrar" href="">x</a>
     </div>
  </div>
-=======
->>>>>>> 4b21f225cac4d0c07fd84a14f9281e0850e0d96a
     <div class="cir">
             <td class="circ" >
                 <strong  class="">Likes & Comentarios</strong>
