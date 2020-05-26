@@ -62,7 +62,7 @@
 				axes: true,
 				data: [
                     @foreach ($usersTOP as $item)
-                    {x: {{$item['userName']}}, y: {{$item['likes']}}},
+                    {x: {{$item['likes']}}, y: {{$item['likes']}}},
                     @endforeach
 				],
 				xkey: 'x',
