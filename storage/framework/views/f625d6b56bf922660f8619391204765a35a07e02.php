@@ -61,10 +61,8 @@
 				axes: true,
 				data: [
                     <?php $__currentLoopData = $usersTOP; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    {x: <?php echo e($item['likes']); ?>, y: <?php echo e($item['likes']); ?>},
+                    {x: <?php echo e($item['userName']); ?>, y: <?php echo e($item['likes']); ?>},
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-
 				],
 				xkey: 'x',
 				ykeys: ['y'],
