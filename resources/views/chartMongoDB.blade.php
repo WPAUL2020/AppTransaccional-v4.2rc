@@ -9,24 +9,14 @@
                 <br />
                 <div id="chartLikesComments" style="height: 250px"></div>
             </td>
-        </tr>
-    </tbody>
-</table>
-<table class="table table-bordered">
-    <tbody>
-        <tr>
-            <td width="100%">
-                <strong>Top 7 Post</strong>
+            <td width="50%">
+                <strong>Top 7</strong>
                 <br />
-                @foreach ($usersTOP as $item)
-                <br>{{$item['userName']. $item['OriginalPost']}}
-                @endforeach
-                <div id="chartTOP" width="200" height="200"></div>
+                <div id="chartTOP" style="height: 250px"></div>
             </td>
         </tr>
     </tbody>
 </table>
-
 @endsection
 @section('Scripts')
 <script src="{{ asset('neonFrontEnd/assets/js/rickshaw/rickshaw.min.js') }}"></script>
@@ -62,7 +52,7 @@
 				axes: true,
 				data: [
                     @foreach ($usersTOP as $item)
-                    {x: {{$item['likes']}}, y: {{$item['likes']}}},
+                    {x: '{{$item['userName']}}', y: {{$item['likes']}}},
                     @endforeach
 				],
 				xkey: 'x',

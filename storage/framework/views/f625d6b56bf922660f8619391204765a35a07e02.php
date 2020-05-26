@@ -7,25 +7,14 @@
                 <br />
                 <div id="chartLikesComments" style="height: 250px"></div>
             </td>
-        </tr>
-    </tbody>
-</table>
-<table class="table table-bordered">
-    <tbody>
-        <tr>
-            <td width="100%">
-                <strong>Top 7 Post</strong>
+            <td width="50%">
+                <strong>Top 7</strong>
                 <br />
-                <?php $__currentLoopData = $usersTOP; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <br><?php echo e($item['userName']. $item['OriginalPost']); ?>
-
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                <div id="chartTOP" width="200" height="200"></div>
+                <div id="chartTOP" style="height: 250px"></div>
             </td>
         </tr>
     </tbody>
 </table>
-
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('Scripts'); ?>
 <script src="<?php echo e(asset('neonFrontEnd/assets/js/rickshaw/rickshaw.min.js')); ?>"></script>
@@ -61,7 +50,7 @@
 				axes: true,
 				data: [
                     <?php $__currentLoopData = $usersTOP; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    {x: <?php echo e($item['userName']); ?>, y: <?php echo e($item['likes']); ?>},
+                    {x: '<?php echo e($item['userName']); ?>', y: <?php echo e($item['likes']); ?>},
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 				],
 				xkey: 'x',
