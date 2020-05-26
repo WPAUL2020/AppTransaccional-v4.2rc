@@ -13,7 +13,7 @@
 
                     <ol class="bc-3">
                             <li>
-                    <a href="<?php echo e(URL::to('appl')); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
+                    <a href="<?php echo e(URL::to('appl2')); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
                 </li>
                     <li class="active">
                                 <strong>InstaHunters</strong>
@@ -77,8 +77,8 @@ endif; ?>
                                    Buscar <i class="fas fa-search"></i>
                                 </button>
                             </form>
-                            <a href="<?php echo e(URL::to('instahunterview')); ?>" class="btn btn-info float-right btn-lg">
-                                Vista previa <i class="fas fa-eye"></i>
+                            <a href="<?php echo e(URL::to('instahuntersvista')); ?>" class="btn btn-info float-right btn-lg">
+                                Busquedas realizadas <i class="fas fa-eye"></i>
                             </a>
                         </div>
                 </div>

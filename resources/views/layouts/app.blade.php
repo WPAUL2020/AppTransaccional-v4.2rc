@@ -99,41 +99,25 @@
                             <i class="entypo-gauge"></i>
                             <span class="title">Zona Transaccional</span>
                         </a>
-                        <ul>
-                            <li>
-
-                                <a href="{{URL::to('appl')}}">
-                                    <i class="entypo-gauge"></i>
-                                    <span class="title">Zona Transaccional</span>
-                                </a>
-                            </li>
-                        </ul>
+                        
                     </li>
                     
                     <li class="has-sub">
                         <a href="{{URL::to('UsuariosTercero')}}">
-                            <i class="entypo-user"></i>
-                            <span class="title">Gestión Usuarios Externos</span>
+                            <i class="entypo-users"></i>
+                            <span class="title">Gestión de Empleado Externos</span>
                         </a>
                         <ul>
+                           
+                            <li>
+                                <a href="{{URL::to('GesUserTerCrear/agregar')}}">
+                                    <span class="title"><i class="entypo-plus-circled"></i> Agregar</span>
+                                </a>
+                            </li>
+                            
                             <li>
                                 <a href="{{URL::to('UsuariosTercero')}}">
-                                    <span class="title"><i class="entypo-user"></i> Gestionar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-collapsed-sidebar.html">
-                                    <span class="title"><i class="entypo-user"></i> Crear</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-fixed-sidebar.html">
-                                    <span class="title"> <i class="entypo-user"></i> Editar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-chat-open.html">
-                                    <span class="title"><i class="entypo-user"></i> Actualizar</span>
+                                    <span class="title"><i class="entypo-cw"></i> Actualizar</span>
                                 </a>
                             </li>
                         </ul>
@@ -141,294 +125,197 @@
                     <li class="has-sub">
                         <a href="{{URL::to('UsuariosInterno')}}">
                             <i class="entypo-user"></i>
-                            <span class="title">Gestión Usuarios Internos</span>
+                            <span class="title">Gestión de Empleado Internos</span>
                         </a>
                         <ul>
+                          
+                            <li>
+                                <a href="{{URL::to('GestUserIntCrear/agregar')}}">
+                                    <span class="title"><i class="entypo-plus-circled"></i> Agregar</span>
+                                </a>
+                            </li>
+                           
                             <li>
                                 <a href="{{URL::to('UsuariosInterno')}}">
-                                    <span class="title"><i class="entypo-user"></i> Gestionar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-collapsed-sidebar.html">
-                                    <span class="title"><i class="entypo-user"></i> Crear</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-fixed-sidebar.html">
-                                    <span class="title"><i class="entypo-user"></i> Editar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-chat-open.html">
-                                    <span class="title"><i class="entypo-user"></i> Actualizar</span>
+                                    <span class="title"><i class="entypo-cw"></i> Actualizar</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="has-sub">
-                        <a href="layout-api.html">
-                            <i class="entypo-user"></i>
+                        <a href="{{URL::to('Clientes')}}">
+                            <i class="entypo-cc-by"></i>
                             <span class="title">Gestión Clientes</span>
                         </a>
                         <ul>
+                           
                             <li>
-                                <a href="layout-api.html">
-                                    <i class="entypo-user"></i>
-                                    <span class="title">Gestionar</span>
+                                <a href="{{URL::to('Clientes/agregar')}}">
+                                    <i class="entypo-plus-circled"></i>
+                                    <span class="title"> Agregar</span>
                                 </a>
                             </li>
+                            
                             <li>
-                                <a href="layout-collapsed-sidebar.html">
-                                    <i class="entypo-user"></i>
-                                    <span class="title"> Crear</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-fixed-sidebar.html">
-                                    <i class="entypo-user"></i>
-                                    <span class="title"> Editar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-chat-open.html">
-                                    <span class="title"><i class="entypo-user"></i> Actualizar</span>
+                                <a href="{{URL::to('Clientes')}}">
+                                    <span class="title"><i class="entypo-cw"></i> Actualizar</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="has-sub">
-                        <a href="layout-api.html">
+                        <a href="{{URL::to('Roles')}}">
                            <i class="entypo-layout"></i>
                             <span class="title">Gestión Roles</span>
                         </a>
                         <ul>
+                           
                             <li>
-                                <a href="layout-api.html">
-                                    <i class="entypo-user"></i>
-                                    <span class="title"><i class="entypo-user"></i> Gestionar</span>
+                                <a href="{{URL::to('RolCrear/agregar')}}">
+                                    <span class="title"><i class="entypo-plus-circled"></i> Agregar</span>
                                 </a>
                             </li>
+                            
                             <li>
-                                <a href="layout-collapsed-sidebar.html">
-                                    <span class="title"><i class="entypo-user"></i> Crear</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-fixed-sidebar.html">
-                                    <span class="title"><i class="entypo-user"></i> Editar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-chat-open.html">
-                                    <span class="title"><i class="entypo-user"></i> Actualizar</span>
+                                <a href="{{URL::to('Roles')}}">
+                                    <span class="title"><i class="entypo-cw"></i> Actualizar</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="has-sub">
-                        <a href="layout-api.html">
-                            <i class="entypo-user"></i>
+                        <a href="{{URL::to('Cargos')}}">
+                            <i class="entypo-vcard"></i>
                             <span class="title">Gestion Cargos</span>
                         </a>
                         <ul>
+                            
                             <li>
-                                <a href="layout-api.html">
-                                    <span class="title"><i class="entypo-user"></i>Gestionar</span>
+                                <a href="{{URL::to('CargoCrear/agregar')}}">
+                                    <i class="entypo-plus-circled"></i>
+                                    <span class="title">Agregar</span>
                                 </a>
                             </li>
+                    
                             <li>
-                                <a href="layout-collapsed-sidebar.html">
-                                    <i class="entypo-user"></i>
-                                    <span class="title">Crear</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-fixed-sidebar.html">
-                                    <i class="entypo-user"></i>
-                                    <span class="title">Editar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-chat-open.html">
-                                    <i class="entypo-user"></i>
+                                <a href="{{URL::to('Cargos')}}">
+                                    <i class="entypo-cw"></i>
                                     <span class="title">Actualizar</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="has-sub">
-                        <a href="layout-api.html">
-                            <i class="entypo-layout"></i>
+                        <a href="{{URL::to('Sector')}}">
+                            <i class="entypo-cog"></i>
                             <span class="title">Gestion Sector (Empresa)</span>
                         </a>
                         <ul>
+                            
                             <li>
-                                <a href="layout-api.html">
-                                    <i class="entypo-user"></i>
-                                    <span class="title">Gestionar</span>
+                                <a href="{{URL::to('SectEmprTerCrear/agregar')}}">
+                                    <i class="entypo-plus-circled"></i>
+                                    <span class="title">Agregar</span>
                                 </a>
                             </li>
+                            
                             <li>
-                                <a href="layout-collapsed-sidebar.html">
-                                    <i class="entypo-user"></i>
-                                    <span class="title">Crear</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-fixed-sidebar.html">
-                                    <i class="entypo-user"></i>
-                                    <span class="title">Editar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-chat-open.html">
-                                    <i class="entypo-user"></i>
+                                <a href="{{URL::to('Sector')}}">
+                                    <i class="entypo-cw"></i>
                                     <span class="title">Actualizar</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="has-sub">
-                        <a href="layout-api.html">
-                            <i class="entypo-layout"></i>
+                        <a href="{{URL::to('instahunters')}}">
+                            <i class="entypo-network"></i>
                             <span class="title">Gestión Big Data</span>
                         </a>
-                        <ul>
-                            <li>
-                                <a href="layout-api.html">
-                                    <i class="entypo-user"></i>
-                                    <span class="title">InstaHunters</span>
-                                </a>
-                            </li>
-                        </ul>
+                        
                     </li>
                     <li class="has-sub">
-                        <a href="layout-api.html">
-                            <i class="entypo-layout"></i>
+                        <a href="{{URL::to('')}}">
+                            <i class="entypo-credit-card"></i>
                             <span class="title">Medios de Pago</span>
                         </a>
                         <ul>
+                            
                             <li>
-                                <a href="layout-api.html">
-                                    <i class="entypo-user"></i>
-                                    <span class="title">Gestionar</span>
+                                <a href="{{URL::to('')}}">
+                                    <i class="entypo-plus-circled"></i>
+                                    <span class="title">Agregar</span>
                                 </a>
                             </li>
+                          
                             <li>
-                                <a href="layout-collapsed-sidebar.html">
-                                    <i class="entypo-user"></i>
-                                    <span class="title">Crear</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-fixed-sidebar.html">
-                                    <i class="entypo-user"></i>
-                                    <span class="title">Editar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-chat-open.html">
-                                    <i class="entypo-user"></i>
+                                <a href="{{URL::to('')}}">
+                                    <i class="entypo-cw"></i>
                                     <span class="title">Actualizar</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="has-sub">
-                        <a href="layout-api.html">
-                            <i class="entypo-layout"></i>
+                        <a href="{{URL::to('Categorias')}}">
+                            <i class="entypo-bag"></i>
                             <span class="title">Productos</span>
                         </a>
                         <ul>
+                           
                             <li>
-                                <a href="layout-api.html">
-                                    <i class="entypo-user"></i>
-                                    <span class="title">Gestionar</span>
+                                <a href="{{URL::to('CategoriaCrear/agregar')}}">
+                                    <i class="entypo-plus-circled"></i>
+                                    <span class="title">Agregar</span>
                                 </a>
                             </li>
+                         
                             <li>
-                                <a href="layout-collapsed-sidebar.html">
-                                    <i class="entypo-user"></i>
-                                    <span class="title">Crear</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-fixed-sidebar.html">
-                                    <i class="entypo-user"></i>
-                                    <span class="title">Editar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-chat-open.html">
-                                    <i class="entypo-user"></i>
+                                <a href="{{URL::to('Categorias')}}">
+                                    <i class="entypo-cw"></i>
                                     <span class="title">Actualizar</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="has-sub">
-                        <a href="layout-api.html">
-                            <i class="entypo-layout"></i>
+                        <a href="{{URL::to('')}}">
+                            <i class="entypo-tools"></i>
                             <span class="title">Servicios</span>
                         </a>
                         <ul>
+                           
                             <li>
-                                <a href="layout-api.html">
-                                    <i class="entypo-user"></i>
-                                    <span class="title">Gestionar</span>
+                                <a href="{{URL::to('')}}">
+                                    <i class="entypo-plus-circled"></i>
+                                    <span class="title">Agregar</span>
                                 </a>
                             </li>
+                          
                             <li>
-                                <a href="layout-collapsed-sidebar.html">
-                                    <i class="entypo-user"></i>
-                                    <span class="title">Crear</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-fixed-sidebar.html">
-                                    <i class="entypo-user"></i>
-                                    <span class="title">Editar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="layout-chat-open.html">
-                                    <i class="entypo-user"></i>
+                                <a href="{{URL::to('')}}">
+                                    <i class="entypo-cw"></i>
                                     <span class="title">Actualizar</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="has-sub">
-                        <a href="layout-api.html">
-                            <i class="entypo-layout"></i>
+                        <a href="{{URL::to('generarFactura')}}">
+                            <i class="entypo-newspaper"></i>
                             <span class="title">Generar Factura</span>
                         </a>
-                        <ul>
-                            <li>
-                                <a href="layout-api.html">
-                                   <i class="entypo-layout"></i>
-                                    <span class="title">Generar</span>
-                                </a>
-                            </li>
-                        </ul>
+                        
                     </li>
                 </li>
                 <li class="has-sub">
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
                         <i class="entypo-logout"></i>
-                        <span class="title">Logout</span>
+                        <span class="title">Cerrar Sesion</span>
                     </a>
-                    <ul>
-                        <li>
-                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
-                                <i class="entypo-logout"></i>
-                                <span class="title">Logout  </span>
-                            </a>
-                        </li>
-                    </ul>
+                    
                 </li>
-                </ul>
+              
 
             </div>
 

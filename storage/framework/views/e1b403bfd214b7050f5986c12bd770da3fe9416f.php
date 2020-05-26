@@ -79,11 +79,11 @@
   </div>
 
   <div class="form-row">
-<<<<<<< HEAD
+
     <div class="col">
 
     <label for="">Ciudad:</label>
-        <select name="CIUDAD" id="ID_CIUDAD" class="form-control">
+        <select name="CIUDAD" id="ID_CIUDAD" class="form-control ciud">
         <option value="">--Escoje la ciudad--</option>
             <?php $__currentLoopData = $Ciudad; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $Ciudad): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <option value="<?php echo e($Ciudad->NOMBRE_CIUDAD); ?>"><?php echo e($Ciudad->NOMBRE_CIUDAD); ?></option>
@@ -91,12 +91,12 @@
         </select>
         <span class="text-danger"><?php echo e($errors->first("CIUDAD")); ?></span>
     </div>
-=======
+
     <div class="col-sm-6">
     <label>Ciudad:</label>
     <input type="text" name="CIUDAD" class="form-control" placeholder="Ciudad">
     <span class="text-danger"><?php echo e($errors->first("CIUDAD")); ?></span>
->>>>>>> 70cb4fc9fedb43c8cad5b2513ce0957b1277518a
+
     </div>
     <div class="col-sm-6">
     <label>Correo Electronico:</label>
@@ -173,15 +173,15 @@
   </div>
   </div>
 
-  <div class="form-group">
+  <div class="form-group lb">
     <label>Observaciones:</label>
-    <textarea name="OBSERVACION" class="form-control" placeholder="Escribe tu Observación"></textarea>
+    <textarea name="OBSERVACION" class="form-control col" placeholder="Escribe tu Observación"></textarea>
   </div>
 
   <div class="form-row">
                     <div class="form-group">
                         <input type="submit" value="Registrar" class="btn btn-primary">
-                        <a class="btn btn-outline-secondary" href="<?php echo e(URL::to('UsuariosTercero')); ?>">Regresar</a>
+                        <a class="btn btn-secondary" href="<?php echo e(URL::to('UsuariosTercero')); ?>">Regresar</a>
                     </div>
   </div>
 

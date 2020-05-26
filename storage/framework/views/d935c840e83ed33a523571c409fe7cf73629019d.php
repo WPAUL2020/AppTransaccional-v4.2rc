@@ -85,17 +85,6 @@
             <div class="row">
 
                 <div class="col-md-12">
-                <div class="text-center">
-                    <ul class="pagination">
-                        <li class="active">
-                            <a href="<?php echo e(URL::to('appl')); ?>"><i class="fas fa-angle-left"></i></a>
-                             </li>
-                        <li>
-                        <a href=""><i class="fas fa-angle-right"></i></a>
-                        </li>
-                    </ul>
-
-</div>
                 </div>
 		</div>
 	</div>
@@ -104,4 +93,4 @@
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\git\AppTransaccional-v4.2rc\resources\views/appl2.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/AppTransaccional-v4.2rc/resources/views/appl4.blade.php ENDPATH**/ ?>

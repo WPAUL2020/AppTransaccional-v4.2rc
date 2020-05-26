@@ -65,18 +65,6 @@
 
                 <div class="col-md-12">
 
-                    <div class="text-center">
-
-                        <ul class="pagination">
-                            <li>
-                                <a href="<?php echo e(URL::to('appl')); ?>"><i class="fas fa-angle-left"></i></a>
-                            </li>
-                            <li class="active">
-                                <a href="#"><i class="fas fa-angle-right"></i></a>
-                            </li>
-                        </ul>
-
-                    </div>
                 </div>
 		</div>
 	</div>
