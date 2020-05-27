@@ -131,7 +131,7 @@ class AnaliticMongoDBController extends Controller
                 $response =  $this->client->request('GET', "p/" . $id_user[$i]['id_usuario'] . "/?__a=1");
                 $allData = json_decode($response->getBody()->getContents());
                 array_push($dataInsert, $this->truncateUsername($allData));
-            } catch (ClientException $e) {
+            } catch (ClientException $e | ) {
                 $e->getResponse()->getStatusCode();
             }
         }
