@@ -18,7 +18,8 @@ class AnaliticMongoDBController extends Controller
     protected $client;
     protected $request;
 
-    public function __construct(Request $request) {
+    public function __construct(Request $request)
+    {
         $this->request = $request;
         $this->middleware('auth');
         $this->client = new Client([
@@ -26,7 +27,6 @@ class AnaliticMongoDBController extends Controller
         ]);
         date_default_timezone_set('America/Bogota');
         $this->date = date('d/m/Y H:i:s');
-
     }
     public function index()
     {
@@ -88,10 +88,10 @@ class AnaliticMongoDBController extends Controller
             'wordSearch' => $id_user['wordSearch'],
             'consulta_log' => $this->date
         ];
-        for ($i=0; $i < count(collect($id_user)) ; $i++) {
+        for ($i = 0; $i < count(collect($id_user)); $i++) {
             error_reporting(~E_NOTICE || ~E_WARNING);
             try {
-                $response =  $this->client->request('GET', "p/".$id_user[$i]['id_usuario']."/?__a=1");
+                $response =  $this->client->request('GET', "p/" . $id_user[$i]['id_usuario'] . "/?__a=1");
                 $allData = json_decode($response->getBody()->getContents());
                 array_push($dataInsert, $this->truncateUsername($allData));
             } catch (ClientException $e) {
@@ -118,20 +118,20 @@ class AnaliticMongoDBController extends Controller
                 'comentarios' => $routeAtributte->edge_media_preview_comment->count,
                 'video' => $routeAtributte->video_url,
                 'text' => $routeAtributte->edge_media_to_caption->edges[0]->node->text,
-                'OriginalPost' => $baseURL.$routeAtributte->shortcode
-        ];
+                'OriginalPost' => $baseURL . $routeAtributte->shortcode
+            ];
         } else {
-                $arrayUsername = [
-                    'id_usuario' => $routeAtributte->shortcode,
-                    'userName' => $routeAtributte->owner->username,
-                    'fullName' => $routeAtributte->owner->full_name,
-                    'profile_pic' => $routeAtributte->owner->profile_pic_url,
-                    'pais' => $routeAtributte->location->name,
-                    'likes' => $routeAtributte->edge_media_preview_like->count,
-                    'comentarios' => $routeAtributte->edge_media_preview_comment->count,
-                    'img' => $routeAtributte->display_url,
-                    'text' => $routeAtributte->edge_media_to_caption->edges[0]->node->text,
-                    'OriginalPost' => $baseURL.$routeAtributte->shortcode
+            $arrayUsername = [
+                'id_usuario' => $routeAtributte->shortcode,
+                'userName' => $routeAtributte->owner->username,
+                'fullName' => $routeAtributte->owner->full_name,
+                'profile_pic' => $routeAtributte->owner->profile_pic_url,
+                'pais' => $routeAtributte->location->name,
+                'likes' => $routeAtributte->edge_media_preview_like->count,
+                'comentarios' => $routeAtributte->edge_media_preview_comment->count,
+                'img' => $routeAtributte->display_url,
+                'text' => $routeAtributte->edge_media_to_caption->edges[0]->node->text,
+                'OriginalPost' => $baseURL . $routeAtributte->shortcode
             ];
         }
 
@@ -141,13 +141,13 @@ class AnaliticMongoDBController extends Controller
 
     private function findTOPPost($data)
     {
-            try {
-                $response =  $this->client->request('GET', "explore/tags/".$data['wordSearch']."/?__a=1");
-                $allData = json_decode($response->getBody()->getContents());
-                $dataInsert = $this->truncateTopPost($allData);
-            } catch (ClientException $e) {
-                $e->getResponse()->getStatusCode();
-            }
+        try {
+            $response =  $this->client->request('GET', "explore/tags/" . $data['wordSearch'] . "/?__a=1");
+            $allData = json_decode($response->getBody()->getContents());
+            $dataInsert = $this->truncateTopPost($allData);
+        } catch (ClientException $e) {
+            $e->getResponse()->getStatusCode();
+        }
 
 
         return $dataInsert;
@@ -158,7 +158,7 @@ class AnaliticMongoDBController extends Controller
     {
         $routeAtributte = $data->graphql->hashtag->edge_hashtag_to_top_posts->edges;
         $dataTOPInsert = [];
-        for ($i=0; $i <count($routeAtributte) ; $i++) {
+        for ($i = 0; $i < count($routeAtributte); $i++) {
             error_reporting(~E_NOTICE);
             $text = $routeAtributte[$i]->node->edge_media_to_caption->edges[0]->node->text;
             $img = $routeAtributte[$i]->node->display_url;
@@ -182,7 +182,7 @@ class AnaliticMongoDBController extends Controller
     private function chartLikesComment($data)
     {
 
-        for ($i=0; $i <count(collect($data)) ; $i++) {
+        for ($i = 0; $i < count(collect($data)); $i++) {
             error_reporting(~E_NOTICE);
             $likes += $data[$i]['likes'];
             $comentarios += $data[$i]['comentarios'];
@@ -198,13 +198,13 @@ class AnaliticMongoDBController extends Controller
     {
 
         $chart = [];
-        for ($i=0; $i <count(collect($scrapTopUsername)) ; $i++) {
+        for ($i = 0; $i < count(collect($scrapTopUsername)); $i++) {
             error_reporting(~E_NOTICE);
             $userName = $scrapTopUsername[$i]['userName'];
             $likes = $scrapTopUsername[$i]['likes'];
             $OriginalPost = $scrapTopUsername[$i]['OriginalPost'];
             if (isset($userName) and isset($likes) and isset($OriginalPost)) {
-                if(!empty($userName) and !empty($likes) and !empty($OriginalPost)){
+                if (!empty($userName) and !empty($likes) and !empty($OriginalPost)) {
                     $chart[$i]['userName'] = $userName;
                     $chart[$i]['likes'] = $likes;
                     $chart[$i]['OriginalPost'] = $OriginalPost;
@@ -219,10 +219,10 @@ class AnaliticMongoDBController extends Controller
     {
         error_reporting(~E_NOTICE || ~E_WARNING);
         $onlyUserName = [];
-        for ($i=0; $i <count(collect($Data)) ; $i++) {
+        for ($i = 0; $i < count(collect($Data)); $i++) {
             $userName = $Data[$i]['userName'];
             if (isset($userName)) {
-                if(!empty($userName)){
+                if (!empty($userName)) {
                     $onlyUserName[$i]['userName'] = $userName;
                 }
             }
@@ -241,10 +241,10 @@ class AnaliticMongoDBController extends Controller
     {
         error_reporting(~E_NOTICE || ~E_WARNING);
         $onlyUserName = [];
-        for ($i=0; $i <count(collect($Data)) ; $i++) {
+        for ($i = 0; $i < count(collect($Data)); $i++) {
             $userName = $Data[$i]['userName'];
             if (isset($userName)) {
-                if(!empty($userName)){
+                if (!empty($userName)) {
                     $onlyUserName[$i]['userName'] = $userName;
                 }
             }
@@ -258,5 +258,4 @@ class AnaliticMongoDBController extends Controller
 
         return $truncate;
     }
-
 }
