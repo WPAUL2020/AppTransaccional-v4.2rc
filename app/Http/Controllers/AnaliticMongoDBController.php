@@ -74,14 +74,27 @@ class AnaliticMongoDBController extends Controller
          * encontrada por ID
          */
         $usersTOP = $this->chartUserTOP($scrapTopUsername);
-
+        /** Se pasan los datos del raspado de los usuarios y se cuenta cuantas veces aparece con el metodo "chartUserValues()"
+         * el cual recibe como parámetro el resultado de buscar por id los últimos encontrados.
+        */
         $chartUserValues = $this->chartUserValues($scrapUser);
-        $chartUserName = $this->chartUserName($scrapUser);
         /**Retorno de la vista  con los datos */
-        return view('chartMongoDB', compact('likesAndComments', 'usersTOP', 'chartUserValues', 'chartUserName'));
+        return view('chartMongoDB', compact('likesAndComments', 'usersTOP', 'chartUserValues'));
     }
 
 
+    /**
+     * findByIDUser
+     * El método recibe  como parámetro el contenido de la collection en mongoDB
+     * que contiene los ids de los usuario.
+     * Realiza un petición POST  al API de Instagram www.instagram.com/p/ID_DE_USUARIO/?__a=1
+     * la cual retorna una respuesta de tipo JSON que a su ves se le entrega esa respuesta al método
+     * "truncateUsername()" que se encarga de manipular la data y entregar solo data interesante
+     * para que a su ves este array pueda ser insertado truncado pueda ser insertado en el metodo
+     * scrapAndAnalitic()
+     * @param mixed $id_user
+     * @return void
+     */
     private function findByIDUser($id_user)
     {
         $dataInsert = [
@@ -237,25 +250,4 @@ class AnaliticMongoDBController extends Controller
         return array_count_values($truncate);
     }
 
-    private function chartUserName($Data)
-    {
-        error_reporting(~E_NOTICE || ~E_WARNING);
-        $onlyUserName = [];
-        for ($i = 0; $i < count(collect($Data)); $i++) {
-            $userName = $Data[$i]['userName'];
-            if (isset($userName)) {
-                if (!empty($userName)) {
-                    $onlyUserName[$i]['userName'] = $userName;
-                }
-            }
-        }
-        $truncate = [];
-        foreach ($onlyUserName as $key => $value) {
-            if (isset($value['userName'])) {
-                array_push($truncate, $value['userName']);
-            }
-        }
-
-        return $truncate;
-    }
 }
