@@ -75,6 +75,30 @@
 				</div>
 
 			</div>
+			<div class="item col-sm-4 col-xs-6 filter-design">
+
+				<div class="portfolio-item">
+					<a href="{{URL::to('')}}" class="image">
+						<img src="{{ asset('')}}" class="img-rounded" />
+						<span class="hover-zoom"></span>
+					</a>
+
+
+				</div>
+
+			</div>
+			<div class="item col-sm-4 col-xs-6 filter-design">
+
+				<div class="portfolio-item">
+					<a href="{{URL::to('')}}" class="image">
+						<img src="{{ asset('')}}" class="img-rounded" />
+						<span class="hover-zoom"></span>
+					</a>
+
+
+				</div>
+
+			</div>
             <div class="row">
 
                 <div class="col-md-12">
