@@ -14,10 +14,34 @@ use App\scrapedUserTopCollectionMongoDB as userTOP;
 
 class AnaliticMongoDBController extends Controller
 {
+    /**
+     * $date
+     * Variable que contiene la fecha actual
+     * @var date
+     */
     protected $date;
+    /**
+     * $client
+     * Variable que contendrá la instancia de tipo cliente de
+     * la librería GuzzleHttp que se encarga de realizar las peticiones
+     * a las cabeceras del API
+     * @var Client
+     */
     protected $client;
+    /**
+     * $request
+     * Variable que contendrá todo los parámetros de la petición http
+     * @var Request
+     */
     protected $request;
 
+    /**
+     * __construct
+     * Constructor de la clase, recibe como parámetro la petición
+     * Request de la ruta
+     * @param Request $request
+     * @return void
+     */
     public function __construct(Request $request)
     {
         $this->request = $request;
@@ -90,7 +114,7 @@ class AnaliticMongoDBController extends Controller
      * Realiza un petición POST  al API de Instagram www.instagram.com/p/ID_DE_USUARIO/?__a=1
      * la cual retorna una respuesta de tipo JSON que a su ves se le entrega esa respuesta al método
      * "truncateUsername()" que se encarga de manipular la data y entregar solo data interesante
-     * para que a su ves este array pueda ser insertado truncado pueda ser insertado en el metodo
+     * para que a su ves este array pueda ser insertado truncado pueda ser insertado en el método
      * scrapAndAnalitic()
      * @param mixed $id_user
      * @return void
