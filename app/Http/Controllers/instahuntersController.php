@@ -13,7 +13,9 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Exception\ConnectException;
+use GuzzleHttp\Exception\RequestException;
 use App\dataCollectionMongoDB as dataMongoDB;
 use Illuminate\Pagination\LengthAwarePaginator;
 use App\dataCollectionMongoDB as dataCollection;
@@ -128,6 +130,16 @@ class instahuntersController extends Controller
                                         <strong>OOPS!!!!!!!!! Algo a fallado con el servidor de raspado</strong>
                                     </div>';
         }
+            catch(ServerException $e){
+                echo "Codigo de error: ". $e->getResponse()->getStatusCode().'<div class="alert alert-danger" role="alert">
+                <strong>OOPS!!!!!!!!! La palabra que intenta buscar no existe en la red social</strong>
+            </div>';
+            }
+            catch(RequestException $e){
+                echo $e->getResponse().'<div class="alert alert-danger" role="alert">
+                <strong>OOPS!!!!!!!!! La palabra que intenta buscar no existe en la red social</strong>
+            </div>';
+            }
 
     }
 
@@ -186,14 +198,14 @@ class instahuntersController extends Controller
             $hashtag_time = $dataIn[$i]->node->taken_at_timestamp;
             $id_usuario = $dataIn[$i]->node->shortcode;
             $fecha = new DateTime("@$hashtag_time");
+            $dataTOInsert['consulta_log'] = $this->date;
+            $dataTOInsert['wordSearch'] = $routeAtributte[0]->graphql->hashtag->name;
             $dataTOInsert[$i]['img'] = $img;
             $dataTOInsert[$i]['txt'] = $text;
             $dataTOInsert[$i]['time'] = $fecha->format('Y-m-d H:i:s');
             $dataTOInsert[$i]['likes'] = $likes;
             $dataTOInsert[$i]['comentarios'] = $comentarios;
             $dataTOInsert[$i]['id_usuario'] = $id_usuario;
-            $dataTOInsert['consulta_log'] = $this->date;
-            $dataTOInsert['wordSearch'] = $routeAtributte[0]->graphql->hashtag->name;
         }
 
         $dataMongoDB = new \App\dataCollectionMongoDB;
@@ -227,6 +239,7 @@ class instahuntersController extends Controller
     {
 
         $truncate = [];
+        $data = collect($data);
         for ($i=0; $i <count(collect($data)) ; $i++) {
             error_reporting(~E_NOTICE);
             $img = $data[$i]['img'];
