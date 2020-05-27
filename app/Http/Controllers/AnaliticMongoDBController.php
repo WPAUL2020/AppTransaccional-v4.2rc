@@ -14,11 +14,36 @@ use App\scrapedUserTopCollectionMongoDB as userTOP;
 
 class AnaliticMongoDBController extends Controller
 {
+    /**
+     * $date
+     * Variable que contiene la fecha actual
+     * @var date
+     */
     protected $date;
+    /**
+     * $client
+     * Variable que contendrá la instancia de tipo cliente de
+     * la librería GuzzleHttp que se encarga de realizar las peticiones
+     * a las cabeceras del API
+     * @var Client
+     */
     protected $client;
+    /**
+     * $request
+     * Variable que contendrá todo los parámetros de la petición http
+     * @var Request
+     */
     protected $request;
 
-    public function __construct(Request $request) {
+    /**
+     * __construct
+     * Constructor de la clase, recibe como parámetro la petición
+     * Request de la ruta
+     * @param Request $request
+     * @return void
+     */
+    public function __construct(Request $request)
+    {
         $this->request = $request;
         $this->middleware('auth');
         $this->client = new Client([
@@ -26,7 +51,6 @@ class AnaliticMongoDBController extends Controller
         ]);
         date_default_timezone_set('America/Bogota');
         $this->date = date('d/m/Y H:i:s');
-
     }
     public function index()
     {
@@ -74,24 +98,37 @@ class AnaliticMongoDBController extends Controller
          * encontrada por ID
          */
         $usersTOP = $this->chartUserTOP($scrapTopUsername);
-
+        /** Se pasan los datos del raspado de los usuarios y se cuenta cuantas veces aparece con el metodo "chartUserValues()"
+         * el cual recibe como parámetro el resultado de buscar por id los últimos encontrados.
+        */
         $chartUserValues = $this->chartUserValues($scrapUser);
-        $chartUserName = $this->chartUserName($scrapUser);
         /**Retorno de la vista  con los datos */
-        return view('chartMongoDB', compact('likesAndComments', 'usersTOP', 'chartUserValues', 'chartUserName'));
+        return view('chartMongoDB', compact('likesAndComments', 'usersTOP', 'chartUserValues'));
     }
 
 
+    /**
+     * findByIDUser
+     * El método recibe  como parámetro el contenido de la collection en mongoDB
+     * que contiene los ids de los usuario.
+     * Realiza un petición POST  al API de Instagram www.instagram.com/p/ID_DE_USUARIO/?__a=1
+     * la cual retorna una respuesta de tipo JSON que a su ves se le entrega esa respuesta al método
+     * "truncateUsername()" que se encarga de manipular la data y entregar solo data interesante
+     * para que a su ves este array pueda ser insertado truncado pueda ser insertado en el método
+     * scrapAndAnalitic()
+     * @param mixed $id_user
+     * @return void
+     */
     private function findByIDUser($id_user)
     {
         $dataInsert = [
             'wordSearch' => $id_user['wordSearch'],
             'consulta_log' => $this->date
         ];
-        for ($i=0; $i < count(collect($id_user)) ; $i++) {
+        for ($i = 0; $i < count(collect($id_user)); $i++) {
             error_reporting(~E_NOTICE || ~E_WARNING);
             try {
-                $response =  $this->client->request('GET', "p/".$id_user[$i]['id_usuario']."/?__a=1");
+                $response =  $this->client->request('GET', "p/" . $id_user[$i]['id_usuario'] . "/?__a=1");
                 $allData = json_decode($response->getBody()->getContents());
                 array_push($dataInsert, $this->truncateUsername($allData));
             } catch (ClientException $e) {
@@ -118,20 +155,20 @@ class AnaliticMongoDBController extends Controller
                 'comentarios' => $routeAtributte->edge_media_preview_comment->count,
                 'video' => $routeAtributte->video_url,
                 'text' => $routeAtributte->edge_media_to_caption->edges[0]->node->text,
-                'OriginalPost' => $baseURL.$routeAtributte->shortcode
-        ];
+                'OriginalPost' => $baseURL . $routeAtributte->shortcode
+            ];
         } else {
-                $arrayUsername = [
-                    'id_usuario' => $routeAtributte->shortcode,
-                    'userName' => $routeAtributte->owner->username,
-                    'fullName' => $routeAtributte->owner->full_name,
-                    'profile_pic' => $routeAtributte->owner->profile_pic_url,
-                    'pais' => $routeAtributte->location->name,
-                    'likes' => $routeAtributte->edge_media_preview_like->count,
-                    'comentarios' => $routeAtributte->edge_media_preview_comment->count,
-                    'img' => $routeAtributte->display_url,
-                    'text' => $routeAtributte->edge_media_to_caption->edges[0]->node->text,
-                    'OriginalPost' => $baseURL.$routeAtributte->shortcode
+            $arrayUsername = [
+                'id_usuario' => $routeAtributte->shortcode,
+                'userName' => $routeAtributte->owner->username,
+                'fullName' => $routeAtributte->owner->full_name,
+                'profile_pic' => $routeAtributte->owner->profile_pic_url,
+                'pais' => $routeAtributte->location->name,
+                'likes' => $routeAtributte->edge_media_preview_like->count,
+                'comentarios' => $routeAtributte->edge_media_preview_comment->count,
+                'img' => $routeAtributte->display_url,
+                'text' => $routeAtributte->edge_media_to_caption->edges[0]->node->text,
+                'OriginalPost' => $baseURL . $routeAtributte->shortcode
             ];
         }
 
@@ -141,13 +178,13 @@ class AnaliticMongoDBController extends Controller
 
     private function findTOPPost($data)
     {
-            try {
-                $response =  $this->client->request('GET', "explore/tags/".$data['wordSearch']."/?__a=1");
-                $allData = json_decode($response->getBody()->getContents());
-                $dataInsert = $this->truncateTopPost($allData);
-            } catch (ClientException $e) {
-                $e->getResponse()->getStatusCode();
-            }
+        try {
+            $response =  $this->client->request('GET', "explore/tags/" . $data['wordSearch'] . "/?__a=1");
+            $allData = json_decode($response->getBody()->getContents());
+            $dataInsert = $this->truncateTopPost($allData);
+        } catch (ClientException $e) {
+            $e->getResponse()->getStatusCode();
+        }
 
 
         return $dataInsert;
@@ -158,7 +195,7 @@ class AnaliticMongoDBController extends Controller
     {
         $routeAtributte = $data->graphql->hashtag->edge_hashtag_to_top_posts->edges;
         $dataTOPInsert = [];
-        for ($i=0; $i <count($routeAtributte) ; $i++) {
+        for ($i = 0; $i < count($routeAtributte); $i++) {
             error_reporting(~E_NOTICE);
             $text = $routeAtributte[$i]->node->edge_media_to_caption->edges[0]->node->text;
             $img = $routeAtributte[$i]->node->display_url;
@@ -182,7 +219,7 @@ class AnaliticMongoDBController extends Controller
     private function chartLikesComment($data)
     {
 
-        for ($i=0; $i <count(collect($data)) ; $i++) {
+        for ($i = 0; $i < count(collect($data)); $i++) {
             error_reporting(~E_NOTICE);
             $likes += $data[$i]['likes'];
             $comentarios += $data[$i]['comentarios'];
@@ -198,13 +235,13 @@ class AnaliticMongoDBController extends Controller
     {
 
         $chart = [];
-        for ($i=0; $i <count(collect($scrapTopUsername)) ; $i++) {
+        for ($i = 0; $i < count(collect($scrapTopUsername)); $i++) {
             error_reporting(~E_NOTICE);
             $userName = $scrapTopUsername[$i]['userName'];
             $likes = $scrapTopUsername[$i]['likes'];
             $OriginalPost = $scrapTopUsername[$i]['OriginalPost'];
             if (isset($userName) and isset($likes) and isset($OriginalPost)) {
-                if(!empty($userName) and !empty($likes) and !empty($OriginalPost)){
+                if (!empty($userName) and !empty($likes) and !empty($OriginalPost)) {
                     $chart[$i]['userName'] = $userName;
                     $chart[$i]['likes'] = $likes;
                     $chart[$i]['OriginalPost'] = $OriginalPost;
@@ -219,10 +256,10 @@ class AnaliticMongoDBController extends Controller
     {
         error_reporting(~E_NOTICE || ~E_WARNING);
         $onlyUserName = [];
-        for ($i=0; $i <count(collect($Data)) ; $i++) {
+        for ($i = 0; $i < count(collect($Data)); $i++) {
             $userName = $Data[$i]['userName'];
             if (isset($userName)) {
-                if(!empty($userName)){
+                if (!empty($userName)) {
                     $onlyUserName[$i]['userName'] = $userName;
                 }
             }
@@ -235,28 +272,6 @@ class AnaliticMongoDBController extends Controller
         }
 
         return array_count_values($truncate);
-    }
-
-    private function chartUserName($Data)
-    {
-        error_reporting(~E_NOTICE || ~E_WARNING);
-        $onlyUserName = [];
-        for ($i=0; $i <count(collect($Data)) ; $i++) {
-            $userName = $Data[$i]['userName'];
-            if (isset($userName)) {
-                if(!empty($userName)){
-                    $onlyUserName[$i]['userName'] = $userName;
-                }
-            }
-        }
-        $truncate = [];
-        foreach ($onlyUserName as $key => $value) {
-            if (isset($value['userName'])) {
-                array_push($truncate, $value['userName']);
-            }
-        }
-
-        return $truncate;
     }
 
 }
