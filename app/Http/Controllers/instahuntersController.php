@@ -13,9 +13,12 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Exception\ConnectException;
+use GuzzleHttp\Exception\RequestException;
 use App\dataCollectionMongoDB as dataMongoDB;
 use Illuminate\Pagination\LengthAwarePaginator;
+use App\dataCollectionMongoDB as dataCollection;
 
 class instahuntersController extends Controller
 {
@@ -69,8 +72,9 @@ class instahuntersController extends Controller
 
     public function indexPreview()
     {
-            return view('instahunterview');
-
+        $findByID = dataCollection::findOrFail($this->request->_id);
+        $data = $this->truncateModelData($findByID);
+        return $this->paginate($data, $this->request->_id);
     }
 
 
@@ -126,17 +130,49 @@ class instahuntersController extends Controller
                                         <strong>OOPS!!!!!!!!! Algo a fallado con el servidor de raspado</strong>
                                     </div>';
         }
+            catch(ServerException $e){
+                echo "Codigo de error: ". $e->getResponse()->getStatusCode().'<div class="alert alert-danger" role="alert">
+                <strong>OOPS!!!!!!!!! La palabra que intenta buscar no existe en la red social</strong>
+            </div>';
+            }
+            catch(RequestException $e){
+                echo $e->getResponse().'<div class="alert alert-danger" role="alert">
+                <strong>OOPS!!!!!!!!! La palabra que intenta buscar no existe en la red social</strong>
+            </div>';
+            }
 
     }
 
 
+    private function paginate($items, $id)
+    {
 
+        // Get current page form url e.x. &page=1
+        $currentPage = LengthAwarePaginator::resolveCurrentPage();
+
+        // Create a new Laravel collection from the array data
+        $itemCollection = collect($items);
+
+        // Define how many items we want to be visible in each page
+        $perPage = 3;
+
+        // Slice the collection to get the items to display in current page
+        $currentPageItems = $itemCollection->slice(($currentPage * $perPage) - $perPage, $perPage)->all();
+
+        // Create our paginator and pass it to the view
+        $paginatedItems= new LengthAwarePaginator($currentPageItems , count($itemCollection), $perPage);
+
+        // set url path for generted links
+        $paginatedItems->setPath($this->request->url());
+
+        return view('instahunterview', ['data' => $paginatedItems, 'id' => $id]);
+    }
 
     public function exportXls()
     {
-        $response = $this->client->request('GET', 'apiPreview.php');
-        $posts = json_decode($response->getBody()->getContents(), true);
-        return Excel::download(new exportData($posts), 'Data.xlsx');
+        $findByID = dataCollection::findOrFail($this->request->_id);
+        $data = $this->truncateModelData($findByID);
+        return Excel::download(new exportData($data), 'Data.xlsx');
 
     }
 
@@ -162,14 +198,14 @@ class instahuntersController extends Controller
             $hashtag_time = $dataIn[$i]->node->taken_at_timestamp;
             $id_usuario = $dataIn[$i]->node->shortcode;
             $fecha = new DateTime("@$hashtag_time");
+            $dataTOInsert['consulta_log'] = $this->date;
+            $dataTOInsert['wordSearch'] = $routeAtributte[0]->graphql->hashtag->name;
             $dataTOInsert[$i]['img'] = $img;
             $dataTOInsert[$i]['txt'] = $text;
             $dataTOInsert[$i]['time'] = $fecha->format('Y-m-d H:i:s');
             $dataTOInsert[$i]['likes'] = $likes;
             $dataTOInsert[$i]['comentarios'] = $comentarios;
             $dataTOInsert[$i]['id_usuario'] = $id_usuario;
-            $dataTOInsert['consulta_log'] = $this->date;
-            $dataTOInsert['wordSearch'] = $routeAtributte[0]->graphql->hashtag->name;
         }
 
         $dataMongoDB = new \App\dataCollectionMongoDB;
@@ -197,6 +233,37 @@ class instahuntersController extends Controller
         }
         $dataMongoDB = new \App\dataCollectionMongoDB;
         $dataMongoDB->insert($dataTOInsert);
+    }
+
+    private function truncateModelData($data)
+    {
+
+        $truncate = [];
+        $data = collect($data);
+        for ($i=0; $i <count(collect($data)) ; $i++) {
+            error_reporting(~E_NOTICE);
+            $img = $data[$i]['img'];
+            $txt = $data[$i]['txt'];
+            $time = $data[$i]['time'];
+            $likes = $data[$i]['likes'];
+            $comentarios = $data[$i]['comentarios'];
+            $originalPost = "www.instagram.com/p/".$data[$i]['id_usuario'];
+            $date =$data['consulta_log'];
+            $word =$data['wordSearch'];
+            if (isset($img) and isset($txt) and isset($time) and isset($likes) and isset($comentarios) and isset($originalPost)) {
+                if (!empty($img) and !empty($time) and !empty($originalPost)) {
+                    $truncate[$i]['img'] = $img;
+                    $truncate[$i]['txt'] = $txt;
+                    $truncate[$i]['time'] = $time;
+                    $truncate[$i]['likes'] = $likes;
+                    $truncate[$i]['comentarios'] = $comentarios;
+                    $truncate[$i]['originalPost'] = $originalPost;
+                    $truncate[$i]['FechaConsulta'] = $date;
+                    $truncate[$i]['BusquedaRealizada'] = $word;
+                }
+            }
+        }
+        return $truncate;
     }
 
 }

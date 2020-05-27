@@ -52,18 +52,6 @@
             <div class="item col-sm-4 col-xs-6 filter-design">
 
 				<div class="portfolio-item">
-                <a href="<?php echo e(URL::to('UsuariosTercero')); ?>" class="image">
-						<img src="<?php echo e(asset('Imagenes/GestiondeUsuariosExternosFinal.png')); ?>" class="img-rounded" />
-						<span class="hover-zoom"></span>
-					</a>
-
-
-				</div>
-
-            </div>
-            <div class="item col-sm-4 col-xs-6 filter-design">
-
-				<div class="portfolio-item">
 					<a href="<?php echo e(URL::to('Categorias')); ?>" class="image">
 						<img src="<?php echo e(asset('Imagenes/categoriasfinal.png')); ?>" class="img-rounded" />
 						<span class="hover-zoom"></span>
@@ -88,19 +76,17 @@
             <div class="row">
 
                 <div class="col-md-12">
+                <div class="text-center">
+                    <ul class="pagination">
+                        <li class="active">
+                            <a href="<?php echo e(URL::to('appl')); ?>"><i class="fas fa-angle-left"></i></a>
+                             </li>
+                        <li>
+                        <a href=""><i class="fas fa-angle-right"></i></a>
+                        </li>
+                    </ul>
 
-                    <div class="text-center">
-
-                        <ul class="pagination">
-                            <li>
-                                <a href="<?php echo e(URL::to('appl')); ?>"><i class="fas fa-angle-left"></i></a>
-                            </li>
-                            <li class="active">
-                                <a href="#"><i class="fas fa-angle-right"></i></a>
-                            </li>
-                        </ul>
-
-                    </div>
+</div>
                 </div>
 		</div>
 	</div>

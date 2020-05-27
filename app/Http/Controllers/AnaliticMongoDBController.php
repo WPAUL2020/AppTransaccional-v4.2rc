@@ -121,11 +121,12 @@ class AnaliticMongoDBController extends Controller
      */
     private function findByIDUser($id_user)
     {
+        $id_user = collect($id_user);
         $dataInsert = [
             'wordSearch' => $id_user['wordSearch'],
             'consulta_log' => $this->date
         ];
-        for ($i = 0; $i < count(collect($id_user)); $i++) {
+        for ($i = 0; $i < count($id_user); $i++) {
             error_reporting(~E_NOTICE || ~E_WARNING);
             try {
                 $response =  $this->client->request('GET', "p/" . $id_user[$i]['id_usuario'] . "/?__a=1");
@@ -218,8 +219,8 @@ class AnaliticMongoDBController extends Controller
 
     private function chartLikesComment($data)
     {
-
-        for ($i = 0; $i < count(collect($data)); $i++) {
+        $data = collect($data);
+        for ($i = 0; $i < count($data); $i++) {
             error_reporting(~E_NOTICE);
             $likes += $data[$i]['likes'];
             $comentarios += $data[$i]['comentarios'];
@@ -233,9 +234,9 @@ class AnaliticMongoDBController extends Controller
 
     private function chartUserTOP($scrapTopUsername)
     {
-
+        $scrapTopUser = collect($scrapTopUsername);
         $chart = [];
-        for ($i = 0; $i < count(collect($scrapTopUsername)); $i++) {
+        for ($i = 0; $i < count($scrapTopUser); $i++) {
             error_reporting(~E_NOTICE);
             $userName = $scrapTopUsername[$i]['userName'];
             $likes = $scrapTopUsername[$i]['likes'];
@@ -254,9 +255,10 @@ class AnaliticMongoDBController extends Controller
 
     private function chartUserValues($Data)
     {
+        $Data = collect($Data);
         error_reporting(~E_NOTICE || ~E_WARNING);
         $onlyUserName = [];
-        for ($i = 0; $i < count(collect($Data)); $i++) {
+        for ($i = 0; $i < count($Data); $i++) {
             $userName = $Data[$i]['userName'];
             if (isset($userName)) {
                 if (!empty($userName)) {

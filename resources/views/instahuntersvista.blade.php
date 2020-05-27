@@ -42,8 +42,8 @@
                     <td>{{ $datos->consulta_log}}</td>
 
                        <td>
-                       <a a href="instahunters/Estadistica/{{$datos->_id}}" class="btn btn-secondary">VER ESTADISTICA</a>
-                           <a a href="#" class="btn btn-info">VISTA PREVIA <i class="fas fa-eye"></i></a>
+                       <a a href="instahunters/Estadistica/{{$datos->_id}}" class="btn btn-primary">VER ESTADISTICA <i class="fas fa-chart-bar"></i></a>
+                           <a a href="instahunterview/{{$datos->_id}}" class="btn btn-info">VISTA PREVIA <i class="fas fa-eye"></i></a>
                        </td>
                        </tr>
                    @endforeach
