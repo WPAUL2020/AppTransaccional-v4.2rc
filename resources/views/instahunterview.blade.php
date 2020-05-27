@@ -13,15 +13,14 @@
 
                                     <ol class="bc-3" >
                                 <li>
-                        <a href="{{ url('/') }}"><i class="fas fa-home"></i> Home</a>
+                        <a href="{{URL::previous()}}"> <i class="fas fa-angle-left"></i> Regresar</a>
                     </li>
                             <li>
 
                                     <a href="{{ url('instahunters') }}">InstaHunters <i class="fas fa-spider"></i></a>
                             </li>
                         <li class="active">
-
-                                    <strong>Vista Previa <i class="fas fa-eye"></i></strong>
+                            <a href="{{ url('instahuntersvista  ') }}"> Busquedas Realizadas <i class="fas fa-eye"></i></strong></a>
                             </li>
                             </ol>
 
@@ -41,14 +40,14 @@
                 <div class="col-sm-8">
 
                     <div class="blog-posts">
-                        @foreach ($items as $data)
+                        @foreach ($data as $datos)
                         <!-- Blog Post -->
                         <div class="blog-post">
 
                             <div class="post-thumb">
 
-                                <a href="#">
-                                    <img src="{{$data->img}}" class="img-rounded" />
+                                <a href="https://{{$datos['originalPost']}}">
+                                    <img src="{{$datos['img']}}" class="img-rounded" />
                                     <span class="hover-zoom"></span>
                                 </a>
 
@@ -57,28 +56,28 @@
                             <div class="post-details">
 
                                 <h3>
-                                    <a href="#">Post</a>
+                                    <a href="https://{{$datos['originalPost']}}">Post Original</a>
                                 </h3>
 
                                 <div class="post-meta">
 
                                     <div class="meta-info">
-                                        <i class="entypo-calendar"></i> {{$data->date}}</div>
+                                        <i class="entypo-calendar"></i> {{$datos['time']}}</div>
 
                                     <div class="meta-info">
                                         <i class="entypo-comment"></i>
-                                        {{$data->comentarios}}
+                                        {{$datos['comentarios']}}
                                     </div>
 
                                     <div class="meta-info">
                                         <i class="far fa-thumbs-up"></i>
-                                        {{$data->likes}}
+                                        {{$datos['likes']}}
                                     </div>
 
 
                                 </div>
 
-                                <p>{{$data->txt}}</p>
+                                <p>{{$datos['txt']}}</p>
 
                             </div>
 
@@ -86,7 +85,8 @@
                         @endforeach
 
 
-                            <form action="{{URL::to('instahunterview')}}" method="post"> {{ csrf_field() }}
+                            <form action="{{ URL:: to("instahunterview/download/$id") }}" method="POST"> {{ csrf_field() }}
+
                                 <button href="#" type="submit" class="btn btn-success btn-lg float-right" name="save">
                                     Download Data <i class="fas fa-file-download"></i>
                                  </button>
@@ -97,7 +97,7 @@
 
                             <ul class="pagination">
                                 <li class="active">
-                                    {{ $items->links() }}
+                                    {{ $data->links() }}
                                 </li>
                             </ul>
 
@@ -112,7 +112,7 @@
     <div class="sidebar">
 
         <h3>
-            <form action="{{URL::to('instahunterview')}}" method="post"> {{ csrf_field() }}
+            <form action="{{ URL:: to("instahunterview/download/$id") }}" method="POST"> {{ csrf_field() }}
                 <button href="#" type="submit" class="btn btn-success btn-lg float-right" name="save">
                     Download Data <i class="fas fa-file-download"></i>
                  </button>
@@ -122,7 +122,7 @@
             Elementos listos a descargar
             <ul>
                 <li>
-                    <a href="#">Total <span>({{$countItem}})</span></a>
+                    {{-- <a href="#">Total <span>({{$countItem}})</span></a> --}}
                 </li>
             </ul>
         </div>

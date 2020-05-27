@@ -36,8 +36,9 @@ class exportData implements FromCollection, WithHeadings, WithStrictNullComparis
             'Fecha de publicación',
             'Cantidad total de likes',
             'Cantidad total de comentarios',
-            'Id consulta',
-            'Fecha de consulta'
+            'Post Original',
+            'Fecha de consulta',
+            'Búsqueda Realizada'
         ];
     }
 

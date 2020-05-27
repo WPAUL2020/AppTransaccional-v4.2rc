@@ -10,17 +10,16 @@
 
                         <h1>Vista Previa</h1>
 
-                                    <ol class="breadcrumb bc-3" >
+                                    <ol class="bc-3" >
                                 <li>
-                        <a href="<?php echo e(url('/')); ?>"><i class="fas fa-home"></i> Home</a>
+                        <a href="<?php echo e(URL::previous()); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
                     </li>
                             <li>
 
                                     <a href="<?php echo e(url('instahunters')); ?>">InstaHunters <i class="fas fa-spider"></i></a>
                             </li>
                         <li class="active">
-
-                                    <strong>Vista Previa <i class="fas fa-eye"></i></strong>
+                            <a href="<?php echo e(url('instahuntersvista  ')); ?>"> Busquedas Realizadas <i class="fas fa-eye"></i></strong></a>
                             </li>
                             </ol>
 
@@ -40,14 +39,14 @@
                 <div class="col-sm-8">
 
                     <div class="blog-posts">
-                        <?php $__currentLoopData = $items; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <!-- Blog Post -->
                         <div class="blog-post">
 
                             <div class="post-thumb">
 
-                                <a href="#">
-                                    <img src="<?php echo e($data->img); ?>" class="img-rounded" />
+                                <a href="https://<?php echo e($datos['originalPost']); ?>">
+                                    <img src="<?php echo e($datos['img']); ?>" class="img-rounded" />
                                     <span class="hover-zoom"></span>
                                 </a>
 
@@ -56,30 +55,30 @@
                             <div class="post-details">
 
                                 <h3>
-                                    <a href="#">Post</a>
+                                    <a href="https://<?php echo e($datos['originalPost']); ?>">Post Original</a>
                                 </h3>
 
                                 <div class="post-meta">
 
                                     <div class="meta-info">
-                                        <i class="entypo-calendar"></i> <?php echo e($data->date); ?></div>
+                                        <i class="entypo-calendar"></i> <?php echo e($datos['time']); ?></div>
 
                                     <div class="meta-info">
                                         <i class="entypo-comment"></i>
-                                        <?php echo e($data->comentarios); ?>
+                                        <?php echo e($datos['comentarios']); ?>
 
                                     </div>
 
                                     <div class="meta-info">
                                         <i class="far fa-thumbs-up"></i>
-                                        <?php echo e($data->likes); ?>
+                                        <?php echo e($datos['likes']); ?>
 
                                     </div>
 
 
                                 </div>
 
-                                <p><?php echo e($data->txt); ?></p>
+                                <p><?php echo e($datos['txt']); ?></p>
 
                             </div>
 
@@ -87,7 +86,8 @@
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
-                            <form action="<?php echo e(URL::to('instahunterview')); ?>" method="post"> <?php echo e(csrf_field()); ?>
+                            <form action="<?php echo e(URL:: to("instahunterview/download/$id")); ?>" method="POST"> <?php echo e(csrf_field()); ?>
+
 
                                 <button href="#" type="submit" class="btn btn-success btn-lg float-right" name="save">
                                     Download Data <i class="fas fa-file-download"></i>
@@ -99,7 +99,7 @@
 
                             <ul class="pagination">
                                 <li class="active">
-                                    <?php echo e($items->links()); ?>
+                                    <?php echo e($data->links()); ?>
 
                                 </li>
                             </ul>
@@ -115,7 +115,7 @@
     <div class="sidebar">
 
         <h3>
-            <form action="<?php echo e(URL::to('instahunterview')); ?>" method="post"> <?php echo e(csrf_field()); ?>
+            <form action="<?php echo e(URL:: to("instahunterview/download/$id")); ?>" method="POST"> <?php echo e(csrf_field()); ?>
 
                 <button href="#" type="submit" class="btn btn-success btn-lg float-right" name="save">
                     Download Data <i class="fas fa-file-download"></i>
@@ -126,7 +126,7 @@
             Elementos listos a descargar
             <ul>
                 <li>
-                    <a href="#">Total <span>(<?php echo e($countItem); ?>)</span></a>
+                    
                 </li>
             </ul>
         </div>
