@@ -1,6 +1,4 @@
-@extends('layouts.usuario')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 	<!-- Breadcrumb -->
 
 <section class="breadcrumb">
@@ -15,7 +13,7 @@
 
 							<ol class="bc-3" >
 						<li>
-				<a href="{{ url('/') }}"><i class="fas fa-home"></i> Home</a>
+				<a href="<?php echo e(url('/')); ?>"><i class="fas fa-home"></i> Home</a>
 			</li>
 				<li class="active">
 							<strong>Zona Transaccional</strong>
@@ -42,8 +40,8 @@
             <div class="item col-sm-4 col-xs-6 filter-design">
 
 				<div class="portfolio-item">
-					<a href="{{URL::to('cliente-instahunters')}}" class="image">
-						<img src="{{ asset('Imagenes/gestionBigDataFinal.png')}}" class="img-rounded" />
+					<a href="<?php echo e(URL::to('cliente-instahunters')); ?>" class="image">
+						<img src="<?php echo e(asset('Imagenes/gestionBigDataFinal.png')); ?>" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>
 
@@ -54,8 +52,8 @@
             <div class="item col-sm-4 col-xs-6 filter-design">
 
 				<div class="portfolio-item">
-                <a href="{{URL::to('UsuariosTercero')}}" class="image">
-						<img src="{{ asset('Imagenes/GestiondeUsuariosExternosFinal.png')}}" class="img-rounded" />
+                <a href="<?php echo e(URL::to('UsuariosTercero')); ?>" class="image">
+						<img src="<?php echo e(asset('Imagenes/GestiondeUsuariosExternosFinal.png')); ?>" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>
 				</div>
@@ -63,8 +61,8 @@
             <div class="item col-sm-4 col-xs-6 filter-design">
 
 				<div class="portfolio-item">
-					<a href="{{URL::to('Categorias')}}" class="image">
-						<img src="{{ asset('Imagenes/categoriasfinal.png')}}" class="img-rounded" />
+					<a href="<?php echo e(URL::to('Categorias')); ?>" class="image">
+						<img src="<?php echo e(asset('Imagenes/categoriasfinal.png')); ?>" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>
 
@@ -82,4 +80,6 @@
 
 </section>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.usuario', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\git\AppTransaccional-v4.2rc\resources\views/appl4.blade.php ENDPATH**/ ?>
