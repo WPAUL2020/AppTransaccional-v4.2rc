@@ -27,12 +27,12 @@
     </section>
 
 
-<div>
+<div class="tres">
 <div class="cir2">
     <strong  class="">Publicaciones</strong>
 
     <ul class="galeria">
-    	<li><a href="#img11"><img src="https://www.youtube.com/watch?v=w1FOFIg1Xnk"></a></li>
+    	<li><a href="#img11"><img src=""></a></li>
     	<li><a href="#img22"><img src=""></a></li>
     	<li><a href="#img33"><img src=""></a></li>
     	<li><a href="#img44"><img src=""></a></li>
@@ -110,7 +110,7 @@
     	<a class="cerrar" href="">x</a>
     </div>
  </div>
-</div>
+
     <div class="cir">
             <td class="circ" >
                 <strong  class="">Likes & Comentarios</strong>
