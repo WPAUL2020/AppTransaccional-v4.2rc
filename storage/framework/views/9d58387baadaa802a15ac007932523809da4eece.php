@@ -235,21 +235,21 @@
                         
                     </li>
                     <li class="has-sub">
-                        <a href="<?php echo e(URL::to('')); ?>">
+                        <a href="<?php echo e(URL::to('MedioPagos')); ?>">
                             <i class="entypo-credit-card"></i>
                             <span class="title">Medios de Pago</span>
                         </a>
                         <ul>
                             
                             <li>
-                                <a href="<?php echo e(URL::to('')); ?>">
+                                <a href="<?php echo e(URL::to('MedioPagoCrear/agregar')); ?>">
                                     <i class="entypo-plus-circled"></i>
                                     <span class="title">Agregar</span>
                                 </a>
                             </li>
                           
                             <li>
-                                <a href="<?php echo e(URL::to('')); ?>">
+                                <a href="<?php echo e(URL::to('MedioPagos')); ?>">
                                     <i class="entypo-cw"></i>
                                     <span class="title">Actualizar</span>
                                 </a>
@@ -279,21 +279,21 @@
                         </ul>
                     </li>
                     <li class="has-sub">
-                        <a href="<?php echo e(URL::to('')); ?>">
+                        <a href="<?php echo e(URL::to('Servicios')); ?>">
                             <i class="entypo-tools"></i>
                             <span class="title">Servicios</span>
                         </a>
                         <ul>
                            
                             <li>
-                                <a href="<?php echo e(URL::to('')); ?>">
+                                <a href="<?php echo e(URL::to('ServicioCrear/agregar')); ?>">
                                     <i class="entypo-plus-circled"></i>
                                     <span class="title">Agregar</span>
                                 </a>
                             </li>
                           
                             <li>
-                                <a href="<?php echo e(URL::to('')); ?>">
+                                <a href="<?php echo e(URL::to('Servicios')); ?>">
                                     <i class="entypo-cw"></i>
                                     <span class="title">Actualizar</span>
                                 </a>
