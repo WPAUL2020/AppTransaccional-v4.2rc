@@ -30,7 +30,6 @@
 <div class="cir2">
     <strong  class="">Publicaciones</strong>
     <ul class="galeria">
-        <<<<<<< HEAD
         @foreach ($usersTOP as $data)
             <li><a href="{{$data['OriginalPost']}}"><img src="{{$data['img']}}"></a></li>
         @endforeach
