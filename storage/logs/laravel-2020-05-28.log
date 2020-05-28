@@ -1,0 +1,12 @@
+[2020-05-28 00:25:11] local.ERROR: Maximum execution time of 30 seconds exceeded {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Maximum execution time of 30 seconds exceeded at C:\\xampp\\htdocs\\AppTransaccional-v4.2rc\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Providers\\FoundationServiceProvider.php:9)
+[stacktrace]
+#0 {main}
+"} 
+[2020-05-28 00:29:49] local.ERROR: Maximum execution time of 30 seconds exceeded {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Maximum execution time of 30 seconds exceeded at C:\\xampp\\htdocs\\AppTransaccional-v4.2rc\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\SessionManager.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2020-05-28 00:29:50] local.ERROR: Maximum execution time of 30 seconds exceeded {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Maximum execution time of 30 seconds exceeded at C:\\xampp\\htdocs\\AppTransaccional-v4.2rc\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php:22)
+[stacktrace]
+#0 {main}
+"} 

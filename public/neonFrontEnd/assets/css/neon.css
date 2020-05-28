@@ -6,7 +6,7 @@
 }
 @media screen and (min-width: 1021px){
   .container{
-    width: 100%;
+    width: 80%;
   }
 }
 @media screen and (min-width: 814px){
@@ -16,7 +16,7 @@
 }
 @media screen and (min-width: 650px){
   .container{
-    width: 100%;
+    width: 80%;
   }
 }
 
@@ -1080,8 +1080,8 @@ section.breadcrumb .alt-select-field {
 .gallery-container .portfolio-item .like,
 .portfolio-container .gallery-item .like,
 .gallery-container .gallery-item .like {
-  font-size: 15px;*/
-}
+  font-size: 15px;
+}*/
 .portfolio-container .portfolio-item h4,
 .gallery-container .portfolio-item h4,
 .portfolio-container .gallery-item h4,
