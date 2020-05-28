@@ -78,7 +78,7 @@
 			<div class="item col-sm-4 col-xs-6 filter-design">
 
 				<div class="portfolio-item">
-					<a href="{{URL::to('')}}" class="image">
+					<a href="{{URL::to('/MedioPagos')}}" class="image">
 						<img src="{{ asset('')}}" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>
@@ -90,7 +90,7 @@
 			<div class="item col-sm-4 col-xs-6 filter-design">
 
 				<div class="portfolio-item">
-					<a href="{{URL::to('')}}" class="image">
+					<a href="{{URL::to('/Servicios')}}" class="image">
 						<img src="{{ asset('')}}" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>
