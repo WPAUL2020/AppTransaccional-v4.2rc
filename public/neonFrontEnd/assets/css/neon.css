@@ -4,9 +4,10 @@
 .isotope-item {
   z-index: 2;
 }
+
 @media screen and (min-width: 1021px){
   .container{
-    width: 100%;
+    width: 80%;
   }
 
 }
@@ -17,10 +18,15 @@
 }
 @media screen and (min-width: 650px){
   .container{
-    width: 100%;
+    width: 80%;
   }
 }
+@media screen and (min-width: 1021px){
+  .dos{
+    width: 60%;
+  }
 
+}
 
 .isotope-hidden.isotope-item {
   pointer-events: none;
