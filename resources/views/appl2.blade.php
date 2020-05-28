@@ -79,7 +79,7 @@
 
 				<div class="portfolio-item">
 					<a href="{{URL::to('/MedioPagos')}}" class="image">
-						<img src="{{ asset('')}}" class="img-rounded" />
+						<img src="{{ asset('Imagenes/metododepagofinal.png')}}" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>
 
@@ -91,7 +91,7 @@
 
 				<div class="portfolio-item">
 					<a href="{{URL::to('/Servicios')}}" class="image">
-						<img src="{{ asset('')}}" class="img-rounded" />
+						<img src="{{ asset('Imagenes/Serviciosfinal.png')}}" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>
 
