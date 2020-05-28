@@ -24,14 +24,14 @@
         </div>
     </section>
 <div>
+<div class="tres">
 <div class="cir2">
     <strong  class="">Publicaciones</strong>
-
     <ul class="galeria">
-    <?php $__currentLoopData = $usersTOP; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <li><a href="<?php echo e($data['OriginalPost']); ?>"><img src="<?php echo e($data['img']); ?>"></a></li>
-    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
+        <?php $__currentLoopData = $usersTOP; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <li><a href="<?php echo e($data['OriginalPost']); ?>"><img src="<?php echo e($data['img']); ?>"></a></li>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    
     </ul>
     <div class="modal" id="img11">
     	<h4>"Nombre del que la publico1" </h4>
@@ -103,7 +103,7 @@
     	<a class="cerrar" href="">x</a>
     </div>
  </div>
-</div>
+
     <div class="cir">
             <td class="circ" >
                 <strong  class="">Likes & Comentarios</strong>

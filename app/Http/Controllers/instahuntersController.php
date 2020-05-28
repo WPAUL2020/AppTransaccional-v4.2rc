@@ -186,12 +186,7 @@ class instahuntersController extends Controller
         */
         for ($i=0; $i < count($dataIn); $i++) {
             error_reporting(~E_NOTICE);
-            if ($dataIn[$i]->node->is_video == true) {
-                # code...
-            } else {
-                $img = $dataIn[$i]->node->display_url;
-            }
-
+            $img = $dataIn[$i]->node->display_url;
             $text = $dataIn[$i]->node->edge_media_to_caption->edges[0]->node->text;
             $likes = $dataIn[$i]->node->edge_liked_by->count;
             $comentarios = $dataIn[$i]->node->edge_media_to_comment->count;
