@@ -4,10 +4,12 @@
 .isotope-item {
   z-index: 2;
 }
+
 @media screen and (min-width: 1021px){
   .container{
     width: 80%;
   }
+
 }
 @media screen and (min-width: 814px){
   .container{
@@ -19,7 +21,12 @@
     width: 80%;
   }
 }
+@media screen and (min-width: 1021px){
+  .dos{
+    width: 60%;
+  }
 
+}
 
 .isotope-hidden.isotope-item {
   pointer-events: none;
