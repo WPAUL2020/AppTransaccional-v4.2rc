@@ -90,7 +90,7 @@ class instahuntersController extends Controller
             "in" => "Seleccione un valor"
         ];
         $this->request->validate([
-            'optionScrap'=> 'required|in:usuario,hashtag',
+            'optionScrap'=> 'required|in:hashtag',
             'palabraClave' => 'required'
         ],$validateMessage);
         try {
@@ -107,21 +107,6 @@ class instahuntersController extends Controller
                 );
                 $data2view = json_decode($res->getBody()->getContents());
                 $this->truncateAndInsertHashtag($data2view);
-                return view('instahunters');
-            }
-            elseif($this->request->optionScrap === "usuario"){
-                $res = $this->client->request('POST', 'ScrapUser', [
-                    'headers' => [
-                    'Accept'     => 'application/json',
-                    ],
-                    'json' => [
-                        'usuario' => $this->request->palabraClave,
-                        ]
-                    ]
-
-                );
-                $data2view = json_decode($res->getBody()->getContents());
-                $this->truncateAndInsertUser($data2view);
                 return view('instahunters');
             }
         } catch (ConnectException $th) {
@@ -203,29 +188,6 @@ class instahuntersController extends Controller
             $dataTOInsert[$i]['id_usuario'] = $id_usuario;
         }
 
-        $dataMongoDB = new \App\dataCollectionMongoDB;
-        $dataMongoDB->insert($dataTOInsert);
-    }
-    private  function truncateAndInsertUser($data)
-    {
-        $routeAtributte = $data->entry_data->ProfilePage[0]->graphql->user->edge_owner_to_timeline_media->edges;
-        $dataTOInsert = [];
-        for ($i=0; $i < count($routeAtributte); $i++) {
-            error_reporting(~E_NOTICE);
-            $text = $routeAtributte[$i]->node->edge_media_to_caption->edges[0]->node->text;
-            $img = $routeAtributte[$i]->node->display_url;
-            $likes = $routeAtributte[$i]->node->edge_liked_by->count;
-            $comentarios = $routeAtributte[$i]->node->edge_media_to_comment->count;
-            $usuario_time = $routeAtributte[$i]->node->taken_at_timestamp;
-            $fecha = new DateTime("@$usuario_time");
-            $dataTOInsert[$i]['img'] = $img;
-            $dataTOInsert[$i]['txt'] = $text;
-            $dataTOInsert[$i]['time'] = $fecha->format('Y-m-d H:i:s');
-            $dataTOInsert[$i]['likes'] = $likes;
-            $dataTOInsert[$i]['comentarios'] = $comentarios;
-            $dataTOInsert['consulta_log'] = $this->date;
-            $dataTOInsert['userSearch'] = $routeAtributte[0]->graphql->hashtag->name;
-        }
         $dataMongoDB = new \App\dataCollectionMongoDB;
         $dataMongoDB->insert($dataTOInsert);
     }
