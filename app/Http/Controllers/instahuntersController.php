@@ -110,20 +110,16 @@ class instahuntersController extends Controller
                 return redirect()->back()->with('message', 'Su palabra a sido scrapeada satisfactoriamente!');
             }
         } catch (ConnectException $th) {
-
-            echo $th->getResponse().'<div class="alert alert-danger" role="alert">
-                                        <strong>OOPS!!!!!!!!! Algo a fallado con el servidor de raspado</strong>
-                                    </div>';
+            $th->getResponse();
+            return redirect()->back()->with('msj', 'OOPS!!!!!!!!! Algo a fallado con el servidor de raspado\r\n Por favor contacte al administrador');
         }
             catch(ServerException $e){
-                echo "Codigo de error: ". $e->getResponse()->getStatusCode().'<div class="alert alert-danger" role="alert">
-                <strong>OOPS!!!!!!!!! La palabra que intenta buscar no existe en la red social</strong>
-            </div>';
+                $error =  "Codigo de error: ". $e->getResponse()->getStatusCode();
+                return redirect()->back()->with('msj', 'OOPS!!!!!!!!! La palabra que intenta buscar no existe en la red social');
             }
             catch(RequestException $e){
-                echo $e->getResponse().'<div class="alert alert-danger" role="alert">
-                <strong>OOPS!!!!!!!!! La palabra que intenta buscar no existe en la red social</strong>
-            </div>';
+                echo $e->getResponse();
+                return redirect()->back()->with('msj', 'OOPS!!!!!!!!! La palabra que intenta buscar no existe en la red social');
             }
 
     }
