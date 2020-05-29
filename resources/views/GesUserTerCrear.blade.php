@@ -81,8 +81,7 @@
 
   <div class="form-row">
 
-    <div class="col">
-
+    <div class="col-sm-6">
     <label for="">Ciudad:</label>
         <select name="CIUDAD" id="ID_CIUDAD" class="form-control ciud">
         <option value="">--Escoje la ciudad--</option>
