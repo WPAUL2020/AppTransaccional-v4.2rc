@@ -59,6 +59,15 @@
 
 
 }
+.cir5{
+  width: 100%;
+  height: 450px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin: -32px auto;
+
+
+}
 .cir2{
   border:2px solid #a1ecaa;
   border-radius: 10px;
