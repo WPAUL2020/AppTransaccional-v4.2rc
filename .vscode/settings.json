@@ -1,3 +1,4 @@
 {
-    "cSpell.language": ",es"
+    "cSpell.language": ",es",
+    "python.pythonPath": "venv/bin/python3.8"
 }
