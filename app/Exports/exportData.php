@@ -36,6 +36,8 @@ class exportData implements FromCollection, WithHeadings, WithStrictNullComparis
             'Fecha de publicación',
             'Cantidad total de likes',
             'Cantidad total de comentarios',
+            'Nombre de la cuenta',
+            'Nombre en instagram',
             'Post Original',
             'Fecha de consulta',
             'Búsqueda Realizada'

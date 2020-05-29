@@ -26,18 +26,29 @@
         </div>
     </section>
 <div>
-    <div class="cir">
+    <div class="cir1">
+        <div>
             <td class="circ" >
-                <h3 class="tit">Total Likes & Comentarios de la Data Recolectada</h3>
-                 
                 <br />
                 <div class="circ" id="chartLikesComments"></div>
             </td>
-    </div>
-       
+             <div  class="lll">
+             <h3 class="tit">Datos Recolectados</h3>
+             <h4 class="tit2">en la búsqueda</h4>
+             </div>
+             </div>
+             <div class="cir4">
+             <td class="circ1">
+            <br />
+            <div class="circ1" id="chartUser">
+            </div>
+        </td>
+            </div>
+    </div>   
 
     <div class="cir2">
-    <h2 class="tit">Publicaciones Top 8</h2>
+        <h2 class="tit1">Top 8 a Nivel de Instagram</h2>
+    <div class="circ3">
     <ul class="galeria">
        
         @foreach ($usersTOP as $data)
@@ -53,26 +64,15 @@
     	<li><a href="#img77"><img src=""></a></li> --}}
        
     </ul>
-    </div>
-
-       <div class="cir1">
-            <td class="circ1">
-                <h2 class="tit">Top 8</h2>
+     </div>  
+    <div class="cir4">
+        <td class="circ1">
                 <br />
-                <h2 class="tit">de usuarios por palabra con más likes en todo instagram</h2>
                 <div class="circ1" id="chartTOP">
                 </div>
             </td>
-
+       
     </div>
-    <div class="cir1">
-        <td class="circ1">
-            <h2 class="tit">Usuarios recurrentes en las ultimas 24 horas</h2>
-            <br />
-            <div class="circ1" id="chartUser">
-            </div>
-        </td>
-
     </div>
 </div>
 @endsection

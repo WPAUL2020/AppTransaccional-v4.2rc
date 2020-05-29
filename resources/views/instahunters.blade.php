@@ -43,10 +43,9 @@
                                     <strong>{{ $message }}</strong>
                                 </label>
                                 @enderror
-                                <h3>@ Usuario</h3><input type="radio" id="usu" name="optionScrap" value="hashtag">
-                                <label for="usu" class="lbl">  </label>
-                            </div>
+                                </div>
                             <div class="letra">
+                                <br>
                                 <h3># Hashtag </h3><input type="radio" id="has" name="optionScrap" value="hashtag">
                                 <label for="has" class="lbl"> </label>
                             </div>
@@ -87,4 +86,20 @@
 </div>
 
 </div>
+@endsection
+@section('Scripts')
+<script type="text/javascript">
+    var msg = '{{Session::get('message')}}';
+    var exist = '{{Session::has('message')}}';
+    if(exist){
+      alert(msg);
+    }
+</script>
+<script type="text/javascript">
+    var msg = '{{Session::get('msj')}}';
+    var exist = '{{Session::has('msj')}}';
+    if(exist){
+      alert(msg);
+    }
+</script>
 @endsection

@@ -156,6 +156,7 @@ class AnaliticMongoDBController extends Controller
                 'comentarios' => $routeAtributte->edge_media_preview_comment->count,
                 'video' => $routeAtributte->video_url,
                 'text' => $routeAtributte->edge_media_to_caption->edges[0]->node->text,
+                'img' => $routeAtributte->display_url,
                 'OriginalPost' => $baseURL . $routeAtributte->shortcode
             ];
         } else {

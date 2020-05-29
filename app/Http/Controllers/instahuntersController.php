@@ -19,6 +19,7 @@ use GuzzleHttp\Exception\RequestException;
 use App\dataCollectionMongoDB as dataMongoDB;
 use Illuminate\Pagination\LengthAwarePaginator;
 use App\dataCollectionMongoDB as dataCollection;
+use App\scrapedUserCollectionMongoDB as scrapedUser;
 
 class instahuntersController extends Controller
 {
@@ -73,7 +74,7 @@ class instahuntersController extends Controller
     public function indexPreview()
     {
         $findByID = dataCollection::findOrFail($this->request->_id);
-        $data = $this->truncateModelData($findByID);
+        $data = $this->truncateModelDataGET($findByID);
         return $this->paginate($data, $this->request->_id);
     }
 
@@ -90,7 +91,7 @@ class instahuntersController extends Controller
             "in" => "Seleccione un valor"
         ];
         $this->request->validate([
-            'optionScrap'=> 'required|in:usuario,hashtag',
+            'optionScrap'=> 'required|in:hashtag',
             'palabraClave' => 'required'
         ],$validateMessage);
         try {
@@ -107,38 +108,19 @@ class instahuntersController extends Controller
                 );
                 $data2view = json_decode($res->getBody()->getContents());
                 $this->truncateAndInsertHashtag($data2view);
-                return view('instahunters');
-            }
-            elseif($this->request->optionScrap === "usuario"){
-                $res = $this->client->request('POST', 'ScrapUser', [
-                    'headers' => [
-                    'Accept'     => 'application/json',
-                    ],
-                    'json' => [
-                        'usuario' => $this->request->palabraClave,
-                        ]
-                    ]
-
-                );
-                $data2view = json_decode($res->getBody()->getContents());
-                $this->truncateAndInsertUser($data2view);
-                return view('instahunters');
+                return redirect()->back()->with('message', 'Su palabra a sido scrapeada satisfactoriamente!');
             }
         } catch (ConnectException $th) {
-
-            echo $th->getResponse().'<div class="alert alert-danger" role="alert">
-                                        <strong>OOPS!!!!!!!!! Algo a fallado con el servidor de raspado</strong>
-                                    </div>';
+            $th->getResponse();
+            return redirect()->back()->with('msj', 'OOPS!!!!!!!!! Algo a fallado con el servidor de raspado\r\n Por favor contacte al administrador');
         }
             catch(ServerException $e){
-                echo "Codigo de error: ". $e->getResponse()->getStatusCode().'<div class="alert alert-danger" role="alert">
-                <strong>OOPS!!!!!!!!! La palabra que intenta buscar no existe en la red social</strong>
-            </div>';
+                $error =  "Codigo de error: ". $e->getResponse()->getStatusCode();
+                return redirect()->back()->with('msj', 'OOPS!!!!!!!!! La palabra que intenta buscar no existe en la red social');
             }
             catch(RequestException $e){
-                echo $e->getResponse().'<div class="alert alert-danger" role="alert">
-                <strong>OOPS!!!!!!!!! La palabra que intenta buscar no existe en la red social</strong>
-            </div>';
+                echo $e->getResponse();
+                return redirect()->back()->with('msj', 'OOPS!!!!!!!!! La palabra que intenta buscar no existe en la red social');
             }
 
     }
@@ -171,7 +153,15 @@ class instahuntersController extends Controller
     public function exportXls()
     {
         $findByID = dataCollection::findOrFail($this->request->_id);
-        $data = $this->truncateModelData($findByID);
+        #Instancia el modelo dataTopHashtag scrapedUser
+        $scrapUser = new \App\scrapedUserCollectionMongoDB;
+        /***
+         * Al modelo scrapedUser le inserta el array que retorna el método "findByIDUser" que recibe como parámetro
+         * La colección de encontrada por id en mongo y retorna un id de inserción
+         */
+        $idScrapUser = $scrapUser->insertGetId($this->findByIDUser($findByID));
+        $scrapUser = scrapedUser::findOrFail($idScrapUser);
+        $data = $this->truncateModelData($findByID, $scrapUser);
         return Excel::download(new exportData($data), 'Data.xlsx');
 
     }
@@ -186,12 +176,7 @@ class instahuntersController extends Controller
         */
         for ($i=0; $i < count($dataIn); $i++) {
             error_reporting(~E_NOTICE);
-            if ($dataIn[$i]->node->is_video == true) {
-                # code...
-            } else {
-                $img = $dataIn[$i]->node->display_url;
-            }
-
+            $img = $dataIn[$i]->node->display_url;
             $text = $dataIn[$i]->node->edge_media_to_caption->edges[0]->node->text;
             $likes = $dataIn[$i]->node->edge_liked_by->count;
             $comentarios = $dataIn[$i]->node->edge_media_to_comment->count;
@@ -211,31 +196,84 @@ class instahuntersController extends Controller
         $dataMongoDB = new \App\dataCollectionMongoDB;
         $dataMongoDB->insert($dataTOInsert);
     }
-    private  function truncateAndInsertUser($data)
+
+    private function truncateModelData($data, $scrapUser)
     {
-        $routeAtributte = $data->entry_data->ProfilePage[0]->graphql->user->edge_owner_to_timeline_media->edges;
-        $dataTOInsert = [];
-        for ($i=0; $i < count($routeAtributte); $i++) {
+
+        $truncate = [];
+        $data = collect($data);
+        $scrapUser = collect($scrapUser);
+        for ($i=0; $i <count(collect($data)) ; $i++) {
             error_reporting(~E_NOTICE);
-            $text = $routeAtributte[$i]->node->edge_media_to_caption->edges[0]->node->text;
-            $img = $routeAtributte[$i]->node->display_url;
-            $likes = $routeAtributte[$i]->node->edge_liked_by->count;
-            $comentarios = $routeAtributte[$i]->node->edge_media_to_comment->count;
-            $usuario_time = $routeAtributte[$i]->node->taken_at_timestamp;
-            $fecha = new DateTime("@$usuario_time");
-            $dataTOInsert[$i]['img'] = $img;
-            $dataTOInsert[$i]['txt'] = $text;
-            $dataTOInsert[$i]['time'] = $fecha->format('Y-m-d H:i:s');
-            $dataTOInsert[$i]['likes'] = $likes;
-            $dataTOInsert[$i]['comentarios'] = $comentarios;
-            $dataTOInsert['consulta_log'] = $this->date;
-            $dataTOInsert['userSearch'] = $routeAtributte[0]->graphql->hashtag->name;
+            $img = $data[$i]['img'];
+            $txt = $data[$i]['txt'];
+            $time = $data[$i]['time'];
+            $likes = $data[$i]['likes'];
+            $comentarios = $data[$i]['comentarios'];
+            $id_usuario = $scrapUser[$i]['id_usuario'];
+            $userName = "@".$scrapUser[$i]['userName'];
+            $fullName = $scrapUser[$i]['fullName'];
+            $originalPost = "www.instagram.com/p/".$data[$i]['id_usuario'];
+            $date =$data['consulta_log'];
+            $word =$data['wordSearch'];
+            if (isset($img) and isset($txt) and isset($time) and isset($likes) and isset($comentarios) and isset($originalPost) and isset($id_usuario)
+                and isset($userName) and isset($fullName)) {
+                if (!empty($img) and !empty($time) and !empty($originalPost)) {
+                    $truncate[$i]['img'] = $img;
+                    $truncate[$i]['txt'] = $txt;
+                    $truncate[$i]['time'] = $time;
+                    $truncate[$i]['likes'] = $likes;
+                    $truncate[$i]['comentarios'] = $comentarios;
+                    $truncate[$i]['userName'] = $userName;
+                    $truncate[$i]['fullName'] = $fullName;
+                    $truncate[$i]['originalPost'] = $originalPost;
+                    $truncate[$i]['FechaConsulta'] = $date;
+                    $truncate[$i]['BusquedaRealizada'] = $word;
+                }
+            }
         }
-        $dataMongoDB = new \App\dataCollectionMongoDB;
-        $dataMongoDB->insert($dataTOInsert);
+        return $truncate;
     }
 
-    private function truncateModelData($data)
+    private function findByIDUser($id_user)
+    {
+        $clienteUser = new Client([
+            'base_uri' => 'http://www.instagram.com/'
+        ]);
+        $id_user = collect($id_user);
+        $dataInsert = [
+            'wordSearch' => $id_user['wordSearch'],
+            'consulta_log' => $this->date
+        ];
+        for ($i = 0; $i < count($id_user); $i++) {
+            error_reporting(~E_NOTICE || ~E_WARNING);
+            try {
+                $response =  $clienteUser->request('GET', "p/" . $id_user[$i]['id_usuario'] . "/?__a=1");
+                $allData = json_decode($response->getBody()->getContents());
+                array_push($dataInsert, $this->truncateUsername($allData));
+            } catch (ClientException $e) {
+                $e->getResponse()->getStatusCode();
+            }
+        }
+
+        return $dataInsert;
+    }
+
+    private function truncateUsername($data)
+    {
+        $routeAtributte = $data->graphql->shortcode_media;
+        $baseURL = "https://www.instagram.com/p/";
+        $arrayUsername = [
+            'id_usuario' => $routeAtributte->shortcode,
+            'userName' => $routeAtributte->owner->username,
+            'fullName' => $routeAtributte->owner->full_name,
+            'OriginalPost' => $baseURL . $routeAtributte->shortcode
+        ];
+
+
+        return $arrayUsername;
+    }
+    private function truncateModelDataGET($data)
     {
 
         $truncate = [];

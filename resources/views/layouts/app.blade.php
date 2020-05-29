@@ -163,26 +163,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="has-sub">
-                        <a href="{{URL::to('Roles')}}">
-                           <i class="entypo-layout"></i>
-                            <span class="title">Gestión Roles</span>
-                        </a>
-                        <ul>
-                           
-                            <li>
-                                <a href="{{URL::to('RolCrear/agregar')}}">
-                                    <span class="title"><i class="entypo-plus-circled"></i> Agregar</span>
-                                </a>
-                            </li>
-                            
-                            <li>
-                                <a href="{{URL::to('Roles')}}">
-                                    <span class="title"><i class="entypo-cw"></i> Actualizar</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                    
                     <li class="has-sub">
                         <a href="{{URL::to('Cargos')}}">
                             <i class="entypo-vcard"></i>

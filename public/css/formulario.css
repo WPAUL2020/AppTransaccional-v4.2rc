@@ -32,7 +32,7 @@ h2{
   top: -32px;
 }
 .form-group1{
-  margin-right: 430px;
+  margin-top: 30px;
 }
 .lbl{
   display: inline-block;
@@ -66,7 +66,7 @@ h2{
 
 
 .form-group2{
-  width: 170%;
+  width: 100%;
   height: 70px;
   max-width: 600px;
   position: relative;
@@ -86,7 +86,7 @@ h2{
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 170%;
+  width: 80%;
   height: 100%;
   pointer-events: none;
   border-bottom: 1px solid #c7c7c7;
@@ -97,7 +97,7 @@ h2{
   position: absolute;
   left: 0;
   bottom: -1px;
-  width: 170%;
+  width: 100%;
   height: 100%;
   border-bottom: 4px solid  #a1ecaa;
   transform: translateX(-100%);
@@ -125,7 +125,7 @@ h2{
 }
 
 .form-group2{
-  margin-left: 150px;
+  margin-left: 100px;
   margin-bottom: 10px;
 }
 .aliniar{
