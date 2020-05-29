@@ -4,6 +4,32 @@
 .isotope-item {
   z-index: 2;
 }
+
+@media screen and (min-width: 1021px){
+  .container{
+    width: 80%;
+  }
+
+}
+@media screen and (min-width: 814px){
+  .container{
+    width: 100%;
+  }
+}
+@media screen and (min-width: 650px){
+  .container{
+    width: 80%;
+  }
+}
+@media screen and (min-width: 1021px){
+  .dos{
+    width: 60%;
+  }
+
+}
+
+
+
 .isotope-hidden.isotope-item {
   pointer-events: none;
   z-index: 1;
@@ -893,7 +919,7 @@ section.breadcrumb .alt-select-field {
   position: absolute;
   left: 0;
   right: 0;
-  top: 35px;
+  top: 0px;
   bottom: 0;
   background: rgba(48, 54, 65, 0.5);
   z-index: 5;
@@ -1063,8 +1089,8 @@ section.breadcrumb .alt-select-field {
 .gallery-container .portfolio-item .like,
 .portfolio-container .gallery-item .like,
 .gallery-container .gallery-item .like {
-  font-size: 15px;*/
-}
+  font-size: 15px;
+}*/
 .portfolio-container .portfolio-item h4,
 .gallery-container .portfolio-item h4,
 .portfolio-container .gallery-item h4,

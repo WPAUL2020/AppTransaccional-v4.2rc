@@ -40,9 +40,21 @@
   float: right;
   margin-left: 9px;
   padding: 10px 30px;
+  box-sizing: border-box;
 }
 .cir2 strong{
   color: #FAFAFA;
+}
+
+@media (min-width: 1039px){
+  .cir2{
+  width: 64%; 
+  }
+  .cir2 .galeria{
+  width: 100%;
+  
+  }
+  
 }
 .galeria{
   width: 90%;
@@ -61,6 +73,11 @@
 .galeria img{
   width: 150px;
   height: 100px;
+}
+@media (min-width: 1039px){
+  .galeria img{
+    width: 140px;
+  }
 }
 .modal{
 display: none;

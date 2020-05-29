@@ -23,20 +23,15 @@
             </div>
         </div>
     </section>
-
-
 <div>
 <div class="cir2">
     <strong  class="">Publicaciones</strong>
 
     <ul class="galeria">
-    	<li><a href="#img11"><img src="https://www.youtube.com/watch?v=w1FOFIg1Xnk"></a></li>
-    	<li><a href="#img22"><img src=""></a></li>
-    	<li><a href="#img33"><img src=""></a></li>
-    	<li><a href="#img44"><img src=""></a></li>
-    	<li><a href="#img55"><img src=""></a></li>
-    	<li><a href="#img66"><img src=""></a></li>
-    	<li><a href="#img77"><img src=""></a></li>
+    <?php $__currentLoopData = $usersTOP; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <li><a href="<?php echo e($data['OriginalPost']); ?>"><img src="<?php echo e($data['img']); ?>"></a></li>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
     </ul>
     <div class="modal" id="img11">
     	<h4>"Nombre del que la publico1" </h4>
@@ -47,7 +42,7 @@
     	</div>
     	<a class="cerrar" href="">x</a>
     </div>
- 
+
  	<div class="modal" id="img22">
     	<h4>"Nombre del que la publico2" </h4>
     	<div class="imagen1">
@@ -57,7 +52,7 @@
     	</div>
     	<a class="cerrar" href="">x</a>
     </div>
- 
+
  	<div class="modal" id="img33">
     	<h4>"Nombre del que la publico3" </h4>
     	<div class="imagen1">
@@ -67,7 +62,7 @@
     	</div>
     	<a class="cerrar" href="">x</a>
     </div>
- 
+
  	<div class="modal" id="img44">
     	<h4>"Nombre del que la publico4" </h4>
     	<div class="imagen1">
@@ -77,7 +72,7 @@
     	</div>
     	<a class="cerrar" href="">x</a>
     </div>
- 
+
  	<div class="modal" id="img55">
     	<h4>"Nombre del que la publico5" </h4>
     	<div class="imagen1">
@@ -97,7 +92,7 @@
     	</div>
     	<a class="cerrar" href="">x</a>
     </div>
- 
+
  	<div class="modal" id="img77">
     	<h4>"Nombre del que la publico7" </h4>
     	<div class="imagen1">
@@ -119,8 +114,9 @@
 
        <div class="cir1">
             <td class="circ1">
-                <strong>Top 7</strong>
+                <strong>Top 8</strong>
                 <br />
+                <strong>de usuarios por palabra con más likes en todo instagram</strong>
                 <div class="circ1" id="chartTOP">
                 </div>
             </td>
@@ -128,7 +124,7 @@
     </div>
     <div class="cir1">
         <td class="circ1">
-            <strong>Usuarios recurrentes</strong>
+            <strong>Usuarios recurrentes en las ultimas 24 horas</strong>
             <br />
             <div class="circ1" id="chartUser">
             </div>

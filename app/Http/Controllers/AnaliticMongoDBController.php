@@ -241,11 +241,13 @@ class AnaliticMongoDBController extends Controller
             $userName = $scrapTopUsername[$i]['userName'];
             $likes = $scrapTopUsername[$i]['likes'];
             $OriginalPost = $scrapTopUsername[$i]['OriginalPost'];
+            $img = $scrapTopUsername[$i]['img'];
             if (isset($userName) and isset($likes) and isset($OriginalPost)) {
                 if (!empty($userName) and !empty($likes) and !empty($OriginalPost)) {
                     $chart[$i]['userName'] = $userName;
                     $chart[$i]['likes'] = $likes;
                     $chart[$i]['OriginalPost'] = $OriginalPost;
+                    $chart[$i]['img'] = $img;
                 }
             }
         }

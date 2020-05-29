@@ -112,7 +112,7 @@
 	<!-- Main Slider -->
 <section class="slider-container" style="background-image: url('<?php echo e(asset('neonFrontEnd/assets/images/slide-img-1-bg.png')); ?>');">
 
-	<div class="container">
+	<div class="container dos">
 
 		<div class="row">
 

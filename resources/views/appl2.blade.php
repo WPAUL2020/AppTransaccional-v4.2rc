@@ -76,6 +76,30 @@
 				</div>
 
 			</div>
+			<div class="item col-sm-4 col-xs-6 filter-design">
+
+				<div class="portfolio-item">
+					<a href="{{URL::to('/MedioPagos')}}" class="image">
+						<img src="{{ asset('Imagenes/metododepagofinal.png')}}" class="img-rounded" />
+						<span class="hover-zoom"></span>
+					</a>
+
+
+				</div>
+
+			</div>
+			<div class="item col-sm-4 col-xs-6 filter-design">
+
+				<div class="portfolio-item">
+					<a href="{{URL::to('/Servicios')}}" class="image">
+						<img src="{{ asset('Imagenes/Serviciosfinal.png')}}" class="img-rounded" />
+						<span class="hover-zoom"></span>
+					</a>
+
+
+				</div>
+
+			</div>
             <div class="row">
 
                 <div class="col-md-12">
