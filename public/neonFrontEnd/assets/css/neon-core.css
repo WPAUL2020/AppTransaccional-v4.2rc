@@ -18,7 +18,7 @@
 
 }
 .circ1{
-  max-width: 100%;
+  height: 85%;
   box-sizing: border-box;
 }
 .cir1{
@@ -46,7 +46,7 @@
 .cir4{
   width: 100%;
   height: 450px;
-  padding: 10px 0;
+  padding: 10px 10px;
   box-sizing: border-box;
   margin: 20px auto;
 

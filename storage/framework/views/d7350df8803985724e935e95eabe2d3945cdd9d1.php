@@ -25,12 +25,14 @@
     </section>
 <div>
     <div class="cir1">
+        <div>
             <td class="circ" >
                 <br />
                 <div class="circ" id="chartLikesComments"></div>
             </td>
              <div  class="lll">
-             <h3 class="tit">Data Recolectada Scrapeados</h3>
+             <h3 class="tit">Datos Recolectados</h3>
+             </div>
              </div>
              <div class="cir4">
             <td class="circ1">
