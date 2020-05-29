@@ -81,8 +81,7 @@
 
   <div class="form-row">
 
-    <div class="col">
-
+    <div class="col-sm-6">
     <label for="">Ciudad:</label>
         <select name="CIUDAD" id="ID_CIUDAD" class="form-control ciud">
         <option value="">--Escoje la ciudad--</option>
@@ -94,9 +93,6 @@
     </div>
 
     <div class="col-sm-6">
-    <label>Ciudad:</label>
-    <input type="text" name="CIUDAD" class="form-control" placeholder="Ciudad">
-    <span class="text-danger">{{$errors->first("CIUDAD")}}</span>
 
     </div>
     <div class="col-sm-6">

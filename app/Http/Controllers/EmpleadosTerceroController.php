@@ -24,7 +24,7 @@ class EmpleadosTerceroController extends Controller
             // print($user->ID_EMPRESA_TERCERO);
             // print($user->name);
             // print($user->email);
-            $empleados = EmpleadosTercero::where ('ID_EMPRESA_TERCERO',$user->ID_EMPRESA_TERCERO)->get();
+            $empleados = EmpleadosTercero::where ('ID_EMPRESA_TERCERO',$user->ID_EMPRESA_TERCERO) ->get();
             $empresa = EmpresaTercero::where ('ID_EMPRESA_TERCERO',$user->ID_EMPRESA_TERCERO)->first();
             // print ($empresa->ID_EMPRESA_TERCERO);
             // var_dump($empleados);
@@ -78,7 +78,7 @@ class EmpleadosTerceroController extends Controller
    {
     $user = Auth::user();
     $empresa = EmpresaTercero::where ('ID_EMPRESA_TERCERO',$user->ID_EMPRESA_TERCERO)->get();
-    $roles = rol::all();
+    $roles = rol::where ('dependency', "EXTERNO") ->get();
     // $roles = rol::where ('dependency'->EXTERNO)->get();
     $cargos = cargo::all();
     $TipoIdents = TipoIdent::all();

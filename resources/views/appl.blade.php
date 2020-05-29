@@ -59,7 +59,7 @@
 						<span class="hover-zoom"></span>
 					</a>
 
-					
+
 				</div>
 
             </div>
@@ -71,19 +71,7 @@
 						<span class="hover-zoom"></span>
 					</a>
 
-					
-				</div>
 
-            </div>
-            <div class="item col-sm-4 col-xs-6 filter-design">
-
-				<div class="portfolio-item">
-					<a href="{{URL::to('Roles')}}" class="image">
-						<img src="{{ asset('Imagenes/rolfinal.png')}}" class="img-rounded" />
-						<span class="hover-zoom"></span>
-					</a>
-
-					
 				</div>
 
             </div>
@@ -95,7 +83,7 @@
 						<span class="hover-zoom"></span>
 					</a>
 
-					
+
 				</div>
 
             </div>
@@ -107,7 +95,7 @@
 						<span class="hover-zoom"></span>
 					</a>
 
-					
+
 				</div>
 
             </div>
