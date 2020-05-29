@@ -43,7 +43,7 @@
                                     <strong>{{ $message }}</strong>
                                 </label>
                                 @enderror
-                            </div>
+                                </div>
                             <div class="letra">
                                 <br>
                                 <h3># Hashtag </h3><input type="radio" id="has" name="optionScrap" value="hashtag">
@@ -86,4 +86,13 @@
 </div>
 
 </div>
+@endsection
+@section('Scripts')
+<script type="text/javascript">
+    var msg = '{{Session::get('message')}}';
+    var exist = '{{Session::has('message')}}';
+    if(exist){
+      alert(msg);
+    }
+</script>
 @endsection

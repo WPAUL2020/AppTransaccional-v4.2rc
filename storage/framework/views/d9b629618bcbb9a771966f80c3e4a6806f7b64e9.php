@@ -46,7 +46,7 @@ $message = $errors->first('optionScrap'); ?>
                                 <?php unset($message);
 if (isset($messageCache)) { $message = $messageCache; }
 endif; ?>
-                            </div>
+                                </div>
                             <div class="letra">
                                 <br>
                                 <h3># Hashtag </h3><input type="radio" id="has" name="optionScrap" value="hashtag">
@@ -93,6 +93,15 @@ endif; ?>
 </div>
 
 </div>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('Scripts'); ?>
+<script type="text/javascript">
+    var msg = '<?php echo e(Session::get('message')); ?>';
+    var exist = '<?php echo e(Session::has('message')); ?>';
+    if(exist){
+      alert(msg);
+    }
+</script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\AppTransaccional-v4.2rc\resources\views/instahunters.blade.php ENDPATH**/ ?>

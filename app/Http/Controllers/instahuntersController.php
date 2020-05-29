@@ -107,7 +107,7 @@ class instahuntersController extends Controller
                 );
                 $data2view = json_decode($res->getBody()->getContents());
                 $this->truncateAndInsertHashtag($data2view);
-                return view('instahunters');
+                return redirect()->back()->with('message', 'Su palabra a sido scrapeada satisfactoriamente!');
             }
         } catch (ConnectException $th) {
 
