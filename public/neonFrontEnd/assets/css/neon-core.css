@@ -13,8 +13,15 @@
 .cir1 .tit{
   color: #FAFAFA;
   text-align: right;
-  margin-bottom: -25px;
+  margin-bottom: 5px;
   font-size: 50px; 
+
+}
+.cir1 .tit2{
+  color: #FAFAFA;
+  text-align: right;
+  margin-bottom: -15px;
+  font-size: 38px; 
 
 }
 .circ1{
@@ -48,15 +55,15 @@
   height: 450px;
   padding: 10px 10px;
   box-sizing: border-box;
-  margin: 20px auto;
+  margin: 5px auto;
 
 
 }
 .cir2{
   border:2px solid #a1ecaa;
   border-radius: 10px;
-  width: 70%;
-  height: 370px;
+  width: 100%;
+  height: 780px;
   margin-left: 9px;
   padding: 10px 30px;
   box-sizing: border-box;
@@ -65,15 +72,16 @@
 
   flex-wrap: wrap;
 }
+
 .cir2 .tit1{
   color: #FAFAFA;
   text-align: center;
   margin-bottom: -5px; 
+  font-size: 35px;
 }
-.cir3 .tit1{
-  color: #FAFAFA;
-  text-align: center;
-  margin-bottom: -5px; 
+.circ3{
+  width: 95%;
+  margin: auto;
 }
 
 .galeria{

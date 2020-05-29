@@ -32,19 +32,21 @@
             </td>
              <div  class="lll">
              <h3 class="tit">Datos Recolectados</h3>
+             <h4 class="tit2">en la búsqueda</h4>
              </div>
              </div>
              <div class="cir4">
-            <td class="circ1">
-                <br />
-                <div class="circ1" id="chartTOP">
-                </div>
-            </td>
+             <td class="circ1">
+            <br />
+            <div class="circ1" id="chartUser">
+            </div>
+        </td>
             </div>
     </div>   
 
     <div class="cir2">
-    <h2 class="tit1">Publicaciones Top 8</h2>
+        <h2 class="tit1">Top 8 a Nivel de Instagram</h2>
+    <div class="circ3">
     <ul class="galeria">
        
         <?php $__currentLoopData = $usersTOP; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -53,17 +55,15 @@
     
        
     </ul>
-    </div>
-
-       
-    <div class="cir3">
+     </div>  
+    <div class="cir4">
         <td class="circ1">
-            <h2 class="tit1">Usuarios recurrentes en las ultimas 24 horas</h2>
-            <br />
-            <div class="circ1" id="chartUser">
-            </div>
-        </td>
-
+                <br />
+                <div class="circ1" id="chartTOP">
+                </div>
+            </td>
+       
+    </div>
     </div>
 </div>
 <?php $__env->stopSection(); ?>
