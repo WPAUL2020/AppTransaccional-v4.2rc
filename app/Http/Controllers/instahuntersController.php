@@ -19,6 +19,7 @@ use GuzzleHttp\Exception\RequestException;
 use App\dataCollectionMongoDB as dataMongoDB;
 use Illuminate\Pagination\LengthAwarePaginator;
 use App\dataCollectionMongoDB as dataCollection;
+use App\scrapedUserCollectionMongoDB as scrapedUser;
 
 class instahuntersController extends Controller
 {
@@ -73,7 +74,7 @@ class instahuntersController extends Controller
     public function indexPreview()
     {
         $findByID = dataCollection::findOrFail($this->request->_id);
-        $data = $this->truncateModelData($findByID);
+        $data = $this->truncateModelDataGET($findByID);
         return $this->paginate($data, $this->request->_id);
     }
 
@@ -152,7 +153,15 @@ class instahuntersController extends Controller
     public function exportXls()
     {
         $findByID = dataCollection::findOrFail($this->request->_id);
-        $data = $this->truncateModelData($findByID);
+        #Instancia el modelo dataTopHashtag scrapedUser
+        $scrapUser = new \App\scrapedUserCollectionMongoDB;
+        /***
+         * Al modelo scrapedUser le inserta el array que retorna el método "findByIDUser" que recibe como parámetro
+         * La colección de encontrada por id en mongo y retorna un id de inserción
+         */
+        $idScrapUser = $scrapUser->insertGetId($this->findByIDUser($findByID));
+        $scrapUser = scrapedUser::findOrFail($idScrapUser);
+        $data = $this->truncateModelData($findByID, $scrapUser);
         return Excel::download(new exportData($data), 'Data.xlsx');
 
     }
@@ -188,7 +197,83 @@ class instahuntersController extends Controller
         $dataMongoDB->insert($dataTOInsert);
     }
 
-    private function truncateModelData($data)
+    private function truncateModelData($data, $scrapUser)
+    {
+
+        $truncate = [];
+        $data = collect($data);
+        $scrapUser = collect($scrapUser);
+        for ($i=0; $i <count(collect($data)) ; $i++) {
+            error_reporting(~E_NOTICE);
+            $img = $data[$i]['img'];
+            $txt = $data[$i]['txt'];
+            $time = $data[$i]['time'];
+            $likes = $data[$i]['likes'];
+            $comentarios = $data[$i]['comentarios'];
+            $id_usuario = $scrapUser[$i]['id_usuario'];
+            $userName = "@".$scrapUser[$i]['userName'];
+            $fullName = $scrapUser[$i]['fullName'];
+            $originalPost = "www.instagram.com/p/".$data[$i]['id_usuario'];
+            $date =$data['consulta_log'];
+            $word =$data['wordSearch'];
+            if (isset($img) and isset($txt) and isset($time) and isset($likes) and isset($comentarios) and isset($originalPost) and isset($id_usuario)
+                and isset($userName) and isset($fullName)) {
+                if (!empty($img) and !empty($time) and !empty($originalPost)) {
+                    $truncate[$i]['img'] = $img;
+                    $truncate[$i]['txt'] = $txt;
+                    $truncate[$i]['time'] = $time;
+                    $truncate[$i]['likes'] = $likes;
+                    $truncate[$i]['comentarios'] = $comentarios;
+                    $truncate[$i]['userName'] = $userName;
+                    $truncate[$i]['fullName'] = $fullName;
+                    $truncate[$i]['originalPost'] = $originalPost;
+                    $truncate[$i]['FechaConsulta'] = $date;
+                    $truncate[$i]['BusquedaRealizada'] = $word;
+                }
+            }
+        }
+        return $truncate;
+    }
+
+    private function findByIDUser($id_user)
+    {
+        $clienteUser = new Client([
+            'base_uri' => 'http://www.instagram.com/'
+        ]);
+        $id_user = collect($id_user);
+        $dataInsert = [
+            'wordSearch' => $id_user['wordSearch'],
+            'consulta_log' => $this->date
+        ];
+        for ($i = 0; $i < count($id_user); $i++) {
+            error_reporting(~E_NOTICE || ~E_WARNING);
+            try {
+                $response =  $clienteUser->request('GET', "p/" . $id_user[$i]['id_usuario'] . "/?__a=1");
+                $allData = json_decode($response->getBody()->getContents());
+                array_push($dataInsert, $this->truncateUsername($allData));
+            } catch (ClientException $e) {
+                $e->getResponse()->getStatusCode();
+            }
+        }
+
+        return $dataInsert;
+    }
+
+    private function truncateUsername($data)
+    {
+        $routeAtributte = $data->graphql->shortcode_media;
+        $baseURL = "https://www.instagram.com/p/";
+        $arrayUsername = [
+            'id_usuario' => $routeAtributte->shortcode,
+            'userName' => $routeAtributte->owner->username,
+            'fullName' => $routeAtributte->owner->full_name,
+            'OriginalPost' => $baseURL . $routeAtributte->shortcode
+        ];
+
+
+        return $arrayUsername;
+    }
+    private function truncateModelDataGET($data)
     {
 
         $truncate = [];
