@@ -27,6 +27,9 @@ h2{
   margin-bottom: 9px;
   top: 222px;
 }
+.card{
+  margin: auto;
+}
 .form-group1 label{
   left: 100px;
   top: -32px;
