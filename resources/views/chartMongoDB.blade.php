@@ -44,15 +44,16 @@
             </div>
         </td>
             </div>
-    </div>   
+    </div>
 
     <div class="cir2">
         <h2 class="tit1">Top 8 a Nivel de Instagram</h2>
     <div class="circ3">
     <ul class="galeria">
-       
+
         @foreach ($usersTOP as $data)
-            <li><a href="{{$data['OriginalPost']}}"><img src="{{$data['img']}}"></a></li>
+        <li><h4>sdasdasd</h4></li>
+    	<li><a href="{{$data['OriginalPost']}}"><img src="{{$data['img']}}" class="img-rounded"/></a></li>
         @endforeach
     {{--
          <li><h4>sdasdasd</h4></li>
@@ -69,16 +70,16 @@
     	<li><a href="#img66"><img src=""></a></li>
          <li><h4>sdasdasd</h4></li>
     	<li><a href="#img77"><img src=""></a></li> --}}
-       
+
     </ul>
-     </div>  
+     </div>
     <div class="cir5">
         <td class="circ1">
                 <br />
                 <div class="circ1" id="chartTOP">
                 </div>
             </td>
-       
+
     </div>
     </div>
 </div>
