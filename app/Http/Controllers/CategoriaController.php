@@ -14,7 +14,7 @@ class CategoriaController extends Controller
 {
     public function mostrarCategoria(Request $request)
     {
-        $request->user()->authorizeRoles(['SUPERVISOR EXTERNO' , 'ADMINISTRADOR']);
+        $request->user()->authorizeRoles(['SUPERVISOR EXTERNO' , 'ADMINISTRADOR', 'EMPLEADO EXTERNO']);
         if (Auth::check()){
             $user = Auth::user();
             $Categoria = Categoria::where ('ID_EMPRESA_TERCERO',$user->ID_EMPRESA_TERCERO)->get();
