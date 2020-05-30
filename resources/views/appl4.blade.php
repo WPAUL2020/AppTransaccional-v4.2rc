@@ -1,4 +1,4 @@
-@extends('layouts.usuario')
+@extends('layouts.app')
 
 @section('content')
 	<!-- Breadcrumb -->
