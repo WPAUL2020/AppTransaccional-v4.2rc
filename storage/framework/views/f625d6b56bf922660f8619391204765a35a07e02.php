@@ -50,10 +50,10 @@
     <ul class="galeria">
 
         <?php $__currentLoopData = $usersTOP; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <li><h4>sdasdasd</h4></li>
-    	<li><a href="<?php echo e($data['OriginalPost']); ?>"><img src="<?php echo e($data['img']); ?>" class="img-rounded"/></a></li>
+
+
+    	<li><a href="<?php echo e($data['OriginalPost']); ?>"><img src="<?php echo e($data['img']); ?>" class="img-rounded"/></a> <h4><?php echo e($data['userName']); ?></h4> </li>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    
 
     </ul>
      </div>
