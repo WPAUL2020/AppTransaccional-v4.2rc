@@ -67,13 +67,7 @@
     <span class="text-danger">{{$errors->first("TELEFONO")}}</span>
     </div>
   </div>
-
   <div class="form-row">
-    <div class="col-sm-6">
-    <label>Pais:</label>
-    <input value="COLOMBIA" type="text" name="PAIS" class="form-control" placeholder="Pais" value="COLOMBIA">
-    <span class="text-danger">{{$errors->first("PAIS")}}</span>
-    </div>
     <div class="col-sm-6">
     <label for="" style="color:white">Ciudad:</label>
                 <select name="CIUDAD" id="ID_CIUDAD" class="form-control">
@@ -142,17 +136,18 @@
     <span class="text-danger">{{$errors->first("ESTADO")}}</span>
   </div>
   </div>
-  <div class="form-group">
-  <div class="col-sm-6">
+  
+  <div class="form-group lb">
     <label>Observaciones:</label>
     <textarea name="OBSERVACION" class="form-control" placeholder="Escribe tu Observación"></textarea>
+    <span class="text-danger">{{$errors->first("OBSERVACION")}}</span>
   </div>
-  <span class="text-danger">{{$errors->first("OBSERVACION")}}</span>
-  </div>
+  
+
   <div class="form-row">
                     <div class="form-group">
                         <input type="submit" value="Registrar" class="btn btn-primary">
-                        <a class="btn btn-outline-secondary" href="{{URL::to('Clientes')}}">Regresar</a>
+                        <a class="btn btn-secondary" href="{{URL::to('Clientes')}}">Regresar</a>
   </div>
   </div>
 </form>

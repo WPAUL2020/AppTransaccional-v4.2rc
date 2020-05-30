@@ -8,9 +8,9 @@
 
                 <div class="col-sm-9">
 
-                    <h1>Registro De Empresas</h1>
+                  <img src="Imagenes/gestionclientes.png">
 
-                                <ol class="breadcrumb bc-3" >
+                                <ol class=" bc-3" >
                             <li>
                     <a href="<?php echo e(URL::previous()); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
                 </li>
@@ -66,17 +66,16 @@
     <span class="text-danger"><?php echo e($errors->first("TELEFONO")); ?></span>
     </div>
   </div>
-
   <div class="form-row">
     <div class="col-sm-6">
-    <label>Pais:</label>
-    <input value="COLOMBIA" type="text" name="PAIS" class="form-control" placeholder="Pais" value="COLOMBIA">
-    <span class="text-danger"><?php echo e($errors->first("PAIS")); ?></span>
-    </div>
-    <div class="col-sm-6">
-    <label>Ciudad:</label>
-    <input type="text" name="CIUDAD" class="form-control" placeholder="Ciudad">
-    <span class="text-danger"><?php echo e($errors->first("CIUDAD")); ?></span>
+    <label for="" style="color:white">Ciudad:</label>
+                <select name="CIUDAD" id="ID_CIUDAD" class="form-control">
+                 <option value="">--Escoje la ciudad--</option>
+                    <?php $__currentLoopData = $Ciudad; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $Ciudad): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                         <option value="<?php echo e($Ciudad->NOMBRE_CIUDAD); ?>"><?php echo e($Ciudad->NOMBRE_CIUDAD); ?></option>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </select>
+        <span class="text-danger"><?php echo e($errors->first("CIUDAD")); ?></span>
     </div>
   </div>
 
@@ -136,13 +135,14 @@
     <span class="text-danger"><?php echo e($errors->first("ESTADO")); ?></span>
   </div>
   </div>
-  <div class="form-group">
-  <div class="col-sm-6">
+  
+  <div class="form-group lb">
     <label>Observaciones:</label>
     <textarea name="OBSERVACION" class="form-control" placeholder="Escribe tu Observación"></textarea>
+    <span class="text-danger"><?php echo e($errors->first("OBSERVACION")); ?></span>
   </div>
-  <span class="text-danger"><?php echo e($errors->first("OBSERVACION")); ?></span>
-  </div>
+  
+
   <div class="form-row">
                     <div class="form-group">
                         <input type="submit" value="Registrar" class="btn btn-primary">

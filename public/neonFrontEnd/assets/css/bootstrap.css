@@ -1862,6 +1862,7 @@ input[type="search"] {
 }
 .form-group {
   margin-bottom: 15px;
+  padding: 0 13px;
 }
 .ag{
  height: 350px;
