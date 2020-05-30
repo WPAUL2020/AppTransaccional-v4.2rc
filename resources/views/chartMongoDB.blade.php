@@ -52,9 +52,9 @@
     <ul class="galeria">
 
         @foreach ($usersTOP as $data)
-        
-       
-    	<li><a href="{{$data['OriginalPost']}}"><img src="{{$data['img']}}" class="img-rounded"/></a> <h4>sdasdasd</h4> </li>
+
+
+    	<li><a href="{{$data['OriginalPost']}}"><img src="{{$data['img']}}" class="img-rounded"/></a> <h4>{{$data['userName']}}</h4> </li>
         @endforeach
 
     </ul>
