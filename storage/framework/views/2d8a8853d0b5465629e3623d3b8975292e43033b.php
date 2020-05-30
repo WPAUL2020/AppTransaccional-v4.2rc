@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
-<head>
-    <!---Meta-->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="InstHunters" />
-    <meta name="author" content="" />
+<meta name="author" content="" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
@@ -50,7 +42,7 @@
     <!--===============================================================================================-->
         <link rel="stylesheet" type="text/css" href="css/util.css">
         <link rel="stylesheet" type="text/css" href="css/main.css">
-
+    
     <!-- Scripts -->
     <script src="<?php echo e(asset('neonFrontEnd/assets/js/jquery-1.11.3.min.js')); ?>"></script>
 
@@ -99,22 +91,29 @@
                             <i class="entypo-gauge"></i>
                             <span class="title">Zona Transaccional</span>
                         </a>
-
+                        
                     </li>
-
+                    
                     <li class="has-sub">
+                        <a href="<?php echo e(URL::to('instahunters')); ?>">
+                            <i class="entypo-network"></i>
+                            <span class="title">Gestión Big Data</span>
+                        </a>
+                        
+                    </li>
+                     <li class="has-sub">
                         <a href="<?php echo e(URL::to('UsuariosTercero')); ?>">
                             <i class="entypo-users"></i>
                             <span class="title">Gestión de Empleado Externos</span>
                         </a>
                         <ul>
-
+                           
                             <li>
                                 <a href="<?php echo e(URL::to('GesUserTerCrear/agregar')); ?>">
                                     <span class="title"><i class="entypo-plus-circled"></i> Agregar</span>
                                 </a>
                             </li>
-
+                            
                             <li>
                                 <a href="<?php echo e(URL::to('UsuariosTercero')); ?>">
                                     <span class="title"><i class="entypo-cw"></i> Actualizar</span>
@@ -122,139 +121,21 @@
                             </li>
                         </ul>
                     </li>
-                    <?php if(Auth::user()->authorizeRoles1('ADMINISTRADOR')): ?>
-                    <li class="has-sub">
-                        <a href="<?php echo e(URL::to('UsuariosInterno')); ?>">
-                            <i class="entypo-user"></i>
-                            <span class="title">Gestión de Empleado Internos</span>
-                        </a>
-                        <ul>
-
-                            <li>
-                                <a href="<?php echo e(URL::to('GestUserIntCrear/agregar')); ?>">
-                                    <span class="title"><i class="entypo-plus-circled"></i> Agregar</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="<?php echo e(URL::to('UsuariosInterno')); ?>">
-                                    <span class="title"><i class="entypo-cw"></i> Actualizar</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-sub">
-                        <a href="<?php echo e(URL::to('Clientes')); ?>">
-                            <i class="entypo-cc-by"></i>
-                            <span class="title">Gestión Clientes</span>
-                        </a>
-                        <ul>
-
-                            <li>
-                                <a href="<?php echo e(URL::to('Clientes/agregar')); ?>">
-                                    <i class="entypo-plus-circled"></i>
-                                    <span class="title"> Agregar</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="<?php echo e(URL::to('Clientes')); ?>">
-                                    <span class="title"><i class="entypo-cw"></i> Actualizar</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="has-sub">
-                        <a href="<?php echo e(URL::to('Cargos')); ?>">
-                            <i class="entypo-vcard"></i>
-                            <span class="title">Gestion Cargos</span>
-                        </a>
-                        <ul>
-
-                            <li>
-                                <a href="<?php echo e(URL::to('CargoCrear/agregar')); ?>">
-                                    <i class="entypo-plus-circled"></i>
-                                    <span class="title">Agregar</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="<?php echo e(URL::to('Cargos')); ?>">
-                                    <i class="entypo-cw"></i>
-                                    <span class="title">Actualizar</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-sub">
-                        <a href="<?php echo e(URL::to('Sector')); ?>">
-                            <i class="entypo-cog"></i>
-                            <span class="title">Gestion Sector (Empresa)</span>
-                        </a>
-                        <ul>
-
-                            <li>
-                                <a href="<?php echo e(URL::to('SectEmprTerCrear/agregar')); ?>">
-                                    <i class="entypo-plus-circled"></i>
-                                    <span class="title">Agregar</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="<?php echo e(URL::to('Sector')); ?>">
-                                    <i class="entypo-cw"></i>
-                                    <span class="title">Actualizar</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <?php endif; ?>
-                    <li class="has-sub">
-                        <a href="<?php echo e(URL::to('instahunters')); ?>">
-                            <i class="entypo-network"></i>
-                            <span class="title">Gestión Big Data</span>
-                        </a>
-
-                    </li>
-                    <?php if(Auth::user()->authorizeRoles1('ADMINISTRADOR')): ?>
-                    <li class="has-sub">
-                        <a href="<?php echo e(URL::to('MedioPagos')); ?>">
-                            <i class="entypo-credit-card"></i>
-                            <span class="title">Medios de Pago</span>
-                        </a>
-                        <ul>
-
-                            <li>
-                                <a href="<?php echo e(URL::to('MedioPagoCrear/agregar')); ?>">
-                                    <i class="entypo-plus-circled"></i>
-                                    <span class="title">Agregar</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="<?php echo e(URL::to('MedioPagos')); ?>">
-                                    <i class="entypo-cw"></i>
-                                    <span class="title">Actualizar</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <?php endif; ?>
+                    
                     <li class="has-sub">
                         <a href="<?php echo e(URL::to('Categorias')); ?>">
                             <i class="entypo-bag"></i>
                             <span class="title">Productos</span>
                         </a>
                         <ul>
-
+                           
                             <li>
                                 <a href="<?php echo e(URL::to('CategoriaCrear/agregar')); ?>">
                                     <i class="entypo-plus-circled"></i>
                                     <span class="title">Agregar</span>
                                 </a>
                             </li>
-
+                         
                             <li>
                                 <a href="<?php echo e(URL::to('Categorias')); ?>">
                                     <i class="entypo-cw"></i>
@@ -263,47 +144,16 @@
                             </li>
                         </ul>
                     </li>
-                    <?php if(Auth::user()->authorizeRoles1('ADMINISTRADOR')): ?>
-                    <li class="has-sub">
-                        <a href="<?php echo e(URL::to('Servicios')); ?>">
-                            <i class="entypo-tools"></i>
-                            <span class="title">Servicios</span>
-                        </a>
-                        <ul>
-
-                            <li>
-                                <a href="<?php echo e(URL::to('ServicioCrear/agregar')); ?>">
-                                    <i class="entypo-plus-circled"></i>
-                                    <span class="title">Agregar</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="<?php echo e(URL::to('Servicios')); ?>">
-                                    <i class="entypo-cw"></i>
-                                    <span class="title">Actualizar</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="has-sub">
-                        <a href="<?php echo e(URL::to('generarFactura')); ?>">
-                            <i class="entypo-newspaper"></i>
-                            <span class="title">Generar Factura</span>
-                        </a>
-
-                    </li>
-                    <?php endif; ?>
+                   
                 </li>
                 <li class="has-sub">
                     <a href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
                         <i class="entypo-logout"></i>
                         <span class="title">Cerrar Sesion</span>
                     </a>
-
+                    
                 </li>
-
+              
 
             </div>
 
@@ -357,7 +207,7 @@
                                                     </button>
                                                     <ul class="dropdown-menu dropdown-primary" role="menu">
                                                         <li><a href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
-                                                            Cerrar Sesion <i class="entypo-logout"></i>
+                                                            Logout <i class="entypo-logout"></i>
                                                         </a>
                                                         <form id="frm-logout" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
                                                             <?php echo e(csrf_field()); ?>
@@ -394,11 +244,11 @@
 
                 </div>
             </div>
-
+            
             <?php echo $__env->yieldContent('content'); ?>
 
         <br>
-
+       
 <!-- Footer Widgets -->
 <section class="footer-widgets">
 
@@ -513,7 +363,7 @@
 		<!-- Demo Settings -->
         <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-demo.js')); ?>"></script>
 
-        <!--===============================================================================================-->
+        <!--===============================================================================================-->	
 	    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
     <!--===============================================================================================-->
         <script src="vendor/bootstrap/js/popper.js"></script>
@@ -524,4 +374,4 @@
         <script src="resources/js/main.js"></script>
 </body>
 </html>
-<?php /**PATH C:\laragon\www\AppTransaccional-v4.2rc\resources\views/layouts/app.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\laragon\www\AppTransaccional-v4.2rc\resources\views/layouts/usuario.blade.php ENDPATH**/ ?>
