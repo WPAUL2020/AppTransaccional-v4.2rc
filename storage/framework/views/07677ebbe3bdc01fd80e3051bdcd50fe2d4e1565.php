@@ -24,113 +24,47 @@
         </div>
     </section>
 <div>
-<div class="tres">
-<div class="cir2">
-    <strong  class="">Publicaciones</strong>
-    <ul class="galeria">
-        <?php $__currentLoopData = $usersTOP; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <li><a href="<?php echo e($data['OriginalPost']); ?>"><img src="<?php echo e($data['img']); ?>"></a></li>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    
-    </ul>
-    <div class="modal" id="img11">
-    	<h4>"Nombre del que la publico1" </h4>
-    	<div class="imagen1">
-    		<a href="#img44"><</a>
-    		<a href="#img22"><img src=""></a>
-    		<a href="#img22">></a>
-    	</div>
-    	<a class="cerrar" href="">x</a>
-    </div>
-
- 	<div class="modal" id="img22">
-    	<h4>"Nombre del que la publico2" </h4>
-    	<div class="imagen1">
-    		<a href="#img11"><</a>
-    		<a href="#img33"><img src=""></a>
-    		<a href="#img33">></a>
-    	</div>
-    	<a class="cerrar" href="">x</a>
-    </div>
-
- 	<div class="modal" id="img33">
-    	<h4>"Nombre del que la publico3" </h4>
-    	<div class="imagen1">
-    		<a href="#img22"><</a>
-    		<a href="#img44"><img src=""></a>
-    		<a href="#img44">></a>
-    	</div>
-    	<a class="cerrar" href="">x</a>
-    </div>
-
- 	<div class="modal" id="img44">
-    	<h4>"Nombre del que la publico4" </h4>
-    	<div class="imagen1">
-    		<a href="#img33"><</a>
-    		<a href="#img55"><img src=""></a>
-    		<a href="#img55">></a>
-    	</div>
-    	<a class="cerrar" href="">x</a>
-    </div>
-
- 	<div class="modal" id="img55">
-    	<h4>"Nombre del que la publico5" </h4>
-    	<div class="imagen1">
-    		<a href="#img44"><</a>
-    		<a href="#img66"><img src=""></a>
-    		<a href="#img66">></a>
-    	</div>
-    	<a class="cerrar" href="">x</a>
-    </div>
-
- 	<div class="modal" id="img66">
-    	<h4>"Nombre del que la publico6" </h4>
-    	<div class="imagen1">
-    		<a href="#img55"><</a>
-    		<a href="#img77"><img src=""></a>
-    		<a href="#img77">></a>
-    	</div>
-    	<a class="cerrar" href="">x</a>
-    </div>
-
- 	<div class="modal" id="img77">
-    	<h4>"Nombre del que la publico7" </h4>
-    	<div class="imagen1">
-    		<a href="#img66"><</a>
-    		<a href="#img11"><img src=""></a>
-    		<a href="#img11">></a>
-    	</div>
-    	<a class="cerrar" href="">x</a>
-    </div>
- </div>
-
-    <div class="cir">
+    <div class="cir1">
+        <div>
             <td class="circ" >
-                <strong  class="">Likes & Comentarios</strong>
                 <br />
                 <div class="circ" id="chartLikesComments"></div>
             </td>
-       </div>
-
-       <div class="cir1">
-            <td class="circ1">
-                <strong>Top 8</strong>
-                <br />
-                <strong>de usuarios por palabra con más likes en todo instagram</strong>
-                <div class="circ1" id="chartTOP">
-                </div>
-            </td>
-
-    </div>
-    <div class="cir1">
-        <td class="circ1">
-            <strong>Usuarios recurrentes en las ultimas 24 horas</strong>
+             <div  class="lll">
+             <h3 class="tit">Datos Recolectados</h3>
+             <h4 class="tit2">en la búsqueda</h4>
+             </div>
+             </div>
+             <div class="cir4">
+             <td class="circ1">
             <br />
             <div class="circ1" id="chartUser">
             </div>
         </td>
+            </div>
+    </div>   
 
-</div>
+    <div class="cir2">
+        <h2 class="tit1">Top 8 a Nivel de Instagram</h2>
+    <div class="circ3">
+    <ul class="galeria">
+       
+        <?php $__currentLoopData = $usersTOP; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <li><a href="<?php echo e($data['OriginalPost']); ?>"><img src="<?php echo e($data['img']); ?>"></a></li>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    
+       
+    </ul>
+     </div>  
+    <div class="cir4">
+        <td class="circ1">
+                <br />
+                <div class="circ1" id="chartTOP">
+                </div>
+            </td>
+       
+    </div>
+    </div>
 </div>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('Scripts'); ?>
