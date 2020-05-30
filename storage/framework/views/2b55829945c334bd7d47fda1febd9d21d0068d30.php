@@ -13,7 +13,7 @@
 
                     <ol class="bc-3">
                             <li>
-                    <a href="<?php echo e(URL::to('appl2')); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
+                    <a href="<?php echo e(URL::to('appl4')); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
                 </li>
                     <li class="active">
                                 <strong>InstaHunters</strong>
@@ -46,9 +46,10 @@ $message = $errors->first('optionScrap'); ?>
                                 <?php unset($message);
 if (isset($messageCache)) { $message = $messageCache; }
 endif; ?>
-                                </div>
+                                <h3>@ Usuario</h3><input type="radio" id="usu" name="optionScrap" value="hashtag">
+                                <label for="usu" class="lbl">  </label>
+                            </div>
                             <div class="letra">
-                                <br>
                                 <h3># Hashtag </h3><input type="radio" id="has" name="optionScrap" value="hashtag">
                                 <label for="has" class="lbl"> </label>
                             </div>
@@ -64,7 +65,7 @@ $message = $errors->first('palabraClave'); ?>
                             <?php unset($message);
 if (isset($messageCache)) { $message = $messageCache; }
 endif; ?>
-                            <input type="text" class="" maxlength="30" name="palabraClave" autocomplete="off" required>
+                            <input type="text" class="" name="palabraClave" autocomplete="off" required>
                             <label class="lbl2">
                                 <span class="lbltex">Busqueda...</span>
                             </label>
@@ -76,7 +77,7 @@ endif; ?>
                                    Buscar <i class="fas fa-search"></i>
                                 </button>
                             </form>
-                            <a href="<?php echo e(URL::to('instahuntersvista')); ?>" class="btn btn-info float-right btn-lg">
+                            <a href="<?php echo e(URL::to('cliente-instahuntersvista')); ?>" class="btn btn-info float-right btn-lg">
                                 Busquedas realizadas <i class="fas fa-eye"></i>
                             </a>
                         </div>
@@ -94,21 +95,5 @@ endif; ?>
 
 </div>
 <?php $__env->stopSection(); ?>
-<?php $__env->startSection('Scripts'); ?>
-<script type="text/javascript">
-    var msg = '<?php echo e(Session::get('message')); ?>';
-    var exist = '<?php echo e(Session::has('message')); ?>';
-    if(exist){
-      alert(msg);
-    }
-</script>
-<script type="text/javascript">
-    var msg = '<?php echo e(Session::get('msj')); ?>';
-    var exist = '<?php echo e(Session::has('msj')); ?>';
-    if(exist){
-      alert(msg);
-    }
-</script>
-<?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\git\AppTransaccional-v4.2rc\resources\views/instahunters.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.usuario', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\AppTransaccional-v4.2rc\resources\views/cliente-instahunters.blade.php ENDPATH**/ ?>

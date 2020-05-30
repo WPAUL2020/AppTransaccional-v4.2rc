@@ -44,34 +44,28 @@
             </div>
         </td>
             </div>
-    </div>   
+    </div>
 
     <div class="cir2">
         <h2 class="tit1">Top 8 a Nivel de Instagram</h2>
     <div class="circ3">
     <ul class="galeria">
-       
+
         @foreach ($usersTOP as $data)
-            <li><a href="{{$data['OriginalPost']}}"><img src="{{$data['img']}}"></a></li>
+
+
+    	<li><a href="{{$data['OriginalPost']}}"><img src="{{$data['img']}}" class="img-rounded"/></a> <h4>{{$data['userName']}}</h4> </li>
         @endforeach
-    {{--
-    	<li><a href="#img11"><img src=""></a></li>
-    	<li><a href="#img22"><img src=""></a></li>
-    	<li><a href="#img33"><img src=""></a></li>
-    	<li><a href="#img44"><img src=""></a></li>
-    	<li><a href="#img55"><img src=""></a></li>
-    	<li><a href="#img66"><img src=""></a></li>
-    	<li><a href="#img77"><img src=""></a></li> --}}
-       
+
     </ul>
-     </div>  
-    <div class="cir4">
+     </div>
+    <div class="cir5">
         <td class="circ1">
                 <br />
                 <div class="circ1" id="chartTOP">
                 </div>
             </td>
-       
+
     </div>
     </div>
 </div>
@@ -102,7 +96,8 @@
 
 				],
 				labelColor: '#fafafa',
-				colors: ['#00a651', '#f26c4f']
+				colors: ['#00a651', '#f26c4f'],
+                resize: true
 			});
 			// Bar Charts
 			Morris.Bar({
@@ -116,7 +111,8 @@
 				xkey: 'x',
 				ykeys: ['y'],
 				labels: ['Likes'],
-				barColors: ['#00a651']
+				barColors: ['#00a651'],
+                resize: true
 			});
 
 			Morris.Bar({
@@ -130,7 +126,8 @@
 				xkey: 'x',
 				ykeys: ['y'],
 				labels: ['Publicaciones'],
-				barColors: ['#00a651']
+				barColors: ['#00a651'],
+                resize: true
 			});
 		}
 	});
