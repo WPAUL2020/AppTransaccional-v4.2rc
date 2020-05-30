@@ -96,7 +96,8 @@
 
 				],
 				labelColor: '#fafafa',
-				colors: ['#00a651', '#f26c4f']
+				colors: ['#00a651', '#f26c4f'],
+                resize: true
 			});
 			// Bar Charts
 			Morris.Bar({
@@ -110,7 +111,8 @@
 				xkey: 'x',
 				ykeys: ['y'],
 				labels: ['Likes'],
-				barColors: ['#00a651']
+				barColors: ['#00a651'],
+                resize: true
 			});
 
 			Morris.Bar({
@@ -124,7 +126,8 @@
 				xkey: 'x',
 				ykeys: ['y'],
 				labels: ['Publicaciones'],
-				barColors: ['#00a651']
+				barColors: ['#00a651'],
+                resize: true
 			});
 		}
 	});

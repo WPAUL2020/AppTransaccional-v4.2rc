@@ -50,9 +50,9 @@
     <ul class="galeria">
 
         <?php $__currentLoopData = $usersTOP; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        
-       
-    	<li><a href="<?php echo e($data['OriginalPost']); ?>"><img src="<?php echo e($data['img']); ?>" class="img-rounded"/></a> <h4>sdasdasd</h4> </li>
+
+
+    	<li><a href="<?php echo e($data['OriginalPost']); ?>"><img src="<?php echo e($data['img']); ?>" class="img-rounded"/></a> <h4><?php echo e($data['userName']); ?></h4> </li>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
     </ul>
@@ -94,7 +94,8 @@
 
 				],
 				labelColor: '#fafafa',
-				colors: ['#00a651', '#f26c4f']
+				colors: ['#00a651', '#f26c4f'],
+                resize: true
 			});
 			// Bar Charts
 			Morris.Bar({
@@ -108,7 +109,8 @@
 				xkey: 'x',
 				ykeys: ['y'],
 				labels: ['Likes'],
-				barColors: ['#00a651']
+				barColors: ['#00a651'],
+                resize: true
 			});
 
 			Morris.Bar({
@@ -122,7 +124,8 @@
 				xkey: 'x',
 				ykeys: ['y'],
 				labels: ['Publicaciones'],
-				barColors: ['#00a651']
+				barColors: ['#00a651'],
+                resize: true
 			});
 		}
 	});
