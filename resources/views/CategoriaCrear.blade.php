@@ -10,7 +10,7 @@
 
                 <div class="col-sm-9">
 
-                    <h1>Registro De Productos</h1>
+                    <img src="Imagenes/crearproductos.png">
 
                                 <ol class=" bc-3" >
                             <li>

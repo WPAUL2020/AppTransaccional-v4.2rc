@@ -11,7 +11,7 @@
 
 			<div class="col-sm-7">
 
-				<h1>Zona Transaccional</h1>
+				<img src="Imagenes/zonatransaccional.png">
 
 							<ol class="bc-3" >
 						<li>

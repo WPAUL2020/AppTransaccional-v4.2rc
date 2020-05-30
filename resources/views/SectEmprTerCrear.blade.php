@@ -10,7 +10,7 @@
 
                 <div class="col-sm-9">
 
-                    <h1>Crear Sector de Empresa</h1>
+                    <img src="Imagenes/crearsectorempresa.png">
 
                     <ol class=" bc-3" >
                             <li>

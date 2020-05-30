@@ -9,7 +9,7 @@
 
                 <div class="col-sm-9">
 
-                    <h1>Generar Factura</h1>
+                    <img src="Imagenes/generarfactura.png">
 
                                 <ol class=" bc-3" >
                             <li>

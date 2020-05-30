@@ -11,7 +11,7 @@
 
                 <div class="col-sm-9">
 
-                    <h1>Gestion Medios de Pago</h1>
+                    <img src="Imagenes/gestionmediosdepago.png">
 
                     <ol class=" bc-3" >
                             <li>

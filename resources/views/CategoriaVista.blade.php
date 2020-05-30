@@ -10,11 +10,11 @@
 
             <div class="col-sm-9">
 
-                <h1>Gestión Productos</h1>
+                <img src="Imagenes/gestionproductos.png">
 
                 <ol class=" bc-3" >
                         <li>
-                <a href="{{URL::to('appl')}}"> <i class="fas fa-angle-left"></i> Regresar</a>
+                <a href="{{URL::to('appl2')}}"> <i class="fas fa-angle-left"></i> Regresar</a>
             </li>
                 <li class="active">
                             <strong>Gestión Productos</strong>
