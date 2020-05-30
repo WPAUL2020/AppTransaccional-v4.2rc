@@ -42,27 +42,28 @@
             </div>
         </td>
             </div>
-    </div>   
+    </div>
 
     <div class="cir2">
         <h2 class="tit1">Top 8 a Nivel de Instagram</h2>
     <div class="circ3">
     <ul class="galeria">
-       
+
         <?php $__currentLoopData = $usersTOP; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <li><a href="<?php echo e($data['OriginalPost']); ?>"><img src="<?php echo e($data['img']); ?>"></a></li>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    
+        
        
+    	<li><a href="<?php echo e($data['OriginalPost']); ?>"><img src="<?php echo e($data['img']); ?>" class="img-rounded"/></a> <h4>sdasdasd</h4> </li>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
     </ul>
-     </div>  
+     </div>
     <div class="cir5">
         <td class="circ1">
                 <br />
                 <div class="circ1" id="chartTOP">
                 </div>
             </td>
-       
+
     </div>
     </div>
 </div>

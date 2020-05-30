@@ -52,24 +52,10 @@
     <ul class="galeria">
 
         @foreach ($usersTOP as $data)
-        <li><h4>sdasdasd</h4></li>
-    	<li><a href="{{$data['OriginalPost']}}"><img src="{{$data['img']}}" class="img-rounded"/></a></li>
+        
+       
+    	<li><a href="{{$data['OriginalPost']}}"><img src="{{$data['img']}}" class="img-rounded"/></a> <h4>sdasdasd</h4> </li>
         @endforeach
-    {{--
-         <li><h4>sdasdasd</h4></li>
-    	<li><a href="#img11"><img src=""></a></li>
-         <li><h4>sdasdasd</h4></li>
-    	<li><a href="#img22"><img src=""></a></li>
-         <li><h4>sdasdasd</h4></li>
-    	<li><a href="#img33"><img src=""></a></li>
-         <li><h4>sdasdasd</h4></li>
-    	<li><a href="#img44"><img src=""></a></li>
-         <li><h4>sdasdasd</h4></li>
-    	<li><a href="#img55"><img src=""></a></li>
-         <li><h4>sdasdasd</h4></li>
-    	<li><a href="#img66"><img src=""></a></li>
-         <li><h4>sdasdasd</h4></li>
-    	<li><a href="#img77"><img src=""></a></li> --}}
 
     </ul>
      </div>
