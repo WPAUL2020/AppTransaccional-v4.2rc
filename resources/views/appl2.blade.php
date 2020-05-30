@@ -51,7 +51,7 @@
 				</div>
 
             </div>
-            
+
             <div class="item col-sm-4 col-xs-6 filter-design">
 
 				<div class="portfolio-item">
@@ -105,11 +105,11 @@
                 <div class="col-md-12">
                 <div class="text-center">
                     <ul class="pagination">
-                        <li class="active">
-                            <a href="{{URL::to('appl')}}"><i class="fas fa-angle-left"></i></a>
-                             </li>
                         <li>
-                        <a href=""><i class="fas fa-angle-right"></i></a>
+                            <a href="{{URL::to('appl')}}"><i class="fas fa-angle-left"></i></a>
+                        </li>
+                        <li class="active">
+                            <a href="#"><i class="fas fa-angle-right"></i></a>
                         </li>
                     </ul>
 
