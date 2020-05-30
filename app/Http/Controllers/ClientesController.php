@@ -87,7 +87,7 @@ class ClientesController extends Controller
 
     public function getFrmInsertEmpresa()
     {
-     $roles = rol::all();
+     $roles = rol::where ('dependency', "EXTERNO") ->get();
      $SectorEmpresas = SectorEmpresa::all();
      $Ciudad = Ciudad::all();
         return view('clientes')->with(['roles'=>$roles, 'SectorEmpresas'=>$SectorEmpresas, 'Ciudad'=>$Ciudad]);
