@@ -9,7 +9,7 @@
 
                 <div class="col-sm-9">
 
-                    <img src="../Imagenes/empleadosexterno.png">
+                    <img src="Imagenes/empleadosexterno.png">
 
                     <ol class="bc-3">
                             <li>
