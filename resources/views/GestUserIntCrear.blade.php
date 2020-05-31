@@ -76,15 +76,7 @@
               <input type="phone" name="TELEFONO" class="form-control" placeholder="Telefono">
               <span class="text-danger">{{$errors->first("TELEFONO")}}</span>
               </div>
-              <div class="col-sm-6">
-              <label style="color:white">Pais:</label>
-              <input value="COLOMBIA" type="text" name="PAIS" class="form-control" placeholder="Pais">
-              <span class="text-danger">{{$errors->first("PAIS")}}</span>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="col-sm-6">
+                  <div class="col-sm-6">
               <label for="" style="color:white">Ciudad:</label>
                 <select name="CIUDAD" id="ID_CIUDAD" class="form-control">
                  <option value="">--Escoje la ciudad--</option>
@@ -94,41 +86,44 @@
         </select>
         <span class="text-danger">{{$errors->first("CIUDAD")}}</span>
               </div>
+            </div>
+
+            <div class="form-row">
+         
               <div class="col-sm-6">
               <label style="color:white">Correo Electronico:</label>
               <input type="email" name="CORREO" class="form-control" placeholder="Correo Electronico">
               <span class="text-danger">{{$errors->first("CORREO")}}</span>
               </div>
-            </div>
-
-            <div class="form-row">
-              <div class="col-sm-6">
+               <div class="col-sm-6">
               <label style="color:white">Telefono Oficina:</label>
               <input type="phone" name="TELEFONO_OFICINA" class="form-control" placeholder="Telefono de Oficina">
               <span class="text-danger">{{$errors->first("TELEFONO_OFICINA")}}</span>
               </div>
+            </div>
+
+            <div class="form-row">
+             
               <div class="col-sm-6">
               <label style="color:white">Extenciòn:</label>
               <input type="phone" name="EXTENSION" class="form-control" placeholder="Extensiòn">
               <span class="text-danger">{{$errors->first("EXTENSION")}}</span>
               </div>
-            </div>
-
-            <div class="form-row">
               <div class="col-sm-6">
               <label style="color:white">Usuario de Registro:</label>
               <input type="email" name="USUARIO" class="form-control" placeholder="Usuario de registro Correo">
               <span class="text-danger">{{$errors->first("USUARIO")}}</span>
               </div>
+            </div>
+
+            <div class="form-row">
+              
               <div class="col-sm-6">
               <label style="color:white" for="inputEmail4">Password:</label>
               <input type="password" name="CONTRASENA" class="form-control" placeholder="Escribir Password">
               <span class="text-danger">{{$errors->first("CONTRASENA")}}</span>
               </div>
-            </div>
-
-            <div class="form-row">
-              <div class="col-sm-6">
+               <div class="col-sm-6">
               <label style="color:white" for="">Cargo del Funcionario:</label>
                   <select name="ID_CARGO" id="ID_CARGO" class="form-control">
                   <option value="">--Escoja Tipo de Cargo--</option>
@@ -138,6 +133,10 @@
                   </select>
                   <span class="text-danger">{{$errors->first("ID_CARGO")}}</span>
               </div>
+            </div>
+
+            <div class="form-row">
+             
               <div class="col-sm-6">
               <label style="color:white" for="">Rol del Funcionario:</label>
                   <select name="ID_ROL" id="ID_ROL" class="form-control">
@@ -158,14 +157,13 @@
               <span class="text-danger">{{$errors->first("ESTADO")}}</span>
             </div>
             </div>
-
-            <div class="form-group col-sm-6">
-              <label style="color:white">Observaciones:</label>
+             <div class="form-group lb">
+            
+              <label>Observaciones:</label>
               <textarea name="OBSERVACION" class="form-control" placeholder="Escribe tu Observación"></textarea>
               <span class="text-danger">{{$errors->first("OBSERVACION")}}</span>
-
-
-            </div>
+           
+          </div>
             <div class="form-row">
               <div class="form-group">
                   <input type="submit" value="Registrar" class="btn btn-primary">
