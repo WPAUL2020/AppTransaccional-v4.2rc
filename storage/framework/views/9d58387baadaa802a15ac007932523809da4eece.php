@@ -414,7 +414,7 @@
                 </a>
 
                 <p>
-                    Institución educativa <br />
+                    Institución Educativa <br />
                     Universitaria de Colombia.
                 </p>
 
@@ -457,7 +457,7 @@
 
             <div class="col-sm-6">
                 © 2020 Copyright:
-                <a href="https://universitariadecolombia.edu.co/programas/profesionales/ingenieria-de-sistemas/"> Semillero Ingenieria de Sistemas, Institución Universitaria de Colombia. </a>
+                <a href="https://universitariadecolombia.edu.co/programas/profesionales/ingenieria-de-sistemas/"> Semillero Ingenieria de Sistemas, Institución Educativa Universitaria de Colombia. </a>
 
             </div>
 
