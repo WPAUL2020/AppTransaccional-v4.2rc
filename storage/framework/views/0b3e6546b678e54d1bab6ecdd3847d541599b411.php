@@ -101,7 +101,7 @@
                         </a>
 
                     </li>
-
+                    <?php if(Auth::user()->authorizeRoles1('ADMINISTRADOR') or Auth::user()->authorizeRoles1('SUPERVISOR EXTERNO')): ?>
                     <li class="has-sub">
                         <a href="<?php echo e(URL::to('UsuariosTercero')); ?>">
                             <i class="entypo-users"></i>
@@ -122,6 +122,7 @@
                             </li>
                         </ul>
                     </li>
+                    <?php endif; ?>
                     <?php if(Auth::user()->authorizeRoles1('ADMINISTRADOR')): ?>
                     <li class="has-sub">
                         <a href="<?php echo e(URL::to('UsuariosInterno')); ?>">
