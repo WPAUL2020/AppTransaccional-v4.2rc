@@ -9,7 +9,7 @@
 
                 <div class="col-sm-9">
 
-                    <h1>InstaHunters</h1>
+                    <img src="Imagenes/instahunters.png">
 
                     <ol class="bc-3">
                             <li>
