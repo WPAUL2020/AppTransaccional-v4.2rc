@@ -9,14 +9,14 @@
 
                 <div class="col-sm-9">
 
-                    <h1>Gestion Usuarios</h1>
+                    <img src="Imagenes/empleadosinternos.png">
 
                     <ol class=" bc-3" >
                             <li>
                     <a href="<?php echo e(URL::to('appl')); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
                 </li>
                     <li class="active">
-                                <strong>Gestion Usuarios</strong>
+                                <strong>Gestion Empleados Internos</strong>
                         </li>
                         </ol>
                 </div>

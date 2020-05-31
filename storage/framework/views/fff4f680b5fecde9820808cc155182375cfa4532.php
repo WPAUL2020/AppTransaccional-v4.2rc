@@ -72,15 +72,6 @@
     <span class="text-danger"><?php echo e($errors->first("TELEFONO")); ?></span>
     </div>
     <div class="col-sm-6">
-    <label>Pais:</label>
-    <input type="text" name="PAIS" class="form-control" placeholder="Pais" value="COLOMBIA">
-    <span class="text-danger"><?php echo e($errors->first("PAIS")); ?></span>
-    </div>
-  </div>
-
-  <div class="form-row">
-
-    <div class="col-sm-6">
     <label for="">Ciudad:</label>
         <select name="CIUDAD" id="ID_CIUDAD" class="form-control ciud">
         <option value="">--Escoje la ciudad--</option>
@@ -90,44 +81,43 @@
         </select>
         <span class="text-danger"><?php echo e($errors->first("CIUDAD")); ?></span>
     </div>
+  </div>
 
-    <div class="col-sm-6">
+  <div class="form-row">
 
-    </div>
     <div class="col-sm-6">
     <label>Correo Electronico:</label>
     <input type="email" name="CORREO" class="form-control" placeholder="Correo Electronico">
     <span class="text-danger"><?php echo e($errors->first("CORREO")); ?></span>
     </div>
-  </div>
-
-  <div class="form-row">
     <div class="col-sm-6">
     <label>Telefono Oficina:</label>
     <input type="phone" name="TELEFONO_OFICINA" class="form-control" placeholder="Telefono de Oficina">
     <span class="text-danger"><?php echo e($errors->first("TELEFONO_OFICINA")); ?></span>
     </div>
+  </div>
+
+  <div class="form-row">
+    
     <div class="col-sm-6">
     <label>Extenciòn:</label>
     <input type="phone" name="EXTENSION" class="form-control" placeholder="Extensiòn">
     <span class="text-danger"><?php echo e($errors->first("EXTENSION")); ?></span>
     </div>
-  </div>
-
-  <div class="form-row">
     <div class="col-sm-6">
     <label>Usuario de Registro:</label>
     <input type="email" name="USUARIO" class="form-control" placeholder="Usuario de registro Correo">
     <span class="text-danger"><?php echo e($errors->first("USUARIO")); ?></span>
     </div>
+  </div>
+
+  <div class="form-row">
+    
     <div class="col-sm-6">
     <label for="inputEmail4">Password:</label>
     <input type="password" name="CONTRASENA" class="form-control" placeholder="Escribir Password">
     <span class="text-danger"><?php echo e($errors->first("CONTRASENA")); ?></span>
     </div>
-  </div>
-
-  <div class="form-row">
     <div class="col-sm-6">
     <label for="">Cargo del Funcionario:</label>
         <select name="ID_CARGO" id="ID_CARGO" class="form-control">
@@ -138,6 +128,9 @@
         </select>
         <span class="text-danger"><?php echo e($errors->first("ID_CARGO")); ?></span>
     </div>
+  </div>
+
+  <div class="form-row">
     <div class="col-sm-6">
     <label for="">Rol del Funcionario:</label>
         <select name="ID_ROL" id="ID_ROL" class="form-control">
@@ -169,10 +162,12 @@
   </div>
   </div>
 
-  <div class="form-group lb">
+     <div class="col-sm-6">
     <label>Observaciones:</label>
-    <textarea name="OBSERVACION" class="form-control col" placeholder="Escribe tu Observación"></textarea>
-  </div>
+    <textarea name="OBSERVACION" class="form-control" placeholder="Escribe tu Observación"></textarea>
+    <span class="text-danger"><?php echo e($errors->first("OBSERVACION")); ?></span>
+    </div>
+
 
   <div class="form-row">
                     <div class="form-group">

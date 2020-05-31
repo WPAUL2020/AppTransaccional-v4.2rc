@@ -20,6 +20,9 @@ use App\dataCollectionMongoDB as dataMongoDB;
 use Illuminate\Pagination\LengthAwarePaginator;
 use App\dataCollectionMongoDB as dataCollection;
 use App\scrapedUserCollectionMongoDB as scrapedUser;
+use App\EmpresaTercero as EmpresaTercero;
+use App\TipoIdentificacion as TipoIdent;
+use App\EmpleadosTercero as EmpleadosTercero;
 
 class instahuntersController extends Controller
 {
@@ -47,7 +50,7 @@ class instahuntersController extends Controller
      *
      * @var int
      */
-    protected $nitCliente;
+    protected $nombreEmpresa;
     protected $date;
 
     public function __construct(Request $request) {
@@ -68,14 +71,23 @@ class instahuntersController extends Controller
      */
     public function indexInstaHuters()
     {
-        return view('instahunters');
+        if (Auth::check()){
+            return view('instahunters');
+        } else {
+            return redirect('/login');
+        }
     }
 
     public function indexPreview()
     {
-        $findByID = dataCollection::findOrFail($this->request->_id);
-        $data = $this->truncateModelDataGET($findByID);
-        return $this->paginate($data, $this->request->_id);
+        if (Auth::check()) {
+            $findByID = dataCollection::findOrFail($this->request->_id);
+            $data = $this->truncateModelDataGET($findByID);
+            return $this->paginate($data, $this->request->_id);
+        } else {
+            return redirect('/login');
+        }
+
     }
 
 
@@ -108,7 +120,7 @@ class instahuntersController extends Controller
                 );
                 $data2view = json_decode($res->getBody()->getContents());
                 $this->truncateAndInsertHashtag($data2view);
-                return redirect()->back()->with('message', 'Su palabra a sido scrapeada satisfactoriamente!');
+                return redirect('/instahuntersvista')->with('message', 'Su palabra a sido scrapeada satisfactoriamente!');
             }
         } catch (ConnectException $th) {
             $th->getResponse();
@@ -168,6 +180,15 @@ class instahuntersController extends Controller
 
     private  function truncateAndInsertHashtag($data)
     {
+        $user = Auth::user();
+
+        if ($this->request->user()->authorizeRoles1(['EMPLEADO EXTERNO'])) {
+            $this->nombreEmpresa = EmpresaTercero::where('ID_EMPRESA_TERCERO',$user->ID_EMPRESA_TERCERO)->first();
+            $this->nombreEmpresa = $this->nombreEmpresa->NOMBRE;
+        } else {
+            $this->nombreEmpresa = $user->name;
+        }
+
         $routeAtributte = $data->entry_data->TagPage;
         $dataIn = $routeAtributte[0]->graphql->hashtag->edge_hashtag_to_media->edges;
         $dataTOInsert = [];
@@ -185,6 +206,7 @@ class instahuntersController extends Controller
             $fecha = new DateTime("@$hashtag_time");
             $dataTOInsert['consulta_log'] = $this->date;
             $dataTOInsert['wordSearch'] = $routeAtributte[0]->graphql->hashtag->name;
+            $dataTOInsert['empresa'] = $this->nombreEmpresa;
             $dataTOInsert[$i]['img'] = $img;
             $dataTOInsert[$i]['txt'] = $text;
             $dataTOInsert[$i]['time'] = $fecha->format('Y-m-d H:i:s');

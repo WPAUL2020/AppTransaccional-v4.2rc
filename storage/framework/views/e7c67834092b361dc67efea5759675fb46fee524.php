@@ -9,7 +9,7 @@
 
                 <div class="col-sm-9">
 
-                    <h1>InstaHunters</h1>
+                    <img src="Imagenes/instahunters.png">
 
                     <ol class="bc-3">
                             <li>
@@ -85,7 +85,7 @@ endif; ?>
             <center>
                 <!-- Copyright -->
                 <div class="footer-copyright text-center py-3">© 2020 Copyright:
-                  <a href="https://universitariadecolombia.edu.co/programas/profesionales/ingenieria-de-sistemas/"> Semillero Ingenieria de Sistemas, Universitaria de Colombia. </a>
+                  <a href="https://universitariadecolombia.edu.co/programas/profesionales/ingenieria-de-sistemas/"> Semillero Ingenieria de Sistemas, Institución Educativa Universitaria de Colombia. </a>
                 </div>
             </center>
         </div>

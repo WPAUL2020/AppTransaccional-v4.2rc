@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use DateTime;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Exception\ClientException;
 use App\dataCollectionMongoDB as dataCollection;
+use App\scrapedUserTopCollectionMongoDB as userTOP;
 use App\scrapedUserCollectionMongoDB as scrapedUser;
 use App\dataTOPCollectionMongoDB as TopPostCollection;
-use App\scrapedUserTopCollectionMongoDB as userTOP;
+use App\EmpresaTercero as EmpresaTercero;
 
 class AnaliticMongoDBController extends Controller
 {
@@ -54,8 +57,27 @@ class AnaliticMongoDBController extends Controller
     }
     public function index()
     {
-        $data = dataCollection::all();
-        return view('instahuntersvista', compact('data'));
+        if ($this->request->user()->authorizeRoles1('ADMINISTRADOR')){
+            $data = dataCollection::all();
+            return view('instahunterAdminVista', compact('data'));
+        }
+        else{
+            $user = Auth::user();
+            if ($this->request->user()->authorizeRoles1(['EMPLEADO EXTERNO'])) {
+                $this->nombreEmpresa = EmpresaTercero::where('ID_EMPRESA_TERCERO',$user->ID_EMPRESA_TERCERO)->first();
+                $this->nombreEmpresa = $this->nombreEmpresa->NOMBRE;
+            } else {
+                $this->nombreEmpresa = $user->name;
+            }
+            $data = DB::connection('mongodb')->collection('data')->where(
+                'empresa',
+                '=',
+                $this->nombreEmpresa
+            )->get();
+            return view('instahuntersvista', compact('data'));
+
+        }
+
     }
 
     public function scrapAndAnalitic()
