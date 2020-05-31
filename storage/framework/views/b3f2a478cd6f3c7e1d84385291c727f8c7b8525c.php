@@ -9,16 +9,16 @@
 
                 <div class="col-sm-9">
 
-                    <h1>Gestion Usuarios Tercero</h1>
+                    <img src="Imagenes/empleadosexterno.png">
 
                     <ol class="bc-3">
                             <li>
-                    <a href="<?php echo e(URL::to('appl')); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
-                </li>
-                    <li class="active">
-                                <strong>Gestion Usuarios Tercero</strong>
-                        </li>
-                        </ol>
+                                <a href="<?php echo e(URL::to('appl')); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
+                            </li>
+                            <li class="active">
+                                <strong>Gestion Empleados Externos</strong>
+                            </li>
+                    </ol>
                 </div>
             </div>
 
