@@ -9,7 +9,7 @@
 
                 <div class="col-sm-9">
 
-                    <h1>Gestión Clientes</h1>
+                     <img src="Imagenes/gestionclientes.png">
 
                     <ol class=" bc-3" >
                             <li>
