@@ -38,19 +38,17 @@
                        <th class="text-center">TELEFONO</th>
                        <th class="text-center">USUARIO</th>
                        <th class="text-center">CARGO</th>
-                       <th class="text-center">ROL</th>
                        <th class="text-center">ACCIONES</th>
                    </tr>
                    @foreach($empleados as $users1)
                    <tr class="row100">
                        <td>{{ $users1->NOMBRE}}</td>
-                       <td>{{ $users1->TIPO_DOCUMENTO}}</td>
+                       <td>{{ $users1->ID_TIPO_IDENTIFICACION}}</td>
                        <td>{{ $users1->NUM_DOCUMENTO}}</td>
                        <td>{{ $users1->DIRECCION }}</td>
                        <td>{{ $users1->TELEFONO}}</td>
                        <td>{{ $users1->USUARIO}}</td>
                        <td>{{ $users1->ID_CARGO}}</td>
-                       <td>{{ $users1->ID_ROL}}</td>
                        <td>
                        <a href="GestUserIntEdit/updateUser/{{$users1->ID_EMPLEADO_INTERNO}}" class="btn btn-secondary">EDITAR</a>
                        </td>

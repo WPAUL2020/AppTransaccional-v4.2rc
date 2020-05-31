@@ -1,16 +1,31 @@
 <?php $__env->startSection('content'); ?>
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
 
-<!DOCTYPE html>
-<html lang="es_DO">
-<head>
-    <meta charset="UTF-8">
-<title>Pagina de Contacto</title>
-                   <br>
-                   <br>
-</head>
+        <div class="container">
 
-<body>
-    <div class="container">
+            <div class="row">
+
+                <div class="col-sm-9">
+
+                    <h1>Registro De Cargos</h1>
+
+                                <ol class=" bc-3" >
+                            <li>
+                    <a href="<?php echo e(URL::previous()); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
+                </li>
+                    <li class="active">
+                                <strong>Registro De Cargos</strong>
+                        </li>
+                        </ol>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <div class="container fondo_container">
         <div class="row justify-content-sm-center">
             <div class="col-md-5">
                 <h2> <center>REGISTRO DE CARGOS</center></h2>
@@ -40,14 +55,13 @@
                      </div>
                     <div class="form-group">
                         <input type="submit" value="Registrar" class="btn btn-primary">
-                        <a class="btn btn-outline-secondary" href="<?php echo e(URL::to('Cargos')); ?>">Regresar</a>
+                        <a class="btn btn-secondary" href="<?php echo e(URL::to('Cargos')); ?>">Regresar</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-</body>
-</html>
+    </div>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/AppTransaccional-v4.2rc/resources/views/CargoCrear.blade.php ENDPATH**/ ?>
