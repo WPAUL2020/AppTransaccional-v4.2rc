@@ -9,7 +9,7 @@
 
 			<div class="col-sm-7">
 
-				<h1>Zona Transaccional</h1>
+				<img src="Imagenes/zonatransaccional.png">
 
 							<ol class="bc-3" >
 						<li>
@@ -73,4 +73,4 @@
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.usuario', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/AppTransaccional-v4.2rc/resources/views/appl3.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/AppTransaccional-v4.2rc/resources/views/appl3.blade.php ENDPATH**/ ?>

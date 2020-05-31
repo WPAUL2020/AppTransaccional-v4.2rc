@@ -172,7 +172,8 @@
 
   <div class="form-group lb">
     <label>Observaciones:</label>
-    <textarea name="OBSERVACION" class="form-control col" placeholder="Escribe tu Observación"></textarea>
+    <textarea name="OBSERVACION" class="form-control" placeholder="Escribe tu Observación"></textarea>
+    <span class="text-danger">{{$errors->first("OBSERVACION")}}</span>
   </div>
 
   <div class="form-row">

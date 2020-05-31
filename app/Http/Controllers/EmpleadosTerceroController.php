@@ -26,9 +26,10 @@ class EmpleadosTerceroController extends Controller
             // print($user->email);
             $empleados = EmpleadosTercero::where ('ID_EMPRESA_TERCERO',$user->ID_EMPRESA_TERCERO) ->get();
             $empresa = EmpresaTercero::where ('ID_EMPRESA_TERCERO',$user->ID_EMPRESA_TERCERO)->first();
+            $documento = TipoIdent::where ('ID_TIPO_INDENTIFICACION' , $user->ID_TIPO_INDENTIFICACION)->first();
             // print ($empresa->ID_EMPRESA_TERCERO);
             // var_dump($empleados);
-            return view('GesUserTerVista') ->with(["empleados"=>$empleados , 'empresa'=>$empresa ]);
+            return view('GesUserTerVista') ->with(["empleados"=>$empleados , 'empresa'=>$empresa , 'documento'=>$documento]);
             // ->with(["empleados"=>$empleados , 'empresa'=>$empresa ])
 
         } else {
