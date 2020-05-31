@@ -115,7 +115,7 @@ class EmpleadosTerceroController extends Controller
    {
        if (Auth::check()) {
            $EmpleadosTercero = EmpleadosTercero::find($ID_EMPLEADO_TERCERO);
-           $roles = rol::all();
+           $roles = rol::where ('dependency', "EXTERNO") ->get();
            $cargos = cargo::all();
            $TipoIdents = TipoIdent::all();
        return view('GesUserTerEdit')->with(['roles'=>$roles, 'cargos'=>$cargos, 'TipoIdents'=>$TipoIdents, 'EmpleadosTercero' =>$EmpleadosTercero]);
