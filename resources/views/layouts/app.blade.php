@@ -61,14 +61,11 @@
 
 <body class="page-body">
 <div id="contenedor_carga">
-    <div id="cargaaa">  
+    <div id="cargaaa">
     </div>
 </div>
-<<<<<<< HEAD
-=======
 <body class="page-body">
     @include('sweet::alert')
->>>>>>> cd13a5705d5109545110693b0974a182ec56b2ec
     <div class="page-container" id="container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
 
         <div class="sidebar-menu">
@@ -535,6 +532,6 @@
         <script src="resources/js/main.js"></script>
         <!--loader -->
     <script src="{{ asset('neonFrontEnd/assets/js/loadd.js') }}"></script>
-       
+
 </body>
 </html>

@@ -58,9 +58,10 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </head>
-<div class="loadi" id="loadi">
-    <div class="preloadi">
-        <p>CARGANDO</p>
+
+<body class="page-body">
+<div id="contenedor_carga">
+    <div id="cargaaa">
     </div>
 </div>
 <body class="page-body">
@@ -531,7 +532,8 @@
     <!--===============================================================================================-->
         <script src="resources/js/main.js"></script>
         <!--loader -->
-        <script src="<?php echo e(asset('neonFrontEnd/assets/js/loadd.js')); ?>"></script>
+    <script src="<?php echo e(asset('neonFrontEnd/assets/js/loadd.js')); ?>"></script>
+
 </body>
 </html>
 <?php /**PATH C:\laragon\www\AppTransaccional-v4.2rc\resources\views/layouts/app.blade.php ENDPATH**/ ?>

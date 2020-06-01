@@ -94,21 +94,5 @@ endif; ?>
 
 </div>
 <?php $__env->stopSection(); ?>
-<?php $__env->startSection('Scripts'); ?>
-<script type="text/javascript">
-    var msg = '<?php echo e(Session::get('message')); ?>';
-    var exist = '<?php echo e(Session::has('message')); ?>';
-    if(exist){
-      alert(msg);
-    }
-</script>
-<script type="text/javascript">
-    var msg = '<?php echo e(Session::get('msj')); ?>';
-    var exist = '<?php echo e(Session::has('msj')); ?>';
-    if(exist){
-      alert(msg);
-    }
-</script>
-<?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\AppTransaccional-v4.2rc\resources\views/instahunters.blade.php ENDPATH**/ ?>
