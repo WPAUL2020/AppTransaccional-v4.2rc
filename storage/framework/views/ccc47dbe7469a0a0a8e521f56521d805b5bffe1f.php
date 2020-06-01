@@ -8,7 +8,7 @@
 
                 <div class="col-sm-9">
 
-                  <img src="Imagenes/gestionclientes.png">
+                  <img src="<?php echo e(asset('Imagenes/gestionclientes.png')); ?>">
 
                                 <ol class=" bc-3" >
                             <li>
@@ -135,13 +135,13 @@
     <span class="text-danger"><?php echo e($errors->first("ESTADO")); ?></span>
   </div>
   </div>
-  
+
   <div class="form-group lb">
     <label>Observaciones:</label>
     <textarea name="OBSERVACION" class="form-control" placeholder="Escribe tu Observación"></textarea>
     <span class="text-danger"><?php echo e($errors->first("OBSERVACION")); ?></span>
   </div>
-  
+
 
   <div class="form-row">
                     <div class="form-group">

@@ -9,7 +9,7 @@
 
 			<div class="col-sm-7">
 
-				<img src="Imagenes/zonatransaccional.png">
+				<img src="<?php echo e(asset('Imagenes/zonatransaccional.png')); ?>">
 
 							<ol class="bc-3" >
 						<li>
