@@ -1,4 +1,4 @@
-[2020-05-17 03:52:06] local.ERROR: syntax error, unexpected '}' {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected '}' at C:\\laragon\\www\\AppTransaccional-v4.2rc\\app\\Http\\Controllers\\instahuntersController.php:123)
+[2020-06-01 17:14:55] local.ERROR: syntax error, unexpected '}', expecting ';' {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected '}', expecting ';' at C:\\laragon\\www\\AppTransaccional-v4.2rc\\app\\Http\\Controllers\\instahuntersController.php:141)
 [stacktrace]
 #0 C:\\laragon\\www\\AppTransaccional-v4.2rc\\vendor\\composer\\ClassLoader.php(322): Composer\\Autoload\\includeFile('C:\\\\laragon\\\\www\\\\...')
 #1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Http\\\\Contro...')

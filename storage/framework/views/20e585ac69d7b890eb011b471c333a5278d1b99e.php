@@ -33,6 +33,7 @@
 
 </head>
 <body>
+	<!-- loader -->
 <div id="contenedor_carga">
 	<div id="cargaaa">	
 	</div>

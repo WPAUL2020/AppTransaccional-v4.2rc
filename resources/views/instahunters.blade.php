@@ -87,19 +87,3 @@
 
 </div>
 @endsection
-@section('Scripts')
-<script type="text/javascript">
-    var msg = '{{Session::get('message')}}';
-    var exist = '{{Session::has('message')}}';
-    if(exist){
-      alert(msg);
-    }
-</script>
-<script type="text/javascript">
-    var msg = '{{Session::get('msj')}}';
-    var exist = '{{Session::has('msj')}}';
-    if(exist){
-      alert(msg);
-    }
-</script>
-@endsection

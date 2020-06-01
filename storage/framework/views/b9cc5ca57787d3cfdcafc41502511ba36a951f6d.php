@@ -33,6 +33,11 @@
 
 </head>
 <body>
+<div class="loadi" id="loadi">
+	<div class="preloadi">
+		<p>CARGANDO</p>
+	</div>
+</div>
 
 <div class="wrap">
 
@@ -144,7 +149,7 @@
 					</div>
 
 					<!-- Slide 2 -->
-					<div class="slide" data-bg="<?php echo e(asset('Imagenes/logo.png')); ?>">
+					<div class="slide" data-bg="<?php echo e(asset('')); ?>">
 
 						<div class="slide-image">
 
@@ -299,14 +304,12 @@
 				<!-- Portfolio Item in Widget -->
 				<div class="portfolio-item">
 					<a href="portfolio-single.html" class="image">
-						<img src="<?php echo e(asset('imagenes/portfolio-thumb-1.png')); ?>" class="img-rounded" />
+						<img src="<?php echo e(asset('imagenes/banner.gif')); ?>" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>
 					<div class="busqueda">
 					<h4>
-						<a href="portfolio-single.html" class="like">
-							<i class="entypo-heart"></i>
-						</a>
+						
 
 						<a href="portfolio-single.html" class="name">Neon</a>
 					</h4>
@@ -319,53 +322,7 @@
 
 			</div>
 
-			<div class="col-sm-3">
-
-				<!-- Portfolio Item in Widget -->
-				<div class="portfolio-item">
-					<a href="portfolio-single.html" class="image">
-						<img src="<?php echo e(asset('imagenes/portfolio-thumb-2.png')); ?>" class="img-rounded" />
-						<span class="hover-zoom"></span>
-					</a>
-					<div class="busqueda">
-					<h4>
-						<a href="portfolio-single.html" class="like liked">
-							<i class="entypo-heart"></i>
-						</a>
-
-						<a href="portfolio-single.html" class="name">Motorola</a>
-					</h4>
-
-					<div class="categories">
-						<a href="portfolio-single.html">Photography</a>
-					</div>
-				</div>
-				</div>
-
-			</div>
-
-			<div class="col-sm-3">
-
-				<!-- Portfolio Item in Widget -->
-				<div class="portfolio-item">
-					<a href="portfolio-single.html" class="image">
-						<img src="<?php echo e(asset('imagenes/portfolio-thumb-3.png')); ?>" class="img-rounded" />
-						<span class="hover-zoom"></span>
-					</a>
-					<div class="busqueda">
-					<h4>
-						<a href="portfolio-single.html" class="like">
-							<i class="entypo-heart"></i>
-						</a>
-
-						<a href="portfolio-single.html" class="name">Dribbble</a>
-					</h4>
-
-					<div class="categories">
-						<a href="portfolio-single.html">UI Design</a>
-					</div>
-				</div>
-				</div>
+			
 
 			</div>
 
@@ -454,19 +411,19 @@
 					<div class="item active">
 
 						<a href="#">
-							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1.png')); ?>" />
+							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1-1.png')); ?>" />
 						</a>
 
 						<a href="#">
-							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1.png')); ?>" />
+							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1-2.png')); ?>" />
 						</a>
 
 						<a href="#">
-							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1.png')); ?>" />
+							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1-3.png')); ?>" />
 						</a>
 
 						<a href="#">
-							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1.png')); ?>" />
+							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1-4.png')); ?>" />
 						</a>
 
 					</div>
@@ -474,19 +431,19 @@
 					<div class="item">
 
 						<a href="#">
-							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1.png')); ?>" />
+							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1-5.png')); ?>" />
 						</a>
 
 						<a href="#">
-							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1.png')); ?>" />
+							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1-6.png')); ?>" />
 						</a>
 
 						<a href="#">
-							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1.png')); ?>" />
+							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1-7.png')); ?>" />
 						</a>
 
 						<a href="#">
-							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1.png')); ?>" />
+							<img src="<?php echo e(asset('neonFrontEnd/assets/images/client-logo-1-8.png')); ?>" />
 						</a>
 
 					</div>
@@ -514,7 +471,7 @@
                     </a>
 
                     <p>
-                        Institución educativa <br />
+                        Institución Educativa <br />
                         Universitaria de Colombia.
                     </p>
 
@@ -601,6 +558,8 @@
 
 	<!-- JavaScripts initializations and stuff -->
 	<script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-custom.js')); ?>"></script>
+	<!--loader -->
+	<script src="<?php echo e(asset('neonFrontEnd/assets/js/loadd.js')); ?>"></script>
 
 </body>
 </html>
