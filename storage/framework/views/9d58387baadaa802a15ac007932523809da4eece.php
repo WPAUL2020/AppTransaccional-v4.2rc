@@ -528,8 +528,7 @@
     <!--===============================================================================================-->
         <script src="resources/js/main.js"></script>
         <!--loader -->
-    <script src="<?php echo e(asset('neonFrontEnd/assets/js/loadd.js')); ?>"></script>
-       
+       <script src="<?php echo e(asset('neonFrontEnd/assets/js/loadd.js')); ?>"></script>
 </body>
 </html>
 <?php /**PATH C:\xampp\htdocs\git\AppTransaccional-v4.2rc\resources\views/layouts/app.blade.php ENDPATH**/ ?>
