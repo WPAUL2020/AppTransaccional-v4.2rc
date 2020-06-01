@@ -326,4 +326,10 @@ class instahuntersController extends Controller
         return $truncate;
     }
 
+    public function metodoQueNOSIRVE()
+    {
+        'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';
+    }
+
+
 }
