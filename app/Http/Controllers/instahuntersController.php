@@ -73,6 +73,7 @@ class instahuntersController extends Controller
     {
         if (Auth::check()){
             return view('instahunters');
+
         } else {
             return redirect('/login');
         }
@@ -120,19 +121,23 @@ class instahuntersController extends Controller
                 );
                 $data2view = json_decode($res->getBody()->getContents());
                 $this->truncateAndInsertHashtag($data2view);
-                return redirect('/instahuntersvista')->with('message', 'Su palabra a sido scrapeada satisfactoriamente!');
+                return redirect('/instahuntersvista');
             }
         } catch (ConnectException $th) {
             $th->getResponse();
-            return redirect()->back()->with('msj', 'OOPS!!!!!!!!! Algo a fallado con el servidor de raspado\r\n Por favor contacte al administrador');
+            alert()->error('Algo a fallado con el servidor de raspado
+            Por favor contacte al administrador', 'OOPS!')->persistent('Cerrar');
+            return redirect()->back();
         }
             catch(ServerException $e){
-                $error =  "Codigo de error: ". $e->getResponse()->getStatusCode();
-                return redirect()->back()->with('msj', 'OOPS!!!!!!!!! La palabra que intenta buscar no existe en la red social');
+                $e->getResponse()->getStatusCode();
+                alert()->error('La palabra que intenta buscar no existe en la red social', 'OOPS!')->persistent('Cerrar');
+                return redirect()->back();
             }
             catch(RequestException $e){
-                echo $e->getResponse();
-                return redirect()->back()->with('msj', 'OOPS!!!!!!!!! La palabra que intenta buscar no existe en la red social');
+                $e->getResponse();
+                alert()->error('La palabra que intenta buscar no existe en la red social', 'OOPS!')->persistent('Cerrar');
+                return redirect()->back();
             }
 
     }
