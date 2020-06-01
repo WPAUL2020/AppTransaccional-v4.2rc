@@ -50,7 +50,7 @@ class ClientesController extends Controller
 
     public function guardar(Request $clientes)
     {
-        $reglas_Validacion =["ID_SECTOR_EMPRESA_TERCERO"=>"required|min:1","NOMBRE"=>"required|min:3","DIRECCION"=>"required|min:3","TELEFONO"=>"required|numeric|min:3","PAIS"=>"required|min:3","CIUDAD"=>"required|min:3","CORREO" =>"unique:empresa_tercero,CORREO|required|min:3","WEBSITE"=>"required|min:3","NIT"=>"required|numeric|min:3","USUARIO" =>"unique:empresa_tercero,USUARIO|required|min:3","CONTRASENA"=>"required|min:3","ID_ROL"=>"required|min:1","ESTADO"=>"required|min:3","OBSERVACION"=>"required|min:3"];
+        $reglas_Validacion =["ID_SECTOR_EMPRESA_TERCERO"=>"required|min:1","NOMBRE"=>"required|min:3","DIRECCION"=>"required|min:3","TELEFONO"=>"required|numeric|min:3","CIUDAD"=>"required|min:3","CORREO" =>"unique:empresa_tercero,CORREO|required|min:3","WEBSITE"=>"required|min:3","NIT"=>"required|numeric|min:3","USUARIO" =>"unique:empresa_tercero,USUARIO|required|min:3","CONTRASENA"=>"required|min:3","ID_ROL"=>"required|min:1","ESTADO"=>"required|min:3"];
        $mensajes = ["required" => "Este campo es obligatorio", "alpha" => "Este campo solo permite Letras", "numeric" => "Este Campo Solo Permite Numeros",
             "min" => "Este Campo Debe Tener Minimo :min Digitos", "unique" => "Este Campo ya esta Registrado", "exists" => "Este Campo Debe Existir"];
        $this->validate($clientes, $reglas_Validacion, $mensajes);
@@ -61,7 +61,7 @@ class ClientesController extends Controller
        $clientes -> NOMBRE,
        $clientes -> DIRECCION,
        $clientes -> TELEFONO,
-       $clientes -> PAIS,
+       'COLOMBIA',
        $clientes -> CIUDAD,
        $clientes -> CORREO,
        $clientes -> WEBSITE,
