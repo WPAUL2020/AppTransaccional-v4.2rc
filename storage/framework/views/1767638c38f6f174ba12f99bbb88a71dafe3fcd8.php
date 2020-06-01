@@ -65,8 +65,7 @@
                         </div>
                 </form>
             </div>
-        </div>
-    </div>
+       
 </body>
 </html>
 <?php $__env->stopSection(); ?>
