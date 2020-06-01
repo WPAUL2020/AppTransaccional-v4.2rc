@@ -91,22 +91,20 @@ class EmpleadosInternoController extends Controller
 
    public function changeUser(Request $EmpleadosInterno,$ID_EMPLEADO_INTERNO)
    {
-    $reglas_Validacion =["DIRECCION" =>"required|min:3", "TELEFONO" =>"numeric|min:3", "CIUDAD" =>"required|min:3",
+/*     $reglas_Validacion =["DIRECCION" =>"required|min:3", "TELEFONO" =>"numeric|min:3", "CIUDAD" =>"required|min:3",
     "CORREO" =>"required|min:3", "TELEFONO_OFICINA" =>"numeric|min:3", "EXTENSION" =>"numeric|min:3",
     "ID_CARGO" =>"required|min:1", "ID_ROL" =>"required|min:1", "OBSERVACION" =>"required|min:3"];
    $mensajes = ["required" => "Este campo es obligatorio", "alpha" => "Este campo solo permite Letras", "numeric" => "Este Campo Solo Permite Numeros",
         "min" => "Este Campo Debe Tener Minimo :min Digitos", "unique" => "Este Campo ya esta Registrado", "exists" => "Este Campo Debe Existir"];
-       $this->validate($EmpleadosInterno, $reglas_Validacion, $mensajes);
+       $this->validate($EmpleadosInterno, $reglas_Validacion, $mensajes); */
        $EmpleadosInterno=EmpleadosInterno::find($ID_EMPLEADO_INTERNO);
        $EmpleadosInterno -> DIRECCION  = $_POST["DIRECCION"];
        $EmpleadosInterno -> TELEFONO = $_POST["TELEFONO"];
        $EmpleadosInterno -> CIUDAD = $_POST["CIUDAD"];
        $EmpleadosInterno -> CORREO = $_POST["CORREO"];
        $EmpleadosInterno -> TELEFONO_OFICINA = $_POST["TELEFONO_OFICINA"];
-       $EmpleadosInterno -> EXTENSION = $_POST["EXTENSION"];
        $EmpleadosInterno -> ID_CARGO = $_POST["ID_CARGO"];
        $EmpleadosInterno -> ID_ROL = $_POST["ID_ROL"];
-       $EmpleadosInterno -> OBSERVACION = $_POST["OBSERVACION"];
        $EmpleadosInterno->save();
        return redirect('/UsuariosInterno')->with("mensaje", "Usuario Actualizado correctamente");
        //return $id;
@@ -120,7 +118,8 @@ class EmpleadosInternoController extends Controller
            $roles = rol::all();
            $cargos = cargo::all();
            $TipoIdents = TipoIdent::all();
-       return view('GestUserIntEdit')->with(['roles'=>$roles, 'cargos'=>$cargos, 'TipoIdents'=>$TipoIdents, 'EmpleadosInterno' =>$EmpleadosInterno]);
+           $Ciudad = Ciudad::all();
+       return view('GestUserIntEdit')->with(['roles'=>$roles, 'cargos'=>$cargos, 'TipoIdents'=>$TipoIdents, 'EmpleadosInterno' =>$EmpleadosInterno, 'Ciudad'=>$Ciudad]);
    } else{
        return redirect('/GestUserIntVista');
         }

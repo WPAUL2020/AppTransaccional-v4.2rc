@@ -119,7 +119,8 @@ class ClientesController extends Controller
             $roles = rol::all();
             $rol = rol::all();
             $SectorEmpresa = SectorEmpresa::all();
-        return view('GestionClientesEdit')->with(['roles'=>$roles, 'rol'=>$rol, 'clientes' =>$clientes, 'SectorEmpresa'=>$SectorEmpresa]);
+            $Ciudad = Ciudad::all();
+        return view('GestionClientesEdit')->with(['roles'=>$roles, 'rol'=>$rol, 'clientes' =>$clientes, 'SectorEmpresa'=>$SectorEmpresa, 'Ciudad'=>$Ciudad]);
     } else{
         return redirect('/GestionClientes');
          }

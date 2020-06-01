@@ -52,9 +52,14 @@
 
   <div class="form-row">
     <div class="col">
-    <label>Ciudad:</label>
-    <input type="text" name="CIUDAD" class="form-control" placeholder="Ciudad" value={{ $EmpleadosTercero->CIUDAD}}>
-    <span class="text-danger">{{$errors->first("CIUDAD")}}</span>
+    <label for="">Ciudad:</label>
+        <select name="CIUDAD" id="ID_CIUDAD" class="form-control">
+        <option value="">--Escoje la ciudad--</option>
+            @foreach($Ciudad as $Ciudad)
+                <option value="{{$Ciudad->NOMBRE_CIUDAD}}">{{$Ciudad->NOMBRE_CIUDAD}}</option>
+            @endforeach
+        </select>
+        <span class="text-danger">{{$errors->first("CIUDAD")}}</span>
     </div>
     <div class="col">
     <label>Correo Electronico:</label>
