@@ -9,8 +9,8 @@
 
                 <div class="col-sm-9">
 
-                    <h1>Registrar Servicio</h1>
-
+                    <img src="<?php echo e(asset('Imagenes/crearservicios.png')); ?>">
+                    
                     <ol class=" bc-3" >
                             <li>
                     <a href="<?php echo e(URL::previous()); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>

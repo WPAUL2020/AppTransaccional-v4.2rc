@@ -56,6 +56,11 @@
 
 
 </head>
+<div class="loadi" id="loadi">
+    <div class="preloadi">
+        <p>CARGANDO</p>
+    </div>
+</div>
 <body class="page-body">
 
     <div class="page-container" id="container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
@@ -522,5 +527,7 @@
         <script src="vendor/select2/select2.min.js"></script>
     <!--===============================================================================================-->
         <script src="resources/js/main.js"></script>
+        <!--loader -->
+        <script src="{{ asset('neonFrontEnd/assets/js/loadd.js') }}"></script>
 </body>
 </html>

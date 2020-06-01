@@ -33,6 +33,11 @@
 
 </head>
 <body>
+<div class="loadi" id="loadi">
+	<div class="preloadi">
+		<p>CARGANDO</p>
+	</div>
+</div>
 
 <div class="wrap">
 
@@ -615,6 +620,8 @@
 
 	<!-- JavaScripts initializations and stuff -->
 	<script src="{{ asset('neonFrontEnd/assets/js/neon-custom.js') }}"></script>
+	<!--loader -->
+	<script src="{{ asset('neonFrontEnd/assets/js/loadd.js') }}"></script>
 
 </body>
 </html>
