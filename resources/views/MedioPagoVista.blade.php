@@ -11,7 +11,7 @@
 
                 <div class="col-sm-9">
 
-                    <img src="Imagenes/gestionmediosdepago.png">
+                <img src="{{asset('Imagenes/gestionmediosdepago.png')}}">
 
                     <ol class=" bc-3" >
                             <li>

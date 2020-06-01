@@ -11,7 +11,7 @@
 
                 <div class="col-sm-9">
 
-                    <img src="Imagenes/crearmediosdepago.png">
+                <img src="{{asset('Imagenes/crearmediosdepago.png')}}">
                     <ol class=" bc-3" >
                             <li>
                     <a href="{{URL::previous()}}"> <i class="fas fa-angle-left"></i> Regresar</a>

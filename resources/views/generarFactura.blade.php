@@ -9,7 +9,7 @@
 
                 <div class="col-sm-9">
 
-                    <img src="Imagenes/generarfactura.png">
+                <img src="{{asset('Imagenes/generarfactura.png')}}">
 
                                 <ol class=" bc-3" >
                             <li>
