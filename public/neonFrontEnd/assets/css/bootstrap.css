@@ -310,7 +310,7 @@ figure {
 }
 img {
   vertical-align: middle;
-  filter: drop-shadow(0 0 4px #FAFAFA);
+  /* filter: drop-shadow(0 0 4px #FAFAFA); */
 }
 .img-responsive,
 .thumbnail > img,
