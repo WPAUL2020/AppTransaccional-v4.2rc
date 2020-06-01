@@ -41,21 +41,18 @@
 	<link rel="stylesheet" href="<?php echo e(asset('neonFrontEnd/assets/css/neon-forms.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('neonFrontEnd/assets/css/custom.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('css/formulario.css')); ?>">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
     <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('/vendor/animate/animate.css')); ?>">
     <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('/vendor/select2/select2.min.css')); ?>">
     <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="/vendor/perfect-scrollbar/perfect-scrollbar.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('/vendor/perfect-scrollbar/perfect-scrollbar.css')); ?>">
     <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="css/util.css">
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        
 
     <!-- Scripts -->
     <script src="<?php echo e(asset('neonFrontEnd/assets/js/jquery-1.11.3.min.js')); ?>"></script>
-    <!-- Sweet Alert -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
 </head>
 
@@ -64,11 +61,6 @@
     <div id="cargaaa">  
     </div>
 </div>
-<<<<<<< HEAD
-=======
-<body class="page-body">
-    <?php echo $__env->make('sweet::alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
->>>>>>> cd13a5705d5109545110693b0974a182ec56b2ec
     <div class="page-container" id="container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
 
         <div class="sidebar-menu">
@@ -526,17 +518,13 @@
         <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-demo.js')); ?>"></script>
 
         <!--===============================================================================================-->
-	    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	    
     <!--===============================================================================================-->
-        <script src="vendor/bootstrap/js/popper.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="<?php echo e(asset('vendor/select2/select2.min.js')); ?>"></script>
     <!--===============================================================================================-->
-        <script src="vendor/select2/select2.min.js"></script>
-    <!--===============================================================================================-->
-        <script src="resources/js/main.js"></script>
+        
         <!--loader -->
-    <script src="<?php echo e(asset('neonFrontEnd/assets/js/loadd.js')); ?>"></script>
-       
+       <script src="<?php echo e(asset('neonFrontEnd/assets/js/loadd.js')); ?>"></script>
 </body>
 </html>
 <?php /**PATH C:\xampp\htdocs\AppTransaccional-v4.2rc\resources\views/layouts/app.blade.php ENDPATH**/ ?>
