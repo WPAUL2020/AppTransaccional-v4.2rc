@@ -14,7 +14,7 @@
 
                 <div class="col-sm-9">
 
-                    <h1>Registro de Usuarios</h1>
+                <img src="{{asset('Imagenes/empleadosinternoscrear.png')}}">
 
                     <ol class="bc-3" >
                             <li>
@@ -34,7 +34,7 @@
     <div class="container fondo_container">
       <div class="row">
               <div class="col-md-5">
-                  <h2 class="col" > R<span>EGISTRO DE </span>U<span>SUARIOS</span></h2>
+                  <h2 class="col" > R<span>EGISTRO DE </span>E<span>MPLEADOS INTERNOS</span></h2>
                   <div class="form-row">
               </div>
           </div>

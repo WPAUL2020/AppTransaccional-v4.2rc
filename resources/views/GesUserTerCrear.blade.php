@@ -11,14 +11,15 @@
 
                 <div class="col-sm-9">
 
-                    <h1>Registro de Usuarios Tercero</h1>
+                    
+                <img src="{{asset('Imagenes/empleadosexternoscrear.png')}}">
 
                     <ol class=" bc-3" >
                             <li>
                     <a href="{{URL::previous()}}"> <i class="fas fa-angle-left"></i> Regresar</a>
                 </li>
                     <li class="active">
-                                <strong>Registro de Usuarios Tercero</strong>
+                                <strong>Registro de Empleados Externos</strong>
                         </li>
                         </ol>
 
@@ -29,7 +30,7 @@
 <div class="container fondo_container">
     <div class="row">
             <div class="col-md-5">
-                <h2> REGISTRO DE USUARIOS</h2>
+                <h2> REGISTRO DE EMPLEADOS</h2>
                 <div class="form-row">
             </div>
         </div>

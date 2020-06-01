@@ -10,8 +10,8 @@
 
                 <div class="col-sm-9">
 
-                    <h1>Gestion de Servicios</h1>
-
+                    <img src="{{asset('Imagenes/serviciosvista.png')}}">
+                    
                     <ol class=" bc-3" >
                             <li>
                     <a href="{{URL::to('appl')}}"> <i class="fas fa-angle-left"></i> Regresar</a>

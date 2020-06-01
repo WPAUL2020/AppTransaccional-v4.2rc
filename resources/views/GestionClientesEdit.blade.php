@@ -10,7 +10,7 @@
 
                 <div class="col-sm-9">
 
-                    <h1>Editar Empresa</h1>
+                    <img src="{{asset('Imagenes/editarempresa.png')}}">
 
                     <ol class=" bc-3" >
                             <li>

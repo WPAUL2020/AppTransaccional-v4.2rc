@@ -12,7 +12,7 @@
 
                 <div class="col-sm-9">
 
-                    <h1>Editar Usuarios Tercero</h1>
+                    <img src="{{asset('Imagenes/editarempleadosext.png')}}">
 
                     <ol class=" bc-3" >
                             <li>

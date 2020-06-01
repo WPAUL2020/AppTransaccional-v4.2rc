@@ -10,7 +10,7 @@
 
 			<div class="col-sm-7">
 
-				<img src="Imagenes/zonatransaccional.png">
+				<img src="{{asset('Imagenes/zonatransaccional.png')}}">
 
 							<ol class="bc-3" >
 						<li>
@@ -44,7 +44,7 @@
 
 				<div class="portfolio-item">
 					<a href="{{URL::to('UsuariosTercero')}}" class="image">
-						<img src="{{ asset('Imagenes/GestiondeUsuariosExternosFinal.png')}}" class="img-rounded" />
+						<img src="{{asset('Imagenes/GestiondeUsuariosExternosFinal.png')}}" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>
 

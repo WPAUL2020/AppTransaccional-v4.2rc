@@ -9,7 +9,7 @@
 
                 <div class="col-sm-9">
 
-                    <h1>Gestion Medios de Pago</h1>
+                <img src="<?php echo e(asset('Imagenes/gestionmediosdepago.png')); ?>">
 
                     <ol class=" bc-3" >
                             <li>
