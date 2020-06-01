@@ -9,7 +9,7 @@
 
                 <div class="col-sm-9">
 
-                    <img src="Imagenes/instahunters.png">
+                <img src="<?php echo e(asset('Imagenes/instahunters.png')); ?>">
 
                     <ol class="bc-3">
                             <li>
@@ -29,7 +29,7 @@
         <div class="col-md-8 aliniar">
             <div class="card">
                 <div class="card-header1 text-center display-4">
-                    <img src="Imagenes/Instahunterss.gif">
+                <img src="<?php echo e(asset('Imagenes/Instahunterss.gif')); ?>">
                 </div>
 
                 <div class="card-body display-4">

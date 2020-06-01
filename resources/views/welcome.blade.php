@@ -33,9 +33,9 @@
 
 </head>
 <body>
-<div class="loadi" id="loadi">
-	<div class="preloadi">
-		<p>CARGANDO</p>
+	<!-- loader -->
+<div id="contenedor_carga">
+	<div id="cargaaa">	
 	</div>
 </div>
 
@@ -299,7 +299,7 @@
 
 			</div>
 
-			<div class="col-sm-3">
+			<div class="col-sm-9">
 
 				<!-- Portfolio Item in Widget -->
 				<div class="portfolio-item">
