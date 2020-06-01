@@ -8,7 +8,7 @@
 
                 <div class="col-sm-9">
 
-                    <img src="Imagenes/crearproductos.png">
+                    <img src="<?php echo e(asset('Imagenes/crearproductos.png')); ?>">
 
                                 <ol class=" bc-3" >
                             <li>
