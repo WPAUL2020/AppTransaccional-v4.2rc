@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
 <head>
     <!---Meta-->
@@ -61,10 +62,7 @@
 </head>
 
 <body class="page-body">
-<div id="contenedor_carga">
-    <div id="cargaaa">
-    </div>
-</div>
+
     <div class="page-container" id="container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
 <?php echo $__env->make('sweet::alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <div class="sidebar-menu">

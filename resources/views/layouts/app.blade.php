@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<div id="contenedor_carga">
+    <div id="cargaaa">
+    </div>
+</div>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <!---Meta-->
@@ -61,10 +65,7 @@
 </head>
 
 <body class="page-body">
-<div id="contenedor_carga">
-    <div id="cargaaa">
-    </div>
-</div>
+
     <div class="page-container" id="container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
 @include('sweet::alert')
         <div class="sidebar-menu">

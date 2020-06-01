@@ -1,5 +1,10 @@
 <!DOCTYPE html>
+<div id="contenedor_carga">
+	<div id="cargaaa">	
+	</div>
+</div>
 <html lang="en">
+
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -34,10 +39,7 @@
 </head>
 <body>
 	<!-- loader -->
-<div id="contenedor_carga">
-	<div id="cargaaa">	
-	</div>
-</div>
+
 
 <div class="wrap">
 
