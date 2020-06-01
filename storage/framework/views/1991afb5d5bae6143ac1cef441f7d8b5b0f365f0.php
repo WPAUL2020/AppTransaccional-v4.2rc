@@ -33,6 +33,11 @@
 
 </head>
 <body>
+	<!-- loader -->
+<div id="contenedor_carga">
+	<div id="cargaaa">	
+	</div>
+</div>
 
 <div class="wrap">
 
@@ -294,7 +299,7 @@
 
 			</div>
 
-			<div class="col-sm-3">
+			<div class="col-sm-9">
 
 				<!-- Portfolio Item in Widget -->
 				<div class="portfolio-item">
@@ -553,6 +558,8 @@
 
 	<!-- JavaScripts initializations and stuff -->
 	<script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-custom.js')); ?>"></script>
+	<!--loader -->
+	<script src="<?php echo e(asset('neonFrontEnd/assets/js/loadd.js')); ?>"></script>
 
 </body>
 </html>
