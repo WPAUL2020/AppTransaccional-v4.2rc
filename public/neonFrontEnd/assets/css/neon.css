@@ -30,7 +30,9 @@
 
 
 #contenedor_carga{
-  background:radial-gradient(circle, #01984bd1, #000000c9);
+  background-image: url('../images/fondo.jpg');
+  background-size: 100% 100%;
+  background-attachment: fixed;
   height: 100%;
   width: 100%;
   position: fixed;
