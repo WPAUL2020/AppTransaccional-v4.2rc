@@ -125,7 +125,7 @@ class instahuntersController extends Controller
             }
         } catch (ConnectException $th) {
             $th->getResponse();
-            alert()->error('Algo a fallado con el servidor de raspado
+            alert()->error('Algo a fallado con el servidor de Web Scarping,
             Por favor contacte al administrador', 'OOPS!')->persistent('Cerrar');
             return redirect()->back();
         }
