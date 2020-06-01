@@ -41,6 +41,7 @@
 	<link rel="stylesheet" href="{{ asset('neonFrontEnd/assets/css/neon-forms.css') }}">
     <link rel="stylesheet" href="{{ asset('neonFrontEnd/assets/css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('css/formulario.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('/vendor/animate/animate.css')}}">
     <!--===============================================================================================-->
@@ -53,17 +54,19 @@
 
     <!-- Scripts -->
     <script src="{{ asset('neonFrontEnd/assets/js/jquery-1.11.3.min.js') }}"></script>
+    <!-- Sweet Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
 </head>
 
 <body class="page-body">
 <div id="contenedor_carga">
-    <div id="cargaaa">  
+    <div id="cargaaa">
     </div>
 </div>
     <div class="page-container" id="container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
-
+@include('sweet::alert')
         <div class="sidebar-menu">
 
             <div class="sidebar-menu-inner">

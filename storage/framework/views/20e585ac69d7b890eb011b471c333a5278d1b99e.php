@@ -299,7 +299,7 @@
 
 			</div>
 
-			<div class="col-sm-9">
+			<div class="col-sm-8">
 
 				<!-- Portfolio Item in Widget -->
 				<div class="portfolio-item">
