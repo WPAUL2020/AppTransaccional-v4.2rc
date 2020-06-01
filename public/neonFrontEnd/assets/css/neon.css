@@ -29,59 +29,37 @@
 }
 
 
-/*preloader*/
-
-.loadi{
-  position: absolute;
-  background: #000000;
-  color: #FAFAFA;
+#contenedor_carga{
+  background:radial-gradient(circle, #00105fcc, #00311bc9);
+  height: 100%;
   width: 100%;
-  min-height: 100vh;
-
-  display: flex;
+  position: fixed;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  z-index: 10000;
 }
-.preloadi{
+#cargaaa{
+  border: 15px solid #FAFAFA;
+  border-top-color: #a1ecaa;
+  border-top-style: groove;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   margin: auto;
-
-  width: 350px;
-  height: 30px;
-  background: rgba(255,255,255,0.1);
-
-  position: relative;
+  -webkit-animation: girar 1.5s linear infinite;
+  -o-animation: girar 1.5s linear infinite;
+  animation:  girar 1.5s linear infinite;  
 }
-
-.preloadi:before{
-  content: "";
-  position: absolute;
-  background: green;
-  width: 0;
-  height: 30px;
-
-  animation: preloader 10s infinite;
-
-}
-
-.preloadi p{
-  margin: 0;
-  line-height: 30px;
-  font-size: 25px;
-  font-weight: bold;
-
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-
-@keyframes preloader{
-  90%{
-    width: 100%;
-    opacity: 1;
-  }
-  100%{
-    width: 100%;
-    opacity: 0;
-  }
+@keyframes girar{
+  from { transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
 }
 
 

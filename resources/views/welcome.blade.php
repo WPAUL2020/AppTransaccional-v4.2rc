@@ -1,5 +1,10 @@
 <!DOCTYPE html>
+<div id="contenedor_carga">
+	<div id="cargaaa">	
+	</div>
+</div>
 <html lang="en">
+
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -33,11 +38,8 @@
 
 </head>
 <body>
-<div class="loadi" id="loadi">
-	<div class="preloadi">
-		<p>CARGANDO</p>
-	</div>
-</div>
+	<!-- loader -->
+
 
 <div class="wrap">
 
@@ -299,7 +301,7 @@
 
 			</div>
 
-			<div class="col-sm-3">
+			<div class="col-sm-8">
 
 				<!-- Portfolio Item in Widget -->
 				<div class="portfolio-item">

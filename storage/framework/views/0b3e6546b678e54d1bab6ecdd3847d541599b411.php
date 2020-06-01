@@ -41,6 +41,7 @@
 	<link rel="stylesheet" href="<?php echo e(asset('neonFrontEnd/assets/css/neon-forms.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('neonFrontEnd/assets/css/custom.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('css/formulario.css')); ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
     <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
     <!--===============================================================================================-->
@@ -53,13 +54,19 @@
 
     <!-- Scripts -->
     <script src="<?php echo e(asset('neonFrontEnd/assets/js/jquery-1.11.3.min.js')); ?>"></script>
+    <!-- Sweet Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
 </head>
+
 <body class="page-body">
-
+<div id="contenedor_carga">
+    <div id="cargaaa">
+    </div>
+</div>
     <div class="page-container" id="container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
-
+<?php echo $__env->make('sweet::alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <div class="sidebar-menu">
 
             <div class="sidebar-menu-inner">
@@ -523,6 +530,8 @@
         <script src="vendor/select2/select2.min.js"></script>
     <!--===============================================================================================-->
         <script src="resources/js/main.js"></script>
+        <!--loader -->
+       <script src="<?php echo e(asset('neonFrontEnd/assets/js/loadd.js')); ?>"></script>
 </body>
 </html>
 <?php /**PATH C:\laragon\www\AppTransaccional-v4.2rc\resources\views/layouts/app.blade.php ENDPATH**/ ?>

@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<div id="contenedor_carga">
+    <div id="cargaaa">
+    </div>
+</div>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <!---Meta-->
@@ -41,30 +45,29 @@
 	<link rel="stylesheet" href="{{ asset('neonFrontEnd/assets/css/neon-forms.css') }}">
     <link rel="stylesheet" href="{{ asset('neonFrontEnd/assets/css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('css/formulario.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
     <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/vendor/animate/animate.css')}}">
     <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('/vendor/select2/select2.min.css')}}">
     <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="/vendor/perfect-scrollbar/perfect-scrollbar.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('/vendor/perfect-scrollbar/perfect-scrollbar.css')}}">
     <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="css/util.css">
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        {{-- <link rel="stylesheet" type="text/css" href="{{ asset('/css/util.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('/css/main.css')}}"> --}}
 
     <!-- Scripts -->
     <script src="{{ asset('neonFrontEnd/assets/js/jquery-1.11.3.min.js') }}"></script>
+    <!-- Sweet Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
 </head>
-<div class="loadi" id="loadi">
-    <div class="preloadi">
-        <p>CARGANDO</p>
-    </div>
-</div>
+
 <body class="page-body">
 
     <div class="page-container" id="container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
-
+@include('sweet::alert')
         <div class="sidebar-menu">
 
             <div class="sidebar-menu-inner">
@@ -519,15 +522,15 @@
         <script src="{{ asset('neonFrontEnd/assets/js/neon-demo.js') }}"></script>
 
         <!--===============================================================================================-->
-	    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	    {{-- <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
     <!--===============================================================================================-->
         <script src="vendor/bootstrap/js/popper.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script> --}}
     <!--===============================================================================================-->
-        <script src="vendor/select2/select2.min.js"></script>
+        <script src="{{asset('vendor/select2/select2.min.js')}}"></script>
     <!--===============================================================================================-->
-        <script src="resources/js/main.js"></script>
+        {{-- <script src="resources/js/main.js"></script> --}}
         <!--loader -->
-        <script src="{{ asset('neonFrontEnd/assets/js/loadd.js') }}"></script>
+       <script src="{{ asset('neonFrontEnd/assets/js/loadd.js') }}"></script>
 </body>
 </html>
