@@ -10,7 +10,7 @@
 
                 <div class="col-sm-9">
 
-                    <img src="Imagenes/crearsectorempresa.png">
+                <img src="{{asset('Imagenes/crearsectorempresa.png')}}">
 
                     <ol class=" bc-3" >
                             <li>

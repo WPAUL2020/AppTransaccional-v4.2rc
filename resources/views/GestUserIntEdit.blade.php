@@ -11,7 +11,7 @@
 
                 <div class="col-sm-9">
 
-                    <h1>Editar Usuarios</h1>
+                    <img src="{{asset('Imagenes/editarempleadosint.png')}}">
 
                     <ol class=" bc-3" >
                             <li>
@@ -29,7 +29,7 @@
         <div class="container fondo_container">
                         <div class="row">
                             <div class="col-md-5">
-                                <h2> EDITAR USUARIO: {{$EmpleadosInterno->NOMBRE}}</h2>
+                                <h2> EDITAR EMPLEADO: {{$EmpleadosInterno->NOMBRE}}</h2>
                                 <div class="form-row">
                             </div>
                         </div>

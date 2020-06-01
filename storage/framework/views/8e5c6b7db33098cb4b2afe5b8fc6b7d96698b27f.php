@@ -8,7 +8,7 @@
 
                 <div class="col-sm-9">
 
-                    <h1>Registro De Cargos</h1>
+                    <img src="<?php echo e(asset('Imagenes/crearcargo.png')); ?>">
 
                                 <ol class=" bc-3" >
                             <li>

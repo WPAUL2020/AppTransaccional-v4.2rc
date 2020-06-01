@@ -11,7 +11,7 @@
 
                 <div class="col-sm-9">
 
-                    <img src="Imagenes/gestionsectorempresa.png">
+                <img src="{{asset('Imagenes/gestionsectorempresa.png')}}">
 
                     <ol class=" bc-3" >
                             <li>

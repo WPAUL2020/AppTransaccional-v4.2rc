@@ -101,7 +101,7 @@
                         </a>
 
                     </li>
-
+                    <?php if(Auth::user()->authorizeRoles1('ADMINISTRADOR') or Auth::user()->authorizeRoles1('SUPERVISOR EXTERNO')): ?>
                     <li class="has-sub">
                         <a href="<?php echo e(URL::to('UsuariosTercero')); ?>">
                             <i class="entypo-users"></i>
@@ -122,6 +122,7 @@
                             </li>
                         </ul>
                     </li>
+                    <?php endif; ?>
                     <?php if(Auth::user()->authorizeRoles1('ADMINISTRADOR')): ?>
                     <li class="has-sub">
                         <a href="<?php echo e(URL::to('UsuariosInterno')); ?>">
@@ -413,7 +414,7 @@
                 </a>
 
                 <p>
-                    Institución educativa <br />
+                    Institución Educativa <br />
                     Universitaria de Colombia.
                 </p>
 
@@ -456,7 +457,7 @@
 
             <div class="col-sm-6">
                 © 2020 Copyright:
-                <a href="https://universitariadecolombia.edu.co/programas/profesionales/ingenieria-de-sistemas/"> Semillero Ingenieria de Sistemas, Institución Universitaria de Colombia. </a>
+                <a href="https://universitariadecolombia.edu.co/programas/profesionales/ingenieria-de-sistemas/"> Semillero Ingenieria de Sistemas, Institución Educativa Universitaria de Colombia. </a>
 
             </div>
 

@@ -9,7 +9,7 @@
 
                 <div class="col-sm-9">
 
-                    <img src="Imagenes/empleadosinternos.png">
+                <img src="<?php echo e(asset('Imagenes/empleadosinternos.png')); ?>">
 
                     <ol class=" bc-3" >
                             <li>
