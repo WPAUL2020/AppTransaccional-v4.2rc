@@ -13,7 +13,7 @@
 
                     <ol class="bc-3">
                             <li>
-                    <a href="<?php echo e(URL::to('appl2')); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
+                    <a href="<?php echo e(URL::to('appl')); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
                 </li>
                     <li class="active">
                                 <strong>InstaHunters</strong>

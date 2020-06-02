@@ -109,7 +109,7 @@
                         <input type="submit" value="Guardar" class="btn btn-primary">
                         <a class="btn btn-secondary" href="<?php echo e(URL::to('UsuariosTercero')); ?>">Regresar</a>
                     </div>
-
+</div>
 </form>
 </div>
 </body>
