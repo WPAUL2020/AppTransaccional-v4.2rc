@@ -110,7 +110,7 @@
                         <input type="submit" value="Guardar" class="btn btn-primary">
                         <a class="btn btn-secondary" href="{{URL::to('UsuariosTercero')}}">Regresar</a>
                     </div>
-
+</div>
 </form>
 </div>
 </body>
