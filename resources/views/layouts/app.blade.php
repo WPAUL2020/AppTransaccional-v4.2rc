@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<div id="contenedor_carga">
-    <div id="cargaaa">
-    </div>
-</div>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <!---Meta-->
@@ -530,7 +526,6 @@
         <script src="{{asset('vendor/select2/select2.min.js')}}"></script>
     <!--===============================================================================================-->
         {{-- <script src="resources/js/main.js"></script> --}}
-        <!--loader -->
-       <script src="{{ asset('neonFrontEnd/assets/js/loadd.js') }}"></script>
+        
 </body>
 </html>

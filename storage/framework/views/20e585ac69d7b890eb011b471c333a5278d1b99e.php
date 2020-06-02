@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<div id="contenedor_carga">
-	<div id="cargaaa">	
-	</div>
-</div>
+
 <html lang="en">
 
 <head>
@@ -39,7 +36,10 @@
 </head>
 <body>
 	<!-- loader -->
-
+<div id="contenedor_carga">
+	<div id="cargaaa">	
+	</div>
+</div>
 
 <div class="wrap">
 
@@ -562,7 +562,7 @@
 	<script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-custom.js')); ?>"></script>
 	<!--loader -->
 	<script src="<?php echo e(asset('neonFrontEnd/assets/js/loadd.js')); ?>"></script>
-
+	
 </body>
 </html>
 <?php /**PATH C:\xampp\htdocs\git\AppTransaccional-v4.2rc\resources\views/welcome.blade.php ENDPATH**/ ?>

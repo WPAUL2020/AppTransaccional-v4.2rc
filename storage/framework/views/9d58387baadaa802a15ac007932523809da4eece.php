@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-
+<div id="contenedor_carga">
+    <div id="cargaaa">
+    </div>
+</div>
 <html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
 <head>
     <!---Meta-->
@@ -44,14 +47,13 @@
     <link rel="stylesheet" href="<?php echo e(asset('css/formulario.css')); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
     <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('/vendor/animate/animate.css')); ?>">
     <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('/vendor/select2/select2.min.css')); ?>">
     <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="/vendor/perfect-scrollbar/perfect-scrollbar.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('/vendor/perfect-scrollbar/perfect-scrollbar.css')); ?>">
     <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="css/util.css">
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        
 
     <!-- Scripts -->
     <script src="<?php echo e(asset('neonFrontEnd/assets/js/jquery-1.11.3.min.js')); ?>"></script>
@@ -520,14 +522,11 @@
         <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-demo.js')); ?>"></script>
 
         <!--===============================================================================================-->
-	    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	    
     <!--===============================================================================================-->
-        <script src="vendor/bootstrap/js/popper.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="<?php echo e(asset('vendor/select2/select2.min.js')); ?>"></script>
     <!--===============================================================================================-->
-        <script src="vendor/select2/select2.min.js"></script>
-    <!--===============================================================================================-->
-        <script src="resources/js/main.js"></script>
+        
         <!--loader -->
        <script src="<?php echo e(asset('neonFrontEnd/assets/js/loadd.js')); ?>"></script>
 </body>
