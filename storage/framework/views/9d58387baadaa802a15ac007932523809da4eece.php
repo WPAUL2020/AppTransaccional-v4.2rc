@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<div id="contenedor_carga">
-    <div id="cargaaa">
-    </div>
-</div>
 <html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
 <head>
     <!---Meta-->
@@ -527,8 +523,7 @@
         <script src="<?php echo e(asset('vendor/select2/select2.min.js')); ?>"></script>
     <!--===============================================================================================-->
         
-        <!--loader -->
-       <script src="<?php echo e(asset('neonFrontEnd/assets/js/loadd.js')); ?>"></script>
+        
 </body>
 </html>
 <?php /**PATH C:\xampp\htdocs\git\AppTransaccional-v4.2rc\resources\views/layouts/app.blade.php ENDPATH**/ ?>
