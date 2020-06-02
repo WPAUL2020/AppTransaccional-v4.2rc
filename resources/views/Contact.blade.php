@@ -4,6 +4,9 @@
 
 <!DOCTYPE html>
 <div class="wrap">
+<head>
+    <meta charset="UTF-8">
+</head>
 
 <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
@@ -55,7 +58,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 					</div>
 
 					<div class="form-group">
-						<textarea class="form-control" name="message" placeholder="Mensaje:" rows="6"></textarea>
+						<textarea class="form-control" name="mensaje" placeholder="Mensaje:" rows="6"></textarea>
 					</div>
 
 					<div class="form-group text-right">

@@ -41,25 +41,28 @@
 	<link rel="stylesheet" href="<?php echo e(asset('neonFrontEnd/assets/css/neon-forms.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('neonFrontEnd/assets/css/custom.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('css/formulario.css')); ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
     <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('/vendor/animate/animate.css')); ?>">
     <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('/vendor/select2/select2.min.css')); ?>">
     <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="/vendor/perfect-scrollbar/perfect-scrollbar.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('/vendor/perfect-scrollbar/perfect-scrollbar.css')); ?>">
     <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href="css/util.css">
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        
 
     <!-- Scripts -->
     <script src="<?php echo e(asset('neonFrontEnd/assets/js/jquery-1.11.3.min.js')); ?>"></script>
+    <!-- Sweet Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
 </head>
+
 <body class="page-body">
 
     <div class="page-container" id="container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
-
+<?php echo $__env->make('sweet::alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <div class="sidebar-menu">
 
             <div class="sidebar-menu-inner">
@@ -515,14 +518,12 @@
         <script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-demo.js')); ?>"></script>
 
         <!--===============================================================================================-->
-	    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	    
     <!--===============================================================================================-->
-        <script src="vendor/bootstrap/js/popper.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="<?php echo e(asset('vendor/select2/select2.min.js')); ?>"></script>
     <!--===============================================================================================-->
-        <script src="vendor/select2/select2.min.js"></script>
-    <!--===============================================================================================-->
-        <script src="resources/js/main.js"></script>
+        
+        
 </body>
 </html>
 <?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/AppTransaccional-v4.2rc/resources/views/layouts/app.blade.php ENDPATH**/ ?>

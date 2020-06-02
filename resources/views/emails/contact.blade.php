@@ -8,11 +8,8 @@
 <body>
     <p style="color:blue;"><center>Solicitud de Informaciòn</center></p>
     <br>
-    <p><strong>Nombre Completo:  </strong>{!!$nombre!!}</p>
-    <p><strong>Numero Telefonico:  </strong>{!!$phone!!}</p>
-    <p><strong>Ciudad:  </strong>{!!$Ciudad!!}</p>
+    <p><strong>Nombre Completo:  </strong>{!!$name!!}</p>
     <p><strong>email:  </strong>{!!$email!!}</p>
-    <p><strong>Asunto:  </strong>{!!$Asunto!!}</p>
     <p><strong>Mensaje:  </strong>{!!$mensaje!!}</p>
 
 </body>
