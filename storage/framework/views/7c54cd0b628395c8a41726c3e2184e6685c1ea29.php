@@ -8,8 +8,8 @@
 
                 <div class="col-sm-9">
 
-                    <h1>Gestion de Servicios</h1>
-
+                    <img src="<?php echo e(asset('Imagenes/serviciosvista.png')); ?>">
+                    
                     <ol class=" bc-3" >
                             <li>
                     <a href="<?php echo e(URL::to('appl')); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>

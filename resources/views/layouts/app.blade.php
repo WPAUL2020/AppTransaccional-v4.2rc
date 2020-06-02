@@ -343,11 +343,11 @@
                                                 <span>Inicio</span>
                                             </a>
                                         </li>
-                                        <li>
+                                        {{-- <li>
                                             <a href="{{URL::to('Servicios')}}">
                                                 <span>Sevicios</span>
                                             </a>
-                                        </li>
+                                        </li> --}}
                                         <li>
                                             <a href="{{URL::to('Contact')}}">
                                                 <span>Contactenos</span>
@@ -427,7 +427,7 @@
 
                 <h5>Sede Administrativa:</h5>
                 <p>
-                    Carrera 7 No. 35-85 <br />
+                    Carrera 7 No. 36-85 <br />
                     Bogotá, COL
                 </p>
 
@@ -526,6 +526,8 @@
         <script src="{{asset('vendor/select2/select2.min.js')}}"></script>
     <!--===============================================================================================-->
         {{-- <script src="resources/js/main.js"></script> --}}
+        
+
         
 </body>
 </html>

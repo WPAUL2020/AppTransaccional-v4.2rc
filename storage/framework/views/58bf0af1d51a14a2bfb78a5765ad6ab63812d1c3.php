@@ -3,28 +3,10 @@
 <!DOCTYPE html>
 <div class="wrap">
 
-<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false"></script>
-<script type="text/javascript">
-function initialize()
-{
-	var mapDiv = document.getElementById('map');
-	var map = new google.maps.Map(mapDiv, {
-		center: new google.maps.LatLng(48.856614, 2.352222),
-		zoom: 13,
-		mapTypeId: google.maps.MapTypeId.ROADMAP,
-		scrollwheel: false
-	});
-
-	new google.maps.Marker({
-		position: new google.maps.LatLng(48.856614, 2.352222),
-		map: map
-	});
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
-
-<section class="contact-map" id="map"></section>
+	
+<section class="contact-map" id="">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.834741073322!2d-74.06627142884011!3d4.623556084072932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMzcnMjMuMiJOIDc0wrAwMyc1OS4xIlc!5e0!3m2!1ses!2sco!4v1591115545896!5m2!1ses!2sco" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</section>
 
 
 <section class="contact-container">

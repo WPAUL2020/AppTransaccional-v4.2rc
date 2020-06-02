@@ -41,6 +41,7 @@
 	<link rel="stylesheet" href="<?php echo e(asset('neonFrontEnd/assets/css/neon-forms.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('neonFrontEnd/assets/css/custom.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('css/formulario.css')); ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('/vendor/animate/animate.css')); ?>">
     <!--===============================================================================================-->
@@ -52,17 +53,16 @@
 
     <!-- Scripts -->
     <script src="<?php echo e(asset('neonFrontEnd/assets/js/jquery-1.11.3.min.js')); ?>"></script>
+    <!-- Sweet Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
 </head>
 
 <body class="page-body">
-<div id="contenedor_carga">
-    <div id="cargaaa">  
-    </div>
-</div>
-    <div class="page-container" id="container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
 
+    <div class="page-container" id="container"><!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
+<?php echo $__env->make('sweet::alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
         <div class="sidebar-menu">
 
             <div class="sidebar-menu-inner">
@@ -342,11 +342,7 @@
                                                 <span>Inicio</span>
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="<?php echo e(URL::to('Servicios')); ?>">
-                                                <span>Sevicios</span>
-                                            </a>
-                                        </li>
+                                        
                                         <li>
                                             <a href="<?php echo e(URL::to('Contact')); ?>">
                                                 <span>Contactenos</span>
@@ -427,7 +423,7 @@
 
                 <h5>Sede Administrativa:</h5>
                 <p>
-                    Carrera 7 No. 35-85 <br />
+                    Carrera 7 No. 36-85 <br />
                     Bogotá, COL
                 </p>
 
@@ -523,8 +519,9 @@
         <script src="<?php echo e(asset('vendor/select2/select2.min.js')); ?>"></script>
     <!--===============================================================================================-->
         
-        <!--loader -->
-       <script src="<?php echo e(asset('neonFrontEnd/assets/js/loadd.js')); ?>"></script>
+        
+
+        
 </body>
 </html>
 <?php /**PATH C:\xampp\htdocs\AppTransaccional-v4.2rc\resources\views/layouts/app.blade.php ENDPATH**/ ?>
