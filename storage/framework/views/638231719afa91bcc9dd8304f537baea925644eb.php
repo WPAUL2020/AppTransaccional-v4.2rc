@@ -66,7 +66,7 @@
                             </li>
                             <li>
                                 <a href="about.html">
-                                    <span>Acerca de Big Data</span>
+                                    <span>Que es WebScraping</span>
                                 </a>
                             </li>
                             
@@ -284,7 +284,7 @@
 
 				<div class="portfolio-info">
 					<h3>
-						<a href="#">Portfolio</a>
+						<a href="#">Portafolio</a>
 					</h3>
 
 					<p>Además de analizar a tu competencia, el scrapeo te permite descubrir posibles nichos en el mercado, conocer las categorías que funcionan mejor en tu tienda online o escoger la imagen destacada que quieras mostrar.</p>
@@ -305,7 +305,7 @@
 
 			</div>
 
-			
+
 
 			</div>
 
@@ -541,8 +541,8 @@
 
 	<!-- JavaScripts initializations and stuff -->
 	<script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-custom.js')); ?>"></script>
-	
-	
+
+
 </body>
 </html>
 <?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/AppTransaccional-v4.2rc/resources/views/welcome.blade.php ENDPATH**/ ?>
