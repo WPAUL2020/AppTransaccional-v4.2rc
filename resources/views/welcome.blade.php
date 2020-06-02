@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<div id="contenedor_carga">
-	<div id="cargaaa">	
-	</div>
-</div>
+
 <html lang="en">
 
 <head>
@@ -38,8 +35,6 @@
 
 </head>
 <body>
-	<!-- loader -->
-
 
 <div class="wrap">
 
@@ -574,8 +569,7 @@
 
 	<!-- JavaScripts initializations and stuff -->
 	<script src="{{ asset('neonFrontEnd/assets/js/neon-custom.js') }}"></script>
-	<!--loader -->
-	<script src="{{ asset('neonFrontEnd/assets/js/loadd.js') }}"></script>
-
+	
+	
 </body>
 </html>
