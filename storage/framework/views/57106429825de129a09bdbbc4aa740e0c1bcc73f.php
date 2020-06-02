@@ -8,11 +8,8 @@
 <body>
     <p style="color:blue;"><center>Solicitud de Informaciòn</center></p>
     <br>
-    <p><strong>Nombre Completo:  </strong><?php echo $nombre; ?></p>
-    <p><strong>Numero Telefonico:  </strong><?php echo $phone; ?></p>
-    <p><strong>Ciudad:  </strong><?php echo $Ciudad; ?></p>
+    <p><strong>Nombre Completo:  </strong><?php echo $name; ?></p>
     <p><strong>email:  </strong><?php echo $email; ?></p>
-    <p><strong>Asunto:  </strong><?php echo $Asunto; ?></p>
     <p><strong>Mensaje:  </strong><?php echo $mensaje; ?></p>
 
 </body>

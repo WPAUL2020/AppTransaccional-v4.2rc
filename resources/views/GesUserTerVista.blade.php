@@ -45,7 +45,7 @@
                    @foreach($empleados as $users1)
                    <tr class="row100">
                        <td>{{ $users1->NOMBRE}}</td>
-                       <td>{{ $users1->TIPO_DOCUMENTO}}</td>
+                       <td>{{ $users1->ID_TIPO_IDENTIFICACION}}</td>
                        <td>{{ $users1->NUM_DOCUMENTO}}</td>
                        <td>{{ $users1->DIRECCION }}</td>
                        <td>{{ $users1->TELEFONO}}</td>

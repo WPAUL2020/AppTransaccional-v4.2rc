@@ -43,14 +43,14 @@ class CategoriaController extends Controller
 
    public function guardar(Request $Categoria)
    {
-    $reglas_Validacion =["NOMBRE_PRODUCTO_SERV_T" =>"unique:producto_servicio_tercero,NOMBRE_PRODUCTO_SERV_T|required|min:3" , "DETALLE_PRODUCTO_SERV_T" =>"required|min:1", "ID_EMPRESA_TERCERO" =>"required|min:1"];
+    $reglas_Validacion =["NOMBRE_PRODUCTO_SERV_T" =>"required|min:3" , "DETALLE_PRODUCTO_SERV_T" =>"required|min:1", "ID_EMPRESA_TERCERO" =>"required|min:1"];
     $mensajes = ["required" => "Este campo es obligatorio", "alpha" => "Este campo solo permite Letras", "numeric" => "Este Campo Solo Permite Numeros",
          "min" => "Este Campo Debe Tener Minimo :min Digitos", "unique" => "Este Campo ya esta Registrado", "exists" => "Este Campo Debe Existir"];
     $this->validate($Categoria, $reglas_Validacion, $mensajes);
        $Categoria = DB::select(
            'call InsertProductoServicioTercero(?,?,?) ',
            array(
-      $Categoria -> NOMBRE_CATEGORIA,
+      $Categoria -> NOMBRE_PRODUCTO_SERV_T,
       $Categoria -> DETALLE_PRODUCTO_SERV_T,
       $Categoria -> ID_EMPRESA_TERCERO));
       return Redirect('Categorias')->with("mensaje" , "Registro Exitoso");

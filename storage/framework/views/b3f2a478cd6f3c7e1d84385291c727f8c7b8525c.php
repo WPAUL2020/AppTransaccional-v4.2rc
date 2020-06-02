@@ -9,7 +9,7 @@
 
                 <div class="col-sm-9">
 
-                    <img src="Imagenes/empleadosexterno.png">
+                <img src="<?php echo e(asset('Imagenes/empleadosexterno.png')); ?>">
 
                     <ol class="bc-3">
                             <li>
@@ -43,7 +43,7 @@
                    <?php $__currentLoopData = $empleados; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $users1): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                    <tr class="row100">
                        <td><?php echo e($users1->NOMBRE); ?></td>
-                       <td><?php echo e($users1->TIPO_DOCUMENTO); ?></td>
+                       <td><?php echo e($users1->ID_TIPO_IDENTIFICACION); ?></td>
                        <td><?php echo e($users1->NUM_DOCUMENTO); ?></td>
                        <td><?php echo e($users1->DIRECCION); ?></td>
                        <td><?php echo e($users1->TELEFONO); ?></td>
