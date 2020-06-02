@@ -288,7 +288,7 @@
 
 				<div class="portfolio-info">
 					<h3>
-						<a href="#">Portfolio</a>
+						<a href="#">Portafolio</a>
 					</h3>
 
 					<p>Fifteen no inquiry cordial so resolve garrets as. Impression was estimating surrounded solicitude indulgence s...</p>
@@ -306,7 +306,7 @@
 					</a>
 					<div class="busqueda">
 					<h4>
-						
+
 
 						<a href="portfolio-single.html" class="name">Neon</a>
 					</h4>
@@ -319,7 +319,7 @@
 
 			</div>
 
-			
+
 
 			</div>
 
@@ -569,7 +569,7 @@
 
 	<!-- JavaScripts initializations and stuff -->
 	<script src="{{ asset('neonFrontEnd/assets/js/neon-custom.js') }}"></script>
-	
-	
+
+
 </body>
 </html>
