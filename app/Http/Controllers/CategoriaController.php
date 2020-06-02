@@ -50,7 +50,7 @@ class CategoriaController extends Controller
        $Categoria = DB::select(
            'call InsertProductoServicioTercero(?,?,?) ',
            array(
-      $Categoria -> NOMBRE_CATEGORIA,
+      $Categoria -> NOMBRE_PRODUCTO_SERV_T,
       $Categoria -> DETALLE_PRODUCTO_SERV_T,
       $Categoria -> ID_EMPRESA_TERCERO));
       return Redirect('Categorias')->with("mensaje" , "Registro Exitoso");
