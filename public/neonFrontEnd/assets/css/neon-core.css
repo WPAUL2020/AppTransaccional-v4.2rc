@@ -3606,6 +3606,20 @@ table > tbody > tr.highlight > th {
 .popover.popover-default.right .arrow:after {
   border-right-color: #ebebeb;
 }
+.breadcrumb1 {
+  padding: 8px 15px;
+  margin-bottom: 17px;
+  list-style: none;
+  background-image: url('../images/lineas1.png');
+  width:100%;
+  animation: movimiento 15s infinite linear alternate;
+  background-size: 80% 90%;
+  background-attachment: fixed;
+  border-radius: 3px;
+  box-shadow: 0 6px 20px #a1ecaa;
+  border-radius: 10px;
+}
+
 .breadcrumb {
   padding: 8px 15px;
   margin-bottom: 17px;
