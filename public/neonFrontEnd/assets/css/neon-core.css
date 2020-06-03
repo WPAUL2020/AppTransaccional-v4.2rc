@@ -5820,7 +5820,7 @@ body {
   border-radius: 10px;
   cursor: pointer;
 }
-} 
+
 .page-container .sidebar-menu #main-menu li a span {
   -webkit-transition: 350ms opacity ease-in-out;
   -moz-transition: 350ms opacity ease-in-out;
