@@ -27,28 +27,36 @@
     </section>
 <body>
     <div class="container fondo_container">
-        <div class="row justify-content-sm-center">
+        <div class="row">
             <div class="col-md-5">
-                <h2> <center>REGISTRO SECTOR EMPRESA</center></h2>
-                <form method="POST" action="{{URL::to('SectEmprTerCrear/guardar')}}" class="form-horizontal"> {{ csrf_field() }}
-                <div class="form-group">
+                <h2  class="col">R<span>EGISTRO</span> S<span>ECTOR</span> E<span>MPRESA</span></h2>
+                <div class="form-row">
+            </div>
+            </div>
+        </div>
+         <form method="POST" action="{{URL::to('SectEmprTerCrear/guardar')}}"> {{ csrf_field() }}
+        <div class="form-row">
+            <div class="col-sm-9">
                 <label>Digitar nombre del sector</label>
                     <input type="text" name="NOMBRE_SECTOR_EMPRESA_TERCERO" class="form-control" placeholder="Nombre del SECTOR">
                     <span class="text-danger">{{$errors->first("NOMBRE_SECTOR_EMPRESA_TERCERO")}}</span>
-                     </div>
-                    <div class="form-group">
+             </div>
+             <div class="col-sm-9">
                     <label>Descripciòn:</label>
                     <input type="text" name="DESCRIPCION" class="form-control" placeholder="Descripciòn">
                     <span class="text-danger">{{$errors->first("DESCRIPCION")}}</span>
-                     </div>
-                    <div class="form-group">
-                        <input type="submit" value="Registrar" class="btn btn-primary">
-                        <a class="btn btn-secondary" href="{{URL::to('Sector')}}">Regresar</a>
-                    </div>
-                </form>
             </div>
         </div>
-    </div>
+<br>
+        <div class="row">
+                <div class="form-group aaa">
+                        <input type="submit" value="Registrar" class="btn btn-primary">
+                        <a class="btn btn-secondary" href="{{URL::to('Sector')}}">Regresar</a>
+                </div>
+            </div>
+    </form>
+            
+</div>
     
 </body>
 </html>

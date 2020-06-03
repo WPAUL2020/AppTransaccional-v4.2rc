@@ -66,14 +66,10 @@
                             </li>
                             <li>
                                 <a href="about.html">
-                                    <span>Acerca de Big Data</span>
+                                    <span>Que es WebScraping</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="portfolio.html">
-                                    <span>Portafolio</span>
-                                </a>
-                            </li>
+                            
                             <li>
                                 <a href="<?php echo e(URL::to('Contact')); ?>">
                                     <span>Contactenos</span>
@@ -87,7 +83,7 @@
                                     </a>
                                     <?php else: ?>
                                         <a href="<?php echo e(route('login')); ?>" class="btn btn-black">
-                                            <span class="btn btn-black">Login</span>
+                                            <span class="btn btn-black">Iniciar Sesion</span>
                                         </a>
                                     <?php endif; ?>
                             </li>
@@ -127,12 +123,12 @@
 
 						<div class="slide-content">
 							<h2>
-								<small>BIG DATA</small>
-								Dashboard &amp; Front-end
+								<small>BigData</small>
+								Web Scraping
 							</h2>
 
 							<p>
-								Neon &ndash; is flat admin template for multi-purpose usage built<br /> with the latest version of Bootstrap &ndash; 3.
+								Con el web scraping tienes la oportunidad de conocer mejor a tu competencia, saber si tienen ofertas concretas, si han subido sus precios o si lanzan nuevos productos
 							</p>
 						</div>
 
@@ -182,7 +178,7 @@
 
 							<p>
 								Cambia la forma de manejar la información, organizada, intuitiva, <br />
-								transformar los modelos de negocio.
+								transformando los modelos de negocio.
 							</p>
 						</div>
 
@@ -225,11 +221,11 @@
 				<div class="feature-block">
 					<h3>
 						<i class="entypo-cog"></i>
-						Settings
+						Analisis
 					</h3>
 
 					<p>
-						Fifteen no inquiry cordial so resolve garrets as. Impression was estimating surrounded solicitude indulgence son shy.
+						Decodificación de datos que permitan obtener hipótesis y conclusiones y así generen facilidad en la manipulación y acceso de la información.
 					</p>
 				</div>
 
@@ -240,11 +236,11 @@
 				<div class="feature-block">
 					<h3>
 						<i class="entypo-gauge"></i>
-						Dashboard
+						Automatizacion
 					</h3>
 
 					<p>
-						On am we offices expense thought. Its hence ten smile age means. Seven chief sight far point any. Of so high into easy.
+						La forma más recomendable de fortalecer tu desempeño, es gestionar el proceso comercial a través de sistemas o soluciones inteligentes que te permitan automatizar las actividades en la extracción de información.
 					</p>
 				</div>
 
@@ -255,11 +251,11 @@
 				<div class="feature-block">
 					<h3>
 						<i class="entypo-lifebuoy"></i>
-						24/7 Support
+						Extraccion
 					</h3>
 
 					<p>
-						Extremely eagerness principle estimable own was man. Men received far his dashwood subjects new.
+						Obtención de cualquier tipo de información contenida dentro de un lugar plagado de datos en el que la manipulación ordinaria de datos no se puede realizar de manera común.
 					</p>
 				</div>
 
@@ -288,10 +284,10 @@
 
 				<div class="portfolio-info">
 					<h3>
-						<a href="#">Portfolio</a>
+						<a href="#">Portafolio</a>
 					</h3>
 
-					<p>Fifteen no inquiry cordial so resolve garrets as. Impression was estimating surrounded solicitude indulgence s...</p>
+					<p>Además de analizar a tu competencia, el scrapeo te permite descubrir posibles nichos en el mercado, conocer las categorías que funcionan mejor en tu tienda online o escoger la imagen destacada que quieras mostrar.</p>
 				</div>
 
 			</div>
@@ -304,22 +300,12 @@
 						<img src="<?php echo e(asset('imagenes/banner.gif')); ?>" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>
-					<div class="busqueda">
-					<h4>
-						
-
-						<a href="portfolio-single.html" class="name">Neon</a>
-					</h4>
-
-					<div class="categories">
-						<a href="portfolio-single.html">Web Design / Development</a>
-					</div>
-					</div>
+					
 				</div>
 
 			</div>
 
-			
+
 
 			</div>
 
@@ -519,17 +505,17 @@
 
                     <ul class="social-networks text-right">
                         <li>
-                            <a href="#">
+                            <a href="https://www.instagram.com/singsistemas/">
                                 <i class="entypo-instagram"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="entypo-twitter"></i>
+                            <a href="https://github.com/WPAUL2020/AppTransaccional-v4.2rc">
+                                <i class="entypo-github"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://www.facebook.com/groups/IUDCUniversitariaDeColombia">
                                 <i class="entypo-facebook"></i>
                             </a>
                         </li>
@@ -555,8 +541,8 @@
 
 	<!-- JavaScripts initializations and stuff -->
 	<script src="<?php echo e(asset('neonFrontEnd/assets/js/neon-custom.js')); ?>"></script>
-	
-	
+
+
 </body>
 </html>
 <?php /**PATH C:\xampp\htdocs\git\AppTransaccional-v4.2rc\resources\views/welcome.blade.php ENDPATH**/ ?>

@@ -29,29 +29,29 @@
     </section>
 <body>
    <div class="container fondo_container">
-        <div class="row justify-content-sm-center">
+        <div class="row">
             <div class="col-md-5">
-                <h2> <center>REGISTRO DE PRODUCTOS</center></h2>
+                <h2  class="col">R<span>EGISTRO DE </span>P<span>RODUCTOS</span></h2>
                  <div class="form-row">
             </div>
             </div>
         </div>
-        <form method="POST" action="{{URL::to('CategoriaCrear/guardar')}}" class="form-horizontal"> {{ csrf_field() }}
+        <form method="POST" action="{{URL::to('CategoriaCrear/guardar')}}"> {{ csrf_field() }}
         <div class="form-row">
-            <div class="col">
+            <div class="col-sm-9">
                 <label>Digitar Producto</label>
                     <input type="text" name="NOMBRE_PRODUCTO_SERV_T" class="form-control" placeholder="NOMBRE DEL PRODUCTO">
                 <span class="text-danger">{{$errors->first("NOMBRE_PRODUCTO_SERV_T")}}</span>
             </div>
          
-            <div class="col">
+            <div class="col-sm-9">
                 <label>Digitar Detalle del Producto</label>
                     <input type="text" name="DETALLE_PRODUCTO_SERV_T" class="form-control" placeholder="DETALLE DEL PRODUCTO">
                     <span class="text-danger">{{$errors->first("DETALLE_PRODUCTO_SERV_T")}}</span>
             </div>
        
         
-                <div class="col">
+             <div class="col-sm-9">
                     <label for="">Empresa:</label>
                         <select name="ID_EMPRESA_TERCERO" id="ID_EMPRESA_TERCERO" class="form-control be">
                             @foreach($empresa as $empresa)
@@ -64,17 +64,15 @@
             </div>
         </div>
 <br>
-                    <div class="form-group ">
-                        
-                        <input type="submit" value="Registrar" class="btn btn-primary">
-                       
-                        <a class="btn btn-secondary" href="{{URL::to('Categorias')}}">Regresar</a>
-                    </div>
-            
-        </form>
-    </div>
-       
+        <div class="row">
+            <div class="form-group aaa">     
+                 <input type="submit" value="Registrar" class="btn btn-primary">
+                <a class="btn btn-secondary" href="{{URL::to('Categorias')}}">Regresar</a>
+            </div>
+        </div>
 
+  </form>
+</div>
 </body>
 </html>
 @endsection

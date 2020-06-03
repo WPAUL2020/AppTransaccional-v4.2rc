@@ -1862,8 +1862,14 @@ input[type="search"] {
   }
 }
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   padding: 0 13px;
+}
+.aaa{
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  display: flex;
 }
 .ag{
  height: 350px;

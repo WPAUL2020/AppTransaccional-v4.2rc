@@ -30,8 +30,8 @@
 <body>
 <div class="container fondo_container">
     <div class="row">
-            <div class="">
-                <h2> REGISTRO DE EMPRESAS</h2>
+            <div class="col-md-5">
+                <h2 class="col"> R<span>EGISTRO DE</span> E<span>MPRESAS</span></h2>
                 <div class="form-row">
             </div>
         </div>
@@ -137,15 +137,15 @@
   </div>
   </div>
 
-  <div class="form-group lb">
+  <div class="form-group">
     <label>Observaciones:</label>
     <textarea name="OBSERVACION" class="form-control" placeholder="Escribe tu Observación"></textarea>
     <span class="text-danger">{{$errors->first("OBSERVACION")}}</span>
   </div>
 
 
-  <div class="form-row">
-                    <div class="form-group">
+  <div class="row">
+                    <div class="form-group aaa">
                         <input type="submit" value="Registrar" class="btn btn-primary">
                         <a class="btn btn-secondary" href="{{URL::to('Clientes')}}">Regresar</a>
   </div>
