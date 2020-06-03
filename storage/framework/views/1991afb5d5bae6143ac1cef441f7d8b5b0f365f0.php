@@ -66,7 +66,7 @@
                             </li>
                             <li>
                                 <a href="about.html">
-                                    <span>Acerca de Big Data</span>
+                                    <span>Que es WebScraping</span>
                                 </a>
                             </li>
                             

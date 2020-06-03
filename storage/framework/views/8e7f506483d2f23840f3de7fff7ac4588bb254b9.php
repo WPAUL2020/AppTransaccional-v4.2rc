@@ -37,12 +37,12 @@
 
                    <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datos): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <tr class="row100">
-                    <td><?php echo e($datos->wordSearch); ?></td>
-                    <td><?php echo e($datos->consulta_log); ?></td>
+                    <td><?php echo e($datos['wordSearch']); ?></td>
+                    <td><?php echo e($datos['consulta_log']); ?></td>
 
                        <td>
-                       <a a href="instahunters/Estadistica/<?php echo e($datos->_id); ?>" class="btn btn-primary">VER ESTADISTICA <i class="fas fa-chart-bar"></i></a>
-                           <a a href="instahunterview/<?php echo e($datos->_id); ?>" class="btn btn-info">VISTA PREVIA <i class="fas fa-eye"></i></a>
+                       <a a href="instahunters/Estadistica/<?php echo e($datos['_id']); ?>" class="btn btn-primary">VER ESTADISTICA <i class="fas fa-chart-bar"></i></a>
+                           <a a href="instahunterview/<?php echo e($datos['_id']); ?>" class="btn btn-info">VISTA PREVIA <i class="fas fa-eye"></i></a>
                        </td>
                        </tr>
                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
