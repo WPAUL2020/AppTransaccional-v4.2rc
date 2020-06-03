@@ -81,11 +81,11 @@
   </div>
 
   <div class="form-row">
-    <div class="col-sm-6">
+   <!--  <div class="col-sm-6">
     <label>Correo Electronico:</label>
     <input type="email" name="CORREO" class="form-control" placeholder="Correo Electronico">
     <span class="text-danger">{{$errors->first("CORREO")}}</span>
-    </div>
+    </div> -->
 
     <div class="col-sm-6">
     <label>Sitio Web:</label>
@@ -102,7 +102,7 @@
     </div>
 
   <div class="col-sm-6">
-    <label>Usuario:</label>
+    <label>Correo Electronico:</label>
     <input type="email" name="USUARIO" class="form-control" placeholder="Usuario Correo">
     <span class="text-danger">{{$errors->first("USUARIO")}}</span>
   </div>
@@ -126,7 +126,7 @@
         </select>
         <span class="text-danger">{{$errors->first("ID_ROL")}}</span>
     </div>
-    <div class="col-sm-6">
+<!--     <div class="col-sm-6">
     <label>Estado:</label>
     <select name="ESTADO"class="form-control">
     <option value="">--Escoja Estado--</option>
@@ -134,14 +134,14 @@
             <option value="DESACTIVADO">DESACTIVADO</option>
     </select>
     <span class="text-danger">{{$errors->first("ESTADO")}}</span>
-  </div>
+  </div> -->
   </div>
 
-  <div class="form-group">
+<!--   <div class="form-group">
     <label>Observaciones:</label>
     <textarea name="OBSERVACION" class="form-control" placeholder="Escribe tu Observación"></textarea>
     <span class="text-danger">{{$errors->first("OBSERVACION")}}</span>
-  </div>
+  </div> -->
 
 
   <div class="row">
