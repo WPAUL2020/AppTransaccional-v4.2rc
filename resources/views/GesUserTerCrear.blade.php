@@ -11,7 +11,7 @@
 
                 <div class="col-sm-9">
 
-                    
+
                 <img src="{{asset('Imagenes/empleadosexternoscrear.png')}}">
 
                     <ol class=" bc-3" >
@@ -93,32 +93,32 @@
     <span class="text-danger">{{$errors->first("CORREO")}}</span>
     </div>
     <div class="col-sm-6">
-    <label>Telefono Oficina:</label>
-    <input type="phone" name="TELEFONO_OFICINA" class="form-control" placeholder="Telefono de Oficina">
-    <span class="text-danger">{{$errors->first("TELEFONO_OFICINA")}}</span>
+    <label for="inputEmail4">Password:</label>
+    <input type="password" name="CONTRASENA" class="form-control" placeholder="Escribir Password para Ingreso">
+    <span class="text-danger">{{$errors->first("CONTRASENA")}}</span>
     </div>
   </div>
 
   <div class="form-row">
-    
+
     <div class="col-sm-6">
     <label>Extenciòn:</label>
     <input type="phone" name="EXTENSION" class="form-control" placeholder="Extensiòn">
     <span class="text-danger">{{$errors->first("EXTENSION")}}</span>
     </div>
-    <div class="col-sm-6">
+    <!-- <div class="col-sm-6">
     <label>Usuario de Registro:</label>
     <input type="email" name="USUARIO" class="form-control" placeholder="Usuario de registro Correo">
     <span class="text-danger">{{$errors->first("USUARIO")}}</span>
-    </div>
+    </div> -->
   </div>
 
   <div class="form-row">
-    
-    <div class="col-sm-6">
-    <label for="inputEmail4">Password:</label>
-    <input type="password" name="CONTRASENA" class="form-control" placeholder="Escribir Password">
-    <span class="text-danger">{{$errors->first("CONTRASENA")}}</span>
+
+  <div class="col-sm-6">
+    <label>Telefono Oficina:</label>
+    <input type="phone" name="TELEFONO_OFICINA" class="form-control" placeholder="Telefono de Oficina">
+    <span class="text-danger">{{$errors->first("TELEFONO_OFICINA")}}</span>
     </div>
     <div class="col-sm-6">
     <label for="">Cargo del Funcionario:</label>
@@ -153,7 +153,8 @@
 
         <span class="text-danger">{{$errors->first("ID_EMPRESA_TERCERO")}}</span>
     </div>
-    <div class="col-sm-6">
+    </div>
+<!--     <div class="col-sm-6">
     <label>Estado:</label>
     <select name="ESTADO"class="form-control">
     <option value="">--Escoja Estado--</option>
@@ -161,17 +162,15 @@
             <option value="DESACTIVADO">DESACTIVADO</option>
     </select>
     <span class="text-danger">{{$errors->first("ESTADO")}}</span>
-  </div>
-  </div>
+  </div> -->
 
-     <div class="col-sm-6">
+<!--      <div class="col-sm-6">
     <label>Observaciones:</label>
     <textarea name="OBSERVACION" class="form-control" placeholder="Escribe tu Observación"></textarea>
     <span class="text-danger">{{$errors->first("OBSERVACION")}}</span>
     </div>
-
-
-  <div class="form-row">
+ -->
+  <div class="row">
                     <div class="form-group">
                         <input type="submit" value="Registrar" class="btn btn-primary">
                         <a class="btn btn-secondary" href="{{URL::to('UsuariosTercero')}}">Regresar</a>
@@ -179,7 +178,6 @@
   </div>
 
 </form>
-</div>
 </body>
 </html>
 @endsection

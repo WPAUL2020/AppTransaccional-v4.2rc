@@ -9,7 +9,7 @@
 
                 <div class="col-sm-9">
 
-                    <img src="Imagenes/empleadosinternos.png">
+                <img src="<?php echo e(asset('Imagenes/empleadosinternos.png')); ?>">
 
                     <ol class=" bc-3" >
                             <li>
@@ -45,7 +45,7 @@
                        <td><?php echo e($users1->NUM_DOCUMENTO); ?></td>
                        <td><?php echo e($users1->DIRECCION); ?></td>
                        <td><?php echo e($users1->TELEFONO); ?></td>
-                       <td><?php echo e($users1->USUARIO); ?></td>
+                       <td><?php echo e($users1->CORREO); ?></td>
                        <td><?php echo e($users1->ID_CARGO); ?></td>
                        <td>
                        <a href="GestUserIntEdit/updateUser/<?php echo e($users1->ID_EMPLEADO_INTERNO); ?>" class="btn btn-secondary">EDITAR</a>

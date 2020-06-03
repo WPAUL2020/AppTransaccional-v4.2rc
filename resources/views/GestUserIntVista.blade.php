@@ -47,7 +47,7 @@
                        <td>{{ $users1->NUM_DOCUMENTO}}</td>
                        <td>{{ $users1->DIRECCION }}</td>
                        <td>{{ $users1->TELEFONO}}</td>
-                       <td>{{ $users1->USUARIO}}</td>
+                       <td>{{ $users1->CORREO}}</td>
                        <td>{{ $users1->ID_CARGO}}</td>
                        <td>
                        <a href="GestUserIntEdit/updateUser/{{$users1->ID_EMPLEADO_INTERNO}}" class="btn btn-secondary">EDITAR</a>

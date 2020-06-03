@@ -50,7 +50,7 @@
                        <td>{{ $users1->DIRECCION }}</td>
                        <td>{{ $users1->TELEFONO}}</td>
                        <td>{{ $users1->EXTENSION}}</td>
-                       <td>{{ $users1->USUARIO}}</td>
+                       <td>{{ $users1->CORREO}}</td>
                        <td>{{ $empresa->NOMBRE}}</td>
 
                        <td>

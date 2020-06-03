@@ -12,7 +12,7 @@
 
                 <div class="col-sm-9">
 
-                    <h1>Registro de Usuarios</h1>
+                <img src="<?php echo e(asset('Imagenes/empleadosinternoscrear.png')); ?>">
 
                     <ol class="bc-3" >
                             <li>
@@ -32,7 +32,7 @@
     <div class="container fondo_container">
       <div class="row">
               <div class="col-md-5">
-                  <h2 class="col" > R<span>EGISTRO DE </span>U<span>SUARIOS</span></h2>
+                  <h2 class="col" > R<span>EGISTRO DE </span>E<span>MPLEADOS INTERNOS</span></h2>
                   <div class="form-row">
               </div>
           </div>
@@ -75,15 +75,7 @@
               <input type="phone" name="TELEFONO" class="form-control" placeholder="Telefono">
               <span class="text-danger"><?php echo e($errors->first("TELEFONO")); ?></span>
               </div>
-              <div class="col-sm-6">
-              <label style="color:white">Pais:</label>
-              <input value="COLOMBIA" type="text" name="PAIS" class="form-control" placeholder="Pais">
-              <span class="text-danger"><?php echo e($errors->first("PAIS")); ?></span>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="col-sm-6">
+                  <div class="col-sm-6">
               <label for="" style="color:white">Ciudad:</label>
                 <select name="CIUDAD" id="ID_CIUDAD" class="form-control">
                  <option value="">--Escoje la ciudad--</option>
@@ -93,30 +85,13 @@
         </select>
         <span class="text-danger"><?php echo e($errors->first("CIUDAD")); ?></span>
               </div>
+            </div>
+
+            <div class="form-row">
+
               <div class="col-sm-6">
               <label style="color:white">Correo Electronico:</label>
-              <input type="email" name="CORREO" class="form-control" placeholder="Correo Electronico">
-              <span class="text-danger"><?php echo e($errors->first("CORREO")); ?></span>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="col-sm-6">
-              <label style="color:white">Telefono Oficina:</label>
-              <input type="phone" name="TELEFONO_OFICINA" class="form-control" placeholder="Telefono de Oficina">
-              <span class="text-danger"><?php echo e($errors->first("TELEFONO_OFICINA")); ?></span>
-              </div>
-              <div class="col-sm-6">
-              <label style="color:white">Extenciòn:</label>
-              <input type="phone" name="EXTENSION" class="form-control" placeholder="Extensiòn">
-              <span class="text-danger"><?php echo e($errors->first("EXTENSION")); ?></span>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="col-sm-6">
-              <label style="color:white">Usuario de Registro:</label>
-              <input type="email" name="USUARIO" class="form-control" placeholder="Usuario de registro Correo">
+              <input type="email" name="USUARIO" class="form-control" placeholder="Correo Electronico">
               <span class="text-danger"><?php echo e($errors->first("USUARIO")); ?></span>
               </div>
               <div class="col-sm-6">
@@ -127,7 +102,27 @@
             </div>
 
             <div class="form-row">
+
               <div class="col-sm-6">
+              <label style="color:white">Extenciòn:</label>
+              <input type="phone" name="EXTENSION" class="form-control" placeholder="Extensiòn">
+              <span class="text-danger"><?php echo e($errors->first("EXTENSION")); ?></span>
+              </div>
+   <!--            <div class="col-sm-6">
+              <label style="color:white">Usuario de Registro:</label>
+              <input type="email" name="USUARIO" class="form-control" placeholder="Usuario de registro Correo">
+              <span class="text-danger"><?php echo e($errors->first("USUARIO")); ?></span>
+              </div> -->
+            </div>
+
+            <div class="form-row">
+
+            <div class="col-sm-6">
+              <label style="color:white">Telefono Oficina:</label>
+              <input type="phone" name="TELEFONO_OFICINA" class="form-control" placeholder="Telefono de Oficina">
+              <span class="text-danger"><?php echo e($errors->first("TELEFONO_OFICINA")); ?></span>
+              </div>
+               <div class="col-sm-6">
               <label style="color:white" for="">Cargo del Funcionario:</label>
                   <select name="ID_CARGO" id="ID_CARGO" class="form-control">
                   <option value="">--Escoja Tipo de Cargo--</option>
@@ -137,6 +132,10 @@
                   </select>
                   <span class="text-danger"><?php echo e($errors->first("ID_CARGO")); ?></span>
               </div>
+            </div>
+
+            <div class="form-row">
+
               <div class="col-sm-6">
               <label style="color:white" for="">Rol del Funcionario:</label>
                   <select name="ID_ROL" id="ID_ROL" class="form-control">
@@ -147,7 +146,7 @@
                   </select>
                   <span class="text-danger"><?php echo e($errors->first("ID_ROL")); ?></span>
               </div>
-              <div class="col-sm-6">
+             <!--  <div class="col-sm-6">
               <label style="color:white">Estado:</label>
               <select name="ESTADO"class="form-control">
               <option value="">--Escoja Estado--</option>
@@ -155,16 +154,15 @@
                       <option value="DESACTIVADO">DESACTIVADO</option>
               </select>
               <span class="text-danger"><?php echo e($errors->first("ESTADO")); ?></span>
+            </div> -->
             </div>
-            </div>
+<!--              <div class="form-group lb">
 
-            <div class="form-group col-sm-6">
-              <label style="color:white">Observaciones:</label>
+              <label>Observaciones:</label>
               <textarea name="OBSERVACION" class="form-control" placeholder="Escribe tu Observación"></textarea>
               <span class="text-danger"><?php echo e($errors->first("OBSERVACION")); ?></span>
 
-
-            </div>
+          </div> -->
             <div class="form-row">
               <div class="form-group">
                   <input type="submit" value="Registrar" class="btn btn-primary">

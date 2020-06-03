@@ -47,8 +47,8 @@ class EmpleadosTerceroController extends Controller
     {
         $reglas_Validacion =["ID_TIPO_INDENTIFICACION" =>"required|min:1", "NUM_DOCUMENTO" =>"numeric|min:3", "NOMBRE" =>"required|min:3",
         "DIRECCION" =>"required|min:3", "TELEFONO" =>"numeric|min:3", "CIUDAD" =>"required|min:3",
-        "CORREO" =>"required|min:3", "TELEFONO_OFICINA" =>"numeric|min:3", "EXTENSION" =>"numeric|min:3", "USUARIO" =>"unique:empleado_tercero,USUARIO|required|min:3", "CONTRASENA" =>"required|min:3",
-        "ID_CARGO" =>"required|min:1", "ID_ROL" =>"required|min:1", "ESTADO" =>"required|min:3", "ID_EMPRESA_TERCERO" =>"required|min:1" ];
+        "CORREO" =>"required|min:3", "TELEFONO_OFICINA" =>"numeric|min:3", "EXTENSION" =>"numeric|min:3", /* "USUARIO" =>"unique:empleado_tercero,USUARIO|required|min:3", */ "CONTRASENA" =>"required|min:3",
+        "ID_CARGO" =>"required|min:1", "ID_ROL" =>"required|min:1", /* "ESTADO" =>"required|min:3", */ "ID_EMPRESA_TERCERO" =>"required|min:1" ];
        $mensajes = ["required" => "Este campo es obligatorio", "alpha" => "Este campo solo permite Letras", "numeric" => "Este Campo Solo Permite Numeros",
             "min" => "Este Campo Debe Tener Minimo :min Digitos", "unique" => "Este Campo ya esta Registrado", "exists" => "Este Campo Debe Existir"];
        $this->validate($EmpleadosTercero, $reglas_Validacion, $mensajes);
@@ -68,7 +68,7 @@ class EmpleadosTerceroController extends Controller
        $EmpleadosTercero -> OBSERVACION,
        $EmpleadosTercero -> USUARIO,
        bcrypt($EmpleadosTercero -> CONTRASENA),
-       $EmpleadosTercero -> ESTADO,
+       'ESTADO',
        $EmpleadosTercero -> ID_CARGO,
        $EmpleadosTercero -> ID_ROL,
        $EmpleadosTercero -> ID_EMPRESA_TERCERO));
