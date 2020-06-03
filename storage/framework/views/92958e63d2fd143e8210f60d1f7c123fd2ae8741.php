@@ -9,11 +9,11 @@
 
             <div class="col-sm-9">
 
-                <h1>Gestión Cargos</h1>
+                <img src="<?php echo e(asset('Imagenes/gestioncargos.png')); ?>">
 
                 <ol class="bc-3" >
                         <li>
-                <a href="<?php echo e(URL::to('appl')); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
+                <a href="<?php echo e(URL::previous()); ?>"> <i class="fas fa-angle-left"></i> Regresar</a>
             </li>
                 <li class="active">
                             <strong>Gestión Cargos</strong>

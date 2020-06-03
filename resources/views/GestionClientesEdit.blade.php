@@ -29,38 +29,38 @@
     </section>
         <div class="container fondo_container">
             <div class="row">
-                    <div class="">
-                        <h2> EDITAR EMPRESA: {{$clientes->NOMBRE}}</h2>
+                    <div class="col-md-5">
+                        <h2 class="col"> E<span>DITAR </span>E<span>MPRESA</span>: {{$clientes->NOMBRE}}</h2>
                         <div class="form-row">
                     </div>
                 </div>
             </div>
             <form method="POST" action="{{ URL:: to("GestionClientes/changeEmpresa/$clientes->ID_EMPRESA_TERCERO") }}"> {{ csrf_field() }}
         <div class="form-row">
-                            <div class="col">
+                    <div class="col-sm-9">
                             <label>Dirección de la Compañia:</label>
                             <input type="text" name="DIRECCION" class="form-control" placeholder="Direcciòn" value={{ $clientes->DIRECCION}}>
                             </div>
-                            <div class="col">
+                            <div class="col-sm-9">
                             <label>Telefono de la Compañia</label>
                             <input type="phone" name="TELEFONO" class="form-control" placeholder="Telefono" value={{ $clientes->TELEFONO}}>
                             </div>
         </div>
 
         <div class="form-row">
-                            <div class="col">
+                            <div class="col-sm-9">
                             <label>Ciudad:</label>
                             <input type="text" name="CIUDAD" class="form-control" placeholder="Ciudad"value={{ $clientes->CIUDAD}}>
                             </div>
-                            <div class="col">
+                            <div class="col-sm-9">
                             <label>Sitio Web:</label>
                             <input type="text" name="WEBSITE" class="form-control" placeholder="Sitio Web" value={{ $clientes->WEBSITE}}>
                             </div>
-                            <div class="col">
+                            <div class="col-sm-9">
                             <label>Correo Electronico:</label>
                             <input type="email" name="CORREO" class="form-control" placeholder="Correo Electronico" value={{ $clientes->CORREO}}>
                             </div>
-                            <div class="col">
+                            <div class="col-sm-9">
                             <label>Estado:</label>
                             <select name="ESTADO"class="form-control">
                             <option value="">--Escoja Estado--</option>
@@ -70,12 +70,14 @@
                             </div>
         </div>
         <br>
-        <div class="form-row">
-                            <div class="col">
+        <div class="row">
+              <div class="form-group aaa">
                                 <input type="submit" value="Guardar" class="btn btn-primary">
                                 <a class="btn btn-secondary" href="{{URL::to('Clientes')}}">Regresar</a>
                             </div>
         </div>
         </form>
         </div>
+</body>
+</html>
 @endsection

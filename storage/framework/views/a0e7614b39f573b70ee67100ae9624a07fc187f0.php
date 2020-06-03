@@ -48,7 +48,7 @@
                        <td><?php echo e($users1->DIRECCION); ?></td>
                        <td><?php echo e($users1->TELEFONO); ?></td>
                        <td><?php echo e($users1->EXTENSION); ?></td>
-                       <td><?php echo e($users1->USUARIO); ?></td>
+                       <td><?php echo e($users1->CORREO); ?></td>
                        <td><?php echo e($empresa->NOMBRE); ?></td>
 
                        <td>
