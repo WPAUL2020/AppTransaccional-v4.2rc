@@ -225,7 +225,7 @@
 				<div class="feature-block">
 					<h3>
 						<i class="entypo-cog"></i>
-						Analisis
+						Análisis
 					</h3>
 
 					<p>
@@ -240,7 +240,7 @@
 				<div class="feature-block">
 					<h3>
 						<i class="entypo-gauge"></i>
-						Automatizacion
+						Automatización
 					</h3>
 
 					<p>
@@ -255,7 +255,7 @@
 				<div class="feature-block">
 					<h3>
 						<i class="entypo-lifebuoy"></i>
-						Extraccion
+						Extracción
 					</h3>
 
 					<p>
@@ -359,11 +359,11 @@
 
 						<blockquote>
 							<p>
-								Vivamus imperdiet felis consectetur onec eget orci adipiscing nunc. <br />
-								Pellentesque fermentum, ante ac interdum ullamcorper.
+								"En teoría, la teoría y la práctica son los mismos. En la práctica, no es." 
+								
 							</p>
 							<small>
-								<cite>Art Ramadani</cite> - co-founder at Laborator
+								<cite>Yoggi Berra</cite> 
 							</small>
 						</blockquote>
 
@@ -373,11 +373,11 @@
 
 						<blockquote>
 							<p>
-								Entered of cordial do on no hearted. Yet agreed whence and unable limits. <br />
-								Use off him gay abilities concluded immediate allowance.
+								La mayoría de ustedes están familiarizados con las virtudes de un programador. Hay tres, por supuesto: pereza, impaciencia y orgullo desmedido.<br />
+								
 							</p>
 							<small>
-								<cite>Larry Page</cite> - co-founder at Google
+								<cite>Larry Wall</cite>
 							</small>
 						</blockquote>
 
@@ -387,11 +387,11 @@
 
 						<blockquote>
 							<p>
-								Of regard warmth by unable sudden garden ladies. No kept hung am size spot no. <br />
-								Likewise led and dissuade rejoiced welcomed husbands boy.
+								Siempre codifica como si la persona que finalmente mantendrá tu código fuera un psicópata violento que sabe dónde vives.<br />
+								
 							</p>
 							<small>
-								<cite>Bill Gates</cite> - ceo at Microsoft
+								<cite>Martin Golding</cite> - ceo at Microsoft
 							</small>
 						</blockquote>
 

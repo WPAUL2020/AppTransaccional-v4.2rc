@@ -71,13 +71,13 @@
                             </li>
                             
                             <li>
+                                <?php if(Route::has('login')): ?>
+                                <?php if(auth()->guard()->check()): ?>
                                 <a href="<?php echo e(URL::to('Contact')); ?>">
                                     <span>Contactenos</span>
                                 </a>
                             </li>
                             <li>
-                                <?php if(Route::has('login')): ?>
-                                    <?php if(auth()->guard()->check()): ?>
                                     <a href="<?php echo e(URL::to('appl')); ?>" class="btn btn-blue">
                                         <span class="btn btn-blue">Zona Transaccional</span>
                                     </a>
@@ -331,11 +331,11 @@
 
 						<blockquote>
 							<p>
-								Vivamus imperdiet felis consectetur onec eget orci adipiscing nunc. <br />
-								Pellentesque fermentum, ante ac interdum ullamcorper.
+								"En teoría, la teoría y la práctica son los mismos. En la práctica, no es." 
+								
 							</p>
 							<small>
-								<cite>Art Ramadani</cite> - co-founder at Laborator
+								<cite>Yoggi Berra</cite> 
 							</small>
 						</blockquote>
 
@@ -345,11 +345,11 @@
 
 						<blockquote>
 							<p>
-								Entered of cordial do on no hearted. Yet agreed whence and unable limits. <br />
-								Use off him gay abilities concluded immediate allowance.
+								La mayoría de ustedes están familiarizados con las virtudes de un programador. Hay tres, por supuesto: pereza, impaciencia y orgullo desmedido.<br />
+								
 							</p>
 							<small>
-								<cite>Larry Page</cite> - co-founder at Google
+								<cite>Larry Wall</cite>
 							</small>
 						</blockquote>
 
@@ -359,11 +359,11 @@
 
 						<blockquote>
 							<p>
-								Of regard warmth by unable sudden garden ladies. No kept hung am size spot no. <br />
-								Likewise led and dissuade rejoiced welcomed husbands boy.
+								Siempre codifica como si la persona que finalmente mantendrá tu código fuera un psicópata violento que sabe dónde vives.<br />
+								
 							</p>
 							<small>
-								<cite>Bill Gates</cite> - ceo at Microsoft
+								<cite>Martin Golding</cite> - ceo at Microsoft
 							</small>
 						</blockquote>
 
