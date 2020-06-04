@@ -75,13 +75,13 @@
                                 </a>
                             </li> --}}
                             <li>
+                                @if (Route::has('login'))
+                                @auth
                                 <a href="{{URL::to('Contact')}}">
                                     <span>Contactenos</span>
                                 </a>
                             </li>
                             <li>
-                                @if (Route::has('login'))
-                                    @auth
                                     <a href="{{URL::to('appl')}}" class="btn btn-blue">
                                         <span class="btn btn-blue">Zona Transaccional</span>
                                     </a>
