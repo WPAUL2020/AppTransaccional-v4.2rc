@@ -60,14 +60,14 @@
                             <label>Correo Electronico:</label>
                             <input type="email" name="CORREO" class="form-control" placeholder="Correo Electronico" value={{ $clientes->CORREO}}>
                             </div>
-                            <div class="col-sm-9">
+                     <!--        <div class="col-sm-9">
                             <label>Estado:</label>
                             <select name="ESTADO"class="form-control">
                             <option value="">--Escoja Estado--</option>
                                     <option value="ACTIVO">ACTIVO</option>
                                     <option value="DESACTIVADO">DESACTIVADO</option>
                             </select>
-                            </div>
+                            </div> -->
         </div>
         <br>
         <div class="row">

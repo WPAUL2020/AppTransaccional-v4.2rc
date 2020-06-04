@@ -98,11 +98,11 @@
                 </div>
              </div>
 
-            {{-- <div class="form-group">
+         <!--    {{-- <div class="form-group">
                  <label>Observaciones:</label>
                 <textarea name="OBSERVACION" class="form-control" placeholder="Escribe tu Observación"></textarea>
             </div>
-            <span class="text-danger">{{$errors->first("OBSERVACION")}}</span> --}}
+            <span class="text-danger">{{$errors->first("OBSERVACION")}}</span> --}} -->
 
                         <div class="row">
                                             <div class="form-group aaa">
@@ -112,7 +112,7 @@
                         </div>
 
  </form>
-    
+
 </div>
 </body>
 </html>

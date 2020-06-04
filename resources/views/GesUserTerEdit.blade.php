@@ -56,11 +56,11 @@
     <input type="text" name="CIUDAD" class="form-control" placeholder="Ciudad" value={{ $EmpleadosTercero->CIUDAD}}>
     <span class="text-danger">{{$errors->first("CIUDAD")}}</span>
     </div>
-    <div class="col-sm-9">
+<!--     <div class="col-sm-9">
     <label>Correo Electronico:</label>
     <input type="email" name="CORREO" class="form-control" placeholder="Correo Electronico"value={{ $EmpleadosTercero->CORREO}}>
     <span class="text-danger">{{$errors->first("CORREO")}}</span>
-    </div>
+    </div> -->
   </div>
 
   <div class="form-row">
@@ -92,18 +92,18 @@
         <select name="ID_ROL" id="ID_ROL" class="form-control">
         <option value="">--Escoja Tipo de Rol--</option>
             @foreach($roles as $rol)
-                <option value="{{$rol->NOMBRE_ROL}}">{{$rol->NOMBRE_ROL}}</option>
+                <option value="{{$rol->id}}">{{$rol->name}}</option>
             @endforeach
         </select>
         <span class="text-danger">{{$errors->first("ID_ROL")}}</span>
     </div>
   </div>
 
-  <div class="form-group">
+<!--   <div class="form-group">
     <label>Observaciones:</label>
     <textarea name="OBSERVACION" class="form-control" placeholder="Escribe tu Observación"></textarea>
     <span class="text-danger">{{$errors->first("OBSERVACION")}}</span>
-  </div>
+  </div> -->
 
   <div class="row">
               <div class="form-group aaa">
