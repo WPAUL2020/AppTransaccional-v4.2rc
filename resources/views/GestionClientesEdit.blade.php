@@ -56,10 +56,10 @@
                             <label>Sitio Web:</label>
                             <input type="text" name="WEBSITE" class="form-control" placeholder="Sitio Web" value={{ $clientes->WEBSITE}}>
                             </div>
-                            <div class="col-sm-9">
+                       <!--      <div class="col-sm-9">
                             <label>Correo Electronico:</label>
                             <input type="email" name="CORREO" class="form-control" placeholder="Correo Electronico" value={{ $clientes->CORREO}}>
-                            </div>
+                            </div> -->
                      <!--        <div class="col-sm-9">
                             <label>Estado:</label>
                             <select name="ESTADO"class="form-control">

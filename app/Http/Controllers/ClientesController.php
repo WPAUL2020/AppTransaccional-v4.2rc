@@ -96,7 +96,7 @@ class ClientesController extends Controller
     public function changeEmpresa(Request $clientes,$ID_EMPRESA_TERCERO)
     {
         $reglas_Validacion =["DIRECCION" =>"required|min:3", "TELEFONO" =>"numeric|min:3", "CIUDAD" =>"required|min:3",
-        "WEBSITE" =>"required|min:3", "CORREO" =>"required|min:3"/* , "ESTADO" =>"required|min:1" */];
+        "WEBSITE" =>"required|min:3"/* , "CORREO" =>"required|min:3" *//* , "ESTADO" =>"required|min:1" */];
        $mensajes = ["required" => "Este campo es obligatorio", "alpha" => "Este campo solo permite Letras", "numeric" => "Este Campo Solo Permite Numeros",
             "min" => "Este Campo Debe Tener Minimo :min Digitos", "unique" => "Este Campo ya esta Registrado", "exists" => "Este Campo Debe Existir"];
        $this->validate($clientes, $reglas_Validacion, $mensajes);
@@ -105,7 +105,7 @@ class ClientesController extends Controller
         $clientes -> TELEFONO = $_POST["TELEFONO"];
         $clientes -> CIUDAD = $_POST["CIUDAD"];
         $clientes -> WEBSITE = $_POST["WEBSITE"];
-        $clientes -> CORREO = $_POST["CORREO"];
+        /* $clientes -> CORREO = $_POST["CORREO"]; */
         'ACTIVO';
         $clientes->save();
         return redirect('/Clientes')->with("mensaje", "Usuario Actualizado correctamente");

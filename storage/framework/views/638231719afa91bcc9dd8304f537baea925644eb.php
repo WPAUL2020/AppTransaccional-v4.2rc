@@ -71,13 +71,13 @@
                             </li>
                             
                             <li>
+                                <?php if(Route::has('login')): ?>
+                                <?php if(auth()->guard()->check()): ?>
                                 <a href="<?php echo e(URL::to('Contact')); ?>">
                                     <span>Contactenos</span>
                                 </a>
                             </li>
                             <li>
-                                <?php if(Route::has('login')): ?>
-                                    <?php if(auth()->guard()->check()): ?>
                                     <a href="<?php echo e(URL::to('appl')); ?>" class="btn btn-blue">
                                         <span class="btn btn-blue">Zona Transaccional</span>
                                     </a>
@@ -296,7 +296,7 @@
 
 				<!-- Portfolio Item in Widget -->
 				<div class="portfolio-item">
-					<a href="portfolio-single.html" class="image">
+					<a href="about.html" class="image">
 						<img src="<?php echo e(asset('imagenes/banner.gif')); ?>" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>

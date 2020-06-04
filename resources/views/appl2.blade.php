@@ -64,7 +64,7 @@
 				</div>
 
             </div>
-            <div class="item col-sm-4 col-xs-6 filter-design">
+<!--             <div class="item col-sm-4 col-xs-6 filter-design">
 
 				<div class="portfolio-item">
 					<a href="{{URL::to('/generarFactura')}}" class="image">
@@ -75,7 +75,7 @@
 
 				</div>
 
-			</div>
+			</div> -->
 			<div class="item col-sm-4 col-xs-6 filter-design">
 
 				<div class="portfolio-item">

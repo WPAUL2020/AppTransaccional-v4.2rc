@@ -292,13 +292,13 @@
                         </ul>
                     </li>
 
-                    <li class="has-sub">
+                    <!-- <li class="has-sub">
                         <a href="{{URL::to('generarFactura')}}">
                             <i class="entypo-newspaper"></i>
                             <span class="title">Generar Factura</span>
                         </a>
 
-                    </li>
+                    </li> -->
                     @endif
                 </li>
                 <li class="has-sub">
@@ -526,8 +526,8 @@
         <script src="{{asset('vendor/select2/select2.min.js')}}"></script>
     <!--===============================================================================================-->
         {{-- <script src="resources/js/main.js"></script> --}}
-        
 
-        
+
+
 </body>
 </html>

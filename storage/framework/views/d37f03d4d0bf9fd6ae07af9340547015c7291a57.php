@@ -291,13 +291,13 @@
                         </ul>
                     </li>
 
-                    <li class="has-sub">
+                    <!-- <li class="has-sub">
                         <a href="<?php echo e(URL::to('generarFactura')); ?>">
                             <i class="entypo-newspaper"></i>
                             <span class="title">Generar Factura</span>
                         </a>
 
-                    </li>
+                    </li> -->
                     <?php endif; ?>
                 </li>
                 <li class="has-sub">
@@ -519,9 +519,9 @@
         <script src="<?php echo e(asset('vendor/select2/select2.min.js')); ?>"></script>
     <!--===============================================================================================-->
         
-        
 
-        
+
+
 </body>
 </html>
 <?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/AppTransaccional-v4.2rc/resources/views/layouts/app.blade.php ENDPATH**/ ?>

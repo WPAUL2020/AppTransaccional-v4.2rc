@@ -15,7 +15,7 @@
 
 		<div class="row">
 
-			<div class="col-sm-7 sep">
+			<div class="col-sm-12 sep">
 
 				<h4>Póngase en contacto con nosotros, escríbanos un correo electrónico!</h4>
 
@@ -47,60 +47,7 @@
 
 			</div>
 
-			<div class="col-sm-offset-1 col-sm-4">
-
-				<div class="info-entry">
-
-					<h4>Sede Administrativa:</h4>
-
-					<p>
-						Carrera 7 No. 35-85 <br />
-						Bogotá, COL <br />
-
-						<br />
-						<br />
-
-						<strong>Horario:</strong>
-						<br />
-						7:30 am – 6:30 pm <br />
-						Lunes a Viernes
-						<br />
-						<br />
-					</p>
-
-				</div>
-
-				<div class="info-entry">
-
-					<h4>Contactenos</h4>
-
-					<p>
-						Teléfono: +57 (1) 288 – 0871<br />
-						Teléfono: +57 (1) 232 – 4070<br />
-						inscripciones@universitariadecolombia.edu.co
-					</p>
-
-					<ul class="social-networks">
-						<li>
-							<a href="#">
-								<i class="entypo-instagram"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i class="entypo-twitter"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i class="entypo-facebook"></i>
-							</a>
-						</li>
-					</ul>
-
-				</div>
-
-			</div>
+			
 
 		</div>
 

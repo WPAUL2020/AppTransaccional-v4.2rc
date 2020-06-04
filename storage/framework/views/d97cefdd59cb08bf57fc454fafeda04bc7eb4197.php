@@ -9,7 +9,7 @@
 
 			<div class="col-sm-7">
 
-				<img src="Imagenes/zonatransaccional.png">
+				<img src="<?php echo e(asset('Imagenes/zonatransaccional.png')); ?>">
 
 							<ol class="bc-3" >
 						<li>
@@ -62,7 +62,7 @@
 				</div>
 
             </div>
-            <div class="item col-sm-4 col-xs-6 filter-design">
+<!--             <div class="item col-sm-4 col-xs-6 filter-design">
 
 				<div class="portfolio-item">
 					<a href="<?php echo e(URL::to('/generarFactura')); ?>" class="image">
@@ -73,7 +73,7 @@
 
 				</div>
 
-			</div>
+			</div> -->
 			<div class="item col-sm-4 col-xs-6 filter-design">
 
 				<div class="portfolio-item">

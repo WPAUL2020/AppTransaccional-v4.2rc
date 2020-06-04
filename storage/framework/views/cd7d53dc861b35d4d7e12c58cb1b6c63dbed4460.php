@@ -55,11 +55,11 @@
     <input type="text" name="CIUDAD" class="form-control" placeholder="Ciudad" value=<?php echo e($EmpleadosTercero->CIUDAD); ?>>
     <span class="text-danger"><?php echo e($errors->first("CIUDAD")); ?></span>
     </div>
-    <div class="col-sm-9">
+<!--     <div class="col-sm-9">
     <label>Correo Electronico:</label>
     <input type="email" name="CORREO" class="form-control" placeholder="Correo Electronico"value=<?php echo e($EmpleadosTercero->CORREO); ?>>
     <span class="text-danger"><?php echo e($errors->first("CORREO")); ?></span>
-    </div>
+    </div> -->
   </div>
 
   <div class="form-row">
