@@ -17,7 +17,7 @@
 
 		<div class="row">
 
-			<div class="col-sm-7 sep">
+			<div class="col-sm-12 sep">
 
 				<h4>Póngase en contacto con nosotros, escríbanos un correo electrónico!</h4>
 
@@ -48,7 +48,7 @@
 
 			</div>
 
-			<div class="col-sm-offset-1 col-sm-4">
+			{{-- <div class="col-sm-offset-1 col-sm-4">
 
 				<div class="info-entry">
 
@@ -101,7 +101,7 @@
 
 				</div>
 
-			</div>
+			</div> --}}
 
 		</div>
 
