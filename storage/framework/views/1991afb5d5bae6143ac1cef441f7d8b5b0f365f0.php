@@ -296,7 +296,7 @@
 
 				<!-- Portfolio Item in Widget -->
 				<div class="portfolio-item">
-					<a href="portfolio-single.html" class="image">
+					<a href="about.html" class="image">
 						<img src="<?php echo e(asset('imagenes/banner.gif')); ?>" class="img-rounded" />
 						<span class="hover-zoom"></span>
 					</a>

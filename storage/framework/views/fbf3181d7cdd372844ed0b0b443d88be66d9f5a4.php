@@ -43,12 +43,12 @@
                    <?php $__currentLoopData = $empleados; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $users1): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                    <tr class="row100">
                        <td><?php echo e($users1->NOMBRE); ?></td>
-                       <td><?php echo e($users1->TIPO_DOCUMENTO); ?></td>
+                       <td><?php echo e($users1->ID_TIPO_IDENTIFICACION); ?></td>
                        <td><?php echo e($users1->NUM_DOCUMENTO); ?></td>
                        <td><?php echo e($users1->DIRECCION); ?></td>
                        <td><?php echo e($users1->TELEFONO); ?></td>
                        <td><?php echo e($users1->EXTENSION); ?></td>
-                       <td><?php echo e($users1->USUARIO); ?></td>
+                       <td><?php echo e($users1->CORREO); ?></td>
                        <td><?php echo e($empresa->NOMBRE); ?></td>
 
                        <td>
