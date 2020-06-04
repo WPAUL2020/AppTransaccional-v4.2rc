@@ -16,17 +16,19 @@ use Illuminate\Support\Facades\DB;
 
 class EmpleadosTerceroController extends Controller
 {
-    public function mostrarEmpleadosTer(Request $request)
+    public function mostrarEmpleadosTer(Request $request) //Invocamos el request el cual tiene la informacion de usuario que realizo la peticion
     {
-        $request->user()->authorizeRoles(['SUPERVISOR EXTERNO' , 'ADMINISTRADOR']);
+        $request->user()->authorizeRoles(['SUPERVISOR EXTERNO' , 'ADMINISTRADOR']); //Accedemos al request que es la informaciòn del usuario y como ingresamos al modelu Users podemos ingresar a las funciones que estan alli en este caso es el proceso de autorizacion
+        //aca deja ingresar a los usuarios que dentro del rol tenga los que emos descrito en la parte de arriba
+        //Si no esta autorizado nos envia a la vista de la respuesta http 401 en la cual esta en las vistas errors
         if (Auth::check()){
             $user = Auth::user();
             // print($user->ID_EMPRESA_TERCERO);
             // print($user->name);
             // print($user->email);
             $empleados = EmpleadosTercero::where ('ID_EMPRESA_TERCERO',$user->ID_EMPRESA_TERCERO) ->get();
-            $empresa = EmpresaTercero::where ('ID_EMPRESA_TERCERO',$user->ID_EMPRESA_TERCERO)->first();
-            $documento = TipoIdent::where ('ID_TIPO_INDENTIFICACION' , $user->ID_TIPO_INDENTIFICACION)->first();
+            $empresa = EmpresaTercero::where ('ID_EMPRESA_TERCERO',$user->ID_EMPRESA_TERCERO)->first();// Para traer los usuarios al cual pertenece esa empresa
+            $documento = TipoIdent::where ('ID_TIPO_INDENTIFICACION' , $user->ID_TIPO_INDENTIFICACION)->first(); //Envia informacion de la tabla tipo de datos
             // print ($empresa->ID_EMPRESA_TERCERO);
             // var_dump($empleados);
             return view('GesUserTerVista') ->with(["empleados"=>$empleados , 'empresa'=>$empresa , 'documento'=>$documento]);
@@ -40,16 +42,18 @@ class EmpleadosTerceroController extends Controller
     public function InsertEmpleadoTercerorEmpleadosTer()
     {
             $data = DB::select('EXEC InsertEmpleadoTercero');
-            dump($data);
+            dump($data); //Para insertar la informacion y llamar el procedimiento almacenado
     }
-
+   //Valida los campos que trae desde la vista y manda a guardar en la base de datos
     public function guardar(Request $EmpleadosTercero)
     {
+        //Para validar campo a campo segun la regla que se le haya puesto
         $reglas_Validacion =["ID_TIPO_INDENTIFICACION" =>"required|min:1", "NUM_DOCUMENTO" =>"numeric|min:3", "NOMBRE" =>"required|min:3",
         "DIRECCION" =>"required|min:3", "TELEFONO" =>"numeric|min:3", "CIUDAD" =>"required|min:3",
         "CORREO" =>"required|min:3", "TELEFONO_OFICINA" =>"numeric|min:3", "EXTENSION" =>"numeric|min:3", /* "USUARIO" =>"unique:empleado_tercero,USUARIO|required|min:3", */ "CONTRASENA" =>"required|min:3",
         "ID_CARGO" =>"required|min:1", "ID_ROL" =>"required|min:1", /* "ESTADO" =>"required|min:3", */ "ID_EMPRESA_TERCERO" =>"required|min:1" ];
-       $mensajes = ["required" => "Este campo es obligatorio", "alpha" => "Este campo solo permite Letras", "numeric" => "Este Campo Solo Permite Numeros",
+       //Mensajes que tiene cada alerta
+        $mensajes = ["required" => "Este campo es obligatorio", "alpha" => "Este campo solo permite Letras", "numeric" => "Este Campo Solo Permite Numeros",
             "min" => "Este Campo Debe Tener Minimo :min Digitos", "unique" => "Este Campo ya esta Registrado", "exists" => "Este Campo Debe Existir"];
        $this->validate($EmpleadosTercero, $reglas_Validacion, $mensajes);
         $EmpleadosTercero = DB::select(
@@ -74,7 +78,7 @@ class EmpleadosTerceroController extends Controller
        $EmpleadosTercero -> ID_EMPRESA_TERCERO));
        return Redirect('UsuariosTercero')->with("mensaje" , "Registro Exitoso");
    }
-
+  //Accion la cual esta en la ruta la que indica que debe mostrar el formulario para llenar la informacion lee los modelos que pasamos y los envia en la peticion get
    public function getFrmInsertTercero()
    {
     $user = Auth::user();
@@ -87,7 +91,7 @@ class EmpleadosTerceroController extends Controller
     $EmpresaTerceros = EmpresaTercero::all();
     return view('GesUserTerCrear')->with(['roles'=>$roles, 'cargos'=>$cargos, 'TipoIdents'=>$TipoIdents, 'empresa'=>$empresa , 'Ciudad'=>$Ciudad]);
    }
-
+  //Valida campos y los envia a guardar
    public function changeUser(Request $EmpleadosTercero,$ID_EMPLEADO_TERCERO)
    {
     $reglas_Validacion =["DIRECCION" =>"required|min:3", "TELEFONO" =>"numeric|min:3", "CIUDAD" =>"required|min:3",
@@ -110,7 +114,7 @@ class EmpleadosTerceroController extends Controller
        return redirect('/UsuariosTercero')->with("mensaje", "Usuario Actualizado correctamente");
        //return $id;
    }
-
+  // Invocar el formulario editar con el id de registro que se va a editar
    public function updateUser($ID_EMPLEADO_TERCERO)
    {
        if (Auth::check()) {

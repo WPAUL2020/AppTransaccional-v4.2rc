@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+// Modelo de la tabla de Productos Tercero
 class ProductosTercero extends Model
 {
     protected $table="producto_servicio_tercero";

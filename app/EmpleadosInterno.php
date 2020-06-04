@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+// Modelo de la tabla de Empleado Interno
 class EmpleadosInterno extends Model
 {
     protected $table="empleado_interno";

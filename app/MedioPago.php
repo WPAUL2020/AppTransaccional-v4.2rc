@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+// Modelo de la tabla de Medio de Pago
 class MedioPago extends Model
 {
     protected $table="modo_pago";

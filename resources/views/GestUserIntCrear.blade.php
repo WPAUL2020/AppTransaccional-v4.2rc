@@ -2,9 +2,6 @@
 
 @section('content')
 
-
-
-
     <!-- Breadcrumb -->
     <section class="breadcrumb">
 

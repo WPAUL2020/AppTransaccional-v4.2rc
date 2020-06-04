@@ -13,6 +13,6 @@ class Role extends Model
 
     public function users()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany('App\User'); // Relacion de muchos a muchos entre la tabla Roles y Users el cual recibe el modelo de Users es donde estan los roles que hay de la aplicaciòn
     }
 }

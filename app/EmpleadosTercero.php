@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+// Modelo de la tabla de Empleado Externo
 class EmpleadosTercero extends Model
 {
     protected $table="empleado_tercero";
